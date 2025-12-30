@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>milotek.dev</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'Sans';
+            src: url('resources/font/sans.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'Extended';
+            src: url('resources/font/extended.otf') format('opentype');
+        }
+
+        body {
+            font-family: 'Sans', Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1e1e2e;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .marquee-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .marquee-row {
+            white-space: nowrap;
+            overflow: hidden;
+            font-family: 'Extended', monospace;
+            font-size: 120px;
+            font-weight: bold;
+            color: #18182580;
+            line-height: 1;
+            display: flex;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            padding-right: 50px;
+            animation: scrollLeft 240s linear infinite;
+        }
+
+        .marquee-row:nth-child(even) .marquee-content {
+            animation: scrollRight 240s linear infinite;
+        }
+
+        @keyframes scrollLeft {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes scrollRight {
+            0% {
+                transform: translateX(-50%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            aspect-ratio: 2 / 1;
+            display: flex;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .container::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            z-index: 3;
+            background: linear-gradient(
+                90deg,
+                #FFFFFF,
+                #f2cdcd,
+                #f5c2e7,
+                #cba6f7,
+                #f38ba8,
+                #eba0ac,
+                #fab387,
+                #f9e2af,
+                #a6e3a1,
+                #94e2d5,
+                #89dceb,
+                #74c7ec,
+                #89b4fa,
+                #b4befe
+            );
+            background-size: 200% 100%;
+            animation: rainbow 3s linear infinite;
+        }
+
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 200% 0%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                background-image: url('resources/image/background.jpg');
+                background-size: cover;
+                background-position: center;
+                z-index: 2;
+            }
+        }
+
+        .left-sidebar {
+            width: 30%;
+            padding: 40px;
+        }
+
+        @media (max-width: 767px) {
+            .container {
+                width: 90%;
+            }
+            .left-sidebar {
+                width: 100%;
+            }
+        }
+
+        .links {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .links li {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .links a {
+            color: #1e1e2e;
+            background-color: #ffbdbd;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, background-color 0.3s;
+            padding: 2px 6px;
+        }
+
+        .links a:hover {
+            color: #ffbdbd;
+            background-color: #1e1e2e;
+            transition: color 0.3s; background-color: 0.3s;
+        }
+
+        .control-buttons {
+            position: absolute;
+            bottom: -50px;
+            right: 0;
+            display: flex;
+            gap: 0;
+            z-index: 4;
+        }
+
+        .control-btn {
+            width: 40px;
+            height: 40px;
+            background-color: #181825;
+            color: #ffbdbd;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, color 0.3s;
+            transform-origin: top center;
+        }
+
+        .control-btn:hover {
+            background-color: #1e1e2e;
+            color: #ffbdbd;
+        }
+
+        .control-btn.active {
+            background-color: #181825;
+        }
+
+        .control-btn.active:hover {
+            background-color: #ffbdbd;
+            color: #1e1e2e;
+        }
+
+        .btn-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .copyright {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            color: #a6adc880;
+            background-color: #181825;
+            font-size: 14px;
+            z-index: 4;
+        }
+
+        .branding {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: #ffbdbd;
+            background-color: #1e1e2e;
+            font-size: 48px;
+            padding: 0 10px;
+            margin: 0;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="marquee-background">
+        <div class="marquee-row">
+            <div class="marquee-content">To be fair, you have to have a very high IQ to understand xaev's music. The humor is extremely subtle, and without a solid grasp of electronic music history and the evolution of dariacore most of the jokes will go over a typical listener's head. There's also xaev's production talent, which is incredibly woven into his songs - his personal philosophy draws heavily from Leroy's discography, for instance.</div>
+        </div>
+        <div class="marquee-row">
+            <div class="marquee-content">LDM ball cube ball big cube ball next Rest In Peace niflheim vismuth slow wave fast robot keep going! slow ship go! slow ball Auto? fast dual ship slow fast ufo slow How? fast ship slow cube fast ball lol slow robot in out slow ufo take a break ????? !!!!! ?? ?! ??! !! ?! !! ?!!? ??! !! ?!!? ??! ?! ?? !! ?? !! ?? ?! ??! ?!!? ?? ??! ?! !! ?!!? slow ufo go! go! Yeah! fast cube dual wave watch out! faster! OMG! mini next next great! verified by NIFLHEIM koreaqwer</div>
+        </div>
+        <div class="marquee-row">
+            <div class="marquee-content">As a consequence people who dislike xaev truly ARE idiots - of course they wouldn't appreciate, for instance, the niche references in xaev's hit song "toby fox discovers the hyperpop soundfont", which itself is a cryptic reference to Toby Fox's exclusive use of soundfonts for Undertale's soundtrack.</div>
+        </div>
+        <div class="marquee-row">
+            <div class="marquee-content">I'm smirking right now just imagining one of those addlepated simpletons scratching their heads in confusion as schnozz's genius unfolds itself on their television screens. What fools... how I pity them.</div>
+        </div>
+        <div class="marquee-row">
+            <div class="marquee-content">And yes by the way, I DO have a Perry the Platypus tattoo. And no, you cannot see it. It's for the ladies' eyes only - And even they have to demonstrate that they're within the top 50 xaev listeners on spotify.</div>
+        </div>
+        <div class="marquee-row">
+            <div class="marquee-content">I don't know what to put for this bit. Can you just leave me alone? I hope I don't get fired. Just kidding xx. I'm fat. I'm a furry. Nobody will see this. CS2 sucks. Burn in heck.</div>
+        </div>
+        <div class="marquee-row">
+            <div class="marquee-content">im actually 5000 years old my real name is terry davis and im the best programmer who ever lived hahahah. just kidding again guys. i like to play video games and eat apples, especially green apples!</div>
+        </div>
+    </div>
+    <audio id="bgMusic" loop>
+        <source src="resources/audio/music/music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="hoverSound">
+        <source src="resources/audio/sounds/hover.wav" type="audio/wav">
+    </audio>
+    <audio id="clickSound">
+        <source src="resources/audio/sounds/click.wav" type="audio/wav">
+    </audio>
+    <div class="wrapper">
+        <div class="container">
+            <div class="left-sidebar">
+                <ul class="links">
+                    <li><a href="/">/</a></li>
+                    <li><a href="/about.html">/about</a></li>
+                    <li><a href="/projects.html">/projects</a></li>
+                    <li><a href="/blog">/blog</a></li>
+                    <li><a href="/contact.html">/contact</a></li>
+                </ul>
+            </div>
+            <div class="control-buttons">
+                <button id="soundToggle" class="control-btn" aria-label="Toggle sound">
+                    <span class="sound-icon">?</span>
+                </button>
+                <button id="flipToggle" class="control-btn" aria-label="Flip image">
+                    <span>?</span>
+                </button>
+                <button id="imageSwap" class="control-btn" aria-label="Swap image">
+                    <span>?</span>
+                </button>
+            </div>
+            <div class="copyright"><strong>COPYRIGHT LOLOLOLOL</strong></div>
+            <h1 class="branding">milo tek's site</h1>
+        </div>
+    </div>
+
+    <script>
+        const bgMusic = document.getElementById('bgMusic');
+        const hoverSound = document.getElementById('hoverSound');
+        const clickSound = document.getElementById('clickSound');
+        const soundToggle = document.getElementById('soundToggle');
+        const flipToggle = document.getElementById('flipToggle');
+        const imageSwap = document.getElementById('imageSwap');
+        const soundIcon = soundToggle.querySelector('.sound-icon');
+        const wrapper = document.querySelector('.wrapper');
+        const container = document.querySelector('.container');
+        const links = document.querySelectorAll('.links a');
+        const controlButtons = document.querySelectorAll('.control-btn');
+
+        let musicEnabled = false;
+        let isFlipped = false;
+        let currentImage = 1;
+        let audioContext = null;
+        let analyser = null;
+        let dataArray = null;
+        let animationId = null;
+        let frequencyOffset = 0;
+
+        function initAudioAnalyser() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                analyser = audioContext.createAnalyser();
+                const source = audioContext.createMediaElementSource(bgMusic);
+                source.connect(analyser);
+                analyser.connect(audioContext.destination);
+                analyser.fftSize = 256;
+                const bufferLength = analyser.frequencyBinCount;
+                dataArray = new Uint8Array(bufferLength);
+            }
+        }
+
+        function animateButtons() {
+            if (!musicEnabled || !analyser) return;
+
+            analyser.getByteFrequencyData(dataArray);
+
+            frequencyOffset += 0.01;
+            if (frequencyOffset >= dataArray.length) {
+                frequencyOffset = 0;
+            }
+
+            controlButtons.forEach((button, index) => {
+                const rangeSize = Math.floor(dataArray.length / controlButtons.length);
+                const baseStartIndex = index * rangeSize;
+
+                const startIndex = (baseStartIndex + Math.floor(frequencyOffset)) % dataArray.length;
+
+                let sum = 0;
+                for (let i = 0; i < rangeSize; i++) {
+                    const dataIndex = (startIndex + i) % dataArray.length;
+                    sum += dataArray[dataIndex];
+                }
+                const average = sum / rangeSize;
+                const scale = 1 + (average / 255) * 3;
+
+                button.style.transform = `scaleY(${scale})`;
+                button.style.transformOrigin = 'top center';
+            });
+
+            animationId = requestAnimationFrame(animateButtons);
+        }
+
+        soundToggle.addEventListener('click', () => {
+            musicEnabled = !musicEnabled;
+
+            if (musicEnabled) {
+                initAudioAnalyser();
+                bgMusic.play().catch(err => console.log('Audio play failed:', err));
+                soundToggle.classList.add('active');
+                animateButtons();
+            } else {
+                bgMusic.pause();
+                soundToggle.classList.remove('active');
+                if (animationId) {
+                    cancelAnimationFrame(animationId);
+                    animationId = null;
+                }
+                controlButtons.forEach(button => {
+                    button.style.transform = 'scaleY(1)';
+                });
+            }
+        });
+
+        controlButtons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                hoverSound.currentTime = 0;
+                hoverSound.play().catch(err => console.log('Hover sound failed:', err));
+            });
+        });
+
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                hoverSound.currentTime = 0;
+                hoverSound.play().catch(err => console.log('Hover sound failed:', err));
+            });
+
+            link.addEventListener('click', (e) => {
+                clickSound.currentTime = 0;
+                clickSound.play().catch(err => console.log('Click sound failed:', err));
+            });
+        });
+
+        flipToggle.addEventListener('click', () => {
+            clickSound.currentTime = 0;
+            clickSound.play().catch(err => console.log('Click sound failed:', err));
+
+            isFlipped = !isFlipped;
+
+            if (isFlipped) {
+                container.style.transform = 'scaleX(-1)';
+                flipToggle.classList.add('active');
+            } else {
+                container.style.transform = 'scaleX(1)';
+                flipToggle.classList.remove('active');
+            }
+        });
+
+        imageSwap.addEventListener('click', () => {
+            clickSound.currentTime = 0;
+            clickSound.play().catch(err => console.log('Click sound failed:', err));
+
+            currentImage = currentImage === 1 ? 2 : 1;
+
+            if (currentImage === 2) {
+                container.style.backgroundImage = "url('resources/image/background_2.png')";
+                imageSwap.classList.add('active');
+            } else {
+                container.style.backgroundImage = "url('resources/image/background.jpg')";
+                imageSwap.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
