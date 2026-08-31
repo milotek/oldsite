@@ -1,3 +1,5 @@
+import type { IconName } from '../components/Icon'
+
 export const site = {
   name: 'Milo Tekchandani',
   title: "milo's website",
@@ -16,22 +18,22 @@ export const site = {
 export interface NavLink {
   to: string
   label: string
+  icon: IconName
 }
 
 export const nav: NavLink[] = [
-  { to: '/projects', label: 'projects' },
-  { to: '/games', label: 'games' },
-  { to: '/cv', label: 'cv' },
-  { to: '/art', label: 'art' },
-  { to: '/misc', label: 'misc' },
+  { to: '/', label: 'home', icon: 'home' },
+  { to: '/projects', label: 'projects', icon: 'folder' },
+  { to: '/games', label: 'games', icon: 'gamepad' },
+  { to: '/cv', label: 'cv', icon: 'document' },
+  { to: '/art', label: 'art', icon: 'palette' },
+  { to: '/misc', label: 'misc', icon: 'info' },
 ]
-
-export type SocialIcon = 'github' | 'linkedin' | 'email' | 'obsidian' | 'instagram'
 
 export interface Social {
   label: string
   href: string
-  icon: SocialIcon
+  icon: IconName
 }
 
 export const socials: Social[] = [

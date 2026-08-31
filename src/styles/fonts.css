@@ -1,0 +1,27 @@
+/*
+ * The Builder faces from the previous milotek.dev. Each ships as a single Bold
+ * weight, so the range below claims 400-700 for that one file: without it the
+ * browser treats the face as 400 and synthesises a fake bold for headings,
+ * which smears an already-heavy typeface.
+ */
+
+@font-face {
+  font-family: 'Builder Sans';
+  src: url('/font/sans.otf') format('opentype');
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Builder Mono';
+  src: url('/font/mono.otf') format('opentype');
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Builder Extended';
+  src: url('/font/extended.otf') format('opentype');
+  font-weight: 400 700;
+  font-display: swap;
+}

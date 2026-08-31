@@ -1,27 +1,60 @@
 /*
- * Palette and type lifted from the old carrd site so the feel carries over:
- * the 45deg sunset gradient it used as a page backdrop, and JetBrains Mono,
- * which was the typeface on 21 of its rules and by far the loudest signal.
+ * Catppuccin Mocha, with one deliberate departure: maroon is #ffbdbd rather
+ * than upstream's #eba0ac. Milo Tekchandani's preference, and it is the accent
+ * the whole site leans on, so it is worth stating plainly rather than burying.
  */
 :root {
-  --sunset-1: #f98a5b;
-  --sunset-2: #cc6cb7;
-  --sunset-3: #a38cff;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #ffbdbd;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
 
-  --ink: #16131a;
-  --panel: rgb(24 20 30 / 0.82);
-  --panel-solid: #1d1924;
-  --line: rgb(255 255 255 / 0.12);
-  --line-strong: rgb(255 255 255 / 0.24);
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
 
-  --text: #f3eef8;
-  --muted: #aa9fba;
-  --accent: var(--sunset-1);
-  --accent-soft: #c4fff1;
+  /* Roles. Components reference these, never the raw ctp names, so a palette
+     swap is one block rather than a search across every rule. */
+  --bg: var(--ctp-crust);
+  --panel: var(--ctp-base);
+  --panel-raised: var(--ctp-surface0);
+  --line: var(--ctp-surface0);
+  --line-strong: var(--ctp-surface1);
 
-  --font: 'JetBrains Mono Variable', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --text: var(--ctp-text);
+  --muted: var(--ctp-subtext0);
+  --faint: var(--ctp-overlay0);
 
-  /* Steps of 4px. Enough range for a page this size, few enough to hold in your head. */
+  --accent: var(--ctp-maroon);
+  --accent-dim: var(--ctp-flamingo);
+
+  --font-sans: 'Builder Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Builder Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-display: 'Builder Extended', 'Builder Sans', sans-serif;
+
+  /* Cell pitch of the backdrop grid. Read by InteractiveGrid at build time and
+     by the no-JS CSS fallback, so the two always agree. */
+  --grid-size: 28px;
+
   --s1: 0.25rem;
   --s2: 0.5rem;
   --s3: 0.75rem;
@@ -31,7 +64,7 @@
   --s7: 3rem;
   --s8: 4.5rem;
 
-  --radius: 10px;
+  --radius: 8px;
   --measure: 68ch;
-  --page: 68rem;
+  --page: 72rem;
 }

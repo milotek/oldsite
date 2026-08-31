@@ -29,7 +29,7 @@ export default function Entry({ entry }: { entry: EntryData }) {
       )}
 
       {entry.video && (
-        <div className="frame" style={{ marginTop: 'var(--s5)' }}>
+        <div className="frame">
           <iframe
             title={entry.video.title}
             src={`https://www.youtube-nocookie.com/embed/${entry.video.youtubeId}?rel=0`}

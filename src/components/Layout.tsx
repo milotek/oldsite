@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { nav, site } from '../data/site'
-import Backdrop from './Backdrop'
+import Icon from './Icon'
+import InteractiveGrid from './InteractiveGrid'
 
 export default function Layout() {
   const { pathname } = useLocation()
@@ -14,7 +15,7 @@ export default function Layout() {
 
   return (
     <div className="shell">
-      <Backdrop />
+      <InteractiveGrid />
       <a className="skip" href="#main">
         skip to content
       </a>
@@ -22,11 +23,12 @@ export default function Layout() {
       <header className="header">
         <div className="wrap">
           <Link to="/" className="brand">
-            {site.name.toLowerCase()}
+            milotek.dev
           </Link>
           <nav className="nav" aria-label="Main">
             {nav.map((link) => (
-              <NavLink key={link.to} to={link.to}>
+              <NavLink key={link.to} to={link.to} end={link.to === '/'}>
+                <Icon name={link.icon} />
                 {link.label}
               </NavLink>
             ))}

@@ -28,7 +28,7 @@ export default function Misc() {
 
         <section className="entry">
           <h2>Something to listen to</h2>
-          <div className="frame" style={{ aspectRatio: 'auto', height: '166px', marginTop: 'var(--s5)' }}>
+          <div className="frame" style={{ aspectRatio: 'auto', height: '166px' }}>
             <iframe title="SoundCloud player" src={soundcloudEmbed} loading="lazy" allow="autoplay" />
           </div>
         </section>
