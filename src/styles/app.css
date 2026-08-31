@@ -1,0 +1,593 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100svh;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* ---------- backdrop ---------- */
+
+/* Fixed so the gradient stays put while the page scrolls, exactly as the
+   original did with body::before. */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--ink);
+}
+
+/* Masked to the lower half rather than washed evenly: the sunset stays
+   genuinely saturated where the peaks sit, and the upper area that body text
+   actually lands on stays ink. A flat wash over the whole viewport was dark
+   enough to read as black, which threw away the one thing worth keeping. */
+.backdrop::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(30deg, var(--sunset-1) 0%, var(--sunset-2) 48%, var(--sunset-3) 100%);
+  opacity: 0.72;
+  mask-image: linear-gradient(to top, #000 0%, rgb(0 0 0 / 0.42) 42%, transparent 78%);
+}
+
+.peaks {
+  position: absolute;
+  inset: auto 0 0 0;
+  width: 100%;
+  height: 62vh;
+  opacity: 0.6;
+}
+
+/* Duration is set per-ridge from the component, which is where the parallax
+   ordering is decided. */
+.peaks path {
+  animation: drift linear infinite;
+}
+
+@keyframes drift {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .peaks path {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- shell ---------- */
+
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip:focus {
+  left: var(--s4);
+  top: var(--s4);
+  z-index: 10;
+  padding: var(--s2) var(--s3);
+  background: var(--panel-solid);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--page);
+  margin-inline: auto;
+  padding-inline: var(--s5);
+}
+
+/* ---------- header ---------- */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  backdrop-filter: blur(14px);
+  background: rgb(22 19 26 / 0.72);
+  border-bottom: 1px solid var(--line);
+}
+
+.header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s3) var(--s5);
+  padding-block: var(--s3);
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.brand:hover {
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s4);
+  margin-left: auto;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.nav a:hover {
+  color: var(--text);
+}
+
+.nav a[aria-current='page'] {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- page ---------- */
+
+.main {
+  flex: 1;
+  padding-block: var(--s7) var(--s8);
+}
+
+.page-head {
+  margin-bottom: var(--s7);
+}
+
+h1 {
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.lede {
+  margin-top: var(--s3);
+  max-width: var(--measure);
+  color: var(--muted);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ---------- home ---------- */
+
+.hero {
+  display: grid;
+  gap: var(--s6);
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+}
+
+@media (min-width: 46rem) {
+  .hero {
+    grid-template-columns: 1fr minmax(0, 20rem);
+  }
+}
+
+.hero-banner {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.hero-banner img {
+  width: 100%;
+  height: auto;
+}
+
+.hero h1 {
+  background: linear-gradient(100deg, var(--sunset-1), var(--sunset-2) 55%, var(--sunset-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tagline {
+  margin-top: var(--s3);
+  color: var(--muted);
+}
+
+/* ---------- socials ---------- */
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  padding: 0;
+  margin-top: var(--s5);
+  list-style: none;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  padding: var(--s2) var(--s3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--muted);
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s, transform 0.15s;
+}
+
+.socials a:hover {
+  color: var(--text);
+  border-color: var(--line-strong);
+  transform: translateY(-1px);
+}
+
+.socials svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex: none;
+}
+
+/* ---------- cards ---------- */
+
+.cards {
+  display: grid;
+  gap: var(--s4);
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  padding: 0;
+  margin-top: var(--s6);
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  padding: var(--s4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.card:hover {
+  color: inherit;
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+}
+
+.card h2 {
+  font-size: 1rem;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* ---------- entries ---------- */
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s8);
+}
+
+.entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s3);
+}
+
+.status {
+  padding: 2px var(--s2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: var(--accent-soft);
+}
+
+.entry > p {
+  max-width: var(--measure);
+  margin-top: var(--s2);
+}
+
+.points {
+  max-width: var(--measure);
+  margin-top: var(--s4);
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  color: var(--muted);
+}
+
+/* The old site prefixed every one of these lines with a literal "> ".
+   Same read, but without the character living inside the content. */
+.points li {
+  display: flex;
+  gap: var(--s3);
+}
+
+.points li::before {
+  content: '>';
+  color: var(--accent);
+  flex: none;
+}
+
+.entry-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s4);
+  margin-top: var(--s4);
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+}
+
+/* ---------- media ---------- */
+
+.figures {
+  display: grid;
+  gap: var(--s4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  margin-top: var(--s5);
+  padding: 0;
+  list-style: none;
+}
+
+.figures.wide {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+}
+
+/* Phone screenshots are ~2:1 portrait; left in the default track they run
+   taller than the viewport. */
+.figures.tall {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 12rem));
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+figcaption {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.frame {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--panel-solid);
+}
+
+.frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ---------- gallery ---------- */
+
+.gallery {
+  display: grid;
+  gap: var(--s4);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+  padding: 0;
+  list-style: none;
+}
+
+.tile {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--panel);
+  cursor: zoom-in;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.tile:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+}
+
+.tile img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.tile figcaption {
+  padding: var(--s3);
+  text-align: left;
+}
+
+/* ---------- lightbox ---------- */
+
+.lightbox {
+  width: min(96vw, 80rem);
+  max-height: 92vh;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--panel-solid);
+  color: var(--text);
+  overflow: hidden;
+}
+
+.lightbox::backdrop {
+  background: rgb(10 8 12 / 0.86);
+  backdrop-filter: blur(6px);
+}
+
+.lightbox form {
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--s2);
+}
+
+.lightbox button {
+  padding: var(--s1) var(--s3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: transparent;
+  cursor: pointer;
+}
+
+.lightbox button:hover {
+  border-color: var(--line-strong);
+}
+
+/* Flex column so the close bar and caption always get their height first and
+   the image takes whatever is left. Sizing the image in vh instead let tall
+   artwork push the caption past the dialog's max-height, where it was clipped. */
+.lightbox[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.lightbox figure {
+  flex: 1;
+  min-height: 0;
+}
+
+.lightbox img {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  object-fit: contain;
+}
+
+.lightbox figcaption {
+  padding: var(--s3) var(--s4) var(--s4);
+}
+
+/* ---------- cv ---------- */
+
+.pdf {
+  width: 100%;
+  height: min(78vh, 60rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel-solid);
+}
+
+/* ---------- footer ---------- */
+
+.footer {
+  border-top: 1px solid var(--line);
+  background: rgb(22 19 26 / 0.72);
+}
+
+.footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--s3);
+  padding-block: var(--s5);
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
