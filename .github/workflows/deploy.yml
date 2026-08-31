@@ -1,0 +1,63 @@
+name: Deploy to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never run two deploys at once, but never cancel one mid-flight either:
+# a cancelled deploy can leave Pages serving a half-uploaded artifact.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # The vault is a separate private repo. Without the deploy key the build
+      # still succeeds and simply publishes no posts or notes, which is the
+      # correct failure mode: never a partial or stale vault.
+      - name: Check for vault deploy key
+        id: vault
+        run: echo "present=${{ secrets.VAULT_DEPLOY_KEY != '' }}" >> "$GITHUB_OUTPUT"
+
+      - name: Check out vault
+        if: steps.vault.outputs.present == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: milotek/ObsidianVault
+          ssh-key: ${{ secrets.VAULT_DEPLOY_KEY }}
+          path: vault
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build
+        env:
+          VAULT_PATH: ${{ github.workspace }}/vault
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/client
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
