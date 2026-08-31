@@ -6,7 +6,7 @@
   "scripts": {
     "vault": "tsx scripts/build-vault.ts",
     "dev": "npm run vault && vite",
-    "typecheck": "npm run vault && tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "build:client": "vite build --outDir dist/client --ssrManifest",
     "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
     "build": "npm run vault && npm run build:client && npm run build:server && tsx scripts/prerender.ts",
