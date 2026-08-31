@@ -1,0 +1,37 @@
+@font-face {
+            font-family: 'Sans';
+            src: url('resources/font/sans.otf') format('opentype');
+        }
+
+@font-face {
+    font-family: 'Mono';
+    src: url('resources/font/mono.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Extended';
+    src: url('resources/font/extended.otf') format('opentype');
+}
+
+body {
+    color: #cdd6f4;
+    background-color: #1e1e2e;
+    margin: 40px auto;
+    max-width: 650px;
+    line-height: 1.6em;
+    font-size: 18px;
+    padding: 0;
+    font-family: Mono;
+    animation-name: myAnimation;
+    animation-duration: 200ms;
+    animation-iteration-count: infinite;
+}
+
+p {
+    color: #a6adc8
+}
+
+b, strong, a {
+   color: #ffbdbd;
+}
+
