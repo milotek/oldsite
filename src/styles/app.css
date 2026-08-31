@@ -1,0 +1,1186 @@
+/* ---------------------------------------------------------------------------
+   Tokens
+
+   Catppuccin Mocha, with Latte for light. The 2025 site put a warm gradient
+   behind its header and left everything below it grey, so the gradient is a
+   header surface here and nowhere else. Spread across the chrome it becomes a
+   page you cannot look at for long.
+   --------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Milo Sans';
+  src: url('/font/sans.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Milo Extended';
+  src: url('/font/extended.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Milo Mono';
+  src: url('/font/mono.otf') format('opentype');
+  font-display: swap;
+}
+
+:root {
+  /* Catppuccin Mocha */
+  --base: #1e1e2e;
+  --mantle: #181825;
+  --crust: #11111b;
+  --surface: #313244;
+  --surface-2: #45475a;
+  --overlay: #6c7086;
+  --subtext: #a6adc8;
+  --text: #cdd6f4;
+
+  --peach: #fab387;
+  --mauve: #cba6f7;
+  --lavender: #b4befe;
+  --pink: #f5c2e7;
+  --green: #a6e3a1;
+  --yellow: #f9e2af;
+  --blue: #89b4fa;
+  --teal: #94e2d5;
+  --red: #f38ba8;
+
+  --accent: var(--mauve);
+  /* Tracks the old site's orange to magenta to periwinkle, in Catppuccin.
+     Fixed across both themes: these are fill colours, not text colours, so
+     they must not follow the Latte accents into full saturation. */
+  --sunset: linear-gradient(115deg, #fab387 0%, #cba6f7 55%, #b4befe 100%);
+  --on-sunset: #1e1e2e;
+
+  --font-sans: 'Milo Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: 'Milo Extended', 'Milo Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Milo Mono', ui-monospace, 'JetBrains Mono', Menlo, monospace;
+
+  --rail: 16.5rem;
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --measure: 66ch;
+
+  /* Written by the audio analyser at 60fps, read by the chrome. 0 when the
+     player is off, which is also the correct resting value. */
+  --level: 0;
+
+  color-scheme: dark;
+  scrollbar-color: var(--surface-2) var(--mantle);
+}
+
+:root[data-theme='light'] {
+  /* Catppuccin Latte */
+  --base: #eff1f5;
+  --mantle: #e6e9ef;
+  --crust: #dce0e8;
+  --surface: #ccd0da;
+  --surface-2: #bcc0cc;
+  --overlay: #9ca0b0;
+  --subtext: #6c6f85;
+  --text: #4c4f69;
+
+  --peach: #fe640b;
+  --mauve: #8839ef;
+  --lavender: #7287fd;
+  --pink: #ea76cb;
+  --green: #40a02b;
+  --yellow: #df8e1d;
+  --blue: #1e66f5;
+  --teal: #179299;
+  --red: #d20f39;
+
+  color-scheme: light;
+  scrollbar-color: var(--surface-2) var(--mantle);
+}
+
+@media (prefers-color-scheme: light) {
+  /* Scoped to "no explicit choice" so an explicit dark toggle still wins for
+     a visitor whose system preference is light. */
+  :root:not([data-theme='dark']) {
+    --base: #eff1f5;
+    --mantle: #e6e9ef;
+    --crust: #dce0e8;
+    --surface: #ccd0da;
+    --surface-2: #bcc0cc;
+    --overlay: #9ca0b0;
+    --subtext: #6c6f85;
+    --text: #4c4f69;
+
+    --peach: #fe640b;
+    --mauve: #8839ef;
+    --lavender: #7287fd;
+    --pink: #ea76cb;
+    --green: #40a02b;
+    --yellow: #df8e1d;
+    --blue: #1e66f5;
+    --teal: #179299;
+    --red: #d20f39;
+
+    color-scheme: light;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Reset and base
+   --------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  background: var(--base);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--base);
+  color: var(--text);
+  /* Monospace body, as the old site had. It is most of that site's character
+     and it suits a page that is mostly lists of technical facts. */
+  font-family: var(--font-mono);
+  font-size: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
+  line-height: 1.7;
+  overflow-wrap: break-word;
+}
+
+::selection {
+  background: var(--mauve);
+  color: var(--crust);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--mantle);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-2);
+  border: 3px solid var(--mantle);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--overlay);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  color: var(--teal);
+  background: var(--mantle);
+  padding: 0.05em 0.35em;
+  border-radius: 3px;
+}
+
+a {
+  color: var(--blue);
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease;
+}
+
+a:hover {
+  color: var(--mauve);
+}
+
+:focus-visible {
+  outline: 2px solid var(--mauve);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  padding: 0.5rem 0.9rem;
+  background: var(--mauve);
+  color: var(--crust);
+  border-radius: 99px;
+}
+
+/* ---------------------------------------------------------------------------
+   The spectrum strip
+
+   The rainbow hairline from the 2025 landing page, swelling with the audio
+   level when the player is on.
+   --------------------------------------------------------------------------- */
+
+.spectrum {
+  position: fixed;
+  inset: 0 0 auto;
+  height: calc(2px + var(--level) * 8px);
+  z-index: 60;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    var(--peach),
+    var(--yellow),
+    var(--green),
+    var(--teal),
+    var(--blue),
+    var(--lavender),
+    var(--mauve),
+    var(--pink),
+    var(--peach)
+  );
+  background-size: 200% 100%;
+  animation: drift 14s linear infinite;
+  transition: height 0.08s linear;
+}
+
+@keyframes drift {
+  to {
+    background-position: 200% 0;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Layout: quiet rail, grey main
+   --------------------------------------------------------------------------- */
+
+.shell {
+  min-height: 100vh;
+}
+
+.rail {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--rail);
+  padding: 2.5rem 1.5rem 1.5rem;
+  background: var(--mantle);
+  border-right: 1px solid var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  overflow-y: auto;
+  scrollbar-width: none;
+  z-index: 40;
+}
+
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+.rail__mark {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* The only colour in the rail. Solid rather than gradient text: the gradient
+   stops are pastels chosen to sit under dark ink, and as text on the light
+   theme's rail they fall well under any readable contrast. */
+.rail__mark span {
+  display: block;
+  color: var(--mauve);
+}
+
+.rail__role {
+  margin: 0.8rem 0 0;
+  font-size: 0.68rem;
+  line-height: 1.55;
+  color: var(--overlay);
+}
+
+.rail__nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.rail__nav a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--subtext);
+  transition:
+    color 0.15s ease,
+    background 0.15s ease;
+}
+
+.rail__nav a::before {
+  content: attr(data-index);
+  font-size: 0.62rem;
+  color: var(--overlay);
+}
+
+.rail__nav a:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.rail__nav a[aria-current='page'] {
+  color: var(--mauve);
+  background: var(--surface);
+}
+
+.rail__foot {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.rail__socials {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.7rem;
+}
+
+.rail__socials a {
+  font-size: 0.68rem;
+  color: var(--subtext);
+  text-decoration: none;
+  border-bottom: 1px solid var(--surface);
+}
+
+.rail__socials a:hover {
+  color: var(--mauve);
+  border-bottom-color: var(--mauve);
+}
+
+.rail__legal {
+  margin: 0;
+  font-size: 0.62rem;
+  line-height: 1.6;
+  color: var(--overlay);
+}
+
+.rail__legal a {
+  color: var(--subtext);
+}
+
+.main {
+  margin-left: var(--rail);
+  padding: 2.5rem var(--gutter) 7rem;
+  max-width: 80rem;
+}
+
+/* ---------------------------------------------------------------------------
+   The header block
+
+   The one coloured surface on the page, standing in for the old site's
+   gradient hero. Everything below it is grey on purpose.
+   --------------------------------------------------------------------------- */
+
+.page-head {
+  background: var(--sunset);
+  color: var(--on-sunset);
+  border-radius: 14px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 2.75rem;
+}
+
+.page-head .eyebrow {
+  color: color-mix(in oklab, var(--on-sunset) 72%, transparent);
+}
+
+.page-head h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.4rem + 2.6vw, 3.1rem);
+  letter-spacing: -0.02em;
+  color: var(--on-sunset);
+}
+
+.page-head .lede {
+  color: color-mix(in oklab, var(--on-sunset) 85%, transparent);
+}
+
+.page-head a {
+  color: var(--on-sunset);
+  text-decoration-thickness: 2px;
+}
+
+.page-head a:hover {
+  color: var(--crust);
+}
+
+.eyebrow {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--overlay);
+  margin: 0 0 0.8rem;
+}
+
+.lede {
+  margin: 1rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--subtext);
+  max-width: var(--measure);
+}
+
+.section {
+  margin-top: 3.5rem;
+}
+
+.section__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.7rem;
+  margin-bottom: 1.4rem;
+  border-bottom: 1px solid var(--surface);
+}
+
+.section__head h2 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.section__head a,
+.section__head span {
+  font-size: 0.7rem;
+  color: var(--overlay);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.section__head a:hover {
+  color: var(--mauve);
+}
+
+/* ---------------------------------------------------------------------------
+   Entry: the shared card for a project or a game
+   --------------------------------------------------------------------------- */
+
+.entries {
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.entry {
+  position: relative;
+  background: var(--mantle);
+  border: 1px solid var(--surface);
+  border-radius: 10px;
+  padding: 1.35rem clamp(1rem, 2vw, 1.6rem);
+  display: grid;
+  grid-template-columns: 2.75rem 1fr;
+  gap: 0 1rem;
+  overflow: hidden;
+  transition: border-color 0.18s ease;
+}
+
+/* The gradient edge is the hover reward: nothing at rest, and it ties the row
+   back to the header without adding a second permanent colour. */
+.entry::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--sunset);
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+.entry:hover {
+  border-color: var(--surface-2);
+}
+
+.entry:hover::before {
+  opacity: 1;
+}
+
+.entry__index {
+  font-size: 0.7rem;
+  color: var(--overlay);
+  padding-top: 0.3rem;
+}
+
+.entry__title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.entry__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.entry__title a:hover {
+  color: var(--mauve);
+}
+
+/* Makes the whole card clickable without nesting interactive elements. */
+.entry__title a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.entry__blurb {
+  color: var(--subtext);
+  margin: 0.4rem 0 0.85rem;
+  max-width: 58ch;
+}
+
+.entry__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.66rem;
+}
+
+.entry__meta > span:not([class]) {
+  color: var(--overlay);
+  margin-right: 0.2rem;
+}
+
+.tag {
+  border: 1px solid var(--surface);
+  border-radius: 5px;
+  padding: 0.1rem 0.5rem;
+  color: var(--subtext);
+  white-space: nowrap;
+}
+
+/* Status is the one place a saturated colour earns its keep: it is the fact
+   most people scan for. Tinted background, coloured text, no neon fill. */
+.status {
+  border-radius: 5px;
+  padding: 0.1rem 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  border: 1px solid currentColor;
+}
+
+.status--shipped {
+  color: var(--green);
+}
+
+.status--unreleased {
+  color: var(--yellow);
+}
+
+.status--in-progress {
+  color: var(--blue);
+}
+
+.status--archived {
+  color: var(--overlay);
+}
+
+/* ---------------------------------------------------------------------------
+   Detail pages
+   --------------------------------------------------------------------------- */
+
+.detail {
+  max-width: var(--measure);
+}
+
+.detail ul {
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.detail ul li {
+  padding-left: 1.4rem;
+  position: relative;
+  color: var(--subtext);
+}
+
+.detail ul li::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  color: var(--mauve);
+}
+
+.linkrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.6rem;
+}
+
+.button {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  padding: 0.45rem 0.95rem;
+  border: 1px solid var(--surface);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--mantle);
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.button:hover {
+  background: var(--surface);
+  border-color: var(--surface-2);
+  color: var(--mauve);
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.72rem;
+  color: var(--overlay);
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--mauve);
+}
+
+/* ---------------------------------------------------------------------------
+   Media
+   --------------------------------------------------------------------------- */
+
+.shots {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+  gap: 1rem;
+  margin-top: 2.25rem;
+}
+
+.shots figure {
+  margin: 0;
+}
+
+.shots img {
+  width: 100%;
+  border: 1px solid var(--surface);
+  border-radius: 8px;
+  background: var(--mantle);
+}
+
+.shots figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.66rem;
+  color: var(--overlay);
+}
+
+.gallery {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+  gap: 1.1rem;
+}
+
+.gallery figure {
+  margin: 0;
+}
+
+.gallery button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--surface);
+  border-radius: 8px;
+  background: var(--mantle);
+  cursor: zoom-in;
+  overflow: hidden;
+  transition: border-color 0.18s ease;
+}
+
+.gallery button:hover {
+  border-color: var(--mauve);
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.gallery button:hover img {
+  transform: scale(1.04);
+}
+
+.gallery figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  color: var(--subtext);
+}
+
+.embed {
+  border: 1px solid var(--surface);
+  border-radius: 10px;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  margin-top: 1.5rem;
+  overflow: hidden;
+  background: var(--mantle);
+}
+
+.embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.pdf {
+  width: 100%;
+  height: min(80vh, 900px);
+  border: 1px solid var(--surface);
+  border-radius: 10px;
+  background: var(--mantle);
+}
+
+/* Lightbox */
+
+/* `display: grid` below beats the UA's `dialog:not([open]) { display: none }`,
+   so without this the backdrop paints over the gallery on every page load. */
+.lightbox:not([open]) {
+  display: none;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  background: color-mix(in oklab, var(--crust) 95%, transparent);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  grid-template-rows: 1fr auto;
+}
+
+.lightbox::backdrop {
+  background: rgb(0 0 0 / 75%);
+}
+
+.lightbox img {
+  max-width: min(94vw, 1400px);
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.lightbox__bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem var(--gutter) 2rem;
+  font-size: 0.72rem;
+  color: var(--subtext);
+  text-align: center;
+}
+
+.lightbox__btn {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--surface);
+  border-radius: 6px;
+  background: var(--mantle);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.lightbox__btn:hover {
+  background: var(--surface);
+  color: var(--mauve);
+}
+
+.lightbox__btn--close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Home hero: the header block, with a portrait in it
+   --------------------------------------------------------------------------- */
+
+.hero {
+  background: var(--sunset);
+  color: var(--on-sunset);
+  border-radius: 14px;
+  padding: clamp(1.5rem, 3vw, 2.75rem);
+  margin-bottom: 2.75rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: start;
+}
+
+.hero .eyebrow {
+  color: color-mix(in oklab, var(--on-sunset) 72%, transparent);
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 1.5rem + 2.8vw, 3.4rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--on-sunset);
+}
+
+/* The display face ships no italic, so <em> would be synthesised and look
+   smeared. The old site underlined its headings; that is the emphasis here. */
+.hero h1 em {
+  font-style: normal;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 7px;
+}
+
+.hero__portrait {
+  width: clamp(6rem, 11vw, 9rem);
+  border-radius: 10px;
+  border: 2px solid color-mix(in oklab, var(--on-sunset) 25%, transparent);
+}
+
+.hero__text {
+  margin-top: 1.1rem;
+  max-width: var(--measure);
+  color: color-mix(in oklab, var(--on-sunset) 85%, transparent);
+  line-height: 1.7;
+}
+
+.hero__text p:last-child {
+  margin-bottom: 0;
+}
+
+.hero__text strong {
+  color: var(--on-sunset);
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------------
+   Misc page: the joke table, kept verbatim
+   --------------------------------------------------------------------------- */
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.78rem;
+  width: 100%;
+  max-width: 34rem;
+  border: 1px solid var(--surface);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  border-bottom: 1px solid var(--surface);
+  padding: 0.55rem 1rem;
+  text-align: left;
+}
+
+.table tr:last-child th,
+.table tr:last-child td {
+  border-bottom: 0;
+}
+
+.table thead th {
+  background: var(--mantle);
+  color: var(--overlay);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.table tbody th {
+  color: var(--overlay);
+  font-weight: 400;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.table td:first-of-type {
+  color: var(--green);
+}
+
+.table td:last-of-type {
+  color: var(--red);
+}
+
+.scroller {
+  overflow-x: auto;
+}
+
+/* ---------------------------------------------------------------------------
+   404: the copypasta wall, retired from the front door
+   --------------------------------------------------------------------------- */
+
+.wall {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  pointer-events: none;
+  user-select: none;
+}
+
+.wall p {
+  margin: 0;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 9vw, 7rem);
+  line-height: 1;
+  color: var(--mantle);
+  animation: crawl 200s linear infinite;
+}
+
+.wall p:nth-child(even) {
+  animation-direction: reverse;
+}
+
+@keyframes crawl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Chrome: the control cluster
+
+   Carried from the 2025 landing page, where three buttons scaled to the audio
+   spectrum. Same idea, now persistent across navigation, which is the reason
+   routing is client-side at all: the music must not restart on every click.
+   --------------------------------------------------------------------------- */
+
+.chrome {
+  position: fixed;
+  right: var(--gutter);
+  bottom: 1.5rem;
+  z-index: 50;
+  display: flex;
+  gap: 1px;
+  background: var(--surface);
+  border: 1px solid var(--surface);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.chrome button {
+  position: relative;
+  width: 2.3rem;
+  height: 2.3rem;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: var(--mantle);
+  color: var(--subtext);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+/* The meter fills the button from the bottom. Scaling the button itself would
+   stretch the glyph with it, which reads as a rendering fault rather than a
+   level. Each button takes its own frequency band, as the 2025 site did. */
+.chrome button::before {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 0;
+  background: color-mix(in oklab, var(--mauve) 40%, transparent);
+  pointer-events: none;
+}
+
+.chrome[data-playing='true'] button:nth-child(1)::before {
+  height: calc(var(--level-1, 0) * 100%);
+}
+
+.chrome[data-playing='true'] button:nth-child(2)::before {
+  height: calc(var(--level-2, 0) * 100%);
+}
+
+.chrome[data-playing='true'] button:nth-child(3)::before {
+  height: calc(var(--level-3, 0) * 100%);
+}
+
+.chrome button > * {
+  position: relative;
+}
+
+.chrome button:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.chrome button[aria-pressed='true'] {
+  color: var(--mauve);
+}
+
+/* ---------------------------------------------------------------------------
+   Responsive: the rail becomes a top bar
+   --------------------------------------------------------------------------- */
+
+@media (max-width: 62rem) {
+  .rail {
+    position: sticky;
+    inset: 0 0 auto 0;
+    width: auto;
+    height: auto;
+    padding: 0.8rem var(--gutter);
+    border-right: 0;
+    border-bottom: 1px solid var(--surface);
+    align-items: stretch;
+    gap: 0.55rem;
+    overflow: visible;
+  }
+
+  .rail__mark {
+    font-size: 1.05rem;
+    white-space: nowrap;
+  }
+
+  .rail__mark span {
+    display: inline;
+  }
+
+  .rail__role,
+  .rail__foot {
+    display: none;
+  }
+
+  /* One scrolling row rather than a wrapping block: seven items wrap to three
+     lines on a phone, which is a taller header than the content it leads to. */
+  .rail__nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 0.25rem;
+    margin: 0 calc(var(--gutter) * -1);
+    padding: 0 var(--gutter);
+  }
+
+  .rail__nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .rail__nav a {
+    white-space: nowrap;
+  }
+
+  .rail__nav a::before {
+    display: none;
+  }
+
+  .main {
+    margin-left: 0;
+    padding-top: 2rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__portrait {
+    order: -1;
+  }
+
+  .entry {
+    grid-template-columns: 1fr;
+  }
+
+  .entry__index {
+    display: none;
+  }
+}
+
+@media (max-width: 30rem) {
+  .chrome {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
