@@ -1,89 +1,108 @@
 import { useState } from 'react'
 import { useParams } from 'react-router'
-import { games } from '../data/games'
-import { Entry } from '../components/Entry'
-import { Detail } from '../components/Detail'
-import { PageHead } from '../components/PageHead'
-import { NotFound } from './NotFound'
+import { games, getGame } from '../data/games'
 import { Meta } from '../components/Meta'
+import { PageHeader } from '../components/PageHeader'
+import { Card } from '../components/Card'
+import { LinkRow } from '../components/LinkRow'
+import { PlayIcon } from '../components/Icons'
+import { NotFound } from './NotFound'
+
+const ordered = [...games].sort(
+  (a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)),
+)
 
 export function Games() {
   return (
     <>
-      <Meta title="Games" description="Games built in Godot, Roblox and C#." />
-      <PageHead
-        eyebrow="Work"
-        title="Games"
-        lede="Godot, Roblox and C#. One was coursework, one is a hobby, one is three games in a trenchcoat."
+      <Meta title="games" description="Games made by Milo Tekchandani." />
+      <PageHeader
+        title="games"
+        lede="Six months in Godot, a Roblox roguelike, and three games in C# with a 14 page evaluation."
       />
-      <ul className="entries">
-        {games.map((game, index) => (
-          <Entry
+      <section className="card-grid">
+        {ordered.map((game, index) => (
+          <Card
             key={game.slug}
-            index={index}
             to={`/games/${game.slug}`}
             title={game.title}
             blurb={game.blurb}
             year={game.year}
-            tech={game.tech}
+            thumb={game.thumb}
+            featured={game.featured}
+            eager={index < 2}
           />
         ))}
-      </ul>
+      </section>
     </>
-  )
-}
-
-/**
- * Click-to-load rather than a bare <iframe>: an embed on mount pulls several
- * hundred KB of YouTube player and sets cookies for every visitor, including
- * the ones who never press play.
- */
-function Video({ id, title }: { id: string; title: string }) {
-  const [live, setLive] = useState(false)
-
-  if (!live) {
-    return (
-      <button className="button" type="button" onClick={() => setLive(true)}>
-        &#9654; Load the video from YouTube
-      </button>
-    )
-  }
-
-  return (
-    <div className="embed">
-      <iframe
-        src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`}
-        title={title}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"
-        allowFullScreen
-      />
-    </div>
   )
 }
 
 export function GameDetail() {
   const { slug } = useParams()
-  const game = games.find((item) => item.slug === slug)
+  const game = slug ? getGame(slug) : undefined
+  const [playing, setPlaying] = useState(false)
+
   if (!game) return <NotFound />
 
   return (
-    <Detail
-      backTo="/games"
-      backLabel="games"
-      eyebrow="Game"
-      title={game.title}
-      blurb={game.blurb}
-      year={game.year}
-      tech={game.tech}
-      points={game.points}
-      links={game.links}
-      shots={game.shots}
-    >
+    <>
+      <Meta title={game.title} description={game.blurb} />
+
+      <section className="panel detail-head">
+        <h1>{game.title}</h1>
+        <p className="lede">{game.description ?? game.blurb}</p>
+        <div className="tech-row">
+          <span className="badge">{game.year}</span>
+          {game.tech.map((item) => (
+            <span className="badge" key={item}>
+              {item}
+            </span>
+          ))}
+        </div>
+        <LinkRow links={game.links} />
+      </section>
+
+      <section className="panel detail-body">
+        <ul>
+          {game.points.map((point) => (
+            <li key={point}>{point}</li>
+          ))}
+        </ul>
+      </section>
+
       {game.video ? (
-        <div className="linkrow">
-          <Video id={game.video.id} title={game.video.title} />
+        <div className="video-frame">
+          {playing ? (
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${game.video.id}?autoplay=1`}
+              title={game.video.title}
+              allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
+              allowFullScreen
+            />
+          ) : (
+            // Loading on click rather than on render, so visiting the page
+            // costs nothing to YouTube and nothing to whoever is reading it.
+            <button type="button" className="video-poster" onClick={() => setPlaying(true)}>
+              <PlayIcon />
+              <span>play {game.video.title}</span>
+            </button>
+          )}
         </div>
       ) : null}
-    </Detail>
+
+      {game.shots.length > 0 ? (
+        <ul className="shots">
+          {game.shots.map((shot) => (
+            <li key={shot.src}>
+              <figure>
+                <img src={shot.src} alt={shot.alt} loading="lazy" />
+                <figcaption>{shot.caption}</figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+    </>
   )
 }

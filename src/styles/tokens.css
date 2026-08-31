@@ -1,0 +1,91 @@
+/* ---------------------------------------------------------------------------
+   Catppuccin Mocha, with #ffbdbd standing in for maroon as the accent.
+
+   The scale is wider than Catppuccin ships: seven surfaces and four overlays
+   rather than three and three. The extra steps are interpolated between the
+   real palette entries, because a layout built out of stacked 1px-bordered
+   panels needs more separation between "panel", "panel on panel" and "border
+   of panel on panel" than three values can give.
+
+   Naming runs dark to light for surfaces and light to dark for subtext, which
+   is the one inconsistency worth living with: it means a bigger number is
+   always further from the body text colour.
+   --------------------------------------------------------------------------- */
+
+:root {
+  /* Catppuccin Mocha, verbatim. Referenced by name below and by the syntax
+     highlighting rules, so the palette is stated once. */
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+
+  /* Maroon, as asked for. Brighter and pinker than Catppuccin's #eba0ac, so
+     it carries as an accent against the very dark crust the page sits on. */
+  --ctp-maroon: #ffbdbd;
+
+  /* Backdrops, darkest first. --core is below Catppuccin's floor: the page
+     needs something the crust-coloured panels can sit on and still read as
+     panels. */
+  --core: #08080d;
+  --crust: #11111b;
+  --mantle: #181825;
+  --base: #1e1e2e;
+
+  --surface0: #26263a;
+  --surface1: #313244;
+  --surface2: #3b3d52;
+  --surface3: #45475a;
+  --surface4: #4e5167;
+  --surface5: #585b70;
+  --surface6: #62657c;
+
+  --overlay0: #6c7086;
+  --overlay1: #7f849c;
+  --overlay2: #9399b2;
+  --overlay3: #a6adc8;
+
+  /* Foregrounds, lightest first. --supertext is rosewater rather than white:
+     against a maroon accent a neutral white heading reads cold. */
+  --supertext: var(--ctp-rosewater);
+  --text: #cdd6f4;
+  --text1: #bac2de;
+  --subtext0: #bac2de;
+  --subtext1: #a6adc8;
+  --subtext2: #9399b2;
+  --subtext3: #7f849c;
+
+  --accent: var(--ctp-maroon);
+
+  /* Translucent forms of the above. Panels sit on the grid backdrop and are
+     meant to let it show through, so their fills are alpha rather than solid. */
+  --panel: rgb(17 17 27 / 0.72);
+  --panel-solid: var(--crust);
+  --panel-hover: rgb(17 17 27 / 0.88);
+  --accent-wash: rgb(255 189 189 / 0.1);
+  --accent-select: rgb(255 189 189 / 0.28);
+  --shadow: rgb(8 8 13 / 0.55);
+
+  /* The backdrop grid. Deliberately close to --crust: at rest it should read
+     as texture, and only the cells the cursor disturbs should be legible. */
+  --grid-size: 28px;
+  --grid-line: #24243c;
+
+  --font-body: 'Milo Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: 'Milo Extended', 'Milo Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Milo Mono', ui-monospace, 'JetBrains Mono', Menlo, monospace;
+
+  --layout-width: 1440px;
+
+  color-scheme: dark;
+  accent-color: var(--accent);
+}

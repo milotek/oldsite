@@ -1,11 +1,11 @@
 import { site } from '../data/site'
 
 /**
- * Per-page document title and description.
+ * Per-page title and description.
  *
- * React 19 hoists <title> and <meta> to <head> wherever they are rendered, so
- * a page declares its own metadata inline and there is no helmet library and
- * no separate table of titles to keep in sync with the routes.
+ * React 19 hoists <title> and <meta> into <head> from wherever they are
+ * rendered, so a page states its own metadata inline. No helmet library, and
+ * no second table of titles to keep in step with the route list.
  */
 export function Meta({ title, description }: { title?: string; description?: string }) {
   return (

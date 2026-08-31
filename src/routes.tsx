@@ -4,8 +4,8 @@ import { Home } from './pages/Home'
 import { Projects, ProjectDetail } from './pages/Projects'
 import { Games, GameDetail } from './pages/Games'
 import { Art } from './pages/Art'
+import { Blog, BlogPost } from './pages/Blog'
 import { Cv } from './pages/Cv'
-import { Contact } from './pages/Contact'
 import { Misc } from './pages/Misc'
 import { Colophon } from './pages/Colophon'
 import { NotFound } from './pages/NotFound'
@@ -21,9 +21,10 @@ export const routes: RouteObject[] = [
       { path: 'games', Component: Games },
       { path: 'games/:slug', Component: GameDetail },
       { path: 'art', Component: Art },
+      { path: 'blog', Component: Blog },
+      { path: 'blog/:slug', Component: BlogPost },
       { path: 'cv', Component: Cv },
       { path: 'misc', Component: Misc },
-      { path: 'contact', Component: Contact },
       { path: 'colophon', Component: Colophon },
       { path: '*', Component: NotFound },
     ],

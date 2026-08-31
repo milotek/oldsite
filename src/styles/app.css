@@ -1,11 +1,4 @@
-/* ---------------------------------------------------------------------------
-   Tokens
-
-   Catppuccin Mocha, with Latte for light. The 2025 site put a warm gradient
-   behind its header and left everything below it grey, so the gradient is a
-   header surface here and nowhere else. Spread across the chrome it becomes a
-   page you cannot look at for long.
-   --------------------------------------------------------------------------- */
+@import './tokens.css';
 
 @font-face {
   font-family: 'Milo Sans';
@@ -25,105 +18,9 @@
   font-display: swap;
 }
 
-:root {
-  /* Catppuccin Mocha */
-  --base: #1e1e2e;
-  --mantle: #181825;
-  --crust: #11111b;
-  --surface: #313244;
-  --surface-2: #45475a;
-  --overlay: #6c7086;
-  --subtext: #a6adc8;
-  --text: #cdd6f4;
-
-  --peach: #fab387;
-  --mauve: #cba6f7;
-  --lavender: #b4befe;
-  --pink: #f5c2e7;
-  --green: #a6e3a1;
-  --yellow: #f9e2af;
-  --blue: #89b4fa;
-  --teal: #94e2d5;
-  --red: #f38ba8;
-
-  --accent: var(--mauve);
-  /* Tracks the old site's orange to magenta to periwinkle, in Catppuccin.
-     Fixed across both themes: these are fill colours, not text colours, so
-     they must not follow the Latte accents into full saturation. */
-  --sunset: linear-gradient(115deg, #fab387 0%, #cba6f7 55%, #b4befe 100%);
-  --on-sunset: #1e1e2e;
-
-  --font-sans: 'Milo Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-display: 'Milo Extended', 'Milo Sans', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'Milo Mono', ui-monospace, 'JetBrains Mono', Menlo, monospace;
-
-  --rail: 16.5rem;
-  --gutter: clamp(1.25rem, 4vw, 3.5rem);
-  --measure: 66ch;
-
-  /* Written by the audio analyser at 60fps, read by the chrome. 0 when the
-     player is off, which is also the correct resting value. */
-  --level: 0;
-
-  color-scheme: dark;
-  scrollbar-color: var(--surface-2) var(--mantle);
-}
-
-:root[data-theme='light'] {
-  /* Catppuccin Latte */
-  --base: #eff1f5;
-  --mantle: #e6e9ef;
-  --crust: #dce0e8;
-  --surface: #ccd0da;
-  --surface-2: #bcc0cc;
-  --overlay: #9ca0b0;
-  --subtext: #6c6f85;
-  --text: #4c4f69;
-
-  --peach: #fe640b;
-  --mauve: #8839ef;
-  --lavender: #7287fd;
-  --pink: #ea76cb;
-  --green: #40a02b;
-  --yellow: #df8e1d;
-  --blue: #1e66f5;
-  --teal: #179299;
-  --red: #d20f39;
-
-  color-scheme: light;
-  scrollbar-color: var(--surface-2) var(--mantle);
-}
-
-@media (prefers-color-scheme: light) {
-  /* Scoped to "no explicit choice" so an explicit dark toggle still wins for
-     a visitor whose system preference is light. */
-  :root:not([data-theme='dark']) {
-    --base: #eff1f5;
-    --mantle: #e6e9ef;
-    --crust: #dce0e8;
-    --surface: #ccd0da;
-    --surface-2: #bcc0cc;
-    --overlay: #9ca0b0;
-    --subtext: #6c6f85;
-    --text: #4c4f69;
-
-    --peach: #fe640b;
-    --mauve: #8839ef;
-    --lavender: #7287fd;
-    --pink: #ea76cb;
-    --green: #40a02b;
-    --yellow: #df8e1d;
-    --blue: #1e66f5;
-    --teal: #179299;
-    --red: #d20f39;
-
-    color-scheme: light;
-  }
-}
-
-/* ---------------------------------------------------------------------------
-   Reset and base
-   --------------------------------------------------------------------------- */
+/* ==========================================================================
+   Base
+   ========================================================================== */
 
 *,
 *::before,
@@ -132,1055 +29,1560 @@
 }
 
 html {
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-  background: var(--base);
+  color: var(--text);
+  background: var(--crust);
+  overflow-x: hidden;
+  scrollbar-color: var(--overlay0) var(--crust);
+  scrollbar-width: thin;
+
+  /* A static grid, so the page has its texture before any JavaScript runs and
+     keeps it if none ever does. InteractiveGrid paints its own cells on top
+     and hides this one by setting .grid-live on <body>. */
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  background-attachment: fixed;
+}
+
+html:has(body.grid-live) {
+  background-image: none;
 }
 
 body {
   margin: 0;
+  padding: 0 1.5rem;
   min-height: 100vh;
-  background: var(--base);
-  color: var(--text);
-  /* Monospace body, as the old site had. It is most of that site's character
-     and it suits a page that is mostly lists of technical facts. */
-  font-family: var(--font-mono);
-  font-size: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
-  line-height: 1.7;
-  overflow-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: var(--font-body);
+  font-size: clamp(15px, 0.4vw + 14px, 17px);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  text-rendering: optimizeLegibility;
+  text-wrap: pretty;
+  overscroll-behavior-y: none;
+}
+
+@media (orientation: portrait) {
+  body {
+    padding: 0;
+  }
 }
 
 ::selection {
-  background: var(--mauve);
-  color: var(--crust);
+  background: var(--accent-select);
+  color: var(--supertext);
 }
 
-::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
+:focus-visible {
+  outline: 1.5px dashed var(--accent);
+  outline-offset: 2px;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--mantle);
+img {
+  user-select: none;
+  max-width: 100%;
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--surface-2);
-  border: 3px solid var(--mantle);
-  border-radius: 99px;
+hr {
+  border: none;
+  border-top: 1px solid var(--surface2);
+  margin: 1.5rem 0;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--overlay);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
+/* ==========================================================================
+   Typography
+   ========================================================================== */
 
 h1,
 h2,
 h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  color: var(--supertext);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 3.5vw + 1.75rem, 4rem);
+  line-height: 1.1;
+  margin: 0 0 0.75rem;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 1.6vw + 1rem, 2.1rem);
+  line-height: 1.2;
+  margin: 0.25em 0 0.4em;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 1vw + 0.95rem, 1.55rem);
+  line-height: 1.25;
+  margin: 0.25em 0 0.4em;
+}
+
 h4 {
-  margin: 0;
-  line-height: 1.15;
-  font-weight: 700;
+  font-size: clamp(1rem, 0.9vw + 0.9rem, 1.3rem);
+  line-height: 1.3;
+  margin: 0.2em 0 0.35em;
 }
 
 p {
-  margin: 0 0 1em;
+  margin-block: 0.5em;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
+strong {
+  color: var(--supertext);
+  font-weight: 600;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  margin: 1rem 0 1rem 0;
+  color: var(--subtext1);
+  font-style: italic;
 }
 
-code {
-  font-family: var(--font-mono);
-  font-size: 0.92em;
-  color: var(--teal);
-  background: var(--mantle);
-  padding: 0.05em 0.35em;
-  border-radius: 3px;
-}
-
-a {
-  color: var(--blue);
-  text-underline-offset: 0.22em;
-  text-decoration-thickness: 1px;
-  transition:
-    color 0.15s ease,
-    background 0.15s ease;
-}
-
-a:hover {
-  color: var(--mauve);
-}
-
-:focus-visible {
-  outline: 2px solid var(--mauve);
-  outline-offset: 3px;
-  border-radius: 3px;
-}
-
-.skip {
-  position: absolute;
-  left: -9999px;
-}
-
-.skip:focus {
-  left: 1rem;
-  top: 1rem;
-  z-index: 100;
-  padding: 0.5rem 0.9rem;
-  background: var(--mauve);
-  color: var(--crust);
-  border-radius: 99px;
-}
-
-/* ---------------------------------------------------------------------------
-   The spectrum strip
-
-   The rainbow hairline from the 2025 landing page, swelling with the audio
-   level when the player is on.
-   --------------------------------------------------------------------------- */
-
-.spectrum {
-  position: fixed;
-  inset: 0 0 auto;
-  height: calc(2px + var(--level) * 8px);
-  z-index: 60;
-  pointer-events: none;
-  background: linear-gradient(
-    90deg,
-    var(--peach),
-    var(--yellow),
-    var(--green),
-    var(--teal),
-    var(--blue),
-    var(--lavender),
-    var(--mauve),
-    var(--pink),
-    var(--peach)
-  );
-  background-size: 200% 100%;
-  animation: drift 14s linear infinite;
-  transition: height 0.08s linear;
-}
-
-@keyframes drift {
-  to {
-    background-position: 200% 0;
-  }
-}
-
-/* ---------------------------------------------------------------------------
-   Layout: quiet rail, grey main
-   --------------------------------------------------------------------------- */
-
-.shell {
-  min-height: 100vh;
-}
-
-.rail {
-  position: fixed;
-  inset: 0 auto 0 0;
-  width: var(--rail);
-  padding: 2.5rem 1.5rem 1.5rem;
-  background: var(--mantle);
-  border-right: 1px solid var(--surface);
-  display: flex;
-  flex-direction: column;
-  gap: 1.75rem;
-  overflow-y: auto;
-  scrollbar-width: none;
-  z-index: 40;
-}
-
-.rail::-webkit-scrollbar {
-  display: none;
-}
-
-.rail__mark {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  line-height: 1.05;
-  letter-spacing: -0.015em;
-  color: var(--text);
-  text-decoration: none;
-}
-
-/* The only colour in the rail. Solid rather than gradient text: the gradient
-   stops are pastels chosen to sit under dark ink, and as text on the light
-   theme's rail they fall well under any readable contrast. */
-.rail__mark span {
-  display: block;
-  color: var(--mauve);
-}
-
-.rail__role {
-  margin: 0.8rem 0 0;
-  font-size: 0.68rem;
-  line-height: 1.55;
-  color: var(--overlay);
-}
-
-.rail__nav {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-}
-
-.rail__nav a {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
-  padding: 0.35rem 0.7rem;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  text-decoration: none;
-  color: var(--subtext);
-  transition:
-    color 0.15s ease,
-    background 0.15s ease;
-}
-
-.rail__nav a::before {
-  content: attr(data-index);
-  font-size: 0.62rem;
-  color: var(--overlay);
-}
-
-.rail__nav a:hover {
-  color: var(--text);
-  background: var(--surface);
-}
-
-.rail__nav a[aria-current='page'] {
-  color: var(--mauve);
-  background: var(--surface);
-}
-
-.rail__foot {
-  margin-top: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-}
-
-.rail__socials {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem 0.7rem;
-}
-
-.rail__socials a {
-  font-size: 0.68rem;
-  color: var(--subtext);
-  text-decoration: none;
-  border-bottom: 1px solid var(--surface);
-}
-
-.rail__socials a:hover {
-  color: var(--mauve);
-  border-bottom-color: var(--mauve);
-}
-
-.rail__legal {
-  margin: 0;
-  font-size: 0.62rem;
-  line-height: 1.6;
-  color: var(--overlay);
-}
-
-.rail__legal a {
-  color: var(--subtext);
-}
-
-.main {
-  margin-left: var(--rail);
-  padding: 2.5rem var(--gutter) 7rem;
-  max-width: 80rem;
-}
-
-/* ---------------------------------------------------------------------------
-   The header block
-
-   The one coloured surface on the page, standing in for the old site's
-   gradient hero. Everything below it is grey on purpose.
-   --------------------------------------------------------------------------- */
-
-.page-head {
-  background: var(--sunset);
-  color: var(--on-sunset);
-  border-radius: 14px;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  margin-bottom: 2.75rem;
-}
-
-.page-head .eyebrow {
-  color: color-mix(in oklab, var(--on-sunset) 72%, transparent);
-}
-
-.page-head h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 1.4rem + 2.6vw, 3.1rem);
-  letter-spacing: -0.02em;
-  color: var(--on-sunset);
-}
-
-.page-head .lede {
-  color: color-mix(in oklab, var(--on-sunset) 85%, transparent);
-}
-
-.page-head a {
-  color: var(--on-sunset);
-  text-decoration-thickness: 2px;
-}
-
-.page-head a:hover {
-  color: var(--crust);
-}
-
-.eyebrow {
-  font-size: 0.66rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--overlay);
-  margin: 0 0 0.8rem;
+/* A small, dim aside. Used for captions, footers, and the run of secondary
+   text under a heading. */
+.subt {
+  font-size: 0.85em;
+  line-height: 1.4;
+  color: var(--subtext1);
 }
 
 .lede {
-  margin: 1rem 0 0;
-  font-size: 0.92rem;
-  line-height: 1.75;
-  color: var(--subtext);
-  max-width: var(--measure);
+  color: var(--subtext0);
+  font-size: 1.05rem;
 }
 
-.section {
-  margin-top: 3.5rem;
+code,
+pre {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--surface0);
+  border: 1px solid var(--surface2);
+  border-radius: 0;
 }
 
-.section__head {
+code {
+  padding: 0.05em 0.3em;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* ==========================================================================
+   Links
+
+   Every link that leaves the site gets a small glyph after it, so the one
+   piece of information a link can't carry in its text — whether it navigates
+   away — is always visible. Internal links are matched by their leading slash
+   and opt out.
+   ========================================================================== */
+
+a,
+a:visited {
+  color: var(--supertext);
+  text-decoration-color: var(--subtext2);
+  text-underline-offset: 2px;
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+a[href^='http']::after {
+  content: '';
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  margin-left: 0.15em;
+  vertical-align: middle;
+  transform: translateY(-1px);
+  background-color: currentColor;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="black"><path d="M144-144v-672h336v72H216v528h528v-264h72v336H144Zm243-192-51-51 357-357H576v-72h240v240h-72v-117L387-336Z"/></svg>');
+}
+
+/* Links whose whole job is to be a control or a picture, not a phrase. */
+a.nav-link::after,
+a.button::after,
+a.card::after,
+a.web-button::after,
+a.gallery-item::after,
+a.contact-card::after,
+a.site-title-link::after {
+  display: none;
+}
+
+/* ==========================================================================
+   Icons
+
+   Two sets, deliberately different: .icon is the drawn UI set, stroked so it
+   sits at the same visual weight as the body text at any size. .icon-brand is
+   third-party logos, which are solid because that is how their owners draw
+   them and a stroked outline would misrepresent the mark.
+   ========================================================================== */
+
+.icon,
+.icon-brand {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  vertical-align: -0.125em;
+}
+
+.icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-brand {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+#root {
+  width: 100%;
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: min(var(--layout-width), 100%);
+  margin: 0 auto;
+}
+
+.main-content {
+  width: 100%;
+  min-width: 0;
+  padding-bottom: 1.5rem;
+  flex: 1;
+}
+
+/* The shared panel: translucent crust, one hairline border, no radius.
+   Nearly every block on the site is one of these. */
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--surface2);
+  padding: 0.9rem 1.1rem;
+}
+
+/* ==========================================================================
+   Navbar
+
+   Sticky, but the bar itself is invisible: each item carries its own panel
+   pill, and a stack of progressively stronger blurs sits behind them so
+   content scrolling underneath dissolves rather than colliding with the text.
+
+   --nav-spread pushes the two groups apart once the page has scrolled, so the
+   bar visibly widens as you leave the top.
+   ========================================================================== */
+
+.navbar {
+  --nav-spread: 0rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding-bottom: 0.7rem;
-  margin-bottom: 1.4rem;
-  border-bottom: 1px solid var(--surface);
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 3.5rem;
+  padding: 1rem 0;
+  padding-top: max(0.6rem, env(safe-area-inset-top));
 }
 
-.section__head h2 {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  letter-spacing: -0.01em;
-  color: var(--text);
+.navbar.scrolled {
+  --nav-spread: clamp(0.5rem, 2vw, 1.25rem);
 }
 
-.section__head a,
-.section__head span {
-  font-size: 0.7rem;
-  color: var(--overlay);
-  text-decoration: none;
-  white-space: nowrap;
+.navbar .site-title-link,
+.navbar .navbar-nav {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
-.section__head a:hover {
-  color: var(--mauve);
+.navbar .site-title-link {
+  transform: translateX(calc(var(--nav-spread) * -1));
 }
 
-/* ---------------------------------------------------------------------------
-   Entry: the shared card for a project or a game
-   --------------------------------------------------------------------------- */
-
-.entries {
-  list-style: none;
-  display: grid;
-  gap: 0.6rem;
+.navbar .navbar-nav {
+  transform: translateX(var(--nav-spread));
 }
 
-.entry {
-  position: relative;
-  background: var(--mantle);
-  border: 1px solid var(--surface);
-  border-radius: 10px;
-  padding: 1.35rem clamp(1rem, 2vw, 1.6rem);
-  display: grid;
-  grid-template-columns: 2.75rem 1fr;
-  gap: 0 1rem;
-  overflow: hidden;
-  transition: border-color 0.18s ease;
+/* Fixed with left/right pinned rather than `width: 100vw`: 100vw counts the
+   scrollbar, so the strip hung a scrollbar's width off each side of the page.
+   The bar is sticky at the top and never scrolls away, so fixed and sticky
+   place this identically - and `.navbar` sets no transform, so this is
+   positioned against the viewport as intended. */
+.top-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8rem;
+  pointer-events: none;
+  z-index: -1;
 }
 
-/* The gradient edge is the hover reward: nothing at rest, and it ties the row
-   back to the header without adding a second permanent colour. */
-.entry::before {
-  content: '';
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 3px;
-  background: var(--sunset);
-  opacity: 0;
-  transition: opacity 0.18s ease;
-}
-
-.entry:hover {
-  border-color: var(--surface-2);
-}
-
-.entry:hover::before {
-  opacity: 1;
-}
-
-.entry__index {
-  font-size: 0.7rem;
-  color: var(--overlay);
-  padding-top: 0.3rem;
-}
-
-.entry__title {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  letter-spacing: -0.01em;
-  color: var(--text);
-}
-
-.entry__title a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.entry__title a:hover {
-  color: var(--mauve);
-}
-
-/* Makes the whole card clickable without nesting interactive elements. */
-.entry__title a::after {
-  content: '';
+.top-blur-layer {
   position: absolute;
   inset: 0;
+  backdrop-filter: blur(var(--blur)) saturate(0.9);
+  /* A very wide ellipse anchored to the top edge: horizontally it reads as a
+     flat band, vertically each layer stops sooner than the last, which is
+     what turns five hard blurs into one gradient. */
+  mask-image: radial-gradient(
+    ellipse 75% 100% at 50% 0%,
+    #000 0%,
+    #000 var(--mid),
+    transparent var(--end)
+  );
 }
 
-.entry__blurb {
-  color: var(--subtext);
-  margin: 0.4rem 0 0.85rem;
-  max-width: 58ch;
+.site-title-link {
+  flex-shrink: 0;
+  text-decoration: none;
 }
 
-.entry__meta {
+.site-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 1.55rem;
+  line-height: 1.2;
+  overflow: hidden;
+  contain: paint layout;
+}
+
+.site-title-pfp {
+  height: 2.6rem;
+  width: auto;
+  display: inline-block;
+  /* Blown up well past its natural size and anchored to the top right so it
+     bleeds out of the pill, then faded out on the diagonal so the crop reads
+     as intentional rather than clipped. */
+  transform: scale(1.9) translateY(-8%) translateX(16%);
+  transform-origin: top right;
+  mask-image: linear-gradient(80deg, rgb(0 0 0 / 0.95) 55%, transparent 88%);
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.navbar-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+
+.nav-link:hover {
+  color: var(--subtext0);
+}
+
+.nav-link.active {
+  color: var(--supertext);
+}
+
+.navbar .panel {
+  padding: 0.4rem 0.7rem;
+  background: rgb(17 17 27 / 0.65);
+  backdrop-filter: blur(6px);
+  border-color: rgb(78 81 103 / 0.5);
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.navbar a.panel:hover {
+  background: var(--panel-hover);
+  border-color: transparent;
+}
+
+/* Six labelled pills plus the title stop fitting well before a phone-sized
+   viewport - a landscape phone or a narrow window hits it first - so the
+   collapse is driven by width rather than by orientation. */
+@media (max-width: 60rem) {
+  .navbar {
+    gap: 0.5rem;
+  }
+
+  .navbar-nav {
+    gap: 0.25rem;
+    justify-content: flex-end;
+  }
+
+  .nav-name {
+    display: none;
+  }
+
+  .site-title {
+    font-size: 1.15rem;
+  }
+
+  .site-title-pfp {
+    height: 1.9rem;
+  }
+}
+
+@media (orientation: portrait) {
+  .layout {
+    padding: 0 0.85rem;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .site-title {
+    font-size: 1rem;
+  }
+
+  .site-title-pfp {
+    height: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   Page header
+
+   One very large word, bled off its own baseline by a mask so it reads as a
+   texture the page starts from rather than a label sitting on top of it.
+   ========================================================================== */
+
+.page-header {
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(3.5rem, 13vw, 8rem);
+  line-height: 0.95;
+  mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
+}
+
+.page-header .lede {
+  margin-top: -0.4rem;
+  margin-left: 0.4rem;
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   Cards
+   ========================================================================== */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (orientation: portrait) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: block;
+  background: var(--panel);
+  border: 1px solid var(--surface3);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transform: scale(1) translateY(0);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  border-color: var(--overlay0);
+  transform: scale(1.01) translateY(-2px);
+  color: inherit;
+}
+
+.card:hover .card-title,
+.card:focus-visible .card-title {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+}
+
+.card-image {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--mantle);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid var(--surface1);
+}
+
+/* Cards with nothing to show get a flat accent-tinted field instead of a
+   stretched placeholder image. */
+.card-image.empty {
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(140deg, var(--surface0) 0%, var(--crust) 70%);
+  border-bottom: 1px solid var(--surface1);
+  color: var(--surface5);
+}
+
+.card-image.empty .icon {
+  width: 3rem;
+  height: 3rem;
+  stroke-width: 1.2;
+}
+
+.card-body {
+  padding: 0.5rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--subtext2);
+}
+
+
+.card-title {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.card-blurb {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--subtext1);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.05rem 0.45rem;
+  border: 1px solid var(--surface3);
+  background: var(--surface0);
+  color: var(--subtext0);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  text-transform: lowercase;
+}
+
+.badge.accent {
+  border-color: rgb(255 189 189 / 0.35);
+  background: var(--accent-wash);
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   Contact cards
+   ========================================================================== */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1rem;
+  margin-block: 1rem;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+  padding: 1rem;
+  min-height: 100%;
+  background: var(--panel);
+  border: 1px solid var(--surface2);
+  text-decoration: none;
+  transform: scale(1) translateY(0);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.contact-card:hover {
+  border-color: var(--overlay0);
+  transform: scale(1.02) translateY(-2px);
+  color: inherit;
+}
+
+.contact-platform {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--supertext);
+}
+
+.contact-platform .icon,
+.contact-platform .icon-brand {
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.contact-handle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text1);
+  overflow-wrap: anywhere;
+}
+
+.contact-card.compact {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.75rem;
+  min-height: 0;
+}
+
+.contact-card.compact .contact-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.25;
+}
+
+.contact-card.compact .contact-platform {
+  font-size: 0.92rem;
+}
+
+.contact-card.compact .contact-handle {
+  font-size: 0.76rem;
+}
+
+.contact-card.compact > .icon,
+.contact-card.compact > .icon-brand {
+  width: 1.05rem;
+  height: 1.05rem;
+  color: var(--supertext);
+}
+
+/* ==========================================================================
+   Compact inline lists: "a / b / c"
+   ========================================================================== */
+
+ul.compact {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.66rem;
+  gap: 0.25rem 0;
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
 }
 
-.entry__meta > span:not([class]) {
-  color: var(--overlay);
-  margin-right: 0.2rem;
-}
-
-.tag {
-  border: 1px solid var(--surface);
-  border-radius: 5px;
-  padding: 0.1rem 0.5rem;
-  color: var(--subtext);
+ul.compact > li {
   white-space: nowrap;
 }
 
-/* Status is the one place a saturated colour earns its keep: it is the fact
-   most people scan for. Tinted background, coloured text, no neon fill. */
-.status {
-  border-radius: 5px;
-  padding: 0.1rem 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  border: 1px solid currentColor;
+ul.compact > li:not(:last-child)::after {
+  content: '/';
+  margin: 0 0.7rem;
+  color: var(--subtext3);
 }
 
-.status--shipped {
-  color: var(--green);
+ul.compact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: underline;
 }
 
-.status--unreleased {
-  color: var(--yellow);
-}
 
-.status--in-progress {
-  color: var(--blue);
-}
-
-.status--archived {
-  color: var(--overlay);
-}
-
-/* ---------------------------------------------------------------------------
+/* ==========================================================================
    Detail pages
-   --------------------------------------------------------------------------- */
+   ========================================================================== */
 
-.detail {
-  max-width: var(--measure);
+.detail-head {
+  margin-bottom: 1rem;
 }
 
-.detail ul {
-  list-style: none;
-  display: grid;
-  gap: 0.5rem;
-  margin: 1.5rem 0;
+.detail-head h1 {
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
 }
 
-.detail ul li {
-  padding-left: 1.4rem;
-  position: relative;
-  color: var(--subtext);
+.detail-body ul {
+  padding-left: 1.1rem;
+  margin: 0.5rem 0;
 }
 
-.detail ul li::before {
-  content: '>';
-  position: absolute;
-  left: 0;
-  color: var(--mauve);
+.detail-body li {
+  margin-bottom: 0.35rem;
 }
 
-.linkrow {
+.tech-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1.6rem;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
 }
-
-.button {
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  padding: 0.45rem 0.95rem;
-  border: 1px solid var(--surface);
-  border-radius: 6px;
-  text-decoration: none;
-  color: var(--text);
-  background: var(--mantle);
-  cursor: pointer;
-  transition:
-    background 0.15s ease,
-    border-color 0.15s ease,
-    color 0.15s ease;
-}
-
-.button:hover {
-  background: var(--surface);
-  border-color: var(--surface-2);
-  color: var(--mauve);
-}
-
-.back {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  font-size: 0.72rem;
-  color: var(--overlay);
-  text-decoration: none;
-}
-
-.back:hover {
-  color: var(--mauve);
-}
-
-/* ---------------------------------------------------------------------------
-   Media
-   --------------------------------------------------------------------------- */
 
 .shots {
-  list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
   gap: 1rem;
-  margin-top: 2.25rem;
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0;
 }
 
 .shots figure {
   margin: 0;
+  border: 1px solid var(--surface2);
+  background: var(--panel);
 }
 
 .shots img {
+  display: block;
   width: 100%;
-  border: 1px solid var(--surface);
-  border-radius: 8px;
-  background: var(--mantle);
+  height: auto;
 }
 
 .shots figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.66rem;
-  color: var(--overlay);
+  padding: 0.45rem 0.6rem;
+  font-size: 0.8rem;
+  color: var(--subtext1);
+  border-top: 1px solid var(--surface1);
 }
+
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  margin-top: 1rem;
+  border: 1px solid var(--surface2);
+  background: var(--mantle);
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ==========================================================================
+   Gallery
+   ========================================================================== */
 
 .gallery {
-  list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
-  gap: 1.1rem;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0;
 }
 
-.gallery figure {
+.gallery > li {
+  display: flex;
+}
+
+.gallery-item {
+  display: flex;
+  flex: 1;
+  text-decoration: none;
+  border: 1px solid var(--surface2);
+  background: var(--panel);
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.gallery-item:hover {
+  border-color: var(--accent);
+  transform: scale(1.015) translateY(-2px);
+}
+
+.gallery-item figure {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   margin: 0;
 }
 
-.gallery button {
+.gallery-item img {
   display: block;
   width: 100%;
-  padding: 0;
-  border: 1px solid var(--surface);
-  border-radius: 8px;
-  background: var(--mantle);
-  cursor: zoom-in;
-  overflow: hidden;
-  transition: border-color 0.18s ease;
-}
-
-.gallery button:hover {
-  border-color: var(--mauve);
-}
-
-.gallery img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1;
   object-fit: cover;
-  transition: transform 0.35s ease;
 }
 
-.gallery button:hover img {
-  transform: scale(1.04);
+.gallery-item figcaption {
+  padding: 0.45rem 0.6rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--subtext1);
+  border-top: 1px solid var(--surface1);
 }
 
-.gallery figcaption {
-  margin-top: 0.55rem;
-  font-size: 0.7rem;
-  line-height: 1.6;
-  color: var(--subtext);
-}
-
-.embed {
-  border: 1px solid var(--surface);
-  border-radius: 10px;
-  aspect-ratio: 16 / 9;
-  width: 100%;
-  margin-top: 1.5rem;
+/* The full-size viewer. A <dialog>, so Escape and the top layer come free. */
+dialog.lightbox {
+  border: 1px solid var(--surface3);
+  background: var(--crust);
+  color: var(--text);
+  padding: 0;
+  max-width: min(96vw, 1200px);
+  max-height: 92vh;
   overflow: hidden;
-  background: var(--mantle);
 }
 
-.embed iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
+dialog.lightbox[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+dialog.lightbox::backdrop {
+  background: rgb(8 8 13 / 0.82);
+  backdrop-filter: blur(3px);
+}
+
+dialog.lightbox img {
   display: block;
+  min-height: 0;
+  max-width: 100%;
+  object-fit: contain;
 }
 
-.pdf {
-  width: 100%;
-  height: min(80vh, 900px);
-  border: 1px solid var(--surface);
-  border-radius: 10px;
-  background: var(--mantle);
+.lightbox-bar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-top: 1px solid var(--surface2);
+  font-size: 0.82rem;
+  color: var(--subtext1);
 }
 
-/* Lightbox */
+/* ==========================================================================
+   Blog
+   ========================================================================== */
 
-/* `display: grid` below beats the UA's `dialog:not([open]) { display: none }`,
-   so without this the backdrop paints over the gallery on every page load. */
-.lightbox:not([open]) {
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.8rem;
+}
+
+.blog-item {
+  position: relative;
+  border-bottom: 1px solid var(--surface3);
+  padding: 1rem 1.25rem 1rem 0.75rem;
+  overflow: hidden;
+}
+
+.blog-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: var(--cover);
+  background-size: cover;
+  background-position: 90% 45%;
+  /* Fades in from the right on the diagonal, so the cover is an atmosphere
+     behind the text rather than a picture the text sits on. */
+  mask-image: linear-gradient(
+    -45deg,
+    rgb(0 0 0 / 0.35) 40%,
+    rgb(0 0 0 / 0.25) 52%,
+    transparent 80%
+  );
+}
+
+.blog-item:not(.has-cover)::before {
   display: none;
 }
 
-.lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 90;
-  border: 0;
-  padding: 0;
+.blog-link {
+  display: block;
+  text-decoration: none;
+}
+
+.blog-link h3 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.25rem, 1.6vw + 0.5rem, 1.9rem);
+}
+
+.blog-item.has-cover h3,
+.blog-item.has-cover .post-desc,
+.blog-item.has-cover time {
+  text-shadow: 0 1px 8px rgb(0 0 0 / 0.45);
+}
+
+.blog-link:hover h3 {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+}
+
+.post-desc {
   margin: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  max-height: none;
-  background: color-mix(in oklab, var(--crust) 95%, transparent);
-  color: var(--text);
-  display: grid;
-  place-items: center;
-  grid-template-rows: 1fr auto;
+  color: var(--subtext1);
 }
 
-.lightbox::backdrop {
-  background: rgb(0 0 0 / 75%);
-}
-
-.lightbox img {
-  max-width: min(94vw, 1400px);
-  max-height: 78vh;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-.lightbox__bar {
+.post-footer {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
-  padding: 1rem var(--gutter) 2rem;
-  font-size: 0.72rem;
-  color: var(--subtext);
-  text-align: center;
+  margin-top: 0.5rem;
 }
 
-.lightbox__btn {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  padding: 0.4rem 0.85rem;
-  border: 1px solid var(--surface);
-  border-radius: 6px;
-  background: var(--mantle);
-  color: var(--text);
-  cursor: pointer;
+.post-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
 }
 
-.lightbox__btn:hover {
-  background: var(--surface);
-  color: var(--mauve);
+.post-tags > .icon {
+  color: var(--subtext2);
 }
 
-.lightbox__btn--close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+.tag {
+  padding: 0.1rem 0.5rem;
+  border: 1px solid rgb(147 153 178 / 0.35);
+  border-radius: 999px;
+  background: rgb(147 153 178 / 0.18);
+  backdrop-filter: blur(2px);
+  color: var(--supertext);
+  font-size: 0.75rem;
 }
 
-/* ---------------------------------------------------------------------------
-   Home hero: the header block, with a portrait in it
-   --------------------------------------------------------------------------- */
-
-.hero {
-  background: var(--sunset);
-  color: var(--on-sunset);
-  border-radius: 14px;
-  padding: clamp(1.5rem, 3vw, 2.75rem);
-  margin-bottom: 2.75rem;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(1.25rem, 3vw, 2.5rem);
-  align-items: start;
+time {
+  color: var(--subtext2);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
 }
 
-.hero .eyebrow {
-  color: color-mix(in oklab, var(--on-sunset) 72%, transparent);
+.post-body {
+  padding: 1.25rem;
+  line-height: 1.85;
 }
 
-.hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2.1rem, 1.5rem + 2.8vw, 3.4rem);
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  color: var(--on-sunset);
+.post-body > :first-child {
+  margin-top: 0;
 }
 
-/* The display face ships no italic, so <em> would be synthesised and look
-   smeared. The old site underlined its headings; that is the emphasis here. */
-.hero h1 em {
-  font-style: normal;
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 7px;
+.post-body h2 {
+  margin-top: 2rem;
 }
 
-.hero__portrait {
-  width: clamp(6rem, 11vw, 9rem);
-  border-radius: 10px;
-  border: 2px solid color-mix(in oklab, var(--on-sunset) 25%, transparent);
-}
-
-.hero__text {
-  margin-top: 1.1rem;
-  max-width: var(--measure);
-  color: color-mix(in oklab, var(--on-sunset) 85%, transparent);
-  line-height: 1.7;
-}
-
-.hero__text p:last-child {
-  margin-bottom: 0;
-}
-
-.hero__text strong {
-  color: var(--on-sunset);
-  font-weight: 700;
-}
-
-/* ---------------------------------------------------------------------------
-   Misc page: the joke table, kept verbatim
-   --------------------------------------------------------------------------- */
-
-.table {
-  border-collapse: separate;
-  border-spacing: 0;
-  font-size: 0.78rem;
+.post-body img {
   width: 100%;
-  max-width: 34rem;
-  border: 1px solid var(--surface);
-  border-radius: 10px;
-  overflow: hidden;
+  height: auto;
 }
 
-.table th,
-.table td {
-  border-bottom: 1px solid var(--surface);
-  padding: 0.55rem 1rem;
-  text-align: left;
+.post-body ul,
+.post-body ol {
+  padding-left: 1.25rem;
 }
 
-.table tr:last-child th,
-.table tr:last-child td {
-  border-bottom: 0;
-}
-
-.table thead th {
-  background: var(--mantle);
-  color: var(--overlay);
-  font-size: 0.64rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-}
-
-.table tbody th {
-  color: var(--overlay);
-  font-weight: 400;
-  font-size: 0.66rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.table td:first-of-type {
-  color: var(--green);
-}
-
-.table td:last-of-type {
-  color: var(--red);
-}
+/* ==========================================================================
+   Tables
+   ========================================================================== */
 
 .scroller {
   overflow-x: auto;
 }
 
-/* ---------------------------------------------------------------------------
-   404: the copypasta wall, retired from the front door
-   --------------------------------------------------------------------------- */
-
-.wall {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  pointer-events: none;
-  user-select: none;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
 }
 
-.wall p {
-  margin: 0;
-  white-space: nowrap;
+th,
+td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--surface2);
+  text-align: left;
+}
+
+thead th {
+  background: var(--surface0);
+  color: var(--supertext);
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 9vw, 7rem);
-  line-height: 1;
-  color: var(--mantle);
-  animation: crawl 200s linear infinite;
+  font-weight: 500;
 }
 
-.wall p:nth-child(even) {
-  animation-direction: reverse;
+tbody th {
+  color: var(--subtext1);
+  font-weight: 400;
+  text-transform: lowercase;
 }
 
-@keyframes crawl {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
 
-/* ---------------------------------------------------------------------------
-   Chrome: the control cluster
-
-   Carried from the 2025 landing page, where three buttons scaled to the audio
-   spectrum. Same idea, now persistent across navigation, which is the reason
-   routing is client-side at all: the music must not restart on every click.
-   --------------------------------------------------------------------------- */
-
-.chrome {
-  position: fixed;
-  right: var(--gutter);
-  bottom: 1.5rem;
-  z-index: 50;
-  display: flex;
-  gap: 1px;
-  background: var(--surface);
-  border: 1px solid var(--surface);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.chrome button {
-  position: relative;
-  width: 2.3rem;
-  height: 2.3rem;
-  display: grid;
-  place-items: center;
-  border: 0;
-  background: var(--mantle);
-  color: var(--subtext);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--surface3);
+  background: var(--panel);
+  color: var(--supertext);
+  font: inherit;
+  font-size: 0.92rem;
+  text-decoration: none;
   cursor: pointer;
   transition:
-    background 0.15s ease,
-    color 0.15s ease;
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
-/* The meter fills the button from the bottom. Scaling the button itself would
-   stretch the glyph with it, which reads as a rendering fault rather than a
-   level. Each button takes its own frequency band, as the 2025 site did. */
-.chrome button::before {
-  content: '';
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 0;
-  background: color-mix(in oklab, var(--mauve) 40%, transparent);
-  pointer-events: none;
+.button:hover {
+  border-color: var(--accent);
+  background: var(--accent-wash);
+  color: var(--accent);
 }
 
-.chrome[data-playing='true'] button:nth-child(1)::before {
-  height: calc(var(--level-1, 0) * 100%);
+.button .icon,
+.button .icon-brand {
+  width: 1.05em;
+  height: 1.05em;
 }
 
-.chrome[data-playing='true'] button:nth-child(2)::before {
-  height: calc(var(--level-2, 0) * 100%);
+.linkrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0;
 }
 
-.chrome[data-playing='true'] button:nth-child(3)::before {
-  height: calc(var(--level-3, 0) * 100%);
+/* The 88x31 wall. Pixel art, so it must never be resampled smoothly. */
+.web-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
 }
 
-.chrome button > * {
+.web-button {
+  display: block;
+  line-height: 0;
+  border: 1px solid var(--surface1);
+}
+
+.web-button img {
+  display: block;
+  width: 88px;
+  height: 31px;
+  image-rendering: pixelated;
+}
+
+.web-button:hover {
+  border-color: var(--accent);
+}
+
+/* ==========================================================================
+   Tooltip
+   ========================================================================== */
+
+.tooltip-wrapper {
   position: relative;
+  display: inline-block;
 }
 
-.chrome button:hover {
-  background: var(--surface);
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(0.25rem);
+  z-index: 100;
+  width: max-content;
+  max-width: 22rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--overlay0);
+  background: var(--surface0);
   color: var(--text);
+  font-size: 0.8rem;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.15s ease,
+    visibility 0.15s ease,
+    transform 0.15s ease;
 }
 
-.chrome button[aria-pressed='true'] {
-  color: var(--mauve);
+.tooltip-wrapper:hover .tooltip,
+.tooltip-wrapper:focus-within .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
-/* ---------------------------------------------------------------------------
-   Responsive: the rail becomes a top bar
-   --------------------------------------------------------------------------- */
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer {
+  margin-top: auto;
+  padding: 0.75rem 0 1rem;
+  width: 100%;
+  font-size: 0.75rem;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer a {
+  color: var(--subtext1);
+  text-decoration-color: var(--subtext3);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.7rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.splash {
+  color: var(--subtext2);
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Interactive grid
+
+   Fixed behind everything, one viewport tall. Cells are plain divs whose
+   border colour is driven from JS; nothing here should ever intercept a
+   pointer event.
+   ========================================================================== */
+
+.interactive-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+  contain: strict;
+}
+
+/* ==========================================================================
+   404
+   ========================================================================== */
+
+.notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 28rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.notfound-mark {
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.notfound-mark > * {
+  grid-area: 1 / 1;
+}
+
+.notfound-mark .icon {
+  width: clamp(7rem, 20vw, 10rem);
+  height: clamp(7rem, 20vw, 10rem);
+  color: var(--overlay3);
+  stroke-width: 1;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
+}
+
+.notfound-mark h1 {
+  margin: 0;
+  transform: translateY(60%);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 0.9;
+}
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Home
+   ========================================================================== */
+
+.about {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.about-text > :first-child {
+  margin-top: 0;
+}
+
+.about-text > :last-child {
+  margin-bottom: 0;
+}
+
+.about-text h1 {
+  font-size: clamp(2.25rem, 4vw + 1rem, 3.5rem);
+}
+
+.about-text p {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.about-portrait {
+  flex-shrink: 0;
+  display: block;
+  width: 200px;
+  height: 200px;
+  border: 2px solid var(--surface3);
+  image-rendering: auto;
+}
+
+@media (orientation: portrait) {
+  .about {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .about-portrait {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* Two columns: what's on the site, and where to find me. They collapse to one
+   at the point where the right column stops being a column and starts being a
+   squeezed strip. */
+.home-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.4fr) minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  align-items: stretch;
+  gap: 0.75rem 1rem;
+  margin-block: 1.5rem;
+}
+
+.home-grid-heading {
+  margin: 0;
+  align-self: end;
+  font-size: 1.35rem;
+}
+
+.home-grid-heading.secondary {
+  font-size: 1.15rem;
+}
+
+.home-stack {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.home-socials {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.home-socials > .contact-card {
+  flex: 1 1 0;
+}
 
 @media (max-width: 62rem) {
-  .rail {
-    position: sticky;
-    inset: 0 0 auto 0;
-    width: auto;
-    height: auto;
-    padding: 0.8rem var(--gutter);
-    border-right: 0;
-    border-bottom: 1px solid var(--surface);
-    align-items: stretch;
-    gap: 0.55rem;
-    overflow: visible;
-  }
-
-  .rail__mark {
-    font-size: 1.05rem;
-    white-space: nowrap;
-  }
-
-  .rail__mark span {
-    display: inline;
-  }
-
-  .rail__role,
-  .rail__foot {
-    display: none;
-  }
-
-  /* One scrolling row rather than a wrapping block: seven items wrap to three
-     lines on a phone, which is a taller header than the content it leads to. */
-  .rail__nav {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    gap: 0.25rem;
-    margin: 0 calc(var(--gutter) * -1);
-    padding: 0 var(--gutter);
-  }
-
-  .rail__nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .rail__nav a {
-    white-space: nowrap;
-  }
-
-  .rail__nav a::before {
-    display: none;
-  }
-
-  .main {
-    margin-left: 0;
-    padding-top: 2rem;
-  }
-
-  .hero {
+  .home-grid {
     grid-template-columns: 1fr;
   }
 
-  .hero__portrait {
-    order: -1;
+  .home-grid-heading,
+  .home-stack,
+  .home-socials {
+    grid-column: 1;
   }
 
-  .entry {
-    grid-template-columns: 1fr;
-  }
-
-  .entry__index {
-    display: none;
+  .home-socials > .contact-card {
+    flex: 0 0 auto;
   }
 }
 
-@media (max-width: 30rem) {
-  .chrome {
-    right: 1rem;
-    bottom: 1rem;
+@media (max-width: 40rem) {
+  .home-stack {
+    grid-template-columns: 1fr;
   }
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.9rem 1rem;
+  background: var(--panel);
+  border: 1px solid var(--surface2);
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.summary-card:hover {
+  border-color: var(--overlay0);
+  transform: scale(1.02) translateY(-2px);
+  color: inherit;
+}
+
+.summary-count {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.summary-label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--supertext);
+}
+
+.summary-card:hover .summary-label {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+}
+
+.summary-desc {
+  font-size: 0.8rem;
+  color: var(--subtext1);
+}
+
+.home-section {
+  margin-block: 1.5rem;
+}
+
+.home-section > h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+}
+
+.latest-post {
+  display: block;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.latest-post:hover {
+  border-color: var(--overlay0);
+  transform: translateY(-2px);
+  color: inherit;
+}
+
+.latest-post h3 {
+  margin: 0 0 0.35rem;
+}
+
+.latest-post:hover h3 {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+}
+
+.latest-post time {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.buttons-section {
+  margin-top: auto;
+  background: var(--mantle);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.button-mine {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--surface2);
+}
+
+/* The 88x31 is a <button>, because clicking it copies rather than navigates.
+   It must not look like one. */
+button.web-button {
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.button-track audio {
+  width: 100%;
+  max-width: 26rem;
+  height: 2.25rem;
+}
+
+@media (max-width: 40rem) {
+  .button-mine {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================================
+   Page-specific odds and ends
+   ========================================================================== */
+
+.page-header h1.post-title {
+  font-size: clamp(2rem, 4.5vw + 1rem, 3.5rem);
+  line-height: 1.08;
+  /* A title is a sentence, not a page name: it wraps, and fading the bottom
+     of every line but the last reads as a rendering fault. */
+  mask-image: none;
+}
+
+.pdf {
+  display: block;
+  width: 100%;
+  height: min(80vh, 900px);
+  padding: 0;
+}
+
+/* Click-to-load poster for the YouTube embed. */
+.video-poster {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: linear-gradient(140deg, var(--surface0) 0%, var(--crust) 75%);
+  color: var(--subtext0);
+  font: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.video-poster:hover {
+  color: var(--accent);
+}
+
+.video-poster .icon {
+  width: 3rem;
+  height: 3rem;
+  stroke-width: 1.2;
 }

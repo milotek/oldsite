@@ -1,30 +1,25 @@
 import { useState } from 'react'
-import { comparison, soundcloudTrackId } from '../data/misc'
-import { PageHead } from '../components/PageHead'
+import { comparison, soundcloudTrackId, quote } from '../data/misc'
 import { Meta } from '../components/Meta'
+import { PageHeader } from '../components/PageHeader'
+import { PlayIcon } from '../components/Icons'
 
 export function Misc() {
   const [player, setPlayer] = useState(false)
 
   return (
     <>
-      <Meta title="Other stuff" description="The bits that do not belong on a portfolio." />
-      <PageHead
-        eyebrow="Other stuff"
-        title="Other stuff"
-        lede="The bits that do not belong on a portfolio, kept because taking them off would make this a worse website."
+      <Meta title="other stuff" description="The bits that do not belong on a portfolio." />
+      <PageHeader
+        title="other stuff"
+        lede="The parts that do not belong on a portfolio, kept because taking them off would make this a worse website."
       />
 
-      <section className="section" style={{ marginTop: 0 }}>
-        <div className="section__head">
-          <h2>Me versus Lukas</h2>
-          <span className="eyebrow" style={{ margin: 0 }}>
-            {comparison.caption}
-          </span>
-        </div>
-
+      <section className="panel">
+        <h2>me versus Lukas</h2>
+        <p className="subt">{comparison.caption}</p>
         <div className="scroller">
-          <table className="table">
+          <table>
             <thead>
               <tr>
                 {comparison.columns.map((column, index) => (
@@ -45,24 +40,29 @@ export function Misc() {
             </tbody>
           </table>
         </div>
+        <blockquote>
+          {quote.text}
+          <br />
+          <span className="subt">{quote.attribution}</span>
+        </blockquote>
       </section>
 
-      <section className="section">
-        <div className="section__head">
-          <h2>A track</h2>
-        </div>
+      <section className="panel" style={{ marginTop: '1rem' }}>
+        <h2>a track</h2>
         {player ? (
           <iframe
             title="SoundCloud player"
             width="100%"
             height="166"
-            style={{ border: '1px solid var(--border)' }}
+            style={{ border: '1px solid var(--surface2)' }}
             allow="autoplay"
             src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${soundcloudTrackId}&auto_play=true&visual=false`}
           />
         ) : (
-          <button className="button" type="button" onClick={() => setPlayer(true)}>
-            &#9654; Load the SoundCloud player
+          // Loaded on click, so visiting this page costs nothing to SoundCloud.
+          <button type="button" className="button" onClick={() => setPlayer(true)}>
+            <PlayIcon />
+            load the SoundCloud player
           </button>
         )}
       </section>

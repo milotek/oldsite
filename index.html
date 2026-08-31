@@ -4,17 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta name="theme-color" content="#1e1e2e" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#eff1f5" media="(prefers-color-scheme: light)" />
+    <link rel="apple-touch-icon" href="/img/face.png" />
+    <meta name="theme-color" content="#11111b" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="author" content="Milo Tekchandani" />
+    <meta property="og:site_name" content="milotek.dev" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://milotek.dev/img/face.png" />
+    <meta name="twitter:card" content="summary" />
+    <!-- The page is dark in every state, so telling Dark Reader to keep its
+         hands off saves it from inverting a palette that is already dark. -->
+    <meta name="darkreader-lock" />
     <title>milotek.dev</title>
-    <script>
-      // Applied before first paint so the page never flashes the wrong theme.
-      // Kept inline and tiny for that reason; it must not wait for a bundle.
-      try {
-        var t = localStorage.getItem('theme')
-        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t
-      } catch (e) {}
-    </script>
   </head>
   <body>
     <div id="root"></div>

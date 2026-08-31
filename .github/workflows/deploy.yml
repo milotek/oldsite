@@ -27,6 +27,15 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # The CV lives in the profile repo. Refreshing it here keeps that the
+      # single place it is edited, while still serving it same-origin so the
+      # inline viewer works. A network blip falls back to the committed copy
+      # rather than failing the deploy.
+      - name: Refresh CV from the profile repo
+        run: |
+          curl -sSfL --retry 3 -o public/CV.pdf \
+            https://raw.githubusercontent.com/milotek/milotek/main/CV.pdf \
+            || echo "could not refresh CV, using the committed copy"
       - run: npm run typecheck
       - run: npm run build
       - uses: actions/upload-pages-artifact@v4

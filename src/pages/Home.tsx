@@ -1,106 +1,183 @@
+import { useState } from 'react'
 import { Link } from 'react-router'
+import { site, socials, webButton, tracks } from '../data/site'
 import { projects } from '../data/projects'
 import { games } from '../data/games'
 import { artworks } from '../data/art'
-import { Entry } from '../components/Entry'
+import { posts } from '../lib/blog'
 import { Meta } from '../components/Meta'
+import { ContactCard } from '../components/ContactCard'
+import {
+  GitHubIcon,
+  LinkedInIcon,
+  InstagramIcon,
+  SpotifyIcon,
+  MailIcon,
+  ArrowRightIcon,
+  MusicIcon,
+} from '../components/Icons'
+
+const icons = {
+  github: <GitHubIcon />,
+  linkedin: <LinkedInIcon />,
+  instagram: <InstagramIcon />,
+  spotify: <SpotifyIcon />,
+} as const
 
 export function Home() {
+  const [copied, setCopied] = useState(false)
+  const [player, setPlayer] = useState(false)
+  const latest = posts[0]
+
+  const copyButton = async () => {
+    try {
+      await navigator.clipboard.writeText(webButton.snippet)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 1800)
+    } catch {
+      // Clipboard access can be refused outright; the snippet is visible in
+      // the page source either way, so there is nothing useful to report.
+    }
+  }
+
   return (
     <>
       <Meta />
-      <section className="hero">
-        <div>
-          <p className="eyebrow">Milo Tekchandani</p>
-          <h1>
-            I make <em>things</em>.
-          </h1>
-          <div className="hero__text">
-            <p>
-              Mostly software. Occasionally out of wood and a Raspberry Pi.
-            </p>
-            <p>
-              <strong>Software engineer apprentice at Google, in London.</strong> Before that: A
-              levels, an EPQ that turned into a Godot game, and a pet feeder built to a
-              neighbour's spec.
-            </p>
-            <p>
-              This is where the work lives. Commercial apps, hobby games, and a decade of drawings
-              I keep around because deleting them felt worse.
-            </p>
-          </div>
+
+      <section className="panel about">
+        <div className="about-text">
+          <h1>hi, i'm milo</h1>
+          <p>
+            Software engineer apprentice at <strong>Google</strong>, in London. Before that: A
+            levels, an EPQ that turned into a Godot game, and a pet feeder built to my neighbours'
+            specification.
+          </p>
+          <p>
+            I mostly write TypeScript and Swift, and I am dangerous enough in C# and GDScript to
+            finish things. Two of the apps here are commercial; the rest exist because I wanted
+            them to.
+          </p>
+          <p>
+            I also draw. There are sixteen years of that in the <Link to="/art">gallery</Link>,
+            kept around because deleting it felt worse than publishing it.
+          </p>
         </div>
         <img
-          className="hero__portrait"
+          className="about-portrait"
           src="/img/face.png"
           alt="Portrait of Milo Tekchandani."
-          width={320}
-          height={320}
+          width={256}
+          height={256}
         />
       </section>
 
-      <section className="section">
-        <div className="section__head">
-          <h2>Projects</h2>
-          <Link to="/projects" viewTransition>
-            all {projects.length} &rarr;
+      <section className="home-grid">
+        <h2 className="home-grid-heading">what's here</h2>
+        <h2 className="home-grid-heading secondary">find me</h2>
+
+        <div className="home-stack">
+          <Link className="summary-card" to="/projects" viewTransition>
+            <span className="summary-count">{projects.length}</span>
+            <span className="summary-label">
+              projects <ArrowRightIcon />
+            </span>
+            <span className="summary-desc">
+              Lockyn, EZcals and a pet feeder with an oak finish.
+            </span>
+          </Link>
+          <Link className="summary-card" to="/games" viewTransition>
+            <span className="summary-count">{games.length}</span>
+            <span className="summary-label">
+              games <ArrowRightIcon />
+            </span>
+            <span className="summary-desc">Godot, Roblox, and three games in C#.</span>
+          </Link>
+          <Link className="summary-card" to="/art" viewTransition>
+            <span className="summary-count">{artworks.length}</span>
+            <span className="summary-label">
+              artworks <ArrowRightIcon />
+            </span>
+            <span className="summary-desc">Mostly Procreate, on an iPad, over many years.</span>
           </Link>
         </div>
-        <ul className="entries">
-          {projects.map((project, index) => (
-            <Entry
-              key={project.slug}
-              index={index}
-              to={`/projects/${project.slug}`}
-              title={project.title}
-              blurb={project.blurb}
-              year={project.year}
-              tech={project.tech}
-              status={project.status}
+
+        <div className="home-socials">
+          {socials.map((social) => (
+            <ContactCard
+              key={social.label}
+              compact
+              platform={social.label}
+              handle={social.handle}
+              href={social.href}
+              icon={icons[social.label as keyof typeof icons]}
             />
           ))}
-        </ul>
+        </div>
       </section>
 
-      <section className="section">
-        <div className="section__head">
-          <h2>Games</h2>
-          <Link to="/games" viewTransition>
-            all {games.length} &rarr;
+      {latest ? (
+        <section className="home-section">
+          <h2>latest post</h2>
+          <Link className="latest-post panel" to={`/blog/${latest.slug}`} viewTransition>
+            <h3>{latest.title}</h3>
+            {latest.description ? <p className="post-desc">{latest.description}</p> : null}
+            <time dateTime={latest.date}>{latest.date}</time>
           </Link>
+        </section>
+      ) : null}
+
+      <section className="home-section">
+        <h2>get in touch</h2>
+        <div className="contact-grid">
+          <ContactCard
+            platform="email"
+            handle={site.email}
+            href={`mailto:${site.email}`}
+            icon={<MailIcon />}
+          />
+          <ContactCard
+            platform="github"
+            handle="@milotek"
+            href="https://github.com/milotek"
+            icon={<GitHubIcon />}
+          />
+          <ContactCard
+            platform="linkedin"
+            handle="Milo Tekchandani"
+            href="https://www.linkedin.com/in/milo-tekchandani-686602292/"
+            icon={<LinkedInIcon />}
+          />
         </div>
-        <ul className="entries">
-          {games.map((game, index) => (
-            <Entry
-              key={game.slug}
-              index={index}
-              to={`/games/${game.slug}`}
-              title={game.title}
-              blurb={game.blurb}
-              year={game.year}
-              tech={game.tech}
-            />
-          ))}
-        </ul>
+        <p className="subt">
+          I like keeping my real self and my online self a bit apart, so this is where the
+          oversharing stops. Thanks for visiting.
+        </p>
       </section>
 
-      <section className="section">
-        <div className="section__head">
-          <h2>Art</h2>
-          <Link to="/art" viewTransition>
-            all {artworks.length} &rarr;
-          </Link>
+      <section className="panel buttons-section">
+        <div className="button-mine">
+          <button type="button" className="web-button" onClick={copyButton}>
+            <img src={webButton.src} alt="milotek.dev" width={88} height={31} />
+          </button>
+          <span className="subt">
+            {copied
+              ? 'copied - paste it wherever you like.'
+              : 'click to copy the HTML. hotlinking is fine, I will not move it.'}
+          </span>
         </div>
-        <ul className="shots">
-          {artworks.slice(0, 4).map((art) => (
-            <li key={art.thumb}>
-              <figure>
-                <img src={art.thumb} alt={art.alt} loading="lazy" />
-                <figcaption>{art.caption}</figcaption>
-              </figure>
-            </li>
-          ))}
-        </ul>
+
+        <div className="button-track">
+          {player ? (
+            <audio controls autoPlay src={tracks[0]} preload="none">
+              Your browser cannot play this file.
+            </audio>
+          ) : (
+            <button type="button" className="button" onClick={() => setPlayer(true)}>
+              <MusicIcon />
+              play the track from the old site
+            </button>
+          )}
+        </div>
       </section>
     </>
   )
