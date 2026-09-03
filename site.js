@@ -80,8 +80,10 @@ splash.addEventListener("click", () => {
   splash.textContent = SPLASHES[splashIndex];
 });
 
-// Recent commits, straight from GitHub's public events feed. Unauthenticated,
-// so a busy visitor can hit the rate limit; the fallback copy covers that.
+// Recently pushed repos, straight from GitHub's API. Unauthenticated, so a
+// busy visitor can hit the rate limit; the fallback copy covers that. The
+// events feed would be closer to a real git log, but it stopped carrying
+// commit messages, so this is the honest version.
 const gitlog = document.getElementById("gitlog");
 function timeAgo(iso) {
   const s = Math.max(1, Math.round((Date.now() - new Date(iso)) / 1000));
@@ -91,36 +93,29 @@ function timeAgo(iso) {
 }
 async function loadGitLog() {
   try {
-    const res = await fetch("https://api.github.com/users/milotek/events/public?per_page=60", {
+    const res = await fetch("https://api.github.com/users/milotek/repos?sort=pushed&per_page=7", {
       headers: { Accept: "application/vnd.github+json" },
     });
     if (!res.ok) throw new Error(res.status);
-    const events = await res.json();
-    const commits = [];
-    for (const ev of events) {
-      if (ev.type !== "PushEvent") continue;
-      for (const c of ev.payload.commits ?? []) {
-        commits.push({ sha: c.sha, message: c.message.split("\n")[0], repo: ev.repo.name, when: ev.created_at });
-      }
-    }
-    if (commits.length === 0) throw new Error("no commits");
+    const repos = (await res.json()).filter((r) => !r.fork);
+    if (repos.length === 0) throw new Error("no repos");
     gitlog.replaceChildren(
-      ...commits.slice(0, 7).map((c) => {
+      ...repos.map((r) => {
         const li = document.createElement("li");
         const a = document.createElement("a");
-        a.href = `https://github.com/${c.repo}/commit/${c.sha}`;
+        a.href = r.html_url;
         a.className = "sha";
-        a.textContent = c.sha.slice(0, 7);
+        a.textContent = r.name;
         const msg = document.createElement("span");
         msg.className = "msg";
-        msg.textContent = c.message + " ";
-        const repo = document.createElement("span");
-        repo.className = "repo";
-        repo.textContent = c.repo.replace("milotek/", "");
+        msg.textContent = (r.description || "no description, sorry") + " ";
+        const lang = document.createElement("span");
+        lang.className = "repo";
+        lang.textContent = r.language ? r.language.toLowerCase() : "";
         const when = document.createElement("span");
         when.className = "when";
-        when.textContent = " " + timeAgo(c.when);
-        msg.append(repo, when);
+        when.textContent = " " + timeAgo(r.pushed_at);
+        msg.append(lang, when);
         li.append(a, msg);
         return li;
       }),

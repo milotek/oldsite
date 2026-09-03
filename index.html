@@ -47,8 +47,9 @@
 
 <!-- workspace 1 -->
 <section class="ws" id="home" aria-labelledby="home-h">
+  <div class="col">
   <article class="win master focused" style="--i:0">
-    <p class="win-title"><span class="class">firefox</span>milotek.dev</p>
+    <p class="win-title"><span class="class">chromium</span>milotek.dev</p>
     <p class="eyebrow">personal website // code projects // portfolio</p>
     <h1 id="home-h">Milo Tekchandani</h1>
     <button class="splash" id="splash" type="button" title="click for another">no lake, no play</button>
@@ -65,9 +66,20 @@
       <a class="btn" href="#art">art</a>
       <a class="btn" href="#contact">say hi</a>
     </div>
+      <div class="buttons buttons--foot">
+        <a class="b88 b88--nix" href="https://github.com/milotek/nixeljam">NixOS</a>
+        <a class="b88 b88--hypr" href="https://hyprland.org">hyprland</a>
+        <span class="b88 b88--html">html by hand</span>
+        <span class="b88 b88--build">no build step</span>
+        <span class="b88 b88--furry">furry =^)</span>
+        <span class="b88 b88--tf2">wallpaper: tf2</span>
+        <a class="b88 b88--lake" href="#art">no lake no play</a>
+        <a class="b88 b88--cat" href="https://github.com/milotek/petfeeder">pet: fed</a>
+      </div>
   </article>
+  </div>
 
-  <div class="stack">
+  <div class="col">
     <article class="win" style="--i:1">
       <p class="win-title"><span class="class">ghostty</span>fastfetch</p>
       <div class="fetch">
@@ -99,30 +111,18 @@
     </article>
 
     <article class="win" style="--i:2">
-      <p class="win-title"><span class="class">ghostty</span>git log --oneline --all</p>
+      <p class="win-title"><span class="class">ghostty</span>gh repo list --limit 7</p>
       <ul class="gitlog" id="gitlog">
-        <li><span class="sha">·······</span><span class="msg muted">asking github what I've been up to</span></li>
+        <li><span class="sha">...</span><span class="msg muted">asking github what I've been up to</span></li>
       </ul>
     </article>
 
-    <article class="win" style="--i:3">
-      <p class="win-title"><span class="class">firefox</span>88x31</p>
-      <div class="buttons">
-        <a class="b88 b88--nix" href="https://github.com/milotek/nixeljam">NixOS</a>
-        <a class="b88 b88--hypr" href="https://hyprland.org">hyprland</a>
-        <span class="b88 b88--html">html by hand</span>
-        <span class="b88 b88--build">no build step</span>
-        <span class="b88 b88--furry">furry =^)</span>
-        <span class="b88 b88--tf2">wallpaper: tf2</span>
-        <a class="b88 b88--lake" href="#art">no lake no play</a>
-        <a class="b88 b88--cat" href="https://github.com/milotek/petfeeder">pet: fed</a>
-      </div>
-    </article>
   </div>
 </section>
 
 <!-- workspace 2 -->
 <section class="ws" id="projects" aria-labelledby="projects-h">
+  <div class="col">
   <article class="win master focused" style="--i:0">
     <p class="win-title"><span class="class">ghostty</span>~/projects/lockyn</p>
     <h2 id="projects-h">Lockyn <span class="status status--unreleased">unreleased</span><span class="year">2024 to now</span></h2>
@@ -141,9 +141,22 @@
       <figure><img src="assets/img/lockyn_summary.jpg" width="760" height="1644" loading="lazy" alt="Lockyn summary page."><figcaption>summary</figcaption></figure>
     </div>
   </article>
-
-  <div class="stack">
     <article class="win" style="--i:1">
+      <p class="win-title"><span class="class">ghostty</span>gh repo list --visibility public</p>
+      <h2>Other things I poke at</h2>
+      <ul class="repos">
+        <li><a href="https://github.com/milotek/nixeljam">nixeljam</a> <span class="lang">nix</span><p>My NixOS config. Modular, customisable, and where the theme this whole site is wearing comes from.</p></li>
+        <li><a href="https://github.com/milotek/makersbnb">makersbnb</a> <span class="lang">python</span><p>AirBnB clone in Flask, test-driven, with a focus on clean architecture and not making users think.</p></li>
+        <li><a href="https://github.com/milotek/habits">habits</a> <span class="lang">kotlin</span><p>Habit tracker. My own description on GitHub is "shitty habit tracker", so, expectations managed.</p></li>
+        <li><a href="https://github.com/milotek/tittyos">tittyos</a> <span class="lang">c++</span><p>A deep learning library written in C++. Yes, that name.</p></li>
+        <li><a href="https://github.com/milotek/minecraft-legacy-console-shaders">legacy console shaders</a> <span class="lang">glsl</span><p>Quick shaders for Minecraft 1.6.4's Core Shaders mod, in the style of the old console editions.</p></li>
+        <li><a href="https://github.com/milotek/acebook">acebook</a> <span class="lang">java</span><p>Facebook clone built as a team: Spring Boot, Maven, Thymeleaf, Bootstrap. The whole enterprise starter pack.</p></li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="col">
+    <article class="win" style="--i:2">
       <p class="win-title"><span class="class">ghostty</span>~/projects/petfeeder</p>
       <h2>AutoPet Feeder <span class="status status--shipped">shipped</span><span class="year">2024</span></h2>
       <p>A fully automated, slightly luxurious pet feeder, designed and built to my neighbours' spec. Real client, real deadline, real pet with opinions.</p>
@@ -160,7 +173,7 @@
       </div>
     </article>
 
-    <article class="win" style="--i:2">
+    <article class="win" style="--i:3">
       <p class="win-title"><span class="class">ghostty</span>~/projects/ezcals</p>
       <h2>EZcals <span class="status status--wip">rewriting</span><span class="year">2024 to 2025</span></h2>
       <p>A calorie tracker for people who want to log a meal in as few taps as physically possible and then get on with their day.</p>
@@ -171,26 +184,15 @@
         <li>Logs calories, protein, fat and the rest. The point was speed, not a feature list.</li>
       </ul>
       <p class="muted"><small>Screenshots below. That gif has said "soon" since 2024 and I stand by it.</small></p>
-      <img class="hero-img" src="assets/img/under_construction.gif" width="640" height="480" loading="lazy" alt="A doodle of me giving a thumbs up next to the words UNDER CONSTRUCTION and two cogs.">
+      <img class="hero-img hero-img--small" src="assets/img/under_construction.gif" width="640" height="480" loading="lazy" alt="A doodle of me giving a thumbs up next to the words UNDER CONSTRUCTION and two cogs.">
     </article>
 
-    <article class="win" style="--i:3">
-      <p class="win-title"><span class="class">ghostty</span>gh repo list --visibility public</p>
-      <h2>Other things I poke at</h2>
-      <ul class="repos">
-        <li><a href="https://github.com/milotek/nixeljam">nixeljam</a> <span class="lang">nix</span><p>My NixOS config. Modular, customisable, and where the theme this whole site is wearing comes from.</p></li>
-        <li><a href="https://github.com/milotek/makersbnb">makersbnb</a> <span class="lang">python</span><p>AirBnB clone in Flask, test-driven, with a focus on clean architecture and not making users think.</p></li>
-        <li><a href="https://github.com/milotek/habits">habits</a> <span class="lang">kotlin</span><p>Habit tracker. My own description on GitHub is "shitty habit tracker", so, expectations managed.</p></li>
-        <li><a href="https://github.com/milotek/tittyos">tittyos</a> <span class="lang">c++</span><p>A deep learning library written in C++. Yes, that name.</p></li>
-        <li><a href="https://github.com/milotek/minecraft-legacy-console-shaders">legacy console shaders</a> <span class="lang">glsl</span><p>Quick shaders for Minecraft 1.6.4's Core Shaders mod, in the style of the old console editions.</p></li>
-        <li><a href="https://github.com/milotek/acebook">acebook</a> <span class="lang">java</span><p>Facebook clone built as a team: Spring Boot, Maven, Thymeleaf, Bootstrap. The whole enterprise starter pack.</p></li>
-      </ul>
-    </article>
   </div>
 </section>
 
 <!-- workspace 3 -->
 <section class="ws" id="games" aria-labelledby="games-h">
+  <div class="col">
   <article class="win master focused" style="--i:0">
     <p class="win-title"><span class="class">godot</span>epq_platformer (*)</p>
     <h2 id="games-h">An accessible platformer <span class="status status--archived">epq</span><span class="year">2023 to 2024</span></h2>
@@ -209,8 +211,9 @@
       <a class="btn" href="https://github.com/milotek/GodotGame">an old fork of the source (Godot 3.5, may not open)</a>
     </div>
   </article>
+  </div>
 
-  <div class="stack">
+  <div class="col">
     <article class="win" style="--i:1">
       <p class="win-title"><span class="class">roblox-studio</span>Schism.rbxl</p>
       <h2>Schism <span class="status status--wip">hobby</span><span class="year">2024 to now</span></h2>
@@ -276,14 +279,16 @@
 
 <!-- workspace 5 -->
 <section class="ws" id="cv" aria-labelledby="cv-h">
+  <div class="col">
   <article class="win master focused" style="--i:0">
-    <p class="win-title"><span class="class">zathura</span>cv.pdf [1/2]</p>
+    <p class="win-title"><span class="class">chromium</span>cv.pdf</p>
     <object class="pdf" data="assets/cv.pdf" type="application/pdf" aria-label="My CV, embedded as a PDF">
       <p>Your browser won't embed PDFs. <a href="assets/cv.pdf">Open the CV directly</a> instead.</p>
     </object>
   </article>
+  </div>
 
-  <div class="stack">
+  <div class="col">
     <article class="win" style="--i:1">
       <p class="win-title"><span class="class">ghostty</span>cat cv.md | head</p>
       <h2 id="cv-h">CV, the short version</h2>
@@ -299,6 +304,18 @@
         <a class="btn" href="https://milotek.dev">the sensible professional version</a>
         <a class="btn" href="https://www.linkedin.com/in/milo-tekchandani-686602292/">linkedin</a>
       </div>
+    </article>
+
+    <article class="win" style="--i:2">
+      <p class="win-title"><span class="class">ghostty</span>git log --reverse --format="%ad %s"</p>
+      <ol class="timeline">
+        <li><span class="when">2018</span><span>Knights Templar School. GCSEs, including the Product Design one that later turned into a pet feeder.</span></li>
+        <li><span class="when">2021</span><span>Research assistant at Tek Bros, the family cybersecurity consultancy. Sponsored to study for the CISSP, which is usually taken by people twice my age.</span></li>
+        <li><span class="when">2023</span><span>Hills Road Sixth Form College, Cambridge. Computer Science, Maths, English, and the EPQ.</span></li>
+        <li><span class="when">2024</span><span>Started tutoring GCSE Computer Science one to one, online and in person.</span></li>
+        <li><span class="when">2025</span><span>Makers bootcamp. Flask, Java, test-driven development, and a Facebook clone built as a team.</span></li>
+        <li><span class="when">now</span><span>Software engineer apprentice at Google, London.</span></li>
+      </ol>
     </article>
   </div>
 </section>
