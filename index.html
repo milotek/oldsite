@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>milotek</title>
+  <meta name="description" content="Milo Tekchandani. 19, London, software engineer apprentice. Projects, games, art, and a website that looks like my desktop.">
+  <meta name="theme-color" content="#1e1e2e">
+  <meta property="og:title" content="milotek">
+  <meta property="og:description" content="Projects, games, art, and a website that looks like my desktop.">
+  <meta property="og:image" content="assets/img/wallpaper.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/moose.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/moose_180.png">
+  <link rel="preload" href="assets/fonts/source_sans_3.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-pill">
+    <div class="module module-osd" aria-hidden="true">=^)</div>
+    <div class="module module-clock"><time id="clock" datetime="">--:--</time></div>
+    <nav class="module workspaces" aria-label="Workspaces">
+      <a href="#home" title="home">1</a>
+      <a href="#projects" title="projects">2</a>
+      <a href="#games" title="games">3</a>
+      <a href="#art" title="art">4</a>
+      <a href="#cv" title="cv">5</a>
+      <a href="#contact" title="contact">6</a>
+    </nav>
+    <div class="module module-name" id="ws-name" aria-live="polite">home</div>
+    <div class="module module-icons">
+      <a class="icon-btn" href="https://github.com/milotek/wst" title="view source" aria-label="view source">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </a>
+      <button class="icon-btn" id="lock-btn" type="button" title="lock (hyprlock)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v10"/><path d="M18.4 6.6a9 9 0 1 1-12.77.04"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- workspace 1 -->
+<section class="ws" id="home" aria-labelledby="home-h">
+  <article class="win master focused" style="--i:0">
+    <p class="win-title"><span class="class">firefox</span>milotek.dev</p>
+    <p class="eyebrow">personal website // code projects // portfolio</p>
+    <h1 id="home-h">Milo Tekchandani</h1>
+    <button class="splash" id="splash" type="button" title="click for another">no lake, no play</button>
+    <p class="lede">Hi. I'm Milo, I'm 19, I live in London and I write software for a living (software engineer apprentice at Google, which still reads like a typo to me).</p>
+    <p>Most of what's on here exists because I wanted it to: a study app, a pet feeder for the neighbours, a pile of games in a pile of engines, and a NixOS config I've honestly sunk more hours into than any of the above.</p>
+    <p>This site is a copy of my desktop. Same colours, same 20px rounding, same 8px gaps, same wallpaper, same everything. Press <kbd>1</kbd> to <kbd>6</kbd> to switch workspace, or click the bar. The power button locks the screen, obviously.</p>
+    <div class="pills">
+      <a class="btn btn--primary" href="https://github.com/milotek">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        github
+      </a>
+      <a class="btn" href="#projects">projects</a>
+      <a class="btn" href="#games">games</a>
+      <a class="btn" href="#art">art</a>
+      <a class="btn" href="#contact">say hi</a>
+    </div>
+  </article>
+
+  <div class="stack">
+    <article class="win" style="--i:1">
+      <p class="win-title"><span class="class">ghostty</span>fastfetch</p>
+      <div class="fetch">
+        <img class="fetch-logo" src="assets/img/me.png" width="180" height="280" alt="A doodle of me: spiky black hair, mildly annoyed expression. Drawn by me, so it is accurate.">
+        <div>
+          <dl>
+            <div class="user">milotek<b>@</b>pixeljam</div>
+            <div class="rule">----------------</div>
+            <div><dt>OS</dt><dd>NixOS (unstable)</dd></div>
+            <div><dt>WM</dt><dd>Hyprland, master layout, mfact 0.5</dd></div>
+            <div><dt>Bar</dt><dd>waybar, 36px, one pill</dd></div>
+            <div><dt>Shell</dt><dd>zsh</dd></div>
+            <div><dt>Terminal</dt><dd>ghostty</dd></div>
+            <div><dt>Theme</dt><dd>pixeljam · rounding 20 · gaps 8/16 · border 2</dd></div>
+            <div><dt>Font</dt><dd>MesloLGS Nerd Font Mono</dd></div>
+            <div><dt>Cursor</dt><dd>BreezeX-RosePine</dd></div>
+            <div><dt>Wallpaper</dt><dd>tf2 watchtower, stretched, no shame</dd></div>
+            <div><dt>Age</dt><dd>19</dd></div>
+            <div><dt>Location</dt><dd>London, UK</dd></div>
+            <div><dt>Species</dt><dd>yes =^)</dd></div>
+            <div><dt>Uptime</dt><dd id="uptime">19 years</dd></div>
+          </dl>
+          <div class="palette" aria-hidden="true">
+            <i style="background:#1e1e2e"></i><i style="background:#f38ba8"></i><i style="background:#a6e3a1"></i><i style="background:#f9e2af"></i><i style="background:#ffbdbd"></i><i style="background:#cba4f7"></i><i style="background:#94e2d5"></i><i style="background:#cdd6f4"></i>
+            <i style="background:#45475a"></i><i style="background:#f38ba8"></i><i style="background:#a6e3a1"></i><i style="background:#f9e2af"></i><i style="background:#ffbdbd"></i><i style="background:#cba4f7"></i><i style="background:#94e2d5"></i><i style="background:#b4befe"></i>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="win" style="--i:2">
+      <p class="win-title"><span class="class">ghostty</span>git log --oneline --all</p>
+      <ul class="gitlog" id="gitlog">
+        <li><span class="sha">·······</span><span class="msg muted">asking github what I've been up to</span></li>
+      </ul>
+    </article>
+
+    <article class="win" style="--i:3">
+      <p class="win-title"><span class="class">firefox</span>88x31</p>
+      <div class="buttons">
+        <a class="b88 b88--nix" href="https://github.com/milotek/nixeljam">NixOS</a>
+        <a class="b88 b88--hypr" href="https://hyprland.org">hyprland</a>
+        <span class="b88 b88--html">html by hand</span>
+        <span class="b88 b88--build">no build step</span>
+        <span class="b88 b88--furry">furry =^)</span>
+        <span class="b88 b88--tf2">wallpaper: tf2</span>
+        <a class="b88 b88--lake" href="#art">no lake no play</a>
+        <a class="b88 b88--cat" href="https://github.com/milotek/petfeeder">pet: fed</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- workspace 2 -->
+<section class="ws" id="projects" aria-labelledby="projects-h">
+  <article class="win master focused" style="--i:0">
+    <p class="win-title"><span class="class">ghostty</span>~/projects/lockyn</p>
+    <h2 id="projects-h">Lockyn <span class="status status--unreleased">unreleased</span><span class="year">2024 to now</span></h2>
+    <p class="lede">A study app for GCSE and sixth form students. Timers, streaks, per-topic summaries, and a UI I'm actually proud of.</p>
+    <ul class="tags"><li>typescript</li><li>react native</li><li>expo</li><li>firebase</li></ul>
+    <ul>
+      <li>Front end in React Native, so it runs on iOS, Android, web and desktop off one codebase.</li>
+      <li>Firebase on the back end: auth, a non-relational store, and no server for me to babysit.</li>
+      <li>Started life as my A level Computer Science NEA, which is why it was gated on results day.</li>
+      <li>Results day has been and gone. Release date is "when it's good", which I'm aware is what everyone says.</li>
+    </ul>
+    <div class="shots">
+      <figure><img src="assets/img/lockyn_landing.jpg" width="762" height="1676" loading="lazy" alt="Lockyn landing screen: a pink to blue gradient orb, 'welcome to lockyn', and a sign in with email button."><figcaption>landing</figcaption></figure>
+      <figure><img src="assets/img/lockyn_onboarding.jpg" width="770" height="1680" loading="lazy" alt="Lockyn onboarding screen."><figcaption>onboarding</figcaption></figure>
+      <figure><img src="assets/img/lockyn_home.jpg" width="764" height="1662" loading="lazy" alt="Lockyn home screen: a big timer ring reading 0:00, a streak counter, and a play button."><figcaption>home</figcaption></figure>
+      <figure><img src="assets/img/lockyn_summary.jpg" width="760" height="1644" loading="lazy" alt="Lockyn summary page."><figcaption>summary</figcaption></figure>
+    </div>
+  </article>
+
+  <div class="stack">
+    <article class="win" style="--i:1">
+      <p class="win-title"><span class="class">ghostty</span>~/projects/petfeeder</p>
+      <h2>AutoPet Feeder <span class="status status--shipped">shipped</span><span class="year">2024</span></h2>
+      <p>A fully automated, slightly luxurious pet feeder, designed and built to my neighbours' spec. Real client, real deadline, real pet with opinions.</p>
+      <img class="hero-img" src="assets/img/petfeeder.jpg" width="1922" height="1084" loading="lazy" alt="Four photos of the finished feeder: a white 3D printed body with a solid oak lid and a window cut into the front, sat on a workshop bench.">
+      <ul class="tags"><li>raspberry pi</li><li>javascript</li><li>servo</li><li>cad</li><li>3d printing</li><li>oak</li></ul>
+      <ul>
+        <li>Raspberry Pi driving a servo, touchscreen on the front, USB-C for power because nobody has the right barrel jack.</li>
+        <li>ABS shell, 3D printed, with a solid oak lid. Went through a cardboard prototype and about nine CAD revisions first.</li>
+        <li>The full design document (client interviews, prototypes, evaluation, price list) is public. It's long.</li>
+      </ul>
+      <div class="pills">
+        <a class="btn" href="https://github.com/milotek/petfeeder">source</a>
+        <a class="btn" href="https://github.com/milotek/petfeeder/blob/master/Product%20Design%20NEA%20Edited.pdf">design document (pdf)</a>
+      </div>
+    </article>
+
+    <article class="win" style="--i:2">
+      <p class="win-title"><span class="class">ghostty</span>~/projects/ezcals</p>
+      <h2>EZcals <span class="status status--wip">rewriting</span><span class="year">2024 to 2025</span></h2>
+      <p>A calorie tracker for people who want to log a meal in as few taps as physically possible and then get on with their day.</p>
+      <ul class="tags"><li>swift</li><li>swiftui</li><li>react native</li><li>supabase</li><li>postgres</li></ul>
+      <ul>
+        <li>Version one was pure Swift and SwiftUI. Lovely to write, iOS only.</li>
+        <li>Rewritten in React Native in 2025 for Android and web, with a self-hosted Supabase (so, Postgres) behind it.</li>
+        <li>Logs calories, protein, fat and the rest. The point was speed, not a feature list.</li>
+      </ul>
+      <p class="muted"><small>Screenshots below. That gif has said "soon" since 2024 and I stand by it.</small></p>
+      <img class="hero-img" src="assets/img/under_construction.gif" width="640" height="480" loading="lazy" alt="A doodle of me giving a thumbs up next to the words UNDER CONSTRUCTION and two cogs.">
+    </article>
+
+    <article class="win" style="--i:3">
+      <p class="win-title"><span class="class">ghostty</span>gh repo list --visibility public</p>
+      <h2>Other things I poke at</h2>
+      <ul class="repos">
+        <li><a href="https://github.com/milotek/nixeljam">nixeljam</a> <span class="lang">nix</span><p>My NixOS config. Modular, customisable, and where the theme this whole site is wearing comes from.</p></li>
+        <li><a href="https://github.com/milotek/makersbnb">makersbnb</a> <span class="lang">python</span><p>AirBnB clone in Flask, test-driven, with a focus on clean architecture and not making users think.</p></li>
+        <li><a href="https://github.com/milotek/habits">habits</a> <span class="lang">kotlin</span><p>Habit tracker. My own description on GitHub is "shitty habit tracker", so, expectations managed.</p></li>
+        <li><a href="https://github.com/milotek/tittyos">tittyos</a> <span class="lang">c++</span><p>A deep learning library written in C++. Yes, that name.</p></li>
+        <li><a href="https://github.com/milotek/minecraft-legacy-console-shaders">legacy console shaders</a> <span class="lang">glsl</span><p>Quick shaders for Minecraft 1.6.4's Core Shaders mod, in the style of the old console editions.</p></li>
+        <li><a href="https://github.com/milotek/acebook">acebook</a> <span class="lang">java</span><p>Facebook clone built as a team: Spring Boot, Maven, Thymeleaf, Bootstrap. The whole enterprise starter pack.</p></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- workspace 3 -->
+<section class="ws" id="games" aria-labelledby="games-h">
+  <article class="win master focused" style="--i:0">
+    <p class="win-title"><span class="class">godot</span>epq_platformer (*)</p>
+    <h2 id="games-h">An accessible platformer <span class="status status--archived">epq</span><span class="year">2023 to 2024</span></h2>
+    <p class="lede">My Extended Project Qualification: "An accessible platforming and exploration themed video game". Six months of weekends during the first year of A levels.</p>
+    <ul class="tags"><li>godot</li><li>gdscript</li><li>c#</li><li>accessibility</li></ul>
+    <ul>
+      <li>Every mechanic got a user feedback loop before it stayed in. Iterative design, done for real rather than written about.</li>
+      <li>Both GDScript and C#, because I wanted to know which one I'd reach for next time.</li>
+      <li>The characters below are the concept art. Antagonist on the left.</li>
+    </ul>
+    <div class="side-by-side">
+      <figure><img src="assets/art/epq_antagonist.jpg" width="855" height="1200" loading="lazy" alt="Concept art of the antagonist for my EPQ game."><figcaption class="mono muted">antagonist</figcaption></figure>
+      <figure><img src="assets/art/epq_protagonist.jpg" width="792" height="1200" loading="lazy" alt="Concept art of the protagonist for my EPQ game."><figcaption class="mono muted">protagonist</figcaption></figure>
+    </div>
+    <div class="pills">
+      <a class="btn" href="https://github.com/milotek/GodotGame">an old fork of the source (Godot 3.5, may not open)</a>
+    </div>
+  </article>
+
+  <div class="stack">
+    <article class="win" style="--i:1">
+      <p class="win-title"><span class="class">roblox-studio</span>Schism.rbxl</p>
+      <h2>Schism <span class="status status--wip">hobby</span><span class="year">2024 to now</span></h2>
+      <p>Survival, co-op, horror, roguelike. A Roblox project made with friends, mostly for the joy of messing about.</p>
+      <ul class="tags"><li>roblox</li><li>luau</li></ul>
+      <ul>
+        <li>Proprietary code, but we share the useful bits under Pixeljam Studios.</li>
+        <li>There is a video of a frankly unreasonable number of features.</li>
+      </ul>
+      <div class="pills">
+        <a class="btn" href="https://github.com/user-attachments/assets/ab28d996-340b-4c0e-b6d6-fd3042da894d">feature reel</a>
+        <a class="btn" href="https://github.com/Pixeljam-Studios">pixeljam studios</a>
+      </div>
+    </article>
+
+    <article class="win" style="--i:2">
+      <p class="win-title"><span class="class">ghostty</span>dotnet run --project Battleships</p>
+      <h2>C# game collection <span class="status status--shipped">shipped</span><span class="year">2023</span></h2>
+      <p>Battleships, Tetris and Blackjack, built to show three levels of complexity in one language: a text game, a terminal GUI, and a WinForms app.</p>
+      <ul class="tags"><li>c#</li><li>.net</li><li>winforms</li></ul>
+      <div class="shots">
+        <figure><a href="https://github.com/milotek/Practice.NET/tree/main/Battleships"><img src="assets/img/battleships.jpg" width="2047" height="1200" loading="lazy" alt="A macOS terminal showing an ASCII art 'battleships' banner and a numbered menu."></a><figcaption>battleships</figcaption></figure>
+        <figure><a href="https://github.com/milotek/Practice.NET/tree/main/TetrisWinForms"><img src="assets/img/tetris.jpg" width="923" height="951" loading="lazy" alt="A WinForms Tetris window mid-game."></a><figcaption>tetris</figcaption></figure>
+        <figure><a href="https://github.com/milotek/Practice.NET/tree/main/Blackjack"><img src="assets/img/blackjack.jpg" width="685" height="685" loading="lazy" alt="A text based Blackjack game."></a><figcaption>blackjack</figcaption></figure>
+      </div>
+      <ul>
+        <li>Comes with a 14 page written evaluation, because it was coursework and I was thorough.</li>
+      </ul>
+      <div class="pills">
+        <a class="btn" href="https://github.com/milotek/Practice.NET">source</a>
+        <a class="btn" href="https://github.com/milotek/Practice.NET/blob/main/Battleships/Battle%20Boats%20evaluation.pdf">evaluation (pdf)</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- workspace 4 -->
+<section class="ws ws--single" id="art" aria-labelledby="art-h">
+  <article class="win master focused" style="--i:0">
+    <p class="win-title"><span class="class">imv</span>~/pictures/art (16 files)</p>
+    <h2 id="art-h">Art</h2>
+    <p>Stuff I've drawn over the years, mostly in Procreate on an iPad Pro with an Apple Pencil. Click one to see it properly.</p>
+    <div class="gallery" id="gallery">
+      <figure><a href="assets/art/de_dust2_full.jpg" data-caption="de_dust2 in mat_fullbright"><img src="assets/art/de_dust2.jpg" width="1717" height="1200" loading="lazy" alt="A pencil style drawing of the Counter-Strike map de_dust2 under a pink and orange sunset."></a><figcaption>de_dust2 in mat_fullbright</figcaption></figure>
+      <figure><a href="assets/art/de_lake_full.jpg" data-caption="de_lake. My favourite map, and the reason for the tagline."><img src="assets/art/de_lake.jpg" width="1728" height="1200" loading="lazy" alt="Artwork of the Counter-Strike map de_lake."></a><figcaption>de_lake. My favourite map.</figcaption></figure>
+      <figure><a href="assets/art/old_pfp_full.jpg" data-caption="My old profile picture, everywhere, for years."><img src="assets/art/old_pfp.jpg" width="1080" height="1080" loading="lazy" alt="A white stick figure doodle on a pink and orange gradient."></a><figcaption>My old profile picture.</figcaption></figure>
+      <figure><a href="assets/art/quick_sketch.gif" data-caption="Quick sketch I made in under a minute for a friend."><img src="assets/art/quick_sketch.gif" width="640" height="480" loading="lazy" alt="A very quick sketch."></a><figcaption>Under a minute, for a friend.</figcaption></figure>
+      <figure><a href="assets/art/steam_pfp_full.jpg" data-caption="A friend's Steam profile picture, drawn by request."><img src="assets/art/steam_pfp.jpg" width="400" height="400" loading="lazy" alt="A friend's Steam profile picture."></a><figcaption>A friend's Steam pfp, by request.</figcaption></figure>
+      <figure><a href="assets/art/hardware_vs_software_full.jpg" data-caption="Poster for a Computer Science competition, first term: hardware vs software."><img src="assets/art/hardware_vs_software.jpg" width="837" height="1200" loading="lazy" alt="A poster explaining the difference between hardware and software."></a><figcaption>Hardware vs software poster, first term of college.</figcaption></figure>
+      <figure><a href="assets/art/gd_10_years_full.jpg" data-caption="Geometry Dash 10 year anniversary fan art. I don't fully know what it represents either."><img src="assets/art/gd_10_years.jpg" width="1717" height="1200" loading="lazy" alt="Geometry Dash 10 year anniversary fan art."></a><figcaption>Geometry Dash 10 year anniversary. No, I don't know either.</figcaption></figure>
+      <figure><a href="assets/art/epq_antagonist_full.jpg" data-caption="Concept art of the antagonist for my EPQ game."><img src="assets/art/epq_antagonist.jpg" width="855" height="1200" loading="lazy" alt="Concept art of the antagonist for my EPQ game."></a><figcaption>EPQ antagonist.</figcaption></figure>
+      <figure><a href="assets/art/epq_protagonist_full.jpg" data-caption="Concept art of the protagonist for my EPQ game."><img src="assets/art/epq_protagonist.jpg" width="792" height="1200" loading="lazy" alt="Concept art of the protagonist for my EPQ game."></a><figcaption>EPQ protagonist.</figcaption></figure>
+      <figure><a href="assets/art/friends_full.jpg" data-caption="Me and my friends, drawn for someone's birthday. The fastfetch logo is cropped out of this."><img src="assets/art/friends.jpg" width="1573" height="1200" loading="lazy" alt="A grid of stick figure doodles of my friends, each labelled with their name. One of them is me."></a><figcaption>Me and my friends, for a birthday.</figcaption></figure>
+      <figure><a href="assets/art/giraffe_full.jpg" data-caption="Cute giraffe, made in Pixelmator Pro to demonstrate the app."><img src="assets/art/giraffe.jpg" width="1077" height="1076" loading="lazy" alt="A cute giraffe."></a><figcaption>Giraffe. Pixelmator Pro demo.</figcaption></figure>
+      <figure><a href="assets/art/pygame_title_full.jpg" data-caption="Title screen background for a pygame project."><img src="assets/art/pygame_title.jpg" width="1600" height="1200" loading="lazy" alt="Title screen background for a pygame project."></a><figcaption>pygame: title screen.</figcaption></figure>
+      <figure><a href="assets/art/pygame_sunset_full.jpg" data-caption="'Sunset' stage background for a pygame project."><img src="assets/art/pygame_sunset.jpg" width="1600" height="1200" loading="lazy" alt="Sunset stage background."></a><figcaption>pygame: sunset stage.</figcaption></figure>
+      <figure><a href="assets/art/pygame_space_full.jpg" data-caption="'Space' stage background for a pygame project."><img src="assets/art/pygame_space.jpg" width="1600" height="1200" loading="lazy" alt="Space stage background."></a><figcaption>pygame: space stage.</figcaption></figure>
+      <figure><a href="assets/art/pygame_underground_full.jpg" data-caption="'Underground' stage background for a pygame project."><img src="assets/art/pygame_underground.jpg" width="1600" height="1200" loading="lazy" alt="Underground stage background."></a><figcaption>pygame: underground stage.</figcaption></figure>
+      <figure><a href="assets/art/pygame_world_full.jpg" data-caption="'World' stage background for a pygame project."><img src="assets/art/pygame_world.jpg" width="1600" height="1200" loading="lazy" alt="World stage background."></a><figcaption>pygame: world stage.</figcaption></figure>
+    </div>
+  </article>
+</section>
+
+<!-- workspace 5 -->
+<section class="ws" id="cv" aria-labelledby="cv-h">
+  <article class="win master focused" style="--i:0">
+    <p class="win-title"><span class="class">zathura</span>cv.pdf [1/2]</p>
+    <object class="pdf" data="assets/cv.pdf" type="application/pdf" aria-label="My CV, embedded as a PDF">
+      <p>Your browser won't embed PDFs. <a href="assets/cv.pdf">Open the CV directly</a> instead.</p>
+    </object>
+  </article>
+
+  <div class="stack">
+    <article class="win" style="--i:1">
+      <p class="win-title"><span class="class">ghostty</span>cat cv.md | head</p>
+      <h2 id="cv-h">CV, the short version</h2>
+      <ul>
+        <li>Software engineer apprentice at Google, London.</li>
+        <li>A levels at Hills Road Sixth Form, Cambridge: Computer Science, Maths, English, plus the EPQ you've just read about.</li>
+        <li>Python, C#, TypeScript, Lua, Kotlin, and enough Nix to be dangerous.</li>
+        <li>Mobile, desktop, embedded and the odd bit of hardware. I like the parts where software meets a physical thing.</li>
+        <li>Tutored GCSE Computer Science one to one for a couple of years. Teaching it is how I actually learnt data structures.</li>
+      </ul>
+      <div class="pills">
+        <a class="btn btn--primary" href="assets/cv.pdf" download="milo_tekchandani_cv.pdf">download pdf</a>
+        <a class="btn" href="https://milotek.dev">the sensible professional version</a>
+        <a class="btn" href="https://www.linkedin.com/in/milo-tekchandani-686602292/">linkedin</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- workspace 6 -->
+<section class="ws ws--single" id="contact" aria-labelledby="contact-h">
+  <article class="win master focused" style="--i:0">
+    <p class="win-title"><span class="class">swaync</span>notification centre (5)</p>
+    <h2 id="contact-h">Say hi</h2>
+    <p>Email is the reliable one. Everything else I check when I remember it exists.</p>
+    <div class="notifs">
+      <a class="notif" href="mailto:milo@milotek.dev">
+        <span class="notif-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg></span>
+        <span><span class="notif-head"><span>thunderbird</span><span>now</span></span><span class="notif-title">milo@milotek.dev</span><br><span class="notif-body">The one I'll actually reply to.</span></span>
+      </a>
+      <a class="notif" href="https://github.com/milotek">
+        <span class="notif-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></span>
+        <span><span class="notif-head"><span>github</span><span>now</span></span><span class="notif-title">@milotek</span><br><span class="notif-body">Was @pixeljammed. Old links still redirect, mostly.</span></span>
+      </a>
+      <a class="notif" href="https://www.linkedin.com/in/milo-tekchandani-686602292/">
+        <span class="notif-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></span>
+        <span><span class="notif-head"><span>linkedin</span><span>2m</span></span><span class="notif-title">Milo Tekchandani</span><br><span class="notif-body">For the suit-and-tie version of me.</span></span>
+      </a>
+      <a class="notif" href="https://www.instagram.com/milo.tek/">
+        <span class="notif-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></span>
+        <span><span class="notif-head"><span>instagram</span><span>1h</span></span><span class="notif-title">@milo.tek</span><br><span class="notif-body">Photos, occasionally.</span></span>
+      </a>
+      <a class="notif" href="https://furfag.lol">
+        <span class="notif-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span>
+        <span><span class="notif-head"><span>firefox</span><span>yesterday</span></span><span class="notif-title">furfag.lol</span><br><span class="notif-body">My other, worse website. Has MIDI files. You've been warned.</span></span>
+      </a>
+      <div class="notif notif--dnd">do not disturb: off · =^)</div>
+    </div>
+  </article>
+</section>
+
+</main>
+
+<footer>
+  © milo tek 2024 to 2026 · hand-written html, css and about a hundred lines of js · no build step, no framework, no analytics<br>
+  colours, rounding, gaps and wallpaper are read straight out of <a href="https://github.com/milotek/nixeljam">pixeljam.nix</a> · press <kbd>1</kbd>–<kbd>6</kbd> to switch workspace · <a href="https://github.com/milotek/wst">source</a>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+  <div class="lightbox-body">
+    <p class="win-title"><span class="class">imv</span><span id="lb-file">image</span></p>
+    <img id="lb-img" src="" alt="">
+    <div class="lightbox-foot">
+      <span id="lb-caption"></span>
+      <span class="btns">
+        <button class="btn" type="button" id="lb-prev" title="previous (←)">←</button>
+        <button class="btn" type="button" id="lb-next" title="next (→)">→</button>
+        <button class="btn" type="button" id="lb-close" title="close (esc)">close</button>
+      </span>
+    </div>
+  </div>
+</dialog>
+
+<div class="lock" id="lock" hidden>
+  <div class="lock-inner">
+    <div class="lock-clock" id="lock-clock">--:--</div>
+    <div class="lock-date" id="lock-date"></div>
+    <img class="lock-avatar" src="assets/img/me.png" width="180" height="280" alt="">
+    <div class="lock-input" id="lock-input">&nbsp;</div>
+    <div class="lock-hint">type anything. it's not a real lock. hyprlock is, though.</div>
+  </div>
+</div>
+
+<script src="site.js"></script>
+</body>
+</html>
