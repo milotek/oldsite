@@ -443,6 +443,13 @@ footer a:hover { color: var(--base0D); }
   .win { padding: 16px 16px 18px; }
   .gallery { columns: 1; }
   .repos { grid-template-columns: 1fr; }
+  .gitlog li { grid-template-columns: 1fr; gap: 0; margin-bottom: 6px; }
+  .gitlog .msg { white-space: normal; }
+}
+@media (max-width: 400px) {
+  .module { padding: 1px 6px; }
+  .workspaces { padding: 1px 4px; }
+  .module-clock { font-size: 13px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
