@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>milo tek</title>
+  <meta name="description" content="Milo Tekchandani. 19, UK, software engineer, furry, NixOS enjoyer. Apps, games, a pet feeder, and stick men.">
+  <meta name="theme-color" content="#1e1e2e">
+  <meta property="og:title" content="milo tek">
+  <meta property="og:description" content="19, UK, software engineer, furry. Apps, games, a pet feeder, and stick men.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="bar wrap">
+  <a class="brand" href="./"><i>&#xf1b0;</i> milotek.dev</a>
+  <nav aria-label="Main">
+    <a href="./" aria-current="page"><i class="nf">&#xeb06;</i><span>home</span></a>
+    <a href="projects.html"><i class="nf">&#xe5ff;</i><span>projects</span></a>
+    <a href="art.html"><i class="nf">&#xf1fc;</i><span>art</span></a>
+    <a href="https://github.com/milotek/milotek/raw/main/CV.pdf"><i class="nf">&#xf1c1;</i><span>cv</span></a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <button class="avatar" type="button" aria-label="Pat the stick figure">
+        <img src="assets/img/avatar.webp" width="148" height="148" alt="A white stick figure grinning on a pink gradient, drawn by Milo">
+        <span class="pats" aria-live="polite">pat me</span>
+      </button>
+      <div>
+        <p class="eyebrow">/whoami</p>
+        <h1>hiya, I'm milo.</h1>
+        <p class="tagline"><b>19</b><span class="dot">·</span><b>uk</b><span class="dot">·</span>software engineer, semi-professionally<span class="dot">·</span>furry<span class="dot">·</span>runs nixos on purpose</p>
+        <p class="lede">I make apps for phones, games in Godot and Roblox, the odd bit of hardware, and a NixOS config I've sunk frankly too many evenings into. Some of it is on GitHub, one of it lives in my neighbours' kitchen, and I draw stick men with far more confidence than skill.</p>
+        <div class="actions">
+          <a class="btn primary" href="projects.html"><i class="nf">&#xe5ff;</i> projects</a>
+          <a class="btn" href="art.html"><i class="nf">&#xf1fc;</i> art</a>
+          <a class="btn" href="https://github.com/milotek/milotek/raw/main/CV.pdf"><i class="nf">&#xf1c1;</i> cv.pdf</a>
+          <a class="btn" href="mailto:milo@milotek.dev"><i class="nf">&#xf0e0;</i> milo@milotek.dev</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section id="now">
+      <div class="head">
+        <div>
+          <p class="eyebrow">/now</p>
+          <h2>what I'm poking at lately</h2>
+        </div>
+        <a class="more" href="https://github.com/milotek?tab=repositories">all repos <i class="nf">&#xf08e;</i></a>
+      </div>
+      <ul class="now">
+        <li><i class="nf">&#xf313;</i><a href="https://github.com/milotek/nixeljam">nixeljam</a><span>My NixOS flake. Modular, over-thought, and the reason this site looks the way it does.</span></li>
+        <li><i class="nf">&#xe81b;</i><a href="https://github.com/milotek/habits">habits</a><span>A habit tracker in Kotlin. The repo description says "shitty" and honestly I stand by it.</span></li>
+        <li><i class="nf">&#xf0ad;</i><a href="https://github.com/milotek/worksite">worksite</a><span>The sensible, tie-wearing version of this website, for people who might pay me.</span></li>
+        <li><i class="nf">&#xf1b2;</i><a href="https://github.com/milotek/minecraft-legacy-console-shaders">legacy console shaders</a><span>Quick GLSL shaders for Minecraft 1.6.4 via the core shaders mod. Works on Iris and Optifine.</span></li>
+        <li><i class="nf">&#xf121;</i><a href="https://github.com/milotek/xeetcode-submissions">xeetcode-submissions</a><span>Leetcode and Neetcode solutions, committed so I can't pretend I didn't skip a day.</span></li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <div class="head">
+        <div>
+          <p class="eyebrow">/projects</p>
+          <h2>the greatest hits</h2>
+        </div>
+        <a class="more" href="projects.html">the full list <i class="nf">&#xf08e;</i></a>
+      </div>
+      <div class="grid">
+        <a class="card" href="projects.html#lockyn">
+          <div class="cover"><img src="assets/img/projects/lockyn_3.webp" alt="Lockyn's home screen: a big round focus timer on a dark purple background" loading="lazy"></div>
+          <p class="kicker"><i class="nf">&#xe7ba;</i> mobile app · releasing 2026</p>
+          <h3>Lockyn</h3>
+          <p>A study and productivity app for GCSE and sixth-form students. Commercial, properly designed, and held hostage by A level results day.</p>
+          <ul class="tags"><li class="tag ts">typescript</li><li class="tag fb">firebase</li><li class="tag school">nea</li></ul>
+        </a>
+        <a class="card" href="projects.html#petfeeder">
+          <div class="cover glyph" aria-hidden="true"><i class="nf">&#xe722;</i></div>
+          <p class="kicker"><i class="nf">&#xe722;</i> hardware · shipped to a client</p>
+          <h3>AutoPet Feeder</h3>
+          <p>A fully automated pet feeder built to my neighbours' spec. Raspberry Pi, a servo, a touchscreen, a 3D printed shell with an oak finish.</p>
+          <ul class="tags"><li class="tag hw">raspberry pi</li><li class="tag js">javascript</li><li class="tag hw">3d printing</li></ul>
+        </a>
+        <a class="card" href="projects.html#epq">
+          <div class="cover"><img src="assets/img/art/epq_antagonist_thumb.webp" alt="Concept sheet for Laser Antlers, a moose character in a red jumper" loading="lazy"></div>
+          <p class="kicker"><i class="nf">&#xe7ee;</i> game · godot</p>
+          <h3>An accessible platformer</h3>
+          <p>My Extended Project Qualification: an accessibility-first platforming and exploration game, built over six months of weekends.</p>
+          <ul class="tags"><li class="tag gd">gdscript</li><li class="tag school">epq</li></ul>
+        </a>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="head">
+        <div>
+          <p class="eyebrow">/.config</p>
+          <h2>what I reach for</h2>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="card">
+          <p class="kicker"><i class="nf">&#xf121;</i> languages, roughly in order of affection</p>
+          <p>Python when it runs as a service. TypeScript and React Native when it runs on a phone. C# when the coursework says so, GDScript and Lua when it's a game, Swift when I'm feeling brave. Nix underneath all of it, because if I can't rebuild it from the flake I don't really trust it.</p>
+          <ul class="tags">
+            <li class="tag py"><i class="nf">&#xe73c;</i>python</li>
+            <li class="tag ts">typescript</li>
+            <li class="tag rn"><i class="nf">&#xe7ba;</i>react native</li>
+            <li class="tag cs"><i class="nf">&#xe7b2;</i>c#</li>
+            <li class="tag gd"><i class="nf">&#xe7ee;</i>gdscript</li>
+            <li class="tag lua">lua</li>
+            <li class="tag swift"><i class="nf">&#xe755;</i>swift</li>
+            <li class="tag kt"><i class="nf">&#xe81b;</i>kotlin</li>
+            <li class="tag java">java</li>
+            <li class="tag glsl">glsl</li>
+            <li class="tag nix"><i class="nf">&#xf313;</i>nix</li>
+          </ul>
+        </div>
+        <div class="card">
+          <p class="kicker"><i class="nf">&#xf120;</i> the desk</p>
+          <dl class="desk">
+            <dt>os</dt><dd>NixOS, declared down to the cursor</dd>
+            <dt>wm</dt><dd>Hyprland</dd>
+            <dt>term</dt><dd>Ghostty + Zellij</dd>
+            <dt>theme</dt><dd>pixeljam (you're looking at it)</dd>
+            <dt>tablet</dt><dd>iPad Pro + Pencil, Procreate</dd>
+            <dt>maps</dt><dd>de_lake, and I will die on this hill</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="commits">
+      <div class="head">
+        <div>
+          <p class="eyebrow">/git log</p>
+          <h2>the commit skyline</h2>
+        </div>
+        <a class="more" href="https://github.com/milotek">github.com/milotek <i class="nf">&#xf08e;</i></a>
+      </div>
+      <figure class="card commits">
+        <img src="https://raw.githubusercontent.com/milotek/milotek/main/profile-3d-contrib/profile-night-rainbow.svg" alt="A 3D isometric chart of Milo's GitHub contributions over the last year" loading="lazy">
+        <figcaption>Regenerated nightly by a GitHub Action in my profile repo. Tall bars are a good week; flat bits are exams, sleep, or Team Fortress 2.</figcaption>
+      </figure>
+    </section>
+
+    <section id="elsewhere">
+      <div class="head">
+        <div>
+          <p class="eyebrow">/elsewhere</p>
+          <h2>find me</h2>
+        </div>
+      </div>
+      <ul class="links">
+        <li><a href="https://github.com/milotek"><i class="nf">&#xf09b;</i><span><b>github</b><small>everything public lives here</small></span></a></li>
+        <li><a href="https://www.linkedin.com/in/milo-tekchandani-686602292/"><i class="nf">&#xf0e1;</i><span><b>linkedin</b><small>the professional me</small></span></a></li>
+        <li><a href="https://www.instagram.com/milo.tek/"><i class="nf">&#xf16d;</i><span><b>instagram</b><small>occasionally art</small></span></a></li>
+        <li><a href="mailto:milo@milotek.dev"><i class="nf">&#xf0e0;</i><span><b>email</b><small>milo@milotek.dev</small></span></a></li>
+        <li><a href="https://github.com/Pixeljam-Studios"><i class="nf">&#xf11b;</i><span><b>pixeljam studios</b><small>the bits of our games we share</small></span></a></li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="badges" aria-label="88 by 31 buttons, as is tradition">
+      <a href="./" title="milotek.dev"><svg width="88" height="31" viewBox="0 0 88 31" role="img" aria-label="milotek.dev"><rect x="1" y="1" width="86" height="29" fill="#181825" stroke="#ffbdbd" stroke-width="2"/><rect x="5" y="5" width="78" height="21" fill="none" stroke="#313244" stroke-width="1"/><text x="44" y="19" text-anchor="middle" font-family="MesloLGS Nerd Font Mono, monospace" font-size="10" fill="#ffbdbd">milotek.dev</text></svg></a>
+      <a href="https://nixos.org" title="NixOS"><svg width="88" height="31" viewBox="0 0 88 31" role="img" aria-label="powered by NixOS"><rect x="1" y="1" width="86" height="29" fill="#181825" stroke="#b4befe" stroke-width="2"/><text x="10" y="20" font-family="MesloLGS Nerd Font Mono, monospace" font-size="14" fill="#b4befe">&#xf313;</text><text x="27" y="13" font-family="MesloLGS Nerd Font Mono, monospace" font-size="8" fill="#cdd6f4">powered by</text><text x="27" y="24" font-family="MesloLGS Nerd Font Mono, monospace" font-size="10" fill="#b4befe">NixOS</text></svg></a>
+      <a href="https://github.com/milotek/wst2" title="view source"><svg width="88" height="31" viewBox="0 0 88 31" role="img" aria-label="hand-written HTML, no framework"><rect x="1" y="1" width="86" height="29" fill="#181825" stroke="#a6e3a1" stroke-width="2"/><text x="44" y="13" text-anchor="middle" font-family="MesloLGS Nerd Font Mono, monospace" font-size="8" fill="#a6e3a1">hand-made html</text><text x="44" y="24" text-anchor="middle" font-family="MesloLGS Nerd Font Mono, monospace" font-size="8" fill="#cdd6f4">no framework</text></svg></a>
+      <svg width="88" height="31" viewBox="0 0 88 31" role="img" aria-label="furry, colon three"><rect x="1" y="1" width="86" height="29" fill="#181825" stroke="#f2cdcd" stroke-width="2"/><text x="14" y="21" font-family="MesloLGS Nerd Font Mono, monospace" font-size="14" fill="#f2cdcd">&#xf1b0;</text><text x="32" y="20" font-family="MesloLGS Nerd Font Mono, monospace" font-size="10" fill="#f5c2e7">furry :3</text></svg>
+      <svg width="88" height="31" viewBox="0 0 88 31" role="img" aria-label="pixeljam theme palette"><rect x="1" y="1" width="86" height="29" fill="#181825" stroke="#cba4f7" stroke-width="2"/><g><rect x="6" y="6" width="9" height="8" fill="#f38ba8"/><rect x="15" y="6" width="9" height="8" fill="#fab387"/><rect x="24" y="6" width="9" height="8" fill="#f9e2af"/><rect x="33" y="6" width="9" height="8" fill="#a6e3a1"/><rect x="42" y="6" width="9" height="8" fill="#94e2d5"/><rect x="51" y="6" width="9" height="8" fill="#ffbdbd"/><rect x="60" y="6" width="9" height="8" fill="#cba4f7"/><rect x="69" y="6" width="9" height="8" fill="#f2cdcd"/><rect x="78" y="6" width="4" height="8" fill="#b4befe"/></g><text x="44" y="25" text-anchor="middle" font-family="MesloLGS Nerd Font Mono, monospace" font-size="8" fill="#cdd6f4">pixeljam.nix</text></svg>
+      <a href="https://www.teamfortress.com" title="Team Fortress 2"><svg width="88" height="31" viewBox="0 0 88 31" role="img" aria-label="wallpaper from Team Fortress 2"><rect x="1" y="1" width="86" height="29" fill="#181825" stroke="#fab387" stroke-width="2"/><text x="44" y="13" text-anchor="middle" font-family="MesloLGS Nerd Font Mono, monospace" font-size="8" fill="#cdd6f4">wallpaper:</text><text x="44" y="24" text-anchor="middle" font-family="MesloLGS Nerd Font Mono, monospace" font-size="9" fill="#fab387">tf2 watchtower</text></svg></a>
+    </div>
+
+    <details class="theme">
+      <summary>theme: pulled straight out of ~/.config/nixos/themes/pixeljam.nix</summary>
+      <div class="swatches">
+        <span style="--sw: var(--base00)" data-name="00" title="base00"></span>
+        <span style="--sw: var(--base01)" data-name="01" title="base01"></span>
+        <span style="--sw: var(--base02)" data-name="02" title="base02"></span>
+        <span style="--sw: var(--base03)" data-name="03" title="base03"></span>
+        <span style="--sw: var(--base04)" data-name="04" title="base04"></span>
+        <span style="--sw: var(--base05)" data-name="05" title="base05"></span>
+        <span style="--sw: var(--base06)" data-name="06" title="base06"></span>
+        <span style="--sw: var(--base07)" data-name="07" title="base07"></span>
+        <span style="--sw: var(--base08)" data-name="08" title="base08"></span>
+        <span style="--sw: var(--base09)" data-name="09" title="base09"></span>
+        <span style="--sw: var(--base0A)" data-name="0A" title="base0A"></span>
+        <span style="--sw: var(--base0B)" data-name="0B" title="base0B"></span>
+        <span style="--sw: var(--base0C)" data-name="0C" title="base0C"></span>
+        <span style="--sw: var(--base0D)" data-name="0D" title="base0D"></span>
+        <span style="--sw: var(--base0E)" data-name="0E" title="base0E"></span>
+        <span style="--sw: var(--base0F)" data-name="0F" title="base0F"></span>
+      </div>
+      <dl class="theme-facts">
+        <dt>monospace</dt><dd>MesloLGS Nerd Font Mono</dd>
+        <dt>sansSerif</dt><dd class="sans">Source Sans 3</dd>
+        <dt>serif</dt><dd class="serif">Montserrat</dd>
+        <dt>rounding</dt><dd>20px</dd>
+        <dt>border-size</dt><dd>2px</dd>
+        <dt>gaps</dt><dd>8px in, 16px out</dd>
+        <dt>opacity</dt><dd>0.96 active, 0.92 inactive</dd>
+        <dt>bar-height</dt><dd>36px</dd>
+      </dl>
+    </details>
+
+    <p class="colophon">Hand-written HTML, one stylesheet, about 60 lines of JavaScript, no build step. The colours, fonts, corner radius and border width are generated from my NixOS theme by <a href="https://github.com/milotek/wst2/blob/main/tools/theme_from_nix.py">a 60-line Python script</a>, so when my desktop changes, so does this. Fonts are self-hosted and subsetted from the same Nix packages the desktop uses.<br>© milo tek 2024 to 2026. No cookies, no analytics, one <code>localStorage</code> key and it's for the pats.</p>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

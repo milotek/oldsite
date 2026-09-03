@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>projects · milo tek</title>
+  <meta name="description" content="Software, hardware and games by Milo Tekchandani: Lockyn, EZcals, an automated pet feeder, a Godot platformer, a Roblox roguelike and a pile of C#.">
+  <meta name="theme-color" content="#1e1e2e">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="bar wrap">
+  <a class="brand" href="./"><i>&#xf1b0;</i> milotek.dev</a>
+  <nav aria-label="Main">
+    <a href="./"><i class="nf">&#xeb06;</i><span>home</span></a>
+    <a href="projects.html" aria-current="page"><i class="nf">&#xe5ff;</i><span>projects</span></a>
+    <a href="art.html"><i class="nf">&#xf1fc;</i><span>art</span></a>
+    <a href="https://github.com/milotek/milotek/raw/main/CV.pdf"><i class="nf">&#xf1c1;</i><span>cv</span></a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <p class="eyebrow">/projects</p>
+    <h1>things I've made.</h1>
+    <p class="lede">Software, hardware and games, roughly newest first. The coursework ones are flagged as coursework, because pretending a NEA was a startup is a bit much even for me.</p>
+  </div>
+
+  <section id="software">
+    <div class="head">
+      <div>
+        <p class="eyebrow">/projects/software</p>
+        <h2>apps</h2>
+      </div>
+    </div>
+    <div class="grid" style="grid-template-columns: 1fr">
+      <article class="card project" id="lockyn">
+        <div>
+          <p class="kicker"><i class="nf">&#xe7ba;</i> mobile · commercial · releasing 2026</p>
+          <h3>Lockyn</h3>
+          <p>A studying and productivity app for GCSE and sixth-form students. Focus timer, daily goals, screen-time summaries, study groups. The kind of app I wanted to exist while I was doing my A levels, so I built it during them.</p>
+          <ul>
+            <li>TypeScript and JavaScript, Firebase on the back end.</li>
+            <li>Fluent, professionally designed UI. The screenshots are real, not mockups.</li>
+            <li>It's my Computer Science NEA, which means it legally cannot ship until after results day. Release: 2026.</li>
+          </ul>
+          <ul class="tags"><li class="tag ts">typescript</li><li class="tag js">javascript</li><li class="tag fb">firebase</li><li class="tag rn">react native</li><li class="tag school">a level nea</li><li class="tag wip">unreleased</li></ul>
+        </div>
+        <div class="shots">
+          <figure><img src="assets/img/projects/lockyn_1.webp" alt="Lockyn landing screen with a large pink to blue gradient orb and a sign in with email button" loading="lazy"><figcaption>landing</figcaption></figure>
+          <figure><img src="assets/img/projects/lockyn_2.webp" alt="Lockyn onboarding asking why you're here, with a list of checkboxes" loading="lazy"><figcaption>onboarding</figcaption></figure>
+          <figure><img src="assets/img/projects/lockyn_3.webp" alt="Lockyn home screen with a round timer reading zero and a play button" loading="lazy"><figcaption>home</figcaption></figure>
+          <figure><img src="assets/img/projects/lockyn_4.webp" alt="Lockyn summary screen with a weekly streak row and per-app usage bars" loading="lazy"><figcaption>summary</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="card project flip" id="ezcals">
+        <div>
+          <p class="kicker"><i class="nf">&#xe755;</i> mobile · source available</p>
+          <h3>EZcals</h3>
+          <p>A calorie tracker for people trying to lose or gain weight, built around one idea: logging a meal should take seconds, so you actually keep doing it.</p>
+          <ul>
+            <li>iOS and Android. Logs calories, protein, fat and the rest.</li>
+            <li>Originally written entirely in Swift and SwiftUI.</li>
+            <li>Rewritten in React Native in 2025 so the Android half stopped being a promise.</li>
+          </ul>
+          <ul class="tags"><li class="tag swift">swift</li><li class="tag swift">swiftui</li><li class="tag rn">react native</li><li class="tag ts">typescript</li></ul>
+        </div>
+        <div class="shots one">
+          <figure><img class="doodle" src="assets/img/under_construction.webp" alt="A hand-drawn stick figure giving a thumbs up next to the words under construction and two cogs" loading="lazy"><figcaption>screenshots pending. the doodle is load-bearing.</figcaption></figure>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="hardware">
+    <div class="head">
+      <div>
+        <p class="eyebrow">/projects/hardware</p>
+        <h2>things with wires</h2>
+      </div>
+    </div>
+    <article class="card project" id="petfeeder">
+      <div>
+        <p class="kicker"><i class="nf">&#xe722;</i> iot · built to a client's spec</p>
+        <h3>AutoPet Feeder</h3>
+        <p>A fully automated, slightly luxurious pet feeder. Designed and engineered for a real client, who happens to be my neighbours, which made the requirements meetings very short. =^)</p>
+        <ul>
+          <li>Raspberry Pi, a servo, and JavaScript. Touchscreen on the front, USB-C power so it can live anywhere.</li>
+          <li>Custom software and hardware. The firmware started as a fork of rebeccathedev's petfeedd and grew from there.</li>
+          <li>ABS 3D printed shell with an oak wood finish, because it sits in a kitchen and kitchens deserve better than bare plastic.</li>
+          <li>Product Design NEA, with the full design document: client spec, prototypes, development, evaluation.</li>
+        </ul>
+        <ul class="tags"><li class="tag hw">raspberry pi</li><li class="tag js">javascript</li><li class="tag hw">servo</li><li class="tag hw">3d printing</li><li class="tag school">a level nea</li><li class="tag done">delivered</li></ul>
+        <div class="links-row">
+          <a class="btn" href="https://github.com/milotek/milotek/raw/main/Product%20Design%20NEA%20Edited.pdf"><i class="nf">&#xf1c1;</i> design document</a>
+          <a class="btn" href="https://github.com/milotek/petfeeder"><i class="nf">&#xf09b;</i> source</a>
+        </div>
+      </div>
+      <div class="shots one">
+        <figure><div class="glyph" aria-hidden="true"><i class="nf">&#xe722;</i><i class="nf">&#xf0ad;</i><i class="nf">&#xf1b0;</i></div><figcaption>no photo of the feeder survived the old site. picture a very smart oak box.</figcaption></figure>
+      </div>
+    </article>
+  </section>
+
+  <section id="games">
+    <div class="head">
+      <div>
+        <p class="eyebrow">/projects/games</p>
+        <h2>games</h2>
+      </div>
+      <a class="more" href="https://github.com/Pixeljam-Studios">pixeljam studios <i class="nf">&#xf08e;</i></a>
+    </div>
+    <div class="grid" style="grid-template-columns: 1fr">
+      <article class="card project" id="epq">
+        <div>
+          <p class="kicker"><i class="nf">&#xe7ee;</i> godot · extended project qualification</p>
+          <h3>An accessible platformer</h3>
+          <p>The official title is "An accessible platforming and exploration themed video game", which tells you it was marked by a teacher. It is exactly that: a platformer where accessibility was the design brief rather than a settings menu bolted on at the end.</p>
+          <ul>
+            <li>Made in the Godot engine, over 6 months.</li>
+            <li>Built on weekends during the first year of my A levels.</li>
+            <li>The two characters, Laser Antlers and the protagonist, have their own concept sheets over in <a href="art.html">art</a>.</li>
+          </ul>
+          <ul class="tags"><li class="tag gd">gdscript</li><li class="tag gd">godot</li><li class="tag school">epq</li></ul>
+          <div class="links-row">
+            <a class="btn" href="https://github.com/milotek/GodotGame"><i class="nf">&#xf09b;</i> an old fork of it</a>
+          </div>
+        </div>
+        <div class="shots two">
+          <figure><img src="assets/img/art/epq_antagonist_thumb.webp" alt="Concept sheet for Laser Antlers: a moose in a red jumper, with handwritten notes" loading="lazy"><figcaption>antagonist</figcaption></figure>
+          <figure><img src="assets/img/art/epq_protagonist_thumb.webp" alt="Concept sheet for the protagonist: a round-headed figure in a top hat and red tie" loading="lazy"><figcaption>protagonist</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="card project wide" id="schism">
+        <div>
+          <p class="kicker"><i class="nf">&#xf11b;</i> roblox · hobby · proprietary</p>
+          <h3>Schism</h3>
+          <p>Survival, co-op, horror, roguelike. A silly, for-fun Roblox project with friends that ended up with far more systems than a silly, for-fun project should have.</p>
+          <ul>
+            <li>The code stays closed, but the bits we're happy to share live in the Pixeljam Studios org.</li>
+            <li>There's a short video of the feature list, if you want to see the chaos.</li>
+          </ul>
+          <ul class="tags"><li class="tag lua">luau</li><li class="tag lua">roblox</li><li class="tag wip">ongoing</li></ul>
+          <div class="links-row">
+            <a class="btn" href="https://github.com/user-attachments/assets/ab28d996-340b-4c0e-b6d6-fd3042da894d"><i class="nf">&#xf03e;</i> feature video</a>
+            <a class="btn" href="https://github.com/Pixeljam-Studios"><i class="nf">&#xf09b;</i> pixeljam studios</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card project wide" id="csharp">
+        <div>
+          <p class="kicker"><i class="nf">&#xe7b2;</i> c# · .net · three games, three UIs</p>
+          <h3>C# game collection</h3>
+          <p>Three small games written to learn C# properly, each one a step up in complexity so you can see the process rather than just the result.</p>
+          <ul>
+            <li><b>Battleships</b>, text based, running in a terminal with ASCII art and a menu. Comes with a 14 page written evaluation.</li>
+            <li><b>Blackjack</b>, a terminal GUI with boxes, cards and a house that plays against you.</li>
+            <li><b>Tetris</b>, in WinForms, with a next piece and a hold slot like a real one.</li>
+          </ul>
+          <ul class="tags"><li class="tag cs">c#</li><li class="tag cs">.net</li><li class="tag cs">winforms</li><li class="tag school">college</li></ul>
+          <div class="links-row">
+            <a class="btn" href="https://github.com/milotek/Practice.NET"><i class="nf">&#xf09b;</i> source</a>
+            <a class="btn" href="https://github.com/milotek/Practice.NET/blob/main/Battleships/Battle%20Boats%20evaluation.pdf"><i class="nf">&#xf1c1;</i> battleships evaluation</a>
+          </div>
+        </div>
+        <div class="shots three">
+          <figure><a href="https://github.com/milotek/Practice.NET/tree/main/Battleships"><img src="assets/img/projects/battleships.webp" alt="A macOS terminal showing Battleships in ASCII art with a numbered menu" loading="lazy"></a><figcaption>battleships</figcaption></figure>
+          <figure><a href="https://github.com/milotek/Practice.NET/tree/main/TetrisWinForms"><img src="assets/img/projects/tetris.webp" alt="A WinForms Tetris design with a score panel, next and hold boxes" loading="lazy"></a><figcaption>tetris</figcaption></figure>
+          <figure><a href="https://github.com/milotek/Practice.NET/tree/main/Blackjack"><img src="assets/img/projects/blackjack.webp" alt="A terminal Blackjack game drawn with box characters, asking whether to hit or stand" loading="lazy"></a><figcaption>blackjack</figcaption></figure>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="github">
+    <div class="head">
+      <div>
+        <p class="eyebrow">/projects/etc</p>
+        <h2>smaller, weirder, on github</h2>
+      </div>
+      <a class="more" href="https://github.com/milotek?tab=repositories">all of it <i class="nf">&#xf08e;</i></a>
+    </div>
+    <ul class="repos">
+      <li><a href="https://github.com/milotek/nixeljam"><b><i class="nf">&#xf313;</i>nixeljam<i>nix</i></b><span>My NixOS config. Modular, customisable, and the origin of every colour on this page.</span></a></li>
+      <li><a href="https://github.com/milotek/makersbnb"><b><i class="nf">&#xe73c;</i>makersbnb<i>python</i></b><span>An AirBnB clone in Flask with Basecoat UI. Clean architecture, test-driven, users can list spaces and request bookings.</span></a></li>
+      <li><a href="https://github.com/milotek/acebook"><b><i class="nf">&#xf121;</i>acebook<i>java</i></b><span>A Facebook clone built as a team: Java, Spring Boot, Maven, Thymeleaf, Bootstrap.</span></a></li>
+      <li><a href="https://github.com/milotek/tittyos"><b><i class="nf">&#xf121;</i>tittyos<i>c++</i></b><span>A deep learning library for C++. The name was a mistake I've decided to own.</span></a></li>
+      <li><a href="https://github.com/milotek/CollisionSounds"><b><i class="nf">&#xf11b;</i>CollisionSounds<i>lua</i></b><span>A Roblox module that makes objects play material-specific sounds when they hit something.</span></a></li>
+      <li><a href="https://github.com/milotek/Whython"><b><i class="nf">&#xe73c;</i>Whython<i>python</i></b><span>A terrible, opinionated flavour of Python with Lua-like syntax. Nobody asked. I did it anyway.</span></a></li>
+      <li><a href="https://github.com/milotek/simfiles"><b><i class="nf">&#xf1b2;</i>simfiles<i>lua</i></b><span>StepMania modcharts for NotITG, made by me, for people who want their rhythm game to fight back.</span></a></li>
+      <li><a href="https://github.com/milotek/userscripts"><b><i class="nf">&#xf121;</i>userscripts<i>javascript</i></b><span>My userscript collection. Small fixes for websites that refused to fix themselves.</span></a></li>
+      <li><a href="https://github.com/milotek/StandLua-CarSwap"><b><i class="nf">&#xf11b;</i>StandLua-CarSwap<i>lua</i></b><span>A Stand menu script for GTA Online that lets custom DLC cars behave like official ones.</span></a></li>
+      <li><a href="https://github.com/milotek/punchdrunk"><b><i class="nf">&#xe73c;</i>punchdrunk<i>python</i></b><span>The website for my Minecraft server. The repo description calls it boring. It is not wrong.</span></a></li>
+      <li><a href="https://github.com/milotek/PomodoroPrototypeSwift"><b><i class="nf">&#xe755;</i>PomodoroPrototypeSwift<i>swift</i></b><span>The SwiftUI prototype that eventually became Lockyn. Every app starts as a timer.</span></a></li>
+      <li><a href="https://github.com/milotek/Accenture-Interview-Project"><b><i class="nf">&#xe73c;</i>Accenture-Interview-Project<i>python</i></b><span>Two small Python projects built for a degree apprenticeship interview presentation.</span></a></li>
+    </ul>
+  </section>
+
+  <section id="cv">
+    <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--gap-out);align-items:center;justify-content:space-between">
+      <div>
+        <p class="kicker"><i class="nf">&#xf1c1;</i> the formal bit</p>
+        <h3>Résumé / CV</h3>
+        <p>One PDF, kept in my GitHub profile repo so there's exactly one copy to keep up to date.</p>
+      </div>
+      <a class="btn primary" href="https://github.com/milotek/milotek/raw/main/CV.pdf"><i class="nf">&#xf019;</i> download cv.pdf</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="colophon">Back to <a href="./">the front page</a>, or straight to the <a href="art.html">art</a>. Hand-written HTML, theme generated from pixeljam.nix. © milo tek 2024 to 2026.</p>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
