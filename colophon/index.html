@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colophon // milo tek</title>
+<meta name="description" content="How this site is built.">
+<meta name="theme-color" content="#1e1e2e">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Colophon // milo tek">
+<meta property="og:description" content="How this site is built.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://furfag.lol/wst14/assets/img/avatar.webp">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="milo tek" href="../feed.xml">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body data-root="../">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap topbar">
+    <a class="mark" href="../"><span class="mark-dot"></span>milo tek</a>
+    <nav class="nav"><a href="../projects/">projects</a><a href="../blog/">blog</a><a href="../art/">art</a><a href="../now/">now</a><a href="../uses/">uses</a><a href="../index/">index</a></nav>
+  </div>
+  <div class="wrap">
+    <form class="q" action="../index/" method="get" role="search">
+      <label for="q" class="q-sigil">?</label>
+      <input id="q" name="q" type="search" autocomplete="off" spellcheck="false"
+             placeholder="search projects, art, writing" data-full="search 22 projects, 1 post, 15 drawings"
+             aria-label="Search the site">
+      <kbd class="q-kbd">/</kbd>
+    </form>
+  </div>
+</header>
+<main id="main" class="wrap">
+<div id="results" class="results" hidden></div>
+<div id="page">
+<h1>Colophon</h1>
+<div class="prose"><p>Static HTML. No framework, no third-party requests, no analytics, no cookies.</p><p><code>build.py</code> reads TOML and Markdown out of <code>content/</code> and writes the whole site. Adding a project is six lines of TOML, adding a post is a <code>.md</code> file. One Python file, standard library only.</p><p>Search runs off <code>index.json</code>, which is generated from the same data as the pages, so it can't drift.</p><p>Catppuccin Mocha, accent <code>#ffbdbd</code>. Source Sans 3 and JetBrains Mono, self-hosted.</p><p>The 88x31 buttons are drawn by <code>tools/make-buttons.py</code> from a TOML file, using a 5x8 bitmap font with anti-aliasing off.</p><p>Hosted on GitHub Pages. The repo is the site.</p></div>
+<section class="block">
+  <h2 class="label">the numbers</h2>
+  <ul class="ticks">
+    <li>22 projects, 1 post, 15 drawings, 8 buttons.</li>
+    <li>One Python file, no dependencies.</li>
+    <li>Fonts, images and scripts all served from this repo. Nothing phones home.</li>
+  </ul>
+</section>
+<p><a class="pill" href="../index.json">index.json</a> <a class="pill" href="../feed.xml">feed.xml</a></p>
+</div>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p><a href="../colophon/">colophon</a> &middot; <a href="../feed.xml">rss</a> &middot; <a href="../index.json">index.json</a> &middot; <a href="../buttons/">buttons</a></p>
+    <p class="muted">Milo Tekchandani &middot; London</p>
+  </div>
+</footer>
+<script src="../assets/js/search.js" defer></script>
+<script src="../assets/js/lightbox.js" defer></script>
+</body>
+</html>

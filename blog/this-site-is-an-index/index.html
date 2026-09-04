@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>This site is an index // milo tek</title>
+<meta name="description" content="Why the new site is a search box with a website attached, how the content system works, and which bits of it aren&#x27;t finished.">
+<meta name="theme-color" content="#1e1e2e">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="This site is an index // milo tek">
+<meta property="og:description" content="Why the new site is a search box with a website attached, how the content system works, and which bits of it aren&#x27;t finished.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://furfag.lol/wst14/assets/img/avatar.webp">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="milo tek" href="../../feed.xml">
+<link rel="stylesheet" href="../../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../../assets/css/site.css">
+</head>
+<body data-root="../../">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap topbar">
+    <a class="mark" href="../../"><span class="mark-dot"></span>milo tek</a>
+    <nav class="nav"><a href="../../projects/">projects</a><a href="../../blog/" class="on">blog</a><a href="../../art/">art</a><a href="../../now/">now</a><a href="../../uses/">uses</a><a href="../../index/">index</a></nav>
+  </div>
+  <div class="wrap">
+    <form class="q" action="../../index/" method="get" role="search">
+      <label for="q" class="q-sigil">?</label>
+      <input id="q" name="q" type="search" autocomplete="off" spellcheck="false"
+             placeholder="search 21 projects, 1 post, 16 drawings" aria-label="Search the site">
+      <kbd class="q-kbd">/</kbd>
+    </form>
+  </div>
+</header>
+<main id="main" class="wrap">
+<div id="results" class="results" hidden></div>
+<div id="page">
+<article class="detail">
+  <p class="crumb"><a href="../../blog/">&larr; blog</a></p>
+  <h1>This site is an index</h1>
+  <p class="muted mono">2026-09-04 &middot; 575 words</p>
+  <div class="tags"><a class="tag" href="../../index/?q=meta">meta</a><a class="tag" href="../../index/?q=python">python</a><a class="tag" href="../../index/?q=static-sites">static-sites</a></div>
+  <div class="prose"><p>The old site was a carrd export.</p>
+<p>It looked alright in 2024 and it had one real problem: everything I'd made was buried under three taps. You landed on a name, then a menu, then a section, and only then a project. Fine for a business card, useless for the thing it was supposed to be.</p>
+<p>So the rebuild has exactly one idea behind it, and the idea is a search box.</p>
+<h3>Why a search box</h3>
+<p>I work on Google Search, on the app, on the backend side. Joke's on me, I know.</p>
+<p>But spend enough time near a search product and you start to notice how much structure a site throws away. Projects, posts, drawings and pages are all just records with a title, a date, some tags and a bit of text. A normal portfolio splits them into separate pages and then makes you navigate between them.</p>
+<p>This one puts them in one list and lets you filter it. Type <code>lua</code> and you get four projects and a modchart pack. Type <code>godot</code> and you get the EPQ game. Hit <code>/</code> from anywhere and the box takes focus.</p>
+<p>Every result is a row in <code>index.json</code>, which the build script writes from the same data it uses to render the pages. It cannot drift out of sync, because there is nothing to sync.</p>
+<h3>The content system</h3>
+<p>The rule I set myself: I should never have to open a code file to update this site.</p>
+<p><code>content/projects.toml</code> holds one block per project. Six lines gets you a title, a year, some tags and a blurb. <code>content/posts/</code> holds Markdown files with a TOML header, which is convenient because that's already how my Obsidian vault looks. Drawings, links, the now list, the uses page, the buttons: all TOML.</p>
+<p><code>build.py</code> reads that lot and writes the whole site. It's one file, no dependencies past the standard library, and it includes a small Markdown renderer because pulling in a package for one blog post felt worse than writing eighty lines.</p>
+<p>Adding a project is a commit to a TOML file. That was the entire brief.</p>
+<h3>Colours</h3>
+<p>The accent is <code>#ffbdbd</code>, which is <code>base0D</code> in <code>themes/pixeljam.nix</code> in my NixOS config. The rest is Catppuccin Mocha.</p>
+<p>So the site matches my desktop, my terminal, my editor and my bar, for the boring reason that they all read the same attrset. The rounding and border widths came out of the same file.</p>
+<h3>The honest bit</h3>
+<p>I didn't hand-write this one. I wrote a brief describing what I wanted, pointed a coding agent at my GitHub, my old site and my file server, and let it build the thing. It dug out fifteen drawings I'd forgotten were online and read every README I've written, which is more research than I'd have done myself.</p>
+<p>The projects, the screenshots and the technical claims are real and came from repos you can go and check. The words are mine in style, not in typing. I'd rather say that on the site than have you work it out.</p>
+<h3>What isn't finished</h3>
+<p>The <strong>now</strong> page is seeded from what I've actually been pushing lately, but it's the page that goes stale fastest, so assume it's a week behind.</p>
+<p>The 88x31 buttons are all mine or generic. There are three empty slots on the wall, and I want them filled with other people's. Send me one.</p>
+<p>The CV linked in the header predates the Google job by a year. I know.</p></div>
+</article>
+</div>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p><a href="../../colophon/">colophon</a> &middot; <a href="../../feed.xml">rss</a> &middot; <a href="../../index.json">index.json</a> &middot; <a href="../../buttons/">buttons</a></p>
+    <p class="muted">Milo Tekchandani &middot; built from 21 TOML blocks and 1 markdown file</p>
+  </div>
+</footer>
+<script src="../../assets/js/search.js" defer></script>
+</body>
+</html>

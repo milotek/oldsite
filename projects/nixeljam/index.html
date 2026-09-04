@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nixeljam // milo tek</title>
+<meta name="description" content="My NixOS config. Four machines, one flake, one theme file that everything reads from.">
+<meta name="theme-color" content="#1e1e2e">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="nixeljam // milo tek">
+<meta property="og:description" content="My NixOS config. Four machines, one flake, one theme file that everything reads from.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://furfag.lol/wst14/assets/img/avatar.webp">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="milo tek" href="../../feed.xml">
+<link rel="stylesheet" href="../../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../../assets/css/site.css">
+</head>
+<body data-root="../../">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap topbar">
+    <a class="mark" href="../../"><span class="mark-dot"></span>milo tek</a>
+    <nav class="nav"><a href="../../projects/" class="on">projects</a><a href="../../blog/">blog</a><a href="../../art/">art</a><a href="../../now/">now</a><a href="../../uses/">uses</a><a href="../../index/">index</a></nav>
+  </div>
+  <div class="wrap">
+    <form class="q" action="../../index/" method="get" role="search">
+      <label for="q" class="q-sigil">?</label>
+      <input id="q" name="q" type="search" autocomplete="off" spellcheck="false"
+             placeholder="search projects, art, writing" data-full="search 22 projects, 1 post, 15 drawings"
+             aria-label="Search the site">
+      <kbd class="q-kbd">/</kbd>
+    </form>
+  </div>
+</header>
+<main id="main" class="wrap">
+<div id="results" class="results" hidden></div>
+<div id="page">
+<article class="detail">
+  <p class="crumb"><a href="../../projects/">&larr; projects</a></p>
+  <h1>nixeljam</h1>
+  <p class="muted mono">2026 &middot; config &middot; in use daily</p>
+  <p class="lede">My NixOS config. Four machines, one flake, one theme file that everything reads from.</p>
+  <div class="tags"><a class="tag" href="../../index/?q=nix">nix</a><a class="tag" href="../../index/?q=nixos">nixos</a><a class="tag" href="../../index/?q=hyprland">hyprland</a><a class="tag" href="../../index/?q=dotfiles">dotfiles</a></div>
+  <div class="pills"><a class="pill" href="https://github.com/milotek/nixeljam">Repo</a></div>
+  <div class="prose"><p>Started as a fork of <a href="https://github.com/anotherhadi/nixy">nixy</a> and has drifted a long way since.</p>
+<p>It runs my desktop, a mini PC that serves files, a VPS, and my work Mac, off one modular flake. Hyprland, Waybar, tofi, swaync, Ghostty, Neovim through nvf, all declared.</p>
+<p>The bit I actually care about is <code>themes/pixeljam.nix</code>. One attrset holds the colour scheme, the rounding, the gaps, the border widths and the fonts. Change the accent in that file and GTK, the bar, the terminal, Neovim and the lock screen all move together on the next rebuild.</p></div>
+  <div class="shots"><figure class="shot"><a href="../../assets/img/projects/nixeljam-1.webp"><img src="../../assets/img/projects/nixeljam-1.webp" srcset="../../assets/img/projects/nixeljam-1.thumb.webp 720w, ../../assets/img/projects/nixeljam-1.webp 1400w" sizes="(max-width: 820px) 92vw, 640px" alt="Hyprland desktop with a floating Waybar and a pink accent" width="1400" height="788" loading="lazy" decoding="async"></a><figcaption>Hyprland desktop with a floating Waybar and a pink accent</figcaption></figure><figure class="shot"><a href="../../assets/img/projects/nixeljam-2.webp"><img src="../../assets/img/projects/nixeljam-2.webp" srcset="../../assets/img/projects/nixeljam-2.thumb.webp 720w, ../../assets/img/projects/nixeljam-2.webp 1400w" sizes="(max-width: 820px) 92vw, 640px" alt="Neovim and Spotify side by side in the same theme" width="1400" height="789" loading="lazy" decoding="async"></a><figcaption>Neovim and Spotify side by side in the same theme</figcaption></figure><figure class="shot"><a href="../../assets/img/projects/nixeljam-3.webp"><img src="../../assets/img/projects/nixeljam-3.webp" srcset="../../assets/img/projects/nixeljam-3.thumb.webp 720w, ../../assets/img/projects/nixeljam-3.webp 1400w" sizes="(max-width: 820px) 92vw, 640px" alt="Browser and file manager, tiled" width="1400" height="789" loading="lazy" decoding="async"></a><figcaption>Browser and file manager, tiled</figcaption></figure><figure class="shot"><a href="../../assets/img/projects/nixeljam-dash.webp"><img src="../../assets/img/projects/nixeljam-dash.webp" srcset="../../assets/img/projects/nixeljam-dash.thumb.webp 720w, ../../assets/img/projects/nixeljam-dash.webp 1400w" sizes="(max-width: 820px) 92vw, 640px" alt="Server dashboard for the mini PC" width="1400" height="1132" loading="lazy" decoding="async"></a><figcaption>Server dashboard for the mini PC</figcaption></figure></div>
+</article>
+</div>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p><a href="../../colophon/">colophon</a> &middot; <a href="../../feed.xml">rss</a> &middot; <a href="../../index.json">index.json</a> &middot; <a href="../../buttons/">buttons</a></p>
+    <p class="muted">Milo Tekchandani &middot; London</p>
+  </div>
+</footer>
+<script src="../../assets/js/search.js" defer></script>
+<script src="../../assets/js/lightbox.js" defer></script>
+</body>
+</html>

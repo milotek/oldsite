@@ -1,0 +1,115 @@
+# Everything on the site that isn't a project, a post, a drawing or a button
+# lives here. Edit the strings, run `python3 build.py`, commit. No code needed.
+
+[site]
+title       = "milo tek"
+tagline     = "software engineer, London"
+description = "Milo Tekchandani. Software engineer at Google on the Search app. Projects, writing, and some drawings."
+url         = "https://furfag.lol/wst14/"
+author      = "Milo Tekchandani"
+email       = "milo@milotek.dev"
+lang        = "en-GB"
+
+[intro]
+# Shown at the top of the home page, under the name. One line per paragraph.
+lines = [
+  "I'm Milo. 19, London, software engineer at Google on the Search app.",
+  "Mostly backend and infrastructure work. Yes, google.com. It's still funny to me.",
+  "The rest of the time I'm writing Nix, taking apart Source engine games, or drawing badly on an iPad.",
+]
+
+[[links]]
+label = "GitHub"
+href  = "https://github.com/milotek"
+note  = "45 public repos, most of them honest"
+
+[[links]]
+label = "LinkedIn"
+href  = "https://www.linkedin.com/in/fired/"
+note  = "the professional face"
+
+[[links]]
+label = "Email"
+href  = "mailto:milo@milotek.dev"
+note  = "milo@milotek.dev"
+
+[[links]]
+label = "Instagram"
+href  = "https://www.instagram.com/milo.tek/"
+note  = "@milo.tek"
+
+[[links]]
+label = "Pixeljam Studios"
+href  = "https://github.com/Pixeljam-Studios"
+note  = "the games org"
+
+[[links]]
+label = "CV (PDF)"
+href  = "https://github.com/milotek/milotek/raw/main/CV.pdf"
+note  = "a bit out of date, ask me"
+
+[work]
+role     = "Software Engineer (Apprentice)"
+org      = "Google"
+team     = "Google Search, mobile"
+place    = "London"
+period   = "current"
+summary  = "I work on the Google Search App, on the backend and infrastructure side."
+bullets = [
+  "Built developer tooling for the people working on AI Mode.",
+  "Helped implement page transitions between the tabs on the search results page.",
+  "A pile of smaller infrastructure work I'll fill in properly at some point.",
+]
+
+[now]
+# Seeded from what I've actually been pushing. Edit freely.
+updated = "2026-09-04"
+intro   = "What I'm actually spending time on, rather than what I'd like you to think I am."
+items = [
+  "Rewriting my NixOS config, **nixeljam**, for the fourth time. It runs four machines now, including the work Mac.",
+  "**habits**, a Kotlin habit tracker that renders as a GitHub-style grid, for a screen bolted to my wall.",
+  "Slowly poking at **worksite**, the hand-written thing at milotek.dev that has background music and I refuse to remove it.",
+  "Neetcode and Leetcode grinding, dumped into **xeetcode-submissions** so I can't lie to myself about it.",
+]
+
+[uses]
+intro = "The short version. All of it is declared in [nixeljam](https://github.com/milotek/nixeljam) if you want the long one."
+
+[[uses.group]]
+name = "machine"
+items = [
+  "NixOS on a desktop, a mini PC, a VPS and a work Mac",
+  "Hyprland, Waybar, tofi",
+  "Catppuccin Mocha everywhere, with #ffbdbd as the accent",
+]
+
+[[uses.group]]
+name = "writing code"
+items = [
+  "Ghostty, with an unreasonable number of cursor shaders",
+  "Neovim",
+  "lazygit and direnv",
+]
+
+[[uses.group]]
+name = "everything else"
+items = [
+  "Obsidian for notes",
+  "Blender and Godot when a game idea gets out of hand",
+  "copyparty on the mini PC, holding far too much",
+  "Wallpaper is a Team Fortress 2 screenshot of Watchtower, and has been for years",
+]
+
+[colophon]
+lines = [
+  "Static HTML. No framework, no third-party requests, no analytics, no cookies.",
+  "`build.py` reads TOML and Markdown out of `content/` and writes the whole site. Adding a project is six lines of TOML, adding a post is a `.md` file. One Python file, standard library only.",
+  "Search runs off `index.json`, which is generated from the same data as the pages, so it can't drift.",
+  "Catppuccin Mocha, accent `#ffbdbd`. Source Sans 3 and JetBrains Mono, self-hosted.",
+  "The 88x31 buttons are drawn by `tools/make-buttons.py` from a TOML file, using a 5x8 bitmap font with anti-aliasing off.",
+  "Hosted on GitHub Pages. The repo is the site.",
+]
+
+[buttons]
+intro = "The 88x31 wall. Mine are on the left, nick them. The rest is a starter set, and there is very obviously room for more."
+mine_note = "Take one. Hotlinking is fine, GitHub pays for the bandwidth."

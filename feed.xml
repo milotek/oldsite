@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+  <title>milo tek</title>
+  <link>https://furfag.lol/wst14/</link>
+  <description>Milo Tekchandani. Software engineer at Google on the Search app. Projects, writing, and some drawings.</description>
+  <language>en-GB</language>
+  <lastBuildDate>Fri, 04 Sep 2026 21:11:52 +0000</lastBuildDate>
+  <atom:link href="https://furfag.lol/wst14/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Rebuilding this site</title>
+    <link>https://furfag.lol/wst14/blog/rebuilding-this-site/</link>
+    <guid isPermaLink="true">https://furfag.lol/wst14/blog/rebuilding-this-site/</guid>
+    <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
+    <description>The old site buried everything. The new one is a search box with a website attached.</description>
+    <content:encoded><![CDATA[<p>The old site was a carrd export, and it had one real problem: everything I'd made sat three taps down. Name, then menu, then section, then finally a project. Fine for a business card, useless for a portfolio.</p>
+<p>So this one is built round a search box. Projects, posts, drawings and pages are all just records with a title, a date and some tags, so I put them in one list and let you filter it. Type <code>lua</code> and you get a modchart pack, a Roblox sound module and a GTA script. Hit <code>/</code> from anywhere and the box takes focus.</p>
+<p>Under it, everything lives in <code>content/</code>. Projects are TOML blocks, posts are Markdown files with a TOML header, which is already how my Obsidian vault looks. One Python script reads that and writes the site. I never have to open a code file to add a project, which was the entire point.</p>
+<p>The honest bit: I didn't hand-write this one. I wrote a brief, pointed a coding agent at my GitHub, my old site and my file server, and let it build. It dug out 15 drawings I'd forgotten were online. The projects and the screenshots are real and you can go and check them.</p>
+<p>The <strong>now</strong> page is seeded from what I've been pushing lately, so assume it's a week behind. Three slots on the button wall are empty on purpose. Send me one.</p>]]></content:encoded>
+  </item>
+</channel>
+</rss>

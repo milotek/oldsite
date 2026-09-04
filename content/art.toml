@@ -1,0 +1,96 @@
+# Drawings. Files live in assets/img/art/. Mostly Procreate on an iPad Pro with
+# an Apple Pencil, rescued from the old carrd site.
+
+[art]
+intro = "Made over the years, mostly in Procreate on an iPad with an Apple Pencil. A few are twenty seconds of work and I've kept them in anyway."
+
+[[art.piece]]
+src     = "de-lake"
+title   = "de_lake"
+year    = "2024"
+caption = "Counter-Strike's de_lake. My favourite map, and I will not be taking notes on that."
+
+[[art.piece]]
+src     = "dust2-fullbright"
+title   = "de_dust2 in mat_fullbright"
+year    = "2024"
+caption = "Dust2 with the lighting turned off. Everyone who has typed mat_fullbright 1 knows exactly what this looks like."
+
+[[art.piece]]
+src     = "epq-antagonist"
+title   = "Laser Antlers"
+year    = "2024"
+caption = "Antagonist design sheet for my EPQ game, down to the accent and the voice. Based on an old internet friend of mine."
+
+[[art.piece]]
+src     = "epq-protagonist"
+title   = "Protagonist concept"
+year    = "2024"
+caption = "The other half of the same character sheet. Top hat, no explanation."
+
+[[art.piece]]
+src     = "hardware-vs-software-poster"
+title   = "Hardware versus Software"
+year    = "2023"
+caption = "Poster for a Computer Science competition in my first term, explaining the difference. Handwritten, on an iPad, at length."
+
+[[art.piece]]
+src     = "me-and-my-friends"
+title   = "Me and my friends"
+year    = "2023"
+caption = "Drawn for someone's birthday. Everyone got a name label so nobody could argue."
+
+[[art.piece]]
+src     = "steam-pfp-commission"
+title   = "Steam profile picture"
+year    = "2023"
+caption = "A friend's Steam avatar, drawn by request."
+
+[[art.piece]]
+src     = "old-avatar"
+title   = "Old avatar"
+year    = "2022"
+caption = "My profile picture on basically every website for years. It's still the one at the top of this page."
+
+[[art.piece]]
+src     = "quick-sketch"
+title   = "One minute sketch"
+year    = "2023"
+caption = "Under a minute, for a friend. It shows."
+ext     = "gif"
+
+[[art.piece]]
+src     = "giraffe"
+title   = "Giraffe"
+year    = "2022"
+caption = "Made in Pixelmator Pro to demo the app to somebody. Ended up being the nicest thing in the folder."
+
+[[art.piece]]
+src     = "pygame-title"
+title   = "Title screen"
+year    = "2022"
+caption = "Title screen background for a pygame project."
+
+[[art.piece]]
+src     = "pygame-sunset"
+title   = "Sunset stage"
+year    = "2022"
+caption = "\"Sunset\" stage background, same project."
+
+[[art.piece]]
+src     = "pygame-space"
+title   = "Space stage"
+year    = "2022"
+caption = "\"Space\" stage background, same project."
+
+[[art.piece]]
+src     = "pygame-underground"
+title   = "Underground stage"
+year    = "2022"
+caption = "\"Underground\" stage background, same project."
+
+[[art.piece]]
+src     = "pygame-world"
+title   = "World stage"
+year    = "2022"
+caption = "\"World\" stage background, same project."

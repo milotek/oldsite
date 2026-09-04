@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>milo tek</title>
+<meta name="description" content="Milo Tekchandani. Software engineer at Google on the Search app. Projects, writing, and some drawings.">
+<meta name="theme-color" content="#1e1e2e">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="milo tek">
+<meta property="og:description" content="Milo Tekchandani. Software engineer at Google on the Search app. Projects, writing, and some drawings.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://furfag.lol/wst14/assets/img/avatar.webp">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="milo tek" href="./feed.xml">
+<link rel="stylesheet" href="./assets/fonts/fonts.css">
+<link rel="stylesheet" href="./assets/css/site.css">
+</head>
+<body data-root="./">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap topbar">
+    <a class="mark" href="./"><span class="mark-dot"></span>milo tek</a>
+    <nav class="nav"><a href="./projects/">projects</a><a href="./blog/">blog</a><a href="./art/">art</a><a href="./now/">now</a><a href="./uses/">uses</a><a href="./index/">index</a></nav>
+  </div>
+  <div class="wrap">
+    <form class="q" action="./index/" method="get" role="search">
+      <label for="q" class="q-sigil">?</label>
+      <input id="q" name="q" type="search" autocomplete="off" spellcheck="false"
+             placeholder="search projects, art, writing" data-full="search 22 projects, 1 post, 15 drawings"
+             aria-label="Search the site">
+      <kbd class="q-kbd">/</kbd>
+    </form>
+  </div>
+</header>
+<main id="main" class="wrap">
+<div id="results" class="results" hidden></div>
+<div id="page">
+<section class="hero">
+  <img class="avatar" src="./assets/img/avatar.webp" alt="Milo's avatar, a white line drawing on pink" width="400" height="400">
+  <div class="hero-text">
+    <h1>Milo Tekchandani</h1>
+    <p class="lede">software engineer, London</p>
+    <p>I'm Milo. 19, London, software engineer at Google on the Search app.</p><p>Mostly backend and infrastructure work. Yes, google.com. It's still funny to me.</p><p>The rest of the time I'm writing Nix, taking apart Source engine games, or drawing badly on an iPad.</p>
+  </div>
+</section>
+
+<section class="links"><a class="link" href="https://github.com/milotek"><span>GitHub</span><small>45 public repos, most of them honest</small></a><a class="link" href="https://www.linkedin.com/in/fired/"><span>LinkedIn</span><small>the professional face</small></a><a class="link" href="mailto:milo@milotek.dev"><span>Email</span><small>milo@milotek.dev</small></a><a class="link" href="https://www.instagram.com/milo.tek/"><span>Instagram</span><small>@milo.tek</small></a><a class="link" href="https://github.com/Pixeljam-Studios"><span>Pixeljam Studios</span><small>the games org</small></a><a class="link" href="https://github.com/milotek/milotek/raw/main/CV.pdf"><span>CV (PDF)</span><small>a bit out of date, ask me</small></a></section>
+
+<section class="block" id="work">
+  <h2 class="label">currently</h2>
+  <div class="job">
+    <div class="job-head">
+      <h3>Software Engineer (Apprentice), <span class="org">Google</span></h3>
+      <span class="yr">current</span>
+    </div>
+    <p class="job-meta">Google Search, mobile &middot; London</p>
+    <p>I work on the Google Search App, on the backend and infrastructure side.</p>
+    <ul class="ticks"><li>Built developer tooling for the people working on AI Mode.</li><li>Helped implement page transitions between the tabs on the search results page.</li><li>A pile of smaller infrastructure work I'll fill in properly at some point.</li></ul>
+  </div>
+</section>
+
+<section class="block">
+  <div class="block-head"><h2 class="label">selected projects</h2><a class="more" href="./projects/">all 22 &rarr;</a></div>
+  <div class="cards"><a class="card" href="./projects/nixeljam/">
+  <div class="card-shot"><img src="./assets/img/projects/nixeljam-1.thumb.webp" alt="Hyprland desktop with a floating Waybar and a pink accent" width="720" height="405" loading="eager" decoding="async"></div>
+  <div class="card-body">
+    <div class="card-head"><h3>nixeljam</h3><span class="yr">2026</span></div>
+    <p>My NixOS config. Four machines, one flake, one theme file that everything reads from.</p>
+    <div class="card-tags"><span class="tag">nix</span><span class="tag">nixos</span><span class="tag">hyprland</span><span class="tag">dotfiles</span></div>
+  </div>
+</a><a class="card" href="./projects/habits/">
+  <div class="card-shot blank"><span>habits</span></div>
+  <div class="card-body">
+    <div class="card-head"><h3>habits</h3><span class="yr">2026</span></div>
+    <p>A habit tracker that renders as a GitHub-style activity grid, for a screen bolted to my wall.</p>
+    <div class="card-tags"><span class="tag">kotlin</span><span class="tag">nix</span><span class="tag">sqlite</span><span class="tag">kiosk</span></div>
+  </div>
+</a><a class="card" href="./projects/makersbnb/">
+  <div class="card-shot"><img src="./assets/img/projects/makersbnb-1.thumb.webp" alt="MakersBNB listing page" width="720" height="405" loading="eager" decoding="async"></div>
+  <div class="card-body">
+    <div class="card-head"><h3>MakersBNB</h3><span class="yr">2025</span></div>
+    <p>AirBnB clone, six of us, Flask and Basecoat UI. Test-driven the whole way through.</p>
+    <div class="card-tags"><span class="tag">python</span><span class="tag">flask</span><span class="tag">postgres</span><span class="tag">tdd</span></div>
+  </div>
+</a><a class="card" href="./projects/legacy-console-shaders/">
+  <div class="card-shot"><img src="./assets/img/projects/shaders-1.thumb.webp" alt="Minecraft world with warm legacy console lighting" width="720" height="403" loading="lazy" decoding="async"></div>
+  <div class="card-body">
+    <div class="card-head"><h3>Legacy Console Shaders</h3><span class="yr">2026</span></div>
+    <p>Makes Minecraft Java look like the Xbox 360 edition. Written for a 2013 mod, works in Iris.</p>
+    <div class="card-tags"><span class="tag">glsl</span><span class="tag">minecraft</span><span class="tag">shaders</span></div>
+  </div>
+</a><a class="card" href="./projects/lockyn/">
+  <div class="card-shot"><img src="./assets/img/projects/lockyn-2.thumb.webp" alt="Lockyn onboarding, choosing goals" width="720" height="1571" loading="lazy" decoding="async"></div>
+  <div class="card-body">
+    <div class="card-head"><h3>Lockyn</h3><span class="yr">2025</span></div>
+    <p>A studying app for GCSE and sixth form students. Cross platform, and the UI is the actual work.</p>
+    <div class="card-tags"><span class="tag">react-native</span><span class="tag">typescript</span><span class="tag">firebase</span><span class="tag">design</span></div>
+  </div>
+</a><a class="card" href="./projects/petfeeder/">
+  <div class="card-shot"><img src="./assets/img/projects/petfeeder-1.thumb.webp" alt="Finished 3D printed feeder with an oak lid, photographed in a workshop" width="720" height="406" loading="lazy" decoding="async"></div>
+  <div class="card-body">
+    <div class="card-head"><h3>AutoPet Feeder</h3><span class="yr">2024</span></div>
+    <p>An automated pet feeder, built to a real client brief. Raspberry Pi, a servo, a 3D printed shell and an oak lid.</p>
+    <div class="card-tags"><span class="tag">raspberry-pi</span><span class="tag">javascript</span><span class="tag">cad</span><span class="tag">3d-printing</span></div>
+  </div>
+</a></div>
+</section>
+
+<section class="block split">
+  <div>
+    <div class="block-head"><h2 class="label">writing</h2><a class="more" href="./blog/">blog &rarr;</a></div>
+    <a class="post-teaser" href="./blog/rebuilding-this-site/">
+      <h3>Rebuilding this site</h3>
+      <p class="muted mono">2026-09-04 &middot; 236 words</p>
+      <p>The old site buried everything. The new one is a search box with a website attached.</p>
+    </a>
+  </div>
+  <div>
+    <div class="block-head"><h2 class="label">now</h2><a class="more" href="./now/">more &rarr;</a></div>
+    <ul class="ticks"><li>Rewriting my NixOS config, <strong>nixeljam</strong>, for the fourth time. It runs four machines now, including the work Mac.</li><li><strong>habits</strong>, a Kotlin habit tracker that renders as a GitHub-style grid, for a screen bolted to my wall.</li><li>Slowly poking at <strong>worksite</strong>, the hand-written thing at milotek.dev that has background music and I refuse to remove it.</li></ul>
+  </div>
+</section>
+
+<section class="block">
+  <div class="block-head"><h2 class="label">88x31</h2><a class="more" href="./buttons/">the wall &rarr;</a></div>
+  <div class="wall"><a href="https://furfag.lol/" class="btn88"><img src="./assets/img/buttons/milo-tek.png" alt="milo tek" width="88" height="31" loading="lazy"></a><a href="https://furfag.lol/" class="btn88"><img src="./assets/img/buttons/furfag-lol.png" alt="furfag.lol" width="88" height="31" loading="lazy"></a><a href="https://github.com/Pixeljam-Studios" class="btn88"><img src="./assets/img/buttons/pixeljam.png" alt="Pixeljam Studios" width="88" height="31" loading="lazy"></a><a href="https://files.tek.rip" class="btn88"><img src="./assets/img/buttons/tek-rip.png" alt="tek.rip file server" width="88" height="31" loading="lazy"></a><span class="btn88"><img src="./assets/img/buttons/built-by-hand.png" alt="built by hand" width="88" height="31" loading="lazy"></span><a href="https://nixos.org" class="btn88"><img src="./assets/img/buttons/nixos.png" alt="runs NixOS" width="88" height="31" loading="lazy"></a><a href="https://catppuccin.com" class="btn88"><img src="./assets/img/buttons/catppuccin.png" alt="Catppuccin Mocha" width="88" height="31" loading="lazy"></a><span class="btn88"><img src="./assets/img/buttons/best-viewed.png" alt="best viewed with eyes" width="88" height="31" loading="lazy"></span></div>
+</section>
+
+</div>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p><a href="./colophon/">colophon</a> &middot; <a href="./feed.xml">rss</a> &middot; <a href="./index.json">index.json</a> &middot; <a href="./buttons/">buttons</a></p>
+    <p class="muted">Milo Tekchandani &middot; London</p>
+  </div>
+</footer>
+<script src="./assets/js/search.js" defer></script>
+<script src="./assets/js/lightbox.js" defer></script>
+</body>
+</html>
