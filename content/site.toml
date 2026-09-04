@@ -1,0 +1,101 @@
+# Everything the site says about me. Edit here, run `python3 build.py`, commit.
+
+title       = "milo tek"
+tagline     = "software engineer. london."
+description = "Milo Tekchandani (milo tek). Software engineer at Google on Search for mobile. Projects, writing, and drawings."
+url         = "https://furfag.lol/wst13/"
+author      = "Milo Tekchandani"
+email       = "milo@milotek.dev"
+lang        = "en-GB"
+avatar      = "img/pfp.webp"
+
+# The workspaces in the top bar, in order. Each one is a page.
+[[workspace]]
+key = "1"
+name = "home"
+path = ""
+
+[[workspace]]
+key = "2"
+name = "projects"
+path = "projects/"
+
+[[workspace]]
+key = "3"
+name = "blog"
+path = "blog/"
+
+[[workspace]]
+key = "4"
+name = "art"
+path = "art/"
+
+[[workspace]]
+key = "5"
+name = "uses"
+path = "uses/"
+
+[[workspace]]
+key = "6"
+name = "colophon"
+path = "colophon/"
+
+[intro]
+body = """
+19, from the UK, living in London. I write backend and infrastructure code for
+the Google Search app, which is a long way of saying google.com.
+
+Outside work I keep a NixOS config that repaints my whole desktop from one
+colour, make things with [Pixeljam Studios](https://github.com/Pixeljam-Studios),
+and draw when I can be bothered.
+"""
+
+[work]
+role    = "Software Engineer (Apprentice)"
+org     = "Google"
+team    = "Google Search, mobile"
+place   = "London"
+period  = "current"
+points  = [
+  "Backend and infrastructure work on the Google Search app.",
+  "Built developer tools for the engineers working on AI Mode.",
+  "Helped implement page transitions between the tabs on the results page.",
+]
+
+# The bit that goes stale fastest. Change the date when you change the list.
+[now]
+updated = "2026-09-04"
+items = [
+  "Search, for mobile. Mostly the parts nobody sees.",
+  "Bumping flake inputs on [nixeljam](https://github.com/milotek/nixeljam) far more often than is sensible.",
+  "Moving my blog posts into an Obsidian vault so writing one doesn't mean opening an editor.",
+  "Still playing Minecraft 1.6.4 like it's 2013.",
+]
+
+[[link]]
+name = "github"
+url  = "https://github.com/milotek"
+
+[[link]]
+name = "linkedin"
+url  = "https://www.linkedin.com/in/fired/"
+
+[[link]]
+name = "email"
+url  = "mailto:milo@milotek.dev"
+
+[[link]]
+name = "instagram"
+url  = "https://www.instagram.com/milo.tek/"
+
+[[link]]
+name = "pixeljam"
+url  = "https://github.com/Pixeljam-Studios"
+
+[[link]]
+name = "files"
+url  = "https://files.tek.rip"
+
+[[link]]
+name = "cv (pdf)"
+url  = "https://github.com/milotek/milotek/raw/main/CV.pdf"

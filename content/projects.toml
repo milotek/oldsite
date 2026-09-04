@@ -1,0 +1,220 @@
+# Projects. `featured = true` gets a big tile with a screenshot on /projects/ and
+# a slot on the home page. Everything else lands in the compact list underneath.
+# Order here is the order on the page. Add a table, run build.py, done.
+
+[[project]]
+slug     = "nixeljam"
+name     = "nixeljam"
+year     = "2025 - now"
+tags     = ["nix", "hyprland", "stylix"]
+repo     = "https://github.com/milotek/nixeljam"
+featured = true
+blurb    = "My NixOS config. One flake, every machine, one colour."
+images   = [
+  { src = "img/projects/nixeljam.webp", alt = "Hyprland desktop with a clock widget and two terminals over a mountain wallpaper." },
+  { src = "img/projects/nixeljam-server.webp", alt = "A dark server dashboard listing services, uptime and system stats." },
+]
+body = """
+Built on top of [anotherhadi/nixy](https://github.com/anotherhadi/nixy), with my own
+theme layer, hosts and server modules bolted on.
+
+The whole desktop is repainted from one base16 scheme in `themes/`. Change the accent
+in one file and Hyprland, waybar, the terminal, neovim and the GTK apps all follow.
+The pink you are looking at right now is `base0D` out of `themes/pixeljam.nix`.
+"""
+
+[[project]]
+slug     = "lockyn"
+name     = "Lockyn"
+year     = "2024 - now"
+tags     = ["react native", "typescript", "firebase"]
+featured = true
+blurb    = "A studying app for GCSE and sixth form students. Unreleased, source is private."
+card     = "img/projects/lockyn-onboarding.webp"
+images = [
+  { src = "img/projects/lockyn-welcome.webp", alt = "Lockyn welcome screen with a pink and purple gradient orb." },
+  { src = "img/projects/lockyn-onboarding.webp", alt = "Lockyn onboarding screen asking why you are here." },
+  { src = "img/projects/lockyn-home.webp", alt = "Lockyn home screen with a large circular study timer." },
+  { src = "img/projects/lockyn-summary.webp", alt = "Lockyn weekly summary screen with usage bars and highlights." },
+]
+body = """
+Cross platform, one codebase: iOS, Android, web and desktop. React Native on the front,
+Firebase on the back because the data is document-shaped and I did not want to run a
+database at 17.
+
+It started life as my A level NEA and got rewritten properly afterwards. The UI is the
+part I care about most; every screen went through a few passes before it stopped
+annoying me.
+"""
+
+[[project]]
+slug     = "mcshaders"
+name     = "legacy console shaders"
+year     = "2025"
+tags     = ["glsl", "minecraft"]
+repo     = "https://github.com/milotek/minecraft-legacy-console-shaders"
+link     = "https://youtu.be/EzzUaDSsb3Q"
+linkname = "video"
+featured = true
+blurb    = "Make Minecraft Java look like the Xbox 360 edition."
+images = [
+  { src = "img/projects/mcshaders.webp", alt = "Minecraft village at midday with soft shadows and a hazy sky." },
+  { src = "img/projects/mcshaders-cave.webp", alt = "Minecraft cave lit by warm torchlight with volumetric shadows." },
+]
+body = """
+Tested on 1.6.4 with ShadersModCore, which is a mod from about 2013 that you now have to
+go digging through forum posts to find. Works on OptiFine and Iris too.
+
+I play old versions of Minecraft. This is what happens when you play old versions of
+Minecraft and also know GLSL.
+"""
+
+[[project]]
+slug     = "autopet"
+name     = "AutoPet feeder"
+year     = "2024"
+tags     = ["raspberry pi", "javascript", "cad"]
+featured = true
+blurb    = "An automatic pet feeder, designed and built to a client's spec. The client was my neighbours."
+images = [
+  { src = "img/projects/autopet-build.webp", alt = "Three photographs of the finished pet feeder: white 3D printed body with an oak lid." },
+  { src = "img/projects/autopet-proto.webp", alt = "Design document page showing cardboard prototype iterations and client feedback." },
+  { src = "img/projects/autopet-pi.webp", alt = "Design document page showing the Raspberry Pi, touchscreen and electronics used." },
+]
+body = """
+Raspberry Pi, a servo, a touchscreen and USB-C in, so there is exactly one cable. Shell is
+3D printed ABS with an oak finish, because a plastic box on someone's kitchen floor is
+still a thing they have to look at every day.
+
+Ran the whole thing properly: client spec, cardboard prototypes, feedback rounds, an
+evaluation. The design document is the part I am actually proud of.
+"""
+
+[[project]]
+slug     = "makersbnb"
+name     = "MakersBNB"
+year     = "2025"
+tags     = ["flask", "postgres", "tdd"]
+repo     = "https://github.com/milotek/makersbnb"
+featured = true
+blurb    = "An AirBnB clone built by six of us in a week, test-first the whole way."
+images = [
+  { src = "img/projects/makersbnb.webp", alt = "MakersBNB listings page showing property cards with prices per night." },
+]
+body = """
+Flask and Basecoat UI, Postgres underneath, pytest and Playwright on top. Team of six.
+
+The interesting part was not the app, it was six people agreeing on an architecture on
+day one and it still holding on day five. List a space, request a booking, approve or
+decline it.
+"""
+
+[[project]]
+slug     = "habits"
+name     = "habits"
+year     = "2026"
+tags     = ["kotlin", "kiosk"]
+repo     = "https://github.com/milotek/habits"
+link     = "https://habits.tek.rip"
+linkname = "live"
+featured = true
+blurb    = "A habit tracker that renders as a GitHub contribution grid, for a screen on my wall."
+body = """
+Kotlin. It runs on a tablet stuck to a wall, so the entire interface is one grid and
+nothing else. If a habit tracker needs a login screen it has already lost.
+
+I have tried about six of these apps and given up on all of them, always for the same
+reason: opening an app to tick a box is more effort than the box is worth. This one is
+already on, already showing, and one tap wide. Green square or no green square.
+"""
+
+# ---- smaller things -------------------------------------------------------
+
+[[project]]
+slug  = "roxor"
+name  = "Roxor Engine"
+year  = "2026"
+tags  = ["luau", "roblox"]
+repo  = "https://github.com/Pixeljam-Studios/ROXOR"
+blurb = "Pixeljam's base project for Roblox games: character controller, weapons, downed/revive, ragdolls, bots. Aiming for Source engine feel on a platform that really does not want to give it to you."
+
+[[project]]
+slug  = "neosource"
+name  = "Neosource"
+year  = "2026"
+tags  = ["c#", "unity"]
+repo  = "https://github.com/Pixeljam-Studios/neosource"
+blurb = "Fragsurf ported to Unity 2022.3 and URP 14, with the Linux editor working. A Source-like base layer without the 2004 tooling."
+
+[[project]]
+slug  = "punchdrunk"
+name  = "punchdrunk.gg"
+year  = "2025"
+tags  = ["python", "flask"]
+repo  = "https://github.com/milotek/punchdrunk"
+link  = "https://punchdrunk.gg"
+linkname = "live"
+blurb = "The site for my Minecraft server. It is a wall of GIFs and a button that tells you the IP. It does not need to be more than that."
+
+[[project]]
+slug  = "epq"
+name  = "EPQ platformer"
+year  = "2024"
+tags  = ["godot", "gdscript", "c#"]
+blurb = "An accessibility-focused platformer built in Godot over six months of weekends, alongside my A levels. Iterative: build, hand it to someone, watch where they get stuck, change it."
+
+[[project]]
+slug  = "simfiles"
+name  = "simfiles"
+year  = "2025"
+tags  = ["lua", "glsl"]
+repo  = "https://github.com/milotek/simfiles"
+link  = "https://www.youtube.com/watch?v=GO9Xfo2zVvQ"
+linkname = "video"
+blurb = "Stepmania modcharts for notITG, all charted by me. An excuse to write Lua and learn GLSL. I do not own a dance pad."
+
+[[project]]
+slug  = "acebook"
+name  = "Acebook"
+year  = "2025"
+tags  = ["java", "spring boot"]
+repo  = "https://github.com/milotek/acebook"
+blurb = "A Facebook clone in Spring Boot with a team. Maven, Thymeleaf, Flyway migrations, Auth0, Selenium feature tests. My first real look at how much scaffolding enterprise Java asks for."
+
+[[project]]
+slug  = "configs"
+name  = "game configs"
+year  = "2025"
+tags  = ["python", "source engine"]
+repo  = "https://github.com/milotek/configs"
+blurb = "Autoexecs for Valve games, plus a Python script that copies them out of every game folder into the repo. I wrote the script, then realised I could have used symlinks."
+images = [
+  { src = "img/projects/configs.webp", alt = "Sticker-style logo reading SHITTY AUTO EXECS." },
+]
+
+[[project]]
+slug  = "firestarter"
+name  = "Firestarter"
+year  = "2025"
+tags  = ["expo", "react native"]
+repo  = "https://github.com/milotek/react-native-firestarter"
+blurb = "My React Native and Expo starter, based on Ignite's boilerplate and cut down to what I actually use: Expo Router, Zustand, Firebase auth."
+
+[[project]]
+slug  = "dotnetgames"
+name  = ".NET game collection"
+year  = "2024"
+tags  = ["c#", "winforms"]
+blurb = "Battleships, Tetris and Blackjack in C#, at three deliberately different levels of complexity: one text-based, one terminal GUI, one WinForms. Written up in a 14 page evaluation."
+images = [
+  { src = "img/projects/tetris.webp", alt = "Tetris running in a WinForms window with a score panel." },
+  { src = "img/projects/blackjack.webp", alt = "A terminal Blackjack game asking whether to hit or stand." },
+]
+
+[[project]]
+slug  = "milotekold"
+name  = "the old site"
+year  = "2024"
+tags  = ["carrd"]
+repo  = "https://github.com/milotek/milotekold"
+blurb = "The carrd export this one replaces. All the artwork and half the screenshots here were pulled out of it."

@@ -1,0 +1,33 @@
+# What I run. Groups render in order; rows are [thing, what it is].
+
+intro = "Nothing here is a recommendation. It is just what is on the machine."
+
+[[group]]
+name = "desktop"
+rows = [
+  ["os", "NixOS. If it cannot be rebuilt from the flake it does not get installed."],
+  ["wm", "Hyprland, 20px rounding, 8px gaps, 2px borders."],
+  ["theme", "Stylix with a base16 scheme I keep in themes/pixeljam.nix. Catppuccin Mocha, accent swapped to #ffbdbd."],
+  ["font", "MesloLGS Nerd Font everywhere. Source Sans 3 and Montserrat for anything that is not a terminal."],
+  ["cursor", "BreezeX Rosé Pine."],
+  ["terminal", "Ghostty, with Zellij when I need panes."],
+  ["editor", "Neovim. Vim bindings in everything else too, including the browser."],
+]
+
+[[group]]
+name = "servers"
+rows = [
+  ["proxy", "Caddy. Three lines beats nginx's forty until the day it doesn't."],
+  ["database", "Postgres by default. SQLite only where the app already shipped it."],
+  ["admin", "Tailscale, always. No host has a public SSH port."],
+  ["secrets", "sops for anything that grants access. Hostnames and ports stay in plaintext."],
+  ["files", "copyparty, at files.tek.rip. Help yourself."],
+]
+
+[[group]]
+name = "not_code"
+rows = [
+  ["drawing", "Procreate on an iPad Pro, with an Apple Pencil."],
+  ["games", "CS2, Minecraft 1.6.4, notITG."],
+  ["notes", "Obsidian, in a git repo like everything else."],
+]

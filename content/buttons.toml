@@ -1,0 +1,57 @@
+# 88x31 buttons. Drop a real 88x31 gif or png in static/img/buttons/ and add a
+# table below. `mine = true` puts it in the "take one" row at the top.
+
+[mine]
+heading = "steal this"
+note    = "If you link me, use one of these. Right click, save, host it yourself, please do not hotlink."
+
+[[button]]
+file = "milotek.png"
+alt  = "milo tek"
+url  = "https://furfag.lol/"
+mine = true
+
+[[button]]
+file = "furfaglol.png"
+alt  = "furfag.lol"
+url  = "https://furfag.lol/"
+mine = true
+
+[[button]]
+file = "pixeljam.png"
+alt  = "Pixeljam Studios"
+url  = "https://github.com/Pixeljam-Studios"
+mine = true
+
+[[button]]
+file = "nixos.png"
+alt  = "powered by NixOS"
+url  = "https://nixos.org"
+
+[[button]]
+file = "catppuccin.png"
+alt  = "catppuccin"
+url  = "https://catppuccin.com"
+
+[[button]]
+file = "anybrowser.gif"
+alt  = "Best viewed with any browser"
+url  = "https://anybrowser.org/campaign/"
+
+[[button]]
+file = "css.gif"
+alt  = "Made with cascading style sheets"
+url  = "https://www.w3.org/Style/CSS/"
+
+[[button]]
+file = "built_notepad.gif"
+alt  = "Built with Microsoft Notepad"
+
+[[button]]
+file = "blender.gif"
+alt  = "Blender 2.80"
+url  = "https://www.blender.org"
+
+[[button]]
+file = "catscape.gif"
+alt  = "Catscape, meow"

@@ -1,0 +1,79 @@
+# Drawings, newest thinking first. Files live in static/img/art/.
+# Each one wants <slug>.webp and <slug>_thumb.webp. Drop a pair in, add a table.
+
+note = "Mostly Procreate on an iPad Pro with an Apple Pencil, going back a few years. Rescued out of the old carrd site before I deleted it."
+
+[[piece]]
+file    = "epq_antagonist"
+title   = "Laser Antlers"
+caption = "Antagonist concept art for my EPQ game."
+
+[[piece]]
+file    = "epq_protagonist"
+title   = "The protagonist"
+caption = "Protagonist concept art for the same game. Mute, and a bit of a coward."
+
+[[piece]]
+file    = "de_dust2_fullbright"
+title   = "de_dust2 in mat_fullbright"
+caption = "The most famous level in video games, with the lights turned off."
+
+[[piece]]
+file    = "de_lake_sketch"
+title   = "#BringBackLake"
+caption = "de_lake. My favourite Counter-Strike map, and Valve took it away."
+
+[[piece]]
+file    = "friends_birthday"
+title   = "Everyone"
+caption = "Me and my friends, drawn for somebody's birthday."
+
+[[piece]]
+file    = "steam_pfp_commission"
+title   = "Steam profile picture"
+caption = "Drawn for a friend, by request."
+
+[[piece]]
+file    = "old_pfp"
+title   = "Old profile picture"
+caption = "What I used everywhere online for a long time."
+
+[[piece]]
+file    = "hardware_vs_software"
+title   = "Hardware versus software"
+caption = "Poster for a computer science competition, first term."
+
+[[piece]]
+file    = "geometry_dash_anniversary"
+title   = "Geometry Dash, 10 years"
+caption = "Anniversary fan art. I could not tell you what it is meant to represent."
+
+[[piece]]
+file    = "giraffe"
+title   = "Giraffe"
+caption = "Made in Pixelmator Pro to show somebody what Pixelmator Pro does."
+
+[[piece]]
+file    = "pygame_title"
+title   = "Title screen"
+caption = "Background art for a pygame project."
+
+[[piece]]
+file    = "pygame_sunset"
+title   = "Sunset"
+caption = "Stage background, same project."
+
+[[piece]]
+file    = "pygame_space"
+title   = "Space"
+caption = "Stage background, same project."
+
+[[piece]]
+file    = "pygame_underground"
+title   = "Underground"
+caption = "Stage background, same project."
+
+[[piece]]
+file    = "pygame_world"
+title   = "World"
+caption = "Stage background, same project."

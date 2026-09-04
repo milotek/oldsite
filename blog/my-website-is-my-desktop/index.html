@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>my website is my desktop / milo tek</title>
+<meta name="description" content="Why the new site looks like a tiling window manager, and what is actually holding it up.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#11111b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="my website is my desktop / milo tek">
+<meta property="og:description" content="Why the new site looks like a tiling window manager, and what is actually holding it up.">
+<meta property="og:site_name" content="milo tek">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="milo tek" href="../../feed.xml">
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">skip to content</a>
+<header class="bar"><nav class="bar__ws" aria-label="Sections"><a class="ws" href="../../" data-key="1"><span class="ws__key">1</span><span class="ws__name">home</span></a><a class="ws" href="../../projects/" data-key="2"><span class="ws__key">2</span><span class="ws__name">projects</span></a><a class="ws is-active" href="../../blog/" aria-current="page" data-key="3"><span class="ws__key">3</span><span class="ws__name">blog</span></a><a class="ws" href="../../art/" data-key="4"><span class="ws__key">4</span><span class="ws__name">art</span></a><a class="ws" href="../../uses/" data-key="5"><span class="ws__key">5</span><span class="ws__name">uses</span></a><a class="ws" href="../../colophon/" data-key="6"><span class="ws__key">6</span><span class="ws__name">colophon</span></a></nav><div class="bar__status"><span class="mod mod--host">milo@london</span><button class="mod mod--keys" type="button" id="keys-toggle" aria-expanded="false">?</button><span class="mod mod--clock" id="clock" aria-hidden="true">--:--</span></div></header>
+<main class="workspace" id="main">
+<section class="win win--twothirds win--read"><div class="win__bar"><span class="win__dot" aria-hidden="true"></span><h0 class="win__title">~/blog/my-website-is-my-desktop</h0><span class="win__meta">4 Sep 2026</span></div><div class="win__body"><article class="prose"><h1 class="prose__title">my website is my desktop</h1><p class="prose__meta">4 Sep 2026<span class="tags"><span class="tag">meta</span><span class="tag">nix</span><span class="tag">web</span></span></p><p>The old site was a carrd export. It had a slideshow, an "under construction" GIF I drew myself, and a copyright notice that said 2025. It did the job for about a year and then it just sat there getting older.</p>
+<p>So: new one. Three rules going in. Projects first, because that is what people come for. No waffle. And it has to look like something I would actually run.</p>
+<h2>the metaphor</h2>
+<p>It is my desktop.</p>
+<p>There is a bar across the top with workspaces on it, numbered, exactly like Hyprland. Every section of the site is a workspace. Press 1 through 6 and you move between them without touching the mouse. Each block of content sits in a window with a title bar and a border, and when you hover one it takes the focus colour.</p>
+<p>I went back and forth on whether that is too cute for a site that is meant to help me get hired. I decided it isn't, for one reason: it is honest. I spend my day in a tiling WM that I built out of a Nix flake, and the pink you are looking at is <code>base0D</code> from <code>themes/pixeljam.nix</code>. Same colour, same rounding, same gaps. If I repaint my desktop tomorrow I change one variable here and it follows.</p>
+<p>A generic dark portfolio would have told you less about me and taken the same week.</p>
+<h2>what is underneath</h2>
+<p>One Python script. About 500 lines, zero dependencies, no build tooling.</p>
+<p>Content lives in <code>content/</code>. Projects are TOML tables. Posts are Markdown files with a little TOML header. <code>python3 build.py</code> turns them into HTML, drops a feed out the other end, and I commit the result. GitHub Pages serves flat files.</p>
+<p>That is deliberate. I have watched enough personal sites die because the owner came back after eight months, ran the install, and got a wall of peer dependency errors. Nothing here can rot like that. The Python on this machine in 2030 will still run it.</p>
+<p>Adding a project is adding six lines of TOML. Writing a post is dropping a file in a folder. Neither one makes me open a code editor, which matters more than it sounds like it should, because the friction is the reason the old site never got updated.</p>
+<p>The next step is pointing the posts folder at my Obsidian vault so writing a post and writing a note are the same action.</p>
+<h2>the bit people leave out</h2>
+<p>An agent did the first pass. It read my GitHub, my file server and the old carrd export, and it wrote the markup, the CSS and most of the copy.</p>
+<p>I read the diff. All of it. That is the deal I have with these things and it is the only part that actually matters, because code nobody has read is not finished work, however well it runs. It got some project descriptions wrong and invented a bit of enthusiasm I do not have, and I cut those.</p>
+<h2>still broken</h2>
+<p>The <code>now</code> section will be out of date within a month, they always are. The button wall has room in it and I want more real ones. The art page stops in 2024 and I should draw something.</p>
+<p>Anyway. It loads in under a second and it does not ask you about cookies. Good enough.</p></article></div></section>
+<section class="win win--third win--side"><div class="win__bar"><span class="win__dot" aria-hidden="true"></span><h2 class="win__title">~/blog/meta</h2></div><div class="win__body"><dl class="kvs kvs--tight"><div class="kv"><dt>written</dt><dd>4 Sep 2026</dd></div><div class="kv"><dt>words</dt><dd>558</dd></div><div class="kv"><dt>read</dt><dd>~3 min</dd></div></dl><div class="tags tags--block"><span class="tag">meta</span><span class="tag">nix</span><span class="tag">web</span></div><p class="links"><a class="lnk" href="../../blog/">all posts</a><a class="lnk" href="../../feed.xml">rss</a></p></div></section>
+</main>
+<footer class="foot"><span>milo tek</span><span class="foot__sep">/</span><a href="../../feed.xml">rss</a><span class="foot__sep">/</span><a href="https://github.com/milotek/wst13" target="_blank" rel="noopener">source</a><span class="foot__sep">/</span><span>built 4 Sep 2026</span></footer>
+<div class="keys" id="keys" hidden><div class="keys__inner"><p class="keys__head">keybinds</p><div class="keys__grid"><div><kbd>1</kbd><span>home</span></div><div><kbd>2</kbd><span>projects</span></div><div><kbd>3</kbd><span>blog</span></div><div><kbd>4</kbd><span>art</span></div><div><kbd>5</kbd><span>uses</span></div><div><kbd>6</kbd><span>colophon</span></div><div><kbd>?</kbd><span>this</span></div><div><kbd>Esc</kbd><span>close</span></div></div></div></div>
+<script src="../../assets/js/wm.js" defer></script>
+</body>
+</html>
