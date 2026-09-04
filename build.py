@@ -141,8 +141,16 @@ def render(template, **vars):
     return out
 
 
+BASE = ""
+
+
 def rel(depth, target):
-    """Every URL is relative, because the site deploys under a subpath."""
+    """Every URL is relative, because the site deploys under a subpath.
+
+    404.html is the exception. GitHub Pages serves it for any missing path, so a
+    relative URL there resolves against whatever the visitor typed and breaks."""
+    if depth == "abs":
+        return BASE + target
     return ("../" * depth) + target if depth else target
 
 
@@ -257,7 +265,9 @@ def entry_row(entry, depth, tpl):
 
 
 def main():
+    global BASE
     site = load_toml("site.toml")
+    BASE = site["base"]
     buttons = load_toml("buttons.toml")
     tpl = {name[:-5]: read(os.path.join(TEMPLATES, name)) for name in os.listdir(TEMPLATES)}
 
@@ -292,7 +302,7 @@ def main():
             root=rel(depth, "") or "./",
             year=datetime.now().year,
             name=esc(site["name"]),
-            canonical=site["url"] + ("" if path == "index.html" else path[: -len("index.html")]),
+            canonical=site["url"] + (path[: -len("index.html")] if path.endswith("index.html") else path),
             footer_links=links_html([(s["label"], s["url"]) for s in site["socials"]], depth),
             buttons=buttons_html(depth),
         )
@@ -374,7 +384,7 @@ def main():
 
     # -- 404, relative paths cannot work here so it links home absolutely
     shell("404.html", "404 / %s" % site["short"], "Nothing here.",
-          render(tpl["notfound"], home=site["base"]), depth=0)
+          render(tpl["notfound"], home=site["base"]), depth="abs")
 
     # -- feed
     now = format_datetime(datetime.now(timezone.utc))
