@@ -1,0 +1,201 @@
+# One [[project]] per entry, in the order they appear.
+# size = "feature" (image + full write-up, two per page)
+#      | "short"   (small image, a paragraph, three per page)
+#      | "small"   (text only, the classifieds column)
+# Rebuild with `python3 tools/build.py`; pages and numbers sort themselves out.
+
+[[project]]
+name = "Lockyn"
+kicker = "mobile app · unreleased · 2024 to now"
+blurb = """
+A study and productivity app for GCSE and sixth-form students: focus timer, daily goals, screen-time summaries, study groups.
+React Native and TypeScript on the front, Firebase behind it, one codebase for iOS, Android and web.
+Started life as my A level Computer Science NEA, which is why it sat gated behind results day. Release date is "when it's good".
+"""
+tags = ["typescript", "react native", "firebase"]
+size = "feature"
+images = [
+  { src = "assets/img/projects/lockyn_1.webp", alt = "Lockyn landing screen", caption = "landing" },
+  { src = "assets/img/projects/lockyn_3.webp", alt = "Lockyn home screen with a focus timer", caption = "home" },
+]
+links = [
+  { label = "early prototype", url = "https://github.com/milotek/studyapp" },
+]
+
+[[project]]
+name = "AutoPet Feeder"
+kicker = "hardware · delivered · 2024"
+blurb = """
+A fully automated pet feeder built to my neighbours' spec, which made the requirements meetings very short.
+Raspberry Pi driving a servo, touchscreen on the front, USB-C for power, ABS 3D-printed shell with an oak lid because it lives in a kitchen.
+The design document (client interviews, cardboard prototypes, evaluation) is public. It's long.
+"""
+tags = ["raspberry pi", "javascript", "3d printing", "oak"]
+size = "feature"
+images = [
+  { src = "assets/img/projects/petfeeder.webp", alt = "The finished pet feeder: a white shell with a wooden top, photographed from several angles", caption = "completed exterior" },
+]
+links = [
+  { label = "source", url = "https://github.com/milotek/petfeeder" },
+  { label = "design document (pdf)", url = "https://github.com/milotek/milotek/raw/main/Product%20Design%20NEA%20Edited.pdf" },
+]
+
+[[project]]
+name = "nixeljam"
+kicker = "nixos · ongoing"
+blurb = """
+My NixOS flake. Hyprland, Stylix theming, secrets in sops, modules written as though a stranger will enable them even though none will.
+It's where this site's palette and fonts come from, and where most of my commits go.
+"""
+tags = ["nix", "hyprland", "home-manager"]
+size = "feature"
+images = [
+  { src = "assets/img/projects/nixeljam.webp", alt = "A Hyprland desktop with two terminals over a foggy forest wallpaper and a clock reading 13:40", caption = "the desktop this site is copying" },
+]
+links = [
+  { label = "source", url = "https://github.com/milotek/nixeljam" },
+  { label = "the theme file", url = "https://github.com/milotek/nixeljam/blob/main/themes/pixeljam.nix" },
+]
+
+[[project]]
+name = "Neosource"
+kicker = "unity · pixeljam studios · 2026"
+blurb = """
+Fragsurf ported to Unity 2022 with Linux editor support: a modernised Source engine for surf and bhop.
+I fixed the Linux build, then landed CS:GO-style recoil and spread, view models and weapon sounds, and bullet penetration.
+A bullet carries a depth budget in metres of concrete and spends it on every wall it crosses, so one number decides both whether a wall can be beaten and whether the shot was worth taking.
+"""
+tags = ["c#", "unity", "source engine"]
+size = "feature"
+images = [
+  { src = "assets/img/projects/neosource.webp", alt = "Combat surf in Neosource, a player mid-air over a grey blocky map", caption = "combat surf" },
+]
+links = [
+  { label = "source", url = "https://github.com/Pixeljam-Studios/neosource" },
+  { label = "the penetration PR", url = "https://github.com/Pixeljam-Studios/neosource/pull/6" },
+]
+
+[[project]]
+name = "Legacy console shaders"
+kicker = "minecraft · glsl"
+blurb = """
+Shaders that make Minecraft Java 1.6.4 look like the Xbox 360 edition. Works on Iris and OptiFine too. Re-live your childhood, badly.
+"""
+tags = ["glsl"]
+size = "short"
+images = [
+  { src = "assets/img/projects/shaders.webp", alt = "A dim Minecraft mineshaft with a diamond pickaxe held up", caption = "" },
+]
+links = [
+  { label = "source", url = "https://github.com/milotek/minecraft-legacy-console-shaders" },
+  { label = "video", url = "https://youtu.be/EzzUaDSsb3Q" },
+]
+
+[[project]]
+name = "An accessible platformer"
+kicker = "godot · extended project qualification"
+blurb = """
+The official title is "An accessible platforming and exploration themed video game", which tells you a teacher marked it.
+Six months of weekends in Godot, GDScript and C#, every mechanic put through a user feedback loop before it stayed in.
+"""
+tags = ["gdscript", "c#", "godot"]
+size = "short"
+images = [
+  { src = "assets/img/art/epq_antagonist_thumb.webp", alt = "Concept sheet for Laser Antlers, a moose antagonist", caption = "" },
+]
+links = [
+  { label = "an old fork of it", url = "https://github.com/milotek/GodotGame" },
+]
+
+[[project]]
+name = "C# game collection"
+kicker = "dotnet · college"
+blurb = """
+Battleships, Tetris and Blackjack: a text game, a terminal GUI and a WinForms app, each one a step up.
+Comes with a 14 page written evaluation, because it was coursework and I was thorough.
+"""
+tags = ["c#", ".net", "winforms"]
+size = "short"
+images = [
+  { src = "assets/img/projects/battleships.webp", alt = "ASCII art Battleships title screen in a terminal", caption = "" },
+]
+links = [
+  { label = "source", url = "https://github.com/milotek/Practice.NET" },
+]
+
+[[project]]
+name = "makersbnb"
+kicker = "flask · team of six"
+blurb = "AirBnB clone in Flask with Basecoat UI, test-driven, built at Makers. Users list spaces, request bookings, manage reservations."
+size = "small"
+links = [{ label = "source", url = "https://github.com/milotek/makersbnb" }]
+
+[[project]]
+name = "lakeback"
+kicker = "kotlin · work in progress"
+blurb = "Third-party matchmaking for CS2 wingman on de_lake, because lake deserves better. MatchZy and Agones underneath."
+size = "small"
+links = [{ label = "source", url = "https://github.com/milotek/lakeback" }]
+
+[[project]]
+name = "habits"
+kicker = "kotlin · nix"
+blurb = "A habit tracker that draws a GitHub-style grid for a wall-mounted kiosk. The repo description says \"shitty\" and I stand by it."
+size = "small"
+links = [{ label = "source", url = "https://github.com/milotek/habits" }, { label = "live", url = "https://habits.tek.rip" }]
+
+[[project]]
+name = "simfiles"
+kicker = "lua · notitg"
+blurb = "StepMania modcharts for NotITG, made to learn Lua and GLSL. I don't own a DDR pad."
+size = "small"
+links = [{ label = "source", url = "https://github.com/milotek/simfiles" }, { label = "video", url = "https://youtu.be/GO9Xfo2zVvQ" }]
+
+[[project]]
+name = "left-in-vr"
+kicker = "c++ · fork"
+blurb = "Left 4 Dead 2 VR fork with MSAA, analogue movement and a fix for distorted rendering on PSVR2. The original author is gone, so someone had to."
+size = "small"
+links = [{ label = "source", url = "https://github.com/milotek/left-in-vr" }]
+
+[[project]]
+name = "Schism"
+kicker = "roblox · with friends"
+blurb = "Survival, co-op, horror, roguelike. A silly for-fun project that ended up with far more systems than it should have. Code's closed; the useful bits get shared through Pixeljam Studios."
+size = "small"
+links = [{ label = "feature reel", url = "https://github.com/user-attachments/assets/ab28d996-340b-4c0e-b6d6-fd3042da894d" }, { label = "pixeljam studios", url = "https://github.com/Pixeljam-Studios" }]
+
+[[project]]
+name = "configs"
+kicker = "valve games"
+blurb = "Autoexecs and configs for CS2, L4D2 and friends. Sensible keybinds, opinionated yet based."
+size = "small"
+links = [{ label = "source", url = "https://github.com/milotek/configs" }]
+
+[[project]]
+name = "acebook"
+kicker = "java · spring boot"
+blurb = "Facebook clone built as a team at Makers: Spring Boot, Maven, Thymeleaf, Bootstrap, Auth0. The whole enterprise starter pack."
+size = "small"
+links = [{ label = "source", url = "https://github.com/milotek/acebook" }]
+
+[[project]]
+name = "CollisionSounds"
+kicker = "roblox · lua"
+blurb = "A module that makes objects play material-specific impact sounds, volume scaled by how hard they hit. Ships with the Source engine sound set."
+size = "small"
+links = [{ label = "source", url = "https://github.com/milotek/CollisionSounds" }]
+
+[[project]]
+name = "Whython"
+kicker = "python · crime"
+blurb = "Python with Lua's `end` keyword bolted on. Nobody asked. I did it anyway."
+size = "small"
+links = [{ label = "source", url = "https://github.com/milotek/Whython" }]
+
+[[project]]
+name = "userscripts & gists"
+kicker = "javascript"
+blurb = "Small fixes for websites that refused to fix themselves: Reddit's sign-up nag, a Tetr.io mirror, a GitHub homepage redirect."
+size = "small"
+links = [{ label = "userscripts", url = "https://github.com/milotek/userscripts" }, { label = "gists", url = "https://gist.github.com/milotek" }]

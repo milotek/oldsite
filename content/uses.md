@@ -1,0 +1,8 @@
+- **OS:** NixOS, declared down to the cursor. If it can't be rebuilt from the flake it doesn't get installed.
+- **Desktop:** Hyprland, 20px rounding, 8px gaps, Waybar in one pill.
+- **Terminal:** Ghostty and Zellij, MesloLGS Nerd Font at 12pt.
+- **Theme:** Catppuccin Mocha with the accent swapped for #ffbdbd. This page is wearing it.
+- **Notes:** Obsidian, in a git repo, because everything is in a git repo.
+- **Drawing:** iPad Pro, Apple Pencil, Procreate.
+- **Files:** copyparty on a mini PC, anonymously readable, mostly Source engine wallpapers.
+- **Wallpaper:** TF2 watchtower, stretched, no shame.

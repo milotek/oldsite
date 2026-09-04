@@ -1,0 +1,29 @@
+---
+title: How this zine got made
+date: 2026-09-04
+summary: Ten AI agents, one brief, and the one that decided my website should be a photocopied zine.
+---
+
+Quick confession before anything else: I didn't write this site by hand. I wrote a brief, handed it to ten copies of Claude, gave each one a different seed idea, and told them to build, deploy and come back with a report. This one drew "a zine spread". I'm keeping whichever I like most, so if you're reading this, the zine won.
+
+(It also wrote the first draft of this post, in my voice, off a file of rules about how I talk. I've read it. It's honest. That's the bar.)
+
+## Why a zine
+
+My old site was a carrd export from 2024 with my phone number on it. The ones after that were a desktop clone and a "sensible" version. All of them tried to be an app.
+
+A zine is the opposite of an app. Twelve pages, three sheets of A5 folded in half and stapled, finished when you run out of paper. That's a constraint I actually wanted: projects first, personality on top, and if something doesn't fit on a page it doesn't go in.
+
+## What it's made of
+
+- One `index.html`, one `style.css`, zero JavaScript. The pages, the fold, the staples and the pink riso look on the pictures are all CSS.
+- Colours are Catppuccin Mocha with the accent swapped for `#ffbdbd`, lifted from `pixeljam.nix` in my NixOS flake. The fonts are the desktop's fonts too: Montserrat for headlines, Source Sans 3 for body, MesloLGS for anything that looks typed.
+- Pictures are greyscale with `mix-blend-mode: luminosity` over a pink block, which is roughly what one-colour risograph printing does. Hover and they come back in colour.
+- Content lives in `content/*.toml` and `content/*.md`, posts in `posts/*.md`. A short Python script with no dependencies (it reads TOML with `tomllib`) renders the lot into HTML and an RSS feed. Page numbers and the contents list on the cover are worked out at build time, so adding a page renumbers everything.
+- Deployed on GitHub Pages under a subpath, so every URL is relative.
+
+## What's real and what's placeholder
+
+Everything on the projects pages I've actually built, or actually merged into. The 88x31 buttons on the back page are from a public archive plus one made for me; the file that lists them is meant to be edited. The orange cat on the art page came off my file server and I'm fairly sure I didn't draw it. It's holding the spot until I do.
+
+The posts folder has exactly one post in it. This one. I'm told a blog with one post is still a blog.

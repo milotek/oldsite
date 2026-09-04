@@ -1,0 +1,40 @@
+# Facts used across every page. Edit here, rebuild with `python3 tools/build.py`.
+title = "milo tek"
+name = "Milo Tekchandani"
+tagline = "a zine about what I've built"
+description = "Milo Tekchandani, software engineer apprentice at Google in London. Projects, art, a blog, and a page of 88x31 buttons, folded into a twelve page zine."
+url = "https://furfag.lol/wst3/"
+issue = "issue 01"
+date = "september 2026"
+email = "milo@milotek.dev"
+cv = "https://github.com/milotek/milotek/raw/main/CV.pdf"
+
+[[links]]
+label = "github"
+url = "https://github.com/milotek"
+note = "everything public lives here"
+
+[[links]]
+label = "linkedin"
+url = "https://www.linkedin.com/in/fired/"
+note = "the one with a tie on"
+
+[[links]]
+label = "instagram"
+url = "https://www.instagram.com/milo.tek/"
+note = "occasionally art"
+
+[[links]]
+label = "pixeljam studios"
+url = "https://github.com/Pixeljam-Studios"
+note = "games with friends, not a real company"
+
+[[links]]
+label = "file server"
+url = "https://files.tek.rip"
+note = "anonymously readable, mostly wallpapers"
+
+[[links]]
+label = "email"
+url = "mailto:milo@milotek.dev"
+note = "milo@milotek.dev"

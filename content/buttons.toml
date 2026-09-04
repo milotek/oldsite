@@ -1,0 +1,62 @@
+# 88x31 buttons for the back page. Add a [[button]] and rebuild.
+# Files live in assets/buttons/. The archive ones came from cyber.dabamos.de/88x31.
+[[button]]
+img = "milotek.png"
+alt = "milo tek"
+url = "https://milotek.dev"
+
+[[button]]
+img = "paws.gif"
+alt = "made with my own two paws"
+
+[[button]]
+img = "gnu-linux.gif"
+alt = "made on GNU/Linux"
+url = "https://nixos.org"
+
+[[button]]
+img = "github.gif"
+alt = "GitHub"
+url = "https://github.com/milotek"
+
+[[button]]
+img = "any_browser.gif"
+alt = "any browser, any OS"
+
+[[button]]
+img = "best_viewed_with_eyes.gif"
+alt = "best viewed with eyes"
+
+[[button]]
+img = "valid-css.gif"
+alt = "W3C valid CSS"
+
+[[button]]
+img = "rss-button.gif"
+alt = "RSS feed"
+url = "feed.xml"
+
+[[button]]
+img = "steam.gif"
+alt = "play with Steam"
+
+[[button]]
+img = "half-life.gif"
+alt = "Half-Life"
+
+[[button]]
+img = "minecraft.gif"
+alt = "Minecraft"
+url = "https://github.com/milotek/minecraft-legacy-console-shaders"
+
+[[button]]
+img = "neovim.gif"
+alt = "made with Neovim"
+
+[[button]]
+img = "dark-mode.gif"
+alt = "made for dark mode"
+
+[[button]]
+img = "madewithlove.gif"
+alt = "made with love"
