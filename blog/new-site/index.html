@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The new site - milo tek</title>
+<meta name="description" content="Why the old carrd is gone, what replaced it, and how the whole thing is a folder of text files.">
+<meta name="theme-color" content="#11111b">
+<meta property="og:title" content="The new site - milo tek">
+<meta property="og:description" content="Why the old carrd is gone, what replaced it, and how the whole thing is a folder of text files.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://furfag.lol/wst18/assets/img/site/avatar.webp">
+<link rel="icon" href="../../favicon.png">
+<link rel="apple-touch-icon" href="../../assets/img/site/icon-180.png">
+<link rel="alternate" type="application/rss+xml" title="milo tek" href="../../feed.xml">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hud">
+<a class="mark" href="../../"><span class="sq" aria-hidden="true"></span>milo tek</a>
+<nav class="nav"><a href="../../#select">work</a><a class="on" href="../../blog/">blog</a><a href="../../art/">art</a><a href="../../now/">now</a><a href="../../uses/">uses</a><a href="../../colophon/">colophon</a></nav>
+</header>
+<main id="main" class="wrap">
+<p class="crumb"><a href="../../blog/">&larr; all posts</a></p>
+<header class="phead">
+<p class="eyebrow">2026-09-05</p>
+<h1>The new site</h1>
+</header>
+<article class="prose"><p>My old site was a carrd export from 2024 and it had started to embarrass me. Four screenshots of an app I never shipped, a CV that still said "student", and an art gallery where one of the captions was flat out wrong. So it's gone.</p>
+<p>This one is a folder of text files and a Python script. <code>build.py</code> reads <code>content/</code>, walks over some TOML and Markdown, and writes plain HTML. Standard library only, no node, no framework, nothing that needs a lockfile. Adding a project is one <code>.md</code> file with a header on top, and I never have to open the generator to do it.</p>
+<p>That last bit is the whole point, honestly. Every personal site I've built before died because updating it meant remembering how it worked. If the cost of adding something is "write a paragraph in a text editor", I might actually keep it current. My blog posts already live as Markdown in my Obsidian vault, so they drop straight in.</p>
+<p>The front page is a select screen. Everything I've made is on one list, and on a wide screen the pane on the right fills in as you move down it. Arrow keys work. Turn JavaScript off and you get the same list with everything still on it, just longer.</p>
+<p>Colours are Catppuccin Mocha with <code>#ffbdbd</code> pulled out of my Stylix theme, so the site matches my terminal, which matches my editor. Fonts are subset and served from here. There are no third party requests on any page, which took no effort and I'd rather it stayed that way.</p>
+<p>One thing worth saying plainly: I didn't type most of this. I wrote a brief, handed it to a coding agent along with my GitHub, my old site and my file server, and had ten of them build a version each. This is the one I kept. Every fact on the site came out of something real (a README, my CV, the old carrd), and where nothing could be verified the page says so rather than making something up.</p>
+<p>Anyway. It works, it's fast, and I can add to it without dreading it.</p></article>
+</main><footer class="foot">
+<div class="foot-grid">
+<div>
+<p class="tag">elsewhere</p>
+<ul class="plain"><li><a href="https://github.com/milotek" rel="me">GitHub</a></li><li><a href="https://www.linkedin.com/in/fired/" rel="me">LinkedIn</a></li><li><a href="https://www.instagram.com/milo.tek/" rel="me">Instagram</a></li><li><a href="https://github.com/Pixeljam-Studios" rel="me">Pixeljam Studios</a></li><li><a href="https://files.tek.rip" rel="me">files.tek.rip</a></li><li><a href="mailto:milo@milotek.dev" rel="me">milo@milotek.dev</a></li></ul>
+</div>
+<div>
+<p class="tag">pages</p>
+<ul class="plain"><li><a href="../../blog/">blog</a></li><li><a href="../../art/">art</a></li><li><a href="../../now/">now</a></li><li><a href="../../uses/">uses</a></li><li><a href="../../colophon/">colophon</a></li><li><a href="../../buttons/">buttons</a></li><li><a href="../../feed.xml">rss</a></li></ul>
+</div>
+<div class="foot-end">
+<img class="mascot" src="../../assets/img/site/moose.webp" width="72" height="72" alt="A moose with big antlers in a red shirt">
+<a class="foot-buttons" href="../../buttons/" title="button wall"><img src="../../assets/img/buttons/milotek.png" width="88" height="31" alt="milo tek"><img src="../../assets/img/buttons/pixeljam.png" width="88" height="31" alt="Pixeljam Studios"><img src="../../assets/img/buttons/trashdump.png" width="88" height="31" alt="files.tek.rip"></a>
+<p class="fine">Milo Tekchandani &middot; London &middot; 2026</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
