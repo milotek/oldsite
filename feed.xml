@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>milo tek</title>
+<link>https://furfag.lol/wst15/</link>
+<atom:link href="https://furfag.lol/wst15/feed.xml" rel="self" type="application/rss+xml"/>
+<description>Milo Tekchandani. Software engineer in London, currently at Google on the Search app for mobile.</description>
+<language>en-GB</language>
+<lastBuildDate>Fri, 04 Sep 2026 22:01:46 +0000</lastBuildDate>
+<item><title>The new site</title><link>https://furfag.lol/wst15/blog/the-new-site/</link><guid isPermaLink="true">https://furfag.lol/wst15/blog/the-new-site/</guid><pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate><description>Why the carrd had to go, and what replaced it.</description></item>
+</channel>
+</rss>

@@ -1,0 +1,198 @@
+@font-face{font-family:'Source Sans 3';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/source-sans-3-400.woff2) format('woff2')}
+@font-face{font-family:'Source Sans 3';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/source-sans-3-600.woff2) format('woff2')}
+@font-face{font-family:'Source Sans 3';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/source-sans-3-700.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/jetbrains-mono-400.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/jetbrains-mono-600.woff2) format('woff2')}
+
+:root{
+  --bg:#1e1e2e; --mantle:#181825; --crust:#11111b;
+  --surface:#313244; --surface2:#45475a; --overlay:#585b70;
+  --text:#cdd6f4; --sub:#a6adc8; --muted:#7f849c;
+  --accent:#ffbdbd; --accent-dim:#e29b9b;
+  --l0:#ffbdbd; --l1:#e6a3a3; --l2:#bd8290; --l3:#8d6674;
+  --sans:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+  --gap:16px; --dy:3.15rem; --railw:calc(3 * var(--gap) + 14px); --wrap:60rem; --r:12px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font:400 17px/1.6 var(--sans);
+  background-image:radial-gradient(120rem 40rem at 50% -20rem,rgba(255,189,189,.07),transparent 70%);
+  background-repeat:no-repeat;
+}
+/* Grain, because a wide low-alpha gradient on a flat dark background bands into visible rectangles. */
+body::after{
+  content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.04;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='140' height='140' filter='url(%23n)'/></svg>");
+}
+img{max-width:100%; height:auto; display:block}
+a{color:var(--accent); text-decoration-color:rgba(255,189,189,.35); text-underline-offset:3px}
+a:hover{text-decoration-color:var(--accent)}
+h1,h2,h3{line-height:1.2; letter-spacing:-.01em; margin:0}
+code{font-family:var(--mono); font-size:.86em; background:var(--mantle); border:1px solid var(--surface); border-radius:5px; padding:.08em .34em}
+pre{background:var(--mantle); border:1px solid var(--surface); border-radius:var(--r); padding:.9rem 1rem; overflow-x:auto}
+pre code{border:0; background:none; padding:0; font-size:.82em}
+hr{border:0; border-top:1px solid var(--surface); margin:2rem 0}
+.small{color:var(--muted); font-size:.86rem; margin:0}
+.skip{position:absolute; left:-9999px}
+.skip:focus{left:1rem; top:1rem; background:var(--surface); padding:.5rem .8rem; border-radius:8px; z-index:9}
+
+/* ---- chrome ---- */
+.top{
+  max-width:var(--wrap); margin:0 auto; padding:1.6rem 1.25rem .5rem;
+  display:flex; flex-wrap:wrap; gap:.6rem 1.2rem; align-items:baseline; justify-content:space-between;
+}
+.mark{
+  font:600 1.05rem/1 var(--mono); letter-spacing:-.02em; color:var(--text);
+  text-decoration:none; display:inline-flex; align-items:center; gap:.1em;
+}
+.mark b{color:var(--accent); font-weight:600}
+.mark i{width:.42em; height:1em; background:var(--accent); margin-left:.35em; border-radius:1px; animation:blink 1.4s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.nav{display:flex; flex-wrap:wrap; gap:.15rem .4rem; font:400 .92rem/1 var(--mono)}
+.nav a{color:var(--sub); text-decoration:none; padding:.42rem .55rem; border-radius:8px}
+.nav a::before{content:"/"; color:var(--surface2); margin-right:.15rem}
+.nav a:hover{color:var(--text); background:var(--mantle)}
+.nav a.on{color:var(--accent); background:rgba(255,189,189,.09)}
+
+main{max-width:var(--wrap); margin:0 auto; padding:1rem 1.25rem 3rem}
+
+.foot{max-width:var(--wrap); margin:0 auto; padding:2rem 1.25rem 3.5rem; border-top:1px solid var(--surface)}
+.foot-row{display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; justify-content:space-between; align-items:baseline}
+.foot-links,.foot-meta{margin:0; display:flex; flex-wrap:wrap; gap:.3rem .9rem; font:400 .9rem/1.8 var(--mono)}
+.foot-meta a{color:var(--sub)}
+.b31s{display:flex; flex-wrap:wrap; gap:6px; margin:1.4rem 0 1.2rem}
+.b31{display:block; line-height:0; border:1px solid var(--surface); border-radius:2px; background:var(--crust)}
+.b31:hover{border-color:var(--accent)}
+.b31 img{width:88px; height:31px; image-rendering:pixelated}
+
+/* ---- hero ---- */
+.hero{padding:1.5rem 0 2.4rem; max-width:44rem}
+.hero h1{font-size:clamp(1.9rem,6vw,2.7rem); margin-bottom:.7rem}
+.hero h1 em{font-style:normal; color:var(--accent)}
+.hero p{margin:.75rem 0; color:var(--sub)}
+.hero p:first-of-type{color:var(--text)}
+.hero strong{color:var(--text); font-weight:600}
+.socials{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:1.3rem !important}
+.lnk{
+  font:400 .87rem/1 var(--mono); text-decoration:none; color:var(--sub);
+  border:1px solid var(--surface); border-radius:999px; padding:.42rem .8rem; background:var(--mantle);
+}
+.lnk:hover{color:var(--accent); border-color:var(--accent-dim); background:rgba(255,189,189,.07)}
+
+/* ---- the log ---- */
+.log-head{display:flex; flex-wrap:wrap; gap:.4rem 1rem; align-items:baseline; justify-content:space-between; border-bottom:1px solid var(--surface); padding-bottom:.6rem}
+.log-head h2{font:600 1rem/1 var(--mono); color:var(--sub); text-transform:lowercase}
+.log-head b{font-weight:400}
+b.l0{color:var(--l0)} b.l1{color:var(--l1)} b.l2{color:var(--l2)} b.l3{color:var(--l3)}
+
+.entries{list-style:none; margin:0; padding:0}
+.entry{
+  position:relative; display:grid; gap:0 1.1rem;
+  grid-template-columns:var(--railw) minmax(0,1fr) auto;
+  padding:1.35rem 0 1.35rem;
+}
+/* The divider stops short of the rail so it doesn't cut across the branches. */
+.entry + .entry::before{
+  content:""; position:absolute; top:0; left:calc(var(--railw) + 1.1rem); right:0;
+  border-top:1px solid rgba(49,50,68,.7);
+}
+
+/* Absolute, not a grid item, so a branch line runs through the row padding and
+   meets the next row without a gap. */
+.rail{position:absolute; top:0; bottom:0; left:0; width:var(--railw)}
+.ln{position:absolute; top:0; bottom:0; width:2px; margin-left:-1px; left:calc(var(--x) * var(--gap) + 7px); background:currentColor}
+.ln.l0{color:var(--l0)} .ln.l1{color:var(--l1)} .ln.l2{color:var(--l2)} .ln.l3{color:var(--l3)}
+.ln.down{top:var(--dy); bottom:0}
+.ln.up{top:0; height:var(--dy)}
+.ln.open,.ln.close{
+  left:7px; width:calc(var(--x) * var(--gap)); background:none;
+  border:0 solid currentColor; margin-left:-1px;
+}
+.ln.open{top:0; height:var(--dy); bottom:auto; border-left-width:2px; border-bottom-width:2px; border-bottom-left-radius:11px}
+.ln.close{top:var(--dy); bottom:0; height:auto; border-right-width:2px; border-bottom-width:2px; border-bottom-right-radius:11px}
+.entry:first-child .ln.l0{top:var(--dy)}
+.entry:last-child .ln.l0{bottom:auto; height:var(--dy)}
+.dot{
+  position:absolute; width:11px; height:11px; border-radius:50%;
+  left:calc(var(--x) * var(--gap) + 7px); top:var(--dy);
+  transform:translate(-50%,-50%); background:var(--bg);
+  border:2px solid currentColor; box-shadow:0 0 0 4px var(--bg);
+}
+.dot.l0{color:var(--l0); background:var(--l0)} .dot.l1{color:var(--l1)} .dot.l2{color:var(--l2)} .dot.l3{color:var(--l3)}
+
+.ebody{grid-column:2; min-width:0}
+.eref{display:flex; flex-wrap:wrap; gap:.6rem; margin:0 0 .3rem; font:400 .78rem/1.35 var(--mono); color:var(--muted)}
+.ref{color:var(--sub)}
+.ref::before{content:"["} .ref::after{content:"]"}
+.entry h3{font-size:1.12rem; margin:0 0 .3rem; font-weight:600}
+.entry h3 a{color:var(--text); text-decoration:none}
+.entry h3 a:hover{color:var(--accent)}
+.entry.is-head h3::after{
+  content:"HEAD"; margin-left:.6rem; vertical-align:.12em;
+  font:600 .62rem/1 var(--mono); letter-spacing:.08em;
+  color:var(--bg); background:var(--accent); padding:.28em .45em; border-radius:5px;
+}
+.eblurb p{margin:0; color:var(--sub); font-size:.97rem}
+.eblurb p + p{margin-top:.4rem}
+.tags{list-style:none; display:flex; flex-wrap:wrap; gap:.3rem .45rem; margin:.55rem 0 0; padding:0}
+.tags li{font:400 .74rem/1 var(--mono); color:var(--muted); background:var(--mantle); border:1px solid var(--surface); border-radius:5px; padding:.3rem .42rem}
+.elinks{display:flex; flex-wrap:wrap; gap:.35rem; margin:.6rem 0 0}
+.elinks:empty{display:none}
+.elinks .lnk{font-size:.8rem; padding:.32rem .62rem}
+.shot{grid-column:3; align-self:start; width:184px; border-radius:10px; overflow:hidden; border:1px solid var(--surface); line-height:0; background:var(--mantle)}
+.shot img{width:100%; aspect-ratio:16/10; object-fit:cover}
+.shot:hover{border-color:var(--accent-dim)}
+
+/* ---- documents ---- */
+.doc{max-width:44rem; padding-top:1rem}
+.doc.wide{max-width:none}
+.doc.wide .doc-head,.doc.wide .prose{max-width:44rem}
+.crumb{font:400 .85rem/1 var(--mono); margin:0 0 1.5rem}
+.crumb a{color:var(--sub); text-decoration:none}
+.crumb a:hover{color:var(--accent)}
+.doc-head{border-bottom:1px solid var(--surface); padding-bottom:1.1rem; margin-bottom:1.6rem}
+.doc-head h1{font-size:clamp(1.7rem,5vw,2.2rem); margin-bottom:.5rem}
+.lede p{margin:.4rem 0 0; color:var(--sub); font-size:1.05rem}
+.prose p,.prose ul,.prose blockquote{margin:0 0 1.05rem}
+.prose h2{font-size:1.25rem; margin:2rem 0 .7rem; color:var(--accent)}
+.prose h3{font-size:1.05rem; margin:1.6rem 0 .5rem}
+.prose ul{padding-left:1.15rem}
+.prose li{margin:.25rem 0}
+.prose blockquote{border-left:2px solid var(--accent-dim); padding-left:1rem; color:var(--sub); font-style:italic}
+.prose img{border-radius:var(--r); border:1px solid var(--surface); margin:1.2rem 0}
+.prose table{width:100%; border-collapse:collapse}
+
+.gallery{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1rem 1.1rem; margin-top:2rem}
+.gallery figure{margin:0}
+/* One frame height per tile so captions line up across a row whatever shape the art is. */
+.gallery img{width:100%; aspect-ratio:4/3; object-fit:contain; border-radius:10px; border:1px solid var(--surface); background:var(--mantle)}
+.gallery a{display:block; line-height:0}
+.gallery a:hover img{border-color:var(--accent-dim)}
+.gallery figcaption{font-size:.82rem; color:var(--muted); margin-top:.5rem; line-height:1.45}
+
+.postlist{list-style:none; margin:0; padding:0}
+.postlist li{display:grid; grid-template-columns:7.5rem 1fr; gap:.2rem 1rem; padding:1.1rem 0; border-bottom:1px solid rgba(49,50,68,.55)}
+.postlist time{font:400 .82rem/1.9 var(--mono); color:var(--muted)}
+.postlist a{font-size:1.08rem; font-weight:600; text-decoration:none; color:var(--text)}
+.postlist a:hover{color:var(--accent)}
+.postlist span{grid-column:2; color:var(--sub); font-size:.94rem}
+
+.nf h1{font:600 4rem/1 var(--mono); color:var(--accent)}
+
+@media (max-width:720px){
+  :root{--gap:12px; --dy:2.9rem}
+  body{font-size:16px}
+  .entry{grid-template-columns:var(--railw) minmax(0,1fr); gap:0 .85rem}
+  .shot{grid-column:2; width:100%; max-width:280px; margin-top:.8rem}
+  .postlist li{grid-template-columns:1fr}
+  .postlist span{grid-column:1}
+  .top{padding-top:1.1rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .mark i{animation:none}
+  *{scroll-behavior:auto}
+}

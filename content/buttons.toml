@@ -1,0 +1,38 @@
+# 88x31s. Drop a PNG or GIF in assets/buttons/ and add a block here.
+# Mine is the first one, take it if you want to link to me.
+
+[[button]]
+src = "assets/buttons/milotek.png"
+href = "https://furfag.lol/wst15/"
+alt = "milo tek"
+title = "milo tek - link me with this one"
+
+[[button]]
+src = "assets/buttons/pixeljam.png"
+href = "https://github.com/Pixeljam-Studios"
+alt = "pixeljam studios"
+title = "Pixeljam Studios"
+
+[[button]]
+src = "assets/buttons/nixos.png"
+href = "https://nixos.org"
+alt = "powered by nixos"
+title = "Powered by NixOS"
+
+[[button]]
+src = "assets/buttons/catppuccin.png"
+href = "https://catppuccin.com"
+alt = "catppuccin mocha"
+title = "Catppuccin Mocha"
+
+[[button]]
+src = "assets/buttons/delake.png"
+href = "https://github.com/milotek"
+alt = "de_lake enjoyer"
+title = "de_lake deserves better"
+
+[[button]]
+src = "assets/buttons/yours.png"
+href = "mailto:milo@milotek.dev"
+alt = "your button here"
+title = "Send me yours"

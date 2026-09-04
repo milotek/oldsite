@@ -1,0 +1,50 @@
+name = "milo tek"
+short = "milo tek"
+description = "Milo Tekchandani. Software engineer in London, currently at Google on the Search app for mobile."
+url = "https://furfag.lol/wst15/"
+base = "https://furfag.lol/wst15/"
+
+[[nav]]
+slug = "log"
+label = "log"
+url = ""
+
+[[nav]]
+slug = "art"
+label = "art"
+url = "art/"
+
+[[nav]]
+slug = "blog"
+label = "blog"
+url = "blog/"
+
+[[nav]]
+slug = "now"
+label = "now"
+url = "now/"
+
+[[nav]]
+slug = "uses"
+label = "uses"
+url = "uses/"
+
+[[socials]]
+label = "github"
+url = "https://github.com/milotek"
+
+[[socials]]
+label = "linkedin"
+url = "https://www.linkedin.com/in/fired/"
+
+[[socials]]
+label = "instagram"
+url = "https://www.instagram.com/milo.tek/"
+
+[[socials]]
+label = "email"
+url = "mailto:milo@milotek.dev"
+
+[[socials]]
+label = "cv (pdf)"
+url = "https://github.com/milotek/milotek/raw/main/CV.pdf"
