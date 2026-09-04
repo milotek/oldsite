@@ -1,0 +1,99 @@
+# One [[project]] per sticker. Order is display order.
+# size: big (8 of 12 columns), wide (6), normal (4, the default), small (3).
+# image: a file under assets/img/projects/. Omit it for a text-only sticker.
+
+[[project]]
+name = "neosource"
+blurb = "Fragsurf ported to Unity 2022.3 and URP 14, with the editor working on Linux. My merged PRs: bullet penetration, CS:GO-style recoil, viewpunch and spread, view models with per-weapon animators, and the Linux build fix."
+tags = ["C#", "Unity", "Pixeljam Studios"]
+repo = "https://github.com/Pixeljam-Studios/neosource"
+image = "neosource.webp"
+size = "big"
+
+
+[[project]]
+name = "Pixeljam Studios"
+blurb = "The org where the games live. Unity, Godot and Roblox. Not a real company."
+tags = ["org"]
+repo = "https://github.com/Pixeljam-Studios"
+image = "pixeljam.webp"
+size = "normal"
+
+
+[[project]]
+name = "nixeljam"
+blurb = "My NixOS flake: Hyprland, stylix theming, per-host configs and the server modules for everything I self-host. The colours on this page come straight out of its pixeljam theme."
+tags = ["Nix", "Hyprland", "stylix"]
+repo = "https://github.com/milotek/nixeljam"
+image = "nixeljam.webp"
+size = "wide"
+
+
+[[project]]
+name = "legacy console shaders"
+blurb = "Make Minecraft Java look like the Xbox 360 edition. GLSL shaders for 1.6.4 and ShadersModCore, which also run on OptiFine and Iris."
+tags = ["GLSL", "Minecraft"]
+repo = "https://github.com/milotek/minecraft-legacy-console-shaders"
+image = "legacy_console_shaders.webp"
+size = "wide"
+
+
+[[project]]
+name = "habits"
+blurb = "A habit tracker that renders as a GitHub-style activity grid, made for a wall-mounted kiosk. Kotlin, packaged as a Nix module."
+tags = ["Kotlin", "Nix"]
+repo = "https://github.com/milotek/habits"
+link = "https://habits.tek.rip"
+size = "normal"
+
+
+[[project]]
+name = "ROXOR"
+blurb = "A Roblox superset built for unrealistic realism. Source-style movement with ground and air takeover, auto-bhop, and a headless dev-session launcher."
+tags = ["Luau", "Roblox", "Pixeljam Studios"]
+repo = "https://github.com/Pixeljam-Studios/ROXOR"
+image = "roxor.webp"
+size = "normal"
+
+
+[[project]]
+name = "left-in-vr"
+blurb = "Left 4 Dead 2 in VR. A fork where I pulled in the upstream PRs nobody merged, then added MSAA, analogue movement and a fix for distorted rendering on PSVR2."
+tags = ["C++", "Source", "OpenVR"]
+repo = "https://github.com/milotek/left-in-vr"
+size = "normal"
+
+
+[[project]]
+name = "RoRipper"
+blurb = "A Roblox CDN cache dumper and viewer, written in protest at Roblox making user-uploaded sounds and meshes private. Shows, previews and notifies as assets land on disk."
+tags = ["Roblox", "SQLite", "Windows"]
+repo = "https://github.com/milotek/unprivatiser"
+image = "roripper.webp"
+size = "normal"
+
+
+[[project]]
+name = "AutoPet feeder"
+blurb = "A fully automated pet feeder built to my neighbours' spec. Raspberry Pi, a servo, a touchscreen and USB-C power, in a 3D-printed ABS shell with an oak finish. Full design document in the repo."
+tags = ["hardware", "Raspberry Pi", "JavaScript"]
+repo = "https://github.com/milotek/petfeeder"
+image = "petfeeder.webp"
+size = "big"
+
+
+[[project]]
+name = "Lockyn"
+blurb = "A study app for GCSE and sixth form students, my A level NEA. React Native and Firebase."
+tags = ["TypeScript", "React Native"]
+repo = "https://github.com/milotek/studyapp"
+image = "lockyn.webp"
+size = "wide"
+
+
+[[project]]
+name = "simfiles"
+blurb = "Stepmania modcharts for notITG, all charted by me. An excuse to write Lua and learn GLSL."
+tags = ["Lua", "GLSL", "rhythm games"]
+repo = "https://github.com/milotek/simfiles"
+size = "wide"

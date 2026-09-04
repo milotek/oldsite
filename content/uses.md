@@ -1,0 +1,7 @@
+- NixOS from my own flake, [nixeljam](https://github.com/milotek/nixeljam). Hyprland on top, stylix for theming.
+- Catppuccin Mocha everywhere, with `#ffbdbd` swapped in as the accent. Rosé Pine cursor.
+- Ghostty and Zellij, both in MesloLGS Nerd Font.
+- Obsidian for notes. The vault is a git repo, and the posts here can come straight out of it.
+- Tailscale to reach my machines, Caddy in front of anything public.
+- A mini PC running copyparty as a file server for me and my friends.
+- An iPad Pro and Procreate for drawing.

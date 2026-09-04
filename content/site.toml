@@ -1,0 +1,37 @@
+# Facts about the site and its owner. Everything here is rendered by tools/build.py.
+
+name = "Milo Tekchandani"
+handle = "milo tek"
+role = "Software Engineer (Apprentice) at Google, London"
+tagline = "Google Search, the mobile app side. Backend and infrastructure, so the part of google.com that lives on your phone."
+blurb = "The rest of the time goes on a NixOS flake, a Source-flavoured Unity project with the Pixeljam lot, and the occasional drawing."
+email = "milo@milotek.dev"
+url = "https://furfag.lol/wst4/"
+description = "Milo Tekchandani, software engineer in London. Projects, work, a blog and a wall of 88x31 buttons, laid out as a sticker sheet."
+sheet = "sheet 01 · sept 2026"
+cv = "https://github.com/milotek/milotek/raw/main/CV.pdf"
+source = "https://github.com/milotek/wst4"
+
+[[social]]
+name = "GitHub"
+href = "https://github.com/milotek"
+
+[[social]]
+name = "LinkedIn"
+href = "https://www.linkedin.com/in/fired/"
+
+[[social]]
+name = "Instagram"
+href = "https://www.instagram.com/milo.tek/"
+
+[[social]]
+name = "Email"
+href = "mailto:milo@milotek.dev"
+
+[[social]]
+name = "CV (PDF)"
+href = "https://github.com/milotek/milotek/raw/main/CV.pdf"
+
+[[social]]
+name = "Pixeljam Studios"
+href = "https://github.com/Pixeljam-Studios"

@@ -1,0 +1,36 @@
+# The 88x31 wall. Drop a GIF or PNG in assets/buttons/ and add a [[button]] here.
+# mine = true marks the ones people can copy for their own sites.
+
+[[button]]
+file = "milotek.png"
+alt = "milo tek, milotek.dev"
+href = "https://milotek.dev"
+mine = true
+
+[[button]]
+file = "peel_here.png"
+alt = "peel here, no JS inside"
+href = "blog/this-site-is-a-sticker-sheet/"
+mine = true
+
+[[button]]
+file = "anybrowser.gif"
+alt = "Best viewed with any browser"
+href = "https://anybrowser.org/campaign/"
+
+[[button]]
+file = "dark-mode.gif"
+alt = "Dark mode"
+
+[[button]]
+file = "css.gif"
+alt = "Made with CSS"
+
+[[button]]
+file = "blender.gif"
+alt = "Blender"
+href = "https://www.blender.org"
+
+[[button]]
+file = "bestviewedopen.gif"
+alt = "Best viewed with open eyes"

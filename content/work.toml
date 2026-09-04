@@ -1,0 +1,43 @@
+# One [[job]] per sticker in the work section, newest first.
+
+[[job]]
+org = "Google"
+title = "Software Engineer (Apprentice)"
+where = "London"
+when = "now"
+size = "big"
+lines = [
+  "Google Search app, backend and infrastructure.",
+  "Developer tools for the people building AI Mode.",
+  "Page transitions between the tabs on the results page.",
+]
+
+[[job]]
+org = "Makers"
+title = "Software engineering bootcamp"
+where = "London"
+when = "2025"
+lines = [
+  "Team projects: MakersBnB in Flask, Acebook in Java and Spring Boot.",
+  "Test-driven, pair-programmed, the whole thing.",
+]
+
+[[job]]
+org = "Self-employed"
+title = "GCSE Computer Science tutor"
+where = "online and in person"
+when = "2024"
+size = "wide"
+lines = [
+  "1:1 lessons for Year 10 and 11, with a study plan per student.",
+]
+
+[[job]]
+org = "Hills Road Sixth Form College"
+title = "A levels"
+where = "Cambridge"
+when = "2023 to 2025"
+size = "wide"
+lines = [
+  "Computer Science, Maths, English, plus an EPQ that turned into a Godot game.",
+]
