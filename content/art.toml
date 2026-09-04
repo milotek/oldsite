@@ -1,0 +1,98 @@
+# The sketches page. Files live in assets/img/art/. Add a [[piece]] and rebuild.
+
+title = "Sketches"
+description = "Drawings by Milo Tekchandani, mostly Procreate on an iPad Pro."
+intro = """
+Mostly Procreate on an iPad Pro with a Pencil, going back to sixth form.
+Some of it is concept art for games, some of it is for mates, some of it is padding and I've said so in the caption.
+"""
+
+[[piece]]
+file = "moose_grey.webp"
+alt = "A cartoon moose with big antlers and a red jumper, looking slightly alarmed"
+caption = "Laser Antlers, final render. A character based on an old internet mate. He looks like that on purpose."
+
+[[piece]]
+file = "epq_antagonist_laser_antlers.webp"
+alt = "A character design sheet titled Laser Antlers with notes and a polaroid of the moose"
+caption = "The design sheet for the same character."
+
+[[piece]]
+file = "epq_protagonist.webp"
+alt = "A pale figure in a top hat and red tie on a dark background, labelled protagonist"
+caption = "Protagonist concept for my EPQ game."
+
+[[piece]]
+file = "de_dust2_fullbright.webp"
+alt = "A painted view down a sandy street with a bombsite in the distance"
+caption = "de_dust2 in mat_fullbright."
+
+[[piece]]
+file = "bring_back_lake.webp"
+alt = "Ink sketch of the house and dock on de_lake with the hashtag Bring Back Lake"
+caption = "#BringBackLake. My favourite map. See lakeback."
+
+[[piece]]
+file = "steam_pfp_commission.webp"
+alt = "A cartoon character with messy black hair and a cigarette, drawn for a Steam profile"
+caption = "A mate's Steam profile picture, drawn by request."
+
+[[piece]]
+file = "friends_birthday.webp"
+alt = "A grid of small cartoon portraits of friends with their names written above each"
+caption = "Me and my friends, drawn for someone's birthday."
+
+[[piece]]
+file = "hardware_vs_software.webp"
+alt = "A dark poster titled Hardware versus Software with handwritten notes and a laptop drawing"
+caption = "Poster for a Computer Science competition in first term. Hardware versus software."
+
+[[piece]]
+file = "geometry_dash_10.webp"
+alt = "Geometric shapes in a pink and orange gradient"
+caption = "Geometry Dash 10 year anniversary fan art. I don't know what it represents either. Padding."
+
+[[piece]]
+file = "pygame_title.webp"
+alt = "Pixel art mountains under a full moon at dusk"
+caption = "Title screen for a pygame project."
+
+[[piece]]
+file = "pygame_sunset.webp"
+alt = "Pixel art sunset over water"
+caption = "Sunset stage, same pygame project."
+
+[[piece]]
+file = "pygame_space.webp"
+alt = "Pixel art of the Earth and a meteor in space"
+caption = "Space stage."
+
+[[piece]]
+file = "pygame_world.webp"
+alt = "Pixel art blue sky with clouds over grass"
+caption = "World stage."
+
+[[piece]]
+file = "pygame_underground.webp"
+alt = "Pixel art cave rocks with a skull"
+caption = "Underground stage."
+
+[[piece]]
+file = "giraffe_pixelmator.webp"
+alt = "A flat cartoon giraffe in a field"
+caption = "Cute giraffe, made in Pixelmator Pro to demonstrate the app."
+
+[[piece]]
+file = "one_minute_sketch.webp"
+alt = "A scribbled sad stick figure next to a scribbled grinning face"
+caption = "Under a minute, for a friend. Quality reflects that."
+
+[[piece]]
+file = "under_construction.webp"
+alt = "A stick figure giving a thumbs up next to two cogs, captioned under construction, milo tek 2024"
+caption = "The old site's under construction gif. It sat in every screenshot slot for two years."
+
+[[piece]]
+file = "old_pfp.webp"
+alt = "A white stick figure on a pink gradient"
+caption = "My old profile picture on most websites."

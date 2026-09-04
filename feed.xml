@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>milo tek</title><link>https://furfag.lol/wst5/</link><description>Milo Tekchandani&#x27;s field notebook: work, projects, a blog, and the odd sketch.</description><language>en-gb</language><atom:link href="https://furfag.lol/wst5/feed.xml" rel="self" type="application/rss+xml"/><item><title>How this notebook got built</title><link>https://furfag.lol/wst5/blog/how-this-notebook-got-built/</link><guid>https://furfag.lol/wst5/blog/how-this-notebook-got-built/</guid><pubDate>Fri, 04 Sep 2026 09:00:00 +0000</pubDate><description>&lt;p&gt;My old site was a Carrd export from 2024. Under construction gif, phone number in the header, a projects list that stopped at sixth form. It had to go.&lt;/p&gt;
+&lt;h2&gt;The honest bit&lt;/h2&gt;
+&lt;p&gt;I didn&#x27;t write this one by hand. I wrote a brief, pointed ten copies of Claude at it, and each got a different seed idea. This one drew &quot;field notebook&quot; and ran with it: ruled paper, tabs down the side, screenshots taped in at an angle, margin notes in the terminal font.&lt;small class=&quot;note&quot;&gt;the seed was one sentence. &quot;a reader should be able to name the metaphor in one glance.&quot;&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;I&#x27;m comparing the ten and keeping the one I hate least. If you&#x27;re reading this, it won.&lt;/p&gt;
+&lt;h2&gt;What it&#x27;s made of&lt;/h2&gt;
+&lt;p&gt;The whole site is Markdown files with YAML frontmatter, the same format Obsidian uses. A project looks like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-markdown&quot;&gt;---
+title: nixeljam
+kicker: nixos · 2024 → now
+status: live
+featured: true
+order: 1
+tags: [nix, hyprland]
+links:
+  - label: source
+    url: https://github.com/milotek/nixeljam
+---
+My NixOS flake. Five hosts, one theme file...
+
+![the desktop](img/projects/nixeljam_desktop.webp &amp;quot;the desktop this site is copying&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A 250-line Python script turns that folder into HTML. Footnotes become margin notes, which is the part I&#x27;m most pleased with.&lt;small class=&quot;note&quot;&gt;like this one. in obsidian it&#x27;s just a footnote, so the posts still read fine in the vault.&lt;/small&gt; A paragraph that&#x27;s only images becomes a row of taped-in figures. Everything else is the python-markdown library doing what it already does.&lt;/p&gt;
+&lt;p&gt;No JavaScript, because nothing here needs it. No framework, because I don&#x27;t want to migrate off it in two years.&lt;/p&gt;
+&lt;h2&gt;The theme&lt;/h2&gt;
+&lt;p&gt;Colours come from &lt;code&gt;themes/pixeljam.nix&lt;/code&gt; in my NixOS config: Catppuccin Mocha with &lt;code&gt;#ffbdbd&lt;/code&gt; as the accent. The fonts are the ones on my desktop, pulled out of the Nix store, subsetted to Latin and served from here. The site looks like my terminal because it&#x27;s built from the same file.&lt;/p&gt;
+&lt;h2&gt;Deploying under a subpath&lt;/h2&gt;
+&lt;p&gt;GitHub Pages serves this from &lt;code&gt;/wst5/&lt;/code&gt;, so every link is relative. The build script works out how many &lt;code&gt;../&lt;/code&gt; each page needs. That&#x27;s it. No base tag, no config option, nothing to forget.&lt;/p&gt;
+&lt;h2&gt;What I&#x27;d still change&lt;/h2&gt;
+&lt;p&gt;The CV linked from the front page is the pre-Google one. Lockyn is still &quot;unreleased&quot;, which it has been for two years now. And the Now page will rot unless I actually update it, which is a me problem, not a build problem.&lt;/p&gt;
+&lt;p&gt;If you want the build script, it&#x27;s in &lt;a href=&quot;https://github.com/milotek/wst5&quot;&gt;the repo&lt;/a&gt;. Take it.&lt;/p&gt;
+</description></item></channel></rss>

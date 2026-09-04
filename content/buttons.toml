@@ -1,0 +1,53 @@
+# 88x31 buttons for the footer. Drop a gif in assets/img/buttons/ and add a [[button]] here.
+# The archive ones are from cyber.dabamos.de/88x31. milotek.gif is home-made.
+
+[[button]]
+img = "milotek.gif"
+alt = "milo tek"
+url = "https://milotek.dev"
+
+[[button]]
+img = "github.gif"
+alt = "GitHub"
+url = "https://github.com/milotek"
+
+[[button]]
+img = "gnu-linux.gif"
+alt = "Made on GNU/Linux"
+url = "https://nixos.org"
+
+[[button]]
+img = "neovim.gif"
+alt = "Made with neovim"
+url = "https://neovim.io"
+
+[[button]]
+img = "google.gif"
+alt = "Google"
+url = "https://www.google.com"
+
+[[button]]
+img = "steam.gif"
+alt = "Play with Steam"
+url = "https://store.steampowered.com"
+
+[[button]]
+img = "any_browser.gif"
+alt = "Any browser, any OS"
+
+[[button]]
+img = "best_viewed_with_eyes.gif"
+alt = "Best viewed with eyes"
+
+[[button]]
+img = "built_with_microsoft_notepad.gif"
+alt = "Built with Microsoft Notepad (a lie)"
+
+[[button]]
+img = "valid-html5.gif"
+alt = "Valid HTML5"
+
+[[button]]
+img = "rss-button.gif"
+alt = "RSS feed"
+url = "feed.xml"

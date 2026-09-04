@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How this notebook got built · milo tek</title>
+<meta name="description" content="A rebuild of milotek.dev as a field notebook, done in one sitting by an AI agent I pointed at my GitHub. Here&#x27;s what it did and what I&#x27;d change.">
+<meta name="theme-color" content="#1e1e2e">
+<meta property="og:title" content="How this notebook got built · milo tek">
+<meta property="og:description" content="A rebuild of milotek.dev as a field notebook, done in one sitting by an AI agent I pointed at my GitHub. Here&#x27;s what it did and what I&#x27;d change.">
+<meta property="og:url" content="https://furfag.lol/wst5/blog/how-this-notebook-got-built/">
+<meta property="og:image" content="https://furfag.lol/wst5/assets/img/avatar.webp">
+<link rel="canonical" href="https://furfag.lol/wst5/blog/how-this-notebook-got-built/">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="milo tek blog" href="../../feed.xml">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="book">
+<nav class="tabs" aria-label="Sections"><a href="../../">projects</a><a href="../../blog/" class="active" aria-current="page">blog</a><a href="../../sketches/">sketches</a><a href="../../now/">now</a><a href="../../uses/">uses</a><a href="../../colophon/">colophon</a></nav>
+<div class="page">
+<div class="rings" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<main>
+<article class="post">
+<h1><small class="note stamp">4 Sep 2026</small>How this notebook got built</h1>
+<p class="lede">A rebuild of milotek.dev as a field notebook, done in one sitting by an AI agent I pointed at my GitHub. Here&#x27;s what it did and what I&#x27;d change.</p>
+<p>My old site was a Carrd export from 2024. Under construction gif, phone number in the header, a projects list that stopped at sixth form. It had to go.</p>
+<h2>The honest bit</h2>
+<p>I didn't write this one by hand. I wrote a brief, pointed ten copies of Claude at it, and each got a different seed idea. This one drew "field notebook" and ran with it: ruled paper, tabs down the side, screenshots taped in at an angle, margin notes in the terminal font.<small class="note">the seed was one sentence. "a reader should be able to name the metaphor in one glance."</small></p>
+<p>I'm comparing the ten and keeping the one I hate least. If you're reading this, it won.</p>
+<h2>What it's made of</h2>
+<p>The whole site is Markdown files with YAML frontmatter, the same format Obsidian uses. A project looks like this:</p>
+<pre><code class="language-markdown">---
+title: nixeljam
+kicker: nixos · 2024 → now
+status: live
+featured: true
+order: 1
+tags: [nix, hyprland]
+links:
+  - label: source
+    url: https://github.com/milotek/nixeljam
+---
+My NixOS flake. Five hosts, one theme file...
+
+![the desktop](img/projects/nixeljam_desktop.webp &quot;the desktop this site is copying&quot;)
+</code></pre>
+<p>A 250-line Python script turns that folder into HTML. Footnotes become margin notes, which is the part I'm most pleased with.<small class="note">like this one. in obsidian it's just a footnote, so the posts still read fine in the vault.</small> A paragraph that's only images becomes a row of taped-in figures. Everything else is the python-markdown library doing what it already does.</p>
+<p>No JavaScript, because nothing here needs it. No framework, because I don't want to migrate off it in two years.</p>
+<h2>The theme</h2>
+<p>Colours come from <code>themes/pixeljam.nix</code> in my NixOS config: Catppuccin Mocha with <code>#ffbdbd</code> as the accent. The fonts are the ones on my desktop, pulled out of the Nix store, subsetted to Latin and served from here. The site looks like my terminal because it's built from the same file.</p>
+<h2>Deploying under a subpath</h2>
+<p>GitHub Pages serves this from <code>/wst5/</code>, so every link is relative. The build script works out how many <code>../</code> each page needs. That's it. No base tag, no config option, nothing to forget.</p>
+<h2>What I'd still change</h2>
+<p>The CV linked from the front page is the pre-Google one. Lockyn is still "unreleased", which it has been for two years now. And the Now page will rot unless I actually update it, which is a me problem, not a build problem.</p>
+<p>If you want the build script, it's in <a href="https://github.com/milotek/wst5">the repo</a>. Take it.</p>
+
+<p class="back"><a href="../">← all posts</a></p>
+</article>
+</main>
+<footer class="foot">
+<div class="buttons"><a href="https://milotek.dev"><img src="../../assets/img/buttons/milotek.gif" alt="milo tek" width="88" height="31" loading="lazy"></a><a href="https://github.com/milotek"><img src="../../assets/img/buttons/github.gif" alt="GitHub" width="88" height="31" loading="lazy"></a><a href="https://nixos.org"><img src="../../assets/img/buttons/gnu-linux.gif" alt="Made on GNU/Linux" width="88" height="31" loading="lazy"></a><a href="https://neovim.io"><img src="../../assets/img/buttons/neovim.gif" alt="Made with neovim" width="88" height="31" loading="lazy"></a><a href="https://www.google.com"><img src="../../assets/img/buttons/google.gif" alt="Google" width="88" height="31" loading="lazy"></a><a href="https://store.steampowered.com"><img src="../../assets/img/buttons/steam.gif" alt="Play with Steam" width="88" height="31" loading="lazy"></a><img src="../../assets/img/buttons/any_browser.gif" alt="Any browser, any OS" width="88" height="31" loading="lazy"><img src="../../assets/img/buttons/best_viewed_with_eyes.gif" alt="Best viewed with eyes" width="88" height="31" loading="lazy"><img src="../../assets/img/buttons/built_with_microsoft_notepad.gif" alt="Built with Microsoft Notepad (a lie)" width="88" height="31" loading="lazy"><img src="../../assets/img/buttons/valid-html5.gif" alt="Valid HTML5" width="88" height="31" loading="lazy"><a href="feed.xml"><img src="../../assets/img/buttons/rss-button.gif" alt="RSS feed" width="88" height="31" loading="lazy"></a></div>
+<p class="colophon-line"><span class="mono">leaf 2, cont.</span> · <a href="../../feed.xml">rss</a> · <a href="https://github.com/milotek/wst5">source</a> · <a href="mailto:milo@milotek.dev">milo@milotek.dev</a></p>
+</footer>
+</div>
+</div>
+</body>
+</html>

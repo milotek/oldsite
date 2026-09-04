@@ -1,0 +1,66 @@
+# Identity and navigation. Everything else lives in the markdown next door.
+
+[site]
+title = "milo tek"
+name = "Milo Tekchandani"
+volume = "field notebook\nvol. 1 · sept 2026"
+lede = "milo tek. 19, UK. Software Engineer (Apprentice) at Google in London, on Google Search for mobile. Draws a bit. Games a lot."
+description = "Milo Tekchandani's field notebook: work, projects, a blog, and the odd sketch."
+base_url = "https://furfag.lol/wst5/"
+source = "https://github.com/milotek/wst5"
+email = "milo@milotek.dev"
+
+# Tabs down the side of the page, in order. Pages claim a tab with `tab: <key>` in their frontmatter.
+[[tab]]
+key = "projects"
+label = "projects"
+href = ""
+
+[[tab]]
+key = "blog"
+label = "blog"
+href = "blog/"
+
+[[tab]]
+key = "sketches"
+label = "sketches"
+href = "sketches/"
+
+[[tab]]
+key = "now"
+label = "now"
+href = "now/"
+
+[[tab]]
+key = "uses"
+label = "uses"
+href = "uses/"
+
+[[tab]]
+key = "colophon"
+label = "colophon"
+href = "colophon/"
+
+[[social]]
+label = "github"
+url = "https://github.com/milotek"
+
+[[social]]
+label = "pixeljam studios"
+url = "https://github.com/Pixeljam-Studios"
+
+[[social]]
+label = "linkedin"
+url = "https://www.linkedin.com/in/fired/"
+
+[[social]]
+label = "instagram"
+url = "https://www.instagram.com/milo.tek/"
+
+[[social]]
+label = "cv (pdf)"
+url = "https://github.com/milotek/milotek/raw/main/CV.pdf"
+
+[[social]]
+label = "milo@milotek.dev"
+url = "mailto:milo@milotek.dev"

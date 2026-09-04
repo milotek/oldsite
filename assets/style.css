@@ -1,0 +1,499 @@
+@font-face { font-family: "Source Sans 3"; font-weight: 400; font-style: normal; font-display: swap; src: url(fonts/source_sans_3_regular.woff2) format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 400; font-style: italic; font-display: swap; src: url(fonts/source_sans_3_italic.woff2) format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 600; font-style: normal; font-display: swap; src: url(fonts/source_sans_3_semibold.woff2) format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 700; font-style: normal; font-display: swap; src: url(fonts/source_sans_3_bold.woff2) format("woff2"); }
+@font-face { font-family: Montserrat; font-weight: 600; font-style: normal; font-display: swap; src: url(fonts/montserrat_semibold.woff2) format("woff2"); }
+@font-face { font-family: Montserrat; font-weight: 700; font-style: normal; font-display: swap; src: url(fonts/montserrat_bold.woff2) format("woff2"); }
+@font-face { font-family: "MesloLGS NF Mono"; font-weight: 400; font-style: normal; font-display: swap; src: url(fonts/meslo_lgs_nf_mono_regular.woff2) format("woff2"); }
+@font-face { font-family: "MesloLGS NF Mono"; font-weight: 400; font-style: italic; font-display: swap; src: url(fonts/meslo_lgs_nf_mono_italic.woff2) format("woff2"); }
+@font-face { font-family: "MesloLGS NF Mono"; font-weight: 700; font-style: normal; font-display: swap; src: url(fonts/meslo_lgs_nf_mono_bold.woff2) format("woff2"); }
+
+:root {
+  --crust: #11111b;
+  --mantle: #181825;
+  --base: #1e1e2e;
+  --surface0: #313244;
+  --surface1: #45475a;
+  --surface2: #585b70;
+  --overlay0: #6c7086;
+  --overlay1: #7f849c;
+  --subtext0: #a6adc8;
+  --subtext1: #bac2de;
+  --text: #cdd6f4;
+  --accent: #ffbdbd;
+  --accent-ink: rgba(255, 189, 189, 0.16);
+  --tape: rgba(255, 189, 189, 0.32);
+  --green: #a6e3a1;
+  --yellow: #f9e2af;
+  --sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --head: Montserrat, var(--sans);
+  --mono: "MesloLGS NF Mono", ui-monospace, "JetBrains Mono", Menlo, monospace;
+  --line: 1.75rem;
+  --margin: 10.5rem;
+  --gutter: 2.75rem;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  background: var(--crust);
+  color: var(--text);
+  font: 18px/var(--line) var(--sans);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 2.5rem 4.5rem 4rem 2rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-ink);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 2px;
+}
+
+a:hover { text-decoration-color: var(--accent); }
+
+.book {
+  position: relative;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.page {
+  position: relative;
+  background-color: var(--base);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(var(--line) - 1px),
+    var(--surface0) calc(var(--line) - 1px),
+    var(--surface0) var(--line)
+  );
+  background-position: 0 1.05rem;
+  border: 1px solid var(--surface0);
+  border-radius: 4px 14px 14px 4px;
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 0, 0, 0.4);
+  padding: 3rem var(--gutter) 2.5rem calc(var(--margin) + var(--gutter));
+  min-height: 90vh;
+}
+
+.page::before,
+.page::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--accent);
+  pointer-events: none;
+}
+
+.page::before { left: calc(var(--margin) + var(--gutter) - 1.25rem); opacity: 0.55; }
+.page::after { left: calc(var(--margin) + var(--gutter) - 1.25rem + 5px); opacity: 0.22; }
+
+.rings {
+  position: absolute;
+  left: -15px;
+  top: 2rem;
+  bottom: 2rem;
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.rings i {
+  display: block;
+  width: 30px;
+  height: 9px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--surface1), var(--overlay1) 45%, var(--surface2));
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Index tabs hang off the right-hand edge of the page. */
+.tabs {
+  position: absolute;
+  right: -2.35rem;
+  top: 3.5rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.tabs a {
+  writing-mode: vertical-rl;
+  padding: 0.85rem 0.5rem 0.85rem 0.45rem;
+  background: var(--mantle);
+  border: 1px solid var(--surface0);
+  border-left: 0;
+  border-radius: 0 9px 9px 0;
+  font: 13px/1 var(--mono);
+  letter-spacing: 0.08em;
+  color: var(--subtext0);
+  text-decoration: none;
+  box-shadow: 4px 4px 12px -6px rgba(0, 0, 0, 0.8);
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.tabs a:hover { color: var(--text); transform: translateX(3px); }
+
+.tabs a.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--crust);
+  font-weight: 700;
+}
+
+main { position: relative; }
+
+h1, h2, h3, h4 {
+  font-family: var(--head);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: 2.6rem; margin-top: 0.4rem; }
+h2 { font-size: 1.6rem; margin-top: 3.2rem; padding-bottom: 0.35rem; border-bottom: 2px solid var(--surface1); }
+h3 { font-size: 1.35rem; margin-top: 2.6rem; }
+h3.sub { margin-top: 3rem; color: var(--subtext1); }
+h4 { font-size: 1.1rem; margin: 0 0 0.25rem; }
+
+h1 small.note, h2 small.note, h3 small.note, h4 small.note { margin-top: 0.35em; }
+
+p { margin: 0 0 var(--line); }
+p:last-child { margin-bottom: 0; }
+
+ul, ol { padding-left: 1.4rem; margin: 0 0 var(--line); }
+li { margin: 0; }
+
+strong { font-weight: 600; color: #fff; }
+em { font-style: italic; }
+
+code, pre {
+  font-family: var(--mono);
+  font-size: 0.82em;
+}
+
+code {
+  background: var(--mantle);
+  border: 1px solid var(--surface0);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  color: var(--accent);
+}
+
+pre {
+  background: var(--mantle);
+  border: 1px solid var(--surface0);
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  line-height: 1.5;
+  margin: 0 0 var(--line);
+  color: var(--subtext1);
+}
+
+pre code { background: none; border: 0; padding: 0; color: inherit; font-size: 1em; }
+
+hr { border: 0; border-top: 2px dashed var(--surface1); margin: 2rem 0; }
+
+blockquote {
+  margin: 0 0 var(--line);
+  padding: 0 0 0 1rem;
+  border-left: 3px solid var(--accent);
+  color: var(--subtext1);
+}
+
+.mono { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.04em; }
+
+/* Margin notes float out into the left margin, next to the line they annotate. */
+.note {
+  float: left;
+  clear: left;
+  width: calc(var(--margin) - 0.6rem);
+  margin-left: calc(-1 * (var(--margin) + var(--gutter)) + 0.6rem);
+  margin-top: 0.15rem;
+  margin-bottom: 0.4rem;
+  padding-right: 0.35rem;
+  text-align: right;
+  font: 12.5px/1.45 var(--mono);
+  color: var(--subtext0);
+  white-space: pre-line;
+}
+
+.note.stamp { color: var(--accent); font-weight: 700; }
+
+.note .status {
+  display: table;
+  margin: 0.4rem 0 0 auto;
+  padding: 0.05rem 0.45rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--subtext0);
+}
+
+.note .status-live { color: var(--green); }
+.note .status-wip, .note .status-unreleased { color: var(--yellow); }
+.note .status-done { color: var(--accent); }
+.note .status-shelved { color: var(--overlay1); }
+
+.note .tags { display: block; margin-top: 0.4rem; font-weight: 400; color: var(--overlay1); }
+.note .tags span { display: inline-block; }
+.note .tags span + span::before { content: " · "; }
+
+/* Hero */
+.hero { margin-bottom: 1.5rem; }
+
+.hero .polaroid {
+  float: right;
+  width: 9.5rem;
+  margin: 0.2rem 0 1rem 1.5rem;
+  flex: none;
+  transform: rotate(2.4deg);
+}
+
+.hero h1 { color: var(--accent); }
+
+.lede { font-size: 1.2rem; color: var(--subtext1); max-width: 34rem; }
+
+.socials {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+.socials a { text-decoration: none; border-bottom: 1px dashed var(--accent-ink); }
+.socials a:hover { border-bottom-color: var(--accent); }
+
+/* Taped-in figures */
+.pins {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.9rem 1.6rem;
+  margin: 1.8rem 0.4rem 2.2rem;
+}
+
+.pins.solo { justify-content: flex-start; }
+
+figure.taped {
+  position: relative;
+  margin: 0;
+  padding: 0.5rem 0.5rem 0.55rem;
+  background: var(--mantle);
+  border: 1px solid var(--surface1);
+  box-shadow: 0 14px 28px -14px rgba(0, 0, 0, 0.9);
+  transform: rotate(-1.3deg);
+  min-width: 0;
+}
+
+/* --w is the image's own width, so small photos never get blown up past their pixels. */
+figure.taped.landscape { flex: 1 1 18rem; max-width: min(34rem, calc(var(--w) + 1rem + 2px)); }
+figure.taped.square { flex: 1 1 13rem; max-width: min(19rem, calc(var(--w) + 1rem + 2px)); }
+figure.taped.portrait { flex: 0 1 10.5rem; max-width: min(14rem, calc(var(--w) + 1rem + 2px)); }
+.pins.solo figure.taped.landscape { flex-basis: 30rem; }
+.pins.solo figure.taped.portrait { flex-basis: 13rem; }
+
+figure.taped:nth-child(even) { transform: rotate(1.1deg); }
+figure.taped:nth-child(3n) { transform: rotate(-0.5deg); }
+figure.taped:nth-child(4n) { transform: rotate(1.8deg); }
+
+figure.taped img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--crust);
+}
+
+figure.taped figcaption {
+  padding: 0.5rem 0.15rem 0;
+  font: 12.5px/1.4 var(--mono);
+  color: var(--subtext0);
+}
+
+figure.taped::before,
+figure.taped::after {
+  content: "";
+  position: absolute;
+  height: 1.35rem;
+  width: 5rem;
+  top: -0.7rem;
+  background: var(--tape);
+  border: 1px solid rgba(255, 189, 189, 0.18);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+figure.taped::before { left: -1.2rem; transform: rotate(-38deg); }
+figure.taped::after { right: -1.2rem; transform: rotate(35deg); }
+figure.taped:nth-child(even)::before { display: none; }
+figure.taped:nth-child(even)::after { left: 50%; right: auto; transform: translateX(-50%) rotate(-2deg); }
+
+/* Projects */
+.project { margin-bottom: 1rem; padding-bottom: 1.5rem; border-bottom: 1px dashed var(--surface1); }
+.project:last-of-type { border-bottom: 0; }
+.project h3 a { color: var(--text); text-decoration: none; }
+.project h3 a:hover { color: var(--accent); }
+
+.links {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--overlay1);
+  margin-top: -0.3rem;
+}
+
+.links a { text-decoration: none; border-bottom: 1px dashed var(--accent-ink); }
+.links a:hover { border-bottom-color: var(--accent); }
+.links a::before { content: "→ "; color: var(--overlay1); }
+
+.cards { list-style: none; padding: 0; margin: 0; }
+
+.card {
+  padding: 1rem 0 1.1rem;
+  border-bottom: 1px dashed var(--surface1);
+}
+
+.card p { margin-bottom: 0.4rem; }
+.card .links { margin-top: 0; }
+
+.back { font-family: var(--mono); font-size: 0.8rem; }
+.back a { text-decoration: none; border-bottom: 1px dashed var(--accent-ink); }
+
+/* Blog */
+.posts { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.posts li { padding: 0.6rem 0 1rem; border-bottom: 1px dashed var(--surface1); }
+.posts li a { font-family: var(--head); font-weight: 700; font-size: 1.25rem; text-decoration: none; color: var(--text); }
+.posts li a:hover { color: var(--accent); }
+.posts li p { margin: 0.2rem 0 0; color: var(--subtext1); }
+
+.post h2 { font-size: 1.35rem; margin-top: 2.4rem; border-bottom: 0; }
+.post .lede { font-size: 1.1rem; margin-bottom: 1.5rem; }
+
+/* Sketches */
+.pins.gallery figure.taped.landscape { flex: 1 1 16rem; max-width: min(26rem, calc(var(--w) + 1rem + 2px)); }
+.pins.gallery figure.taped.square { flex: 1 1 14rem; max-width: min(20rem, calc(var(--w) + 1rem + 2px)); }
+.pins.gallery figure.taped.portrait { flex: 0 1 12rem; }
+
+/* Footer */
+.foot {
+  clear: both;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--surface1);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.buttons img {
+  display: block;
+  image-rendering: pixelated;
+  border: 1px solid var(--surface0);
+}
+
+.buttons a { display: block; line-height: 0; }
+
+.colophon-line {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--overlay1);
+}
+
+.colophon-line a { text-decoration: none; border-bottom: 1px dashed var(--accent-ink); }
+
+section > p, .project > p, .card > p, .post > p, main > p { overflow-wrap: anywhere; }
+
+@media (max-width: 900px) {
+  :root { --margin: 8.5rem; --gutter: 2rem; }
+  body { padding: 2rem 3.6rem 3rem 1.5rem; }
+  h1 { font-size: 2.2rem; }
+}
+
+@media (max-width: 720px) {
+  :root { --margin: 0rem; --gutter: 1.25rem; --line: 1.65rem; }
+  html { font-size: 17px; }
+  body { padding: 1rem 0.75rem 2.5rem 1.25rem; }
+
+  .page {
+    padding: 1.75rem var(--gutter) 2rem calc(var(--gutter) + 1rem);
+    border-radius: 0 10px 10px 0;
+    min-height: 0;
+  }
+
+  .page::before { left: 1.4rem; }
+  .page::after { left: calc(1.4rem + 4px); }
+
+  .rings { left: -12px; width: 24px; top: 1.5rem; bottom: 1.5rem; }
+  .rings i { width: 24px; height: 7px; }
+
+  .tabs {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    padding: 0 0 0 1.25rem;
+  }
+
+  .tabs a {
+    writing-mode: horizontal-tb;
+    border: 1px solid var(--surface0);
+    border-bottom: 0;
+    border-radius: 9px 9px 0 0;
+    padding: 0.55rem 0.8rem 0.5rem;
+    box-shadow: none;
+  }
+
+  .tabs a:hover { transform: none; }
+
+  .note {
+    float: none;
+    display: block;
+    width: auto;
+    margin: 0.25rem 0 0.6rem;
+    padding: 0.15rem 0 0.15rem 0.6rem;
+    text-align: left;
+    border-left: 2px solid var(--accent);
+    white-space: normal;
+  }
+
+  h1 .note, h2 .note, h3 .note, h4 .note { font-size: 12px; margin-bottom: 0.4rem; }
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.4rem; margin-top: 2.4rem; }
+
+  .hero .polaroid { float: none; width: 5.5rem; margin: 0 0 1.25rem 0.5rem; }
+  .lede { font-size: 1.1rem; }
+
+  .pins { gap: 1.6rem 1rem; margin: 1.4rem 0.2rem 1.8rem; }
+  figure.taped.landscape { flex-basis: 100%; }
+  figure.taped.square { flex: 1 1 100%; }
+  figure.taped.portrait { flex: 1 1 8rem; max-width: 11rem; }
+  .note .status { margin-left: 0; }
+  figure.taped::before, figure.taped::after { width: 3.6rem; }
+  figure.taped::before { left: -0.9rem; }
+  figure.taped::after { right: -0.9rem; }
+  figure.taped:nth-child(even)::after { right: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tabs a { transition: none; }
+}

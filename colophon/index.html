@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colophon · milo tek</title>
+<meta name="description" content="How Milo Tekchandani&#x27;s website is built and hosted.">
+<meta name="theme-color" content="#1e1e2e">
+<meta property="og:title" content="Colophon · milo tek">
+<meta property="og:description" content="How Milo Tekchandani&#x27;s website is built and hosted.">
+<meta property="og:url" content="https://furfag.lol/wst5/colophon/">
+<meta property="og:image" content="https://furfag.lol/wst5/assets/img/avatar.webp">
+<link rel="canonical" href="https://furfag.lol/wst5/colophon/">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="milo tek blog" href="../feed.xml">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="book">
+<nav class="tabs" aria-label="Sections"><a href="../">projects</a><a href="../blog/">blog</a><a href="../sketches/">sketches</a><a href="../now/">now</a><a href="../uses/">uses</a><a href="../colophon/" class="active" aria-current="page">colophon</a></nav>
+<div class="page">
+<div class="rings" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<main>
+<h1><small class="note stamp">how it&#x27;s made</small>Colophon</h1>
+<p><strong>Paper.</strong> Catppuccin Mocha, accent <code>#ffbdbd</code>, lifted from the theme file in my NixOS flake. The margin rule is the accent at half opacity. The ruled lines are <code>surface0</code>.</p>
+<p><strong>Type.</strong> Source Sans 3 for the body, Montserrat for headings, MesloLGS Nerd Font Mono for the margin notes. They're the fonts my desktop uses, subsetted to Latin with fonttools and served from here.<small class="note">~250 kb of woff2 for nine faces. cheaper than one hero image.</small></p>
+<p><strong>Build.</strong> One Python script (<code>tools/build.py</code>) with python-markdown, PyYAML and Pillow, all pinned by <code>shell.nix</code>. Every project, page and post is a Markdown file with YAML frontmatter. Footnotes become margin notes. A paragraph of images becomes a row of taped-in figures.</p>
+<p><strong>Hosting.</strong> GitHub Pages, static files straight from the repo, no build on their side. Every URL is relative so it survives living under a subpath.</p>
+<p><strong>JavaScript.</strong> None. <strong>Analytics.</strong> None. <strong>Cookies.</strong> None.</p>
+<p><strong>Buttons.</strong> The 88x31s in the footer are real ones from the <a href="https://cyber.dabamos.de/88x31/">dabamos archive</a>, plus one I drew in ImageMagick. Room for more.</p>
+<p><strong>Source.</strong> <a href="https://github.com/milotek/wst5">github.com/milotek/wst5</a>. Steal the build script if you like, it's about 250 lines.</p>
+
+</main>
+<footer class="foot">
+<div class="buttons"><a href="https://milotek.dev"><img src="../assets/img/buttons/milotek.gif" alt="milo tek" width="88" height="31" loading="lazy"></a><a href="https://github.com/milotek"><img src="../assets/img/buttons/github.gif" alt="GitHub" width="88" height="31" loading="lazy"></a><a href="https://nixos.org"><img src="../assets/img/buttons/gnu-linux.gif" alt="Made on GNU/Linux" width="88" height="31" loading="lazy"></a><a href="https://neovim.io"><img src="../assets/img/buttons/neovim.gif" alt="Made with neovim" width="88" height="31" loading="lazy"></a><a href="https://www.google.com"><img src="../assets/img/buttons/google.gif" alt="Google" width="88" height="31" loading="lazy"></a><a href="https://store.steampowered.com"><img src="../assets/img/buttons/steam.gif" alt="Play with Steam" width="88" height="31" loading="lazy"></a><img src="../assets/img/buttons/any_browser.gif" alt="Any browser, any OS" width="88" height="31" loading="lazy"><img src="../assets/img/buttons/best_viewed_with_eyes.gif" alt="Best viewed with eyes" width="88" height="31" loading="lazy"><img src="../assets/img/buttons/built_with_microsoft_notepad.gif" alt="Built with Microsoft Notepad (a lie)" width="88" height="31" loading="lazy"><img src="../assets/img/buttons/valid-html5.gif" alt="Valid HTML5" width="88" height="31" loading="lazy"><a href="feed.xml"><img src="../assets/img/buttons/rss-button.gif" alt="RSS feed" width="88" height="31" loading="lazy"></a></div>
+<p class="colophon-line"><span class="mono">leaf 6</span> · <a href="../feed.xml">rss</a> · <a href="https://github.com/milotek/wst5">source</a> · <a href="mailto:milo@milotek.dev">milo@milotek.dev</a></p>
+</footer>
+</div>
+</div>
+</body>
+</html>
