@@ -1,0 +1,56 @@
+# The gallery. Add a row, drop the file in assets/img/art/ as <file>.webp
+# and <file>-t.webp for the thumbnail. Captions only, no invented dates.
+
+lead = "Mostly Procreate on an iPad Pro with an Apple Pencil. Some of it is a decade of being bored in lessons."
+
+[[art]]
+file    = "laser-antlers"
+caption = "Laser Antlers character sheet, final design."
+[[art]]
+file    = "portrait"
+caption = "Character portrait."
+[[art]]
+file    = "protagonist"
+caption = "Protagonist concept board for my EPQ game."
+[[art]]
+file    = "dust2"
+caption = "de_dust2 in mat_fullbright."
+[[art]]
+file    = "lake"
+caption = "de_lake. My favourite map. Bring it back."
+[[art]]
+file    = "hwsw"
+caption = "Hardware versus software poster, for a computer science competition."
+[[art]]
+file    = "friends"
+caption = "Me and my friends, drawn for someone's birthday."
+[[art]]
+file    = "steampfp"
+caption = "A friend's Steam profile picture, drawn by request."
+[[art]]
+file    = "oldpfp"
+caption = "My old profile picture."
+[[art]]
+file    = "oneminute"
+caption = "Quick sketch for a friend, made in under a minute."
+[[art]]
+file    = "giraffe"
+caption = "Giraffe, drawn in Pixelmator Pro to try the app out."
+[[art]]
+file    = "thameslink"
+caption = "Commuter rail discourse."
+[[art]]
+file    = "pg-title"
+caption = "Title screen background for a pygame project."
+[[art]]
+file    = "pg-sunset"
+caption = "Sunset stage background."
+[[art]]
+file    = "pg-space"
+caption = "Space stage background."
+[[art]]
+file    = "pg-underground"
+caption = "Underground stage background."
+[[art]]
+file    = "pg-world"
+caption = "World stage background."

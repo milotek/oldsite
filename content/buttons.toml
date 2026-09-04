@@ -1,0 +1,54 @@
+# The 88x31 wall. Add a row with img/alt/url and it appears.
+# Empty slots are `[[button]]` with `empty = true`, they render as a dashed box.
+
+lead = "Take mine. If you've got one, send it over and I'll put it up."
+
+[[mine]]
+img   = "img/buttons/milotek.png"
+alt   = "milo tek"
+url   = "https://furfag.lol/"
+title = "milo tek"
+[[mine]]
+img   = "img/buttons/pixeljam.png"
+alt   = "Pixeljam Studios"
+url   = "https://github.com/Pixeljam-Studios"
+title = "Pixeljam Studios"
+[[mine]]
+img   = "img/buttons/trashdump.png"
+alt   = "files.tek.rip"
+url   = "https://files.tek.rip"
+title = "files.tek.rip, my file server"
+[[mine]]
+img   = "img/buttons/punchdrunk.png"
+alt   = "punchdrunk.gg"
+url   = "https://punchdrunk.gg"
+title = "punchdrunk.gg, my minecraft server"
+
+[[theirs]]
+img   = "img/buttons/nixos.png"
+alt   = "NixOS"
+url   = "https://nixos.org"
+title = "NixOS"
+[[theirs]]
+img   = "img/buttons/catppuccin.png"
+alt   = "Catppuccin"
+url   = "https://catppuccin.com"
+title = "Catppuccin"
+[[theirs]]
+img   = "img/buttons/godot.png"
+alt   = "Godot Engine"
+url   = "https://godotengine.org"
+title = "Godot Engine"
+[[theirs]]
+img   = "img/buttons/nojs.png"
+alt   = "Works without JavaScript"
+url   = ""
+title = "This site works with JavaScript off"
+[[theirs]]
+empty = true
+[[theirs]]
+empty = true
+[[theirs]]
+empty = true
+[[theirs]]
+empty = true

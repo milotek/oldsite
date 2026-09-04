@@ -1,0 +1,107 @@
+# Everything the generator needs that is not a page. Edit this, not the code.
+
+name          = "milo tek"
+full_name     = "Milo Tekchandani"
+title         = "milo tek"
+tagline       = "Software engineer. Google Search app, London."
+description   = "Milo Tekchandani (milo tek): software engineer at Google in London, working on the Search app. Projects, drawings and the odd blog post."
+base_url      = "https://furfag.lol/wst18/"
+locale        = "en-GB"
+avatar        = "img/site/avatar.webp"
+avatar_alt    = "Drawing of a character in a cat-ear hood holding a mug"
+mascot        = "img/site/moose.webp"
+mascot_alt    = "A moose with big antlers in a red shirt"
+
+# Short lines under the name on the front page. Keep them short.
+intro = [
+  "I'm 19, I live in the UK, and I write software for a living and for fun.",
+  "Right now that means the Google Search app on mobile, mostly backend and infrastructure work.",
+  "Outside of that: Nix, game engines, shaders, and a lot of half-finished side projects.",
+]
+
+# The stat strip on the card next to the avatar.
+[[facts]]
+k = "based"
+v = "United Kingdom"
+[[facts]]
+k = "role"
+v = "SWE Apprentice, Google"
+[[facts]]
+k = "team"
+v = "Search app, mobile"
+[[facts]]
+k = "org"
+v = "Pixeljam Studios"
+
+# Top nav. Anything with a "#" is an anchor on the front page.
+[[nav]]
+label = "work"
+href  = "#select"
+[[nav]]
+label = "blog"
+href  = "blog/"
+[[nav]]
+label = "art"
+href  = "art/"
+[[nav]]
+label = "now"
+href  = "now/"
+[[nav]]
+label = "uses"
+href  = "uses/"
+[[nav]]
+label = "colophon"
+href  = "colophon/"
+
+# Buttons under the intro.
+[[actions]]
+label   = "CV (pdf)"
+url     = "https://github.com/milotek/milotek/raw/main/CV.pdf"
+primary = true
+[[actions]]
+label = "GitHub"
+url   = "https://github.com/milotek"
+[[actions]]
+label = "Email"
+url   = "mailto:milo@milotek.dev"
+
+[[links]]
+label = "GitHub"
+url   = "https://github.com/milotek"
+[[links]]
+label = "LinkedIn"
+url   = "https://www.linkedin.com/in/fired/"
+[[links]]
+label = "Instagram"
+url   = "https://www.instagram.com/milo.tek/"
+[[links]]
+label = "Pixeljam Studios"
+url   = "https://github.com/Pixeljam-Studios"
+[[links]]
+label = "files.tek.rip"
+url   = "https://files.tek.rip"
+[[links]]
+label = "milo@milotek.dev"
+url   = "mailto:milo@milotek.dev"
+
+# Rosters on the front page, in order. A project's "group" picks one.
+[[groups]]
+id    = "work"
+label = "Work"
+note  = "Paid, and the reason I know what I know."
+[[groups]]
+id    = "systems"
+label = "Systems"
+note  = "Things that run on their own and I have to maintain."
+[[groups]]
+id    = "apps"
+label = "Apps and tools"
+note  = "Stuff with users, or at least a UI."
+[[groups]]
+id    = "games"
+label = "Games and graphics"
+note  = "Engines, shaders, charts, silly physics."
+[[groups]]
+id    = "bits"
+label = "Bits"
+note  = "Small, finished, still on the internet."
