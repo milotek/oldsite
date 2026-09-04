@@ -1,0 +1,406 @@
+# Every project on the site lives here. Order in this file is the order on the page.
+# featured = true puts it on the front sheet too.
+#
+# images: shape is "wide", "phone" or "square". src is relative to assets/.
+
+[[project]]
+slug = "lockyn"
+title = "Lockyn"
+kind = "Mobile app"
+years = "2024 -"
+status = "Unreleased"
+stack = ["React Native", "TypeScript", "Firebase"]
+featured = true
+summary = "A studying app for GCSE and sixth form students. Screen time, session timers, a daily summary."
+body = """
+Lockyn started as my A level NEA and turned into something I actually wanted to
+ship. It locks you out of the apps that eat your afternoon, times your study
+sessions, and gives you one honest screen before bed.
+
+The frontend is React Native so it runs on iOS and Android off one codebase.
+Firebase does auth and storage.
+
+It isn't out yet. Exam board rules meant I couldn't release it until after
+results day, and since then I've been rewriting most of the UI.
+"""
+
+[[project.images]]
+src = "img/projects/lockyn_welcome.webp"
+alt = "Lockyn welcome screen with a pink and purple gradient circle."
+caption = "Welcome"
+shape = "phone"
+
+[[project.images]]
+src = "img/projects/lockyn_onboarding.webp"
+alt = "Lockyn onboarding screen asking the user to pick their goals."
+caption = "Onboarding"
+shape = "phone"
+
+[[project.images]]
+src = "img/projects/lockyn_home.webp"
+alt = "Lockyn home screen with a large session timer."
+caption = "Session timer"
+shape = "phone"
+
+[[project.images]]
+src = "img/projects/lockyn_summary.webp"
+alt = "Lockyn daily summary screen with per-app usage bars."
+caption = "Daily summary"
+shape = "phone"
+
+
+[[project]]
+slug = "autopet-feeder"
+title = "AutoPet Feeder"
+kind = "Hardware"
+years = "2023 - 2024"
+status = "Delivered"
+stack = ["Raspberry Pi", "JavaScript", "CAD", "3D printing"]
+featured = true
+summary = "An automated pet feeder built to a real client's spec. My neighbours wanted one, so they got one."
+body = """
+A Raspberry Pi, a servo, a touchscreen and a hopper, wrapped in a 3D printed
+ABS shell with an oak top so it doesn't look like a science project in someone's
+kitchen. USB-C in, no batteries to forget about.
+
+I did this one properly: client spec, cardboard mockups, three iterations, then
+a written evaluation at the end. The cardboard stage is the bit that saved me,
+because model one was the wrong shape and I found that out for the price of a
+box.
+"""
+
+[[project.links]]
+label = "Repo"
+url = "https://github.com/milotek/petfeeder"
+note = "design document and slides"
+
+[[project.images]]
+src = "img/projects/petfeeder_finished.webp"
+alt = "The finished pet feeder: a white 3D printed shell with an oak wood top."
+caption = "Finished unit"
+shape = "tall"
+
+[[project.images]]
+src = "img/projects/petfeeder_prototype.webp"
+alt = "Cardboard prototype iterations of the feeder next to client feedback notes."
+caption = "Cardboard iteration 1"
+shape = "wide"
+
+[[project.images]]
+src = "img/projects/petfeeder_electronics.webp"
+alt = "Raspberry Pi and touchscreen laid out on a desk during development."
+caption = "Electronics"
+shape = "wide"
+
+[[project.images]]
+src = "img/projects/petfeeder_design.webp"
+alt = "Design iteration page showing food and water bowl layouts."
+caption = "Layout studies"
+shape = "wide"
+
+
+[[project]]
+slug = "neosource"
+title = "Neosource"
+kind = "Game engine"
+years = "2025 -"
+status = "In progress"
+stack = ["Unity 2022.3", "URP 14", "C#"]
+featured = true
+org = "Pixeljam Studios"
+summary = "Fragsurf ported forward to Unity 2022.3 and URP 14, with the Linux editor actually working."
+body = """
+Fragsurf is the closest thing surf and bunnyhop have to an open engine, and it
+was stuck on an old Unity with a render pipeline nobody ships anymore. We
+brought it forward.
+
+It loads BSP maps at runtime, so CS:S and CS:GO geometry drops straight in. The
+point of the whole thing is that the modding path stays open, which is the part
+Source got right and everyone since has quietly closed off.
+"""
+
+[[project.links]]
+label = "Repo"
+url = "https://github.com/Pixeljam-Studios/neosource"
+
+[[project.images]]
+src = "img/projects/neosource_bsp.webp"
+alt = "A Source engine BSP map loaded at runtime in Neosource."
+caption = "Runtime BSP loading"
+shape = "wide"
+
+[[project.images]]
+src = "img/projects/neosource_csurf.webp"
+alt = "First person view of combat surf gameplay with a pistol."
+caption = "Combat surf"
+shape = "wide"
+
+[[project.images]]
+src = "img/projects/neosource_tricksurf.webp"
+alt = "A surf ramp curving over water in the Tricksurf gamemode."
+caption = "Tricksurf"
+shape = "wide"
+
+
+[[project]]
+slug = "nixeljam"
+title = "nixeljam"
+kind = "System config"
+years = "2025 -"
+status = "Live"
+stack = ["Nix", "NixOS", "Hyprland", "Stylix"]
+featured = true
+summary = "One flake, three machines: a desktop, a home server and a VPS. Everything declared, nothing clicked."
+body = """
+My NixOS configuration. It started as a fork of nixy and has drifted a long way
+since, mostly because I kept adding machines.
+
+The rule I hold it to: if it can't be rebuilt from the flake, it doesn't get
+installed. That covers the desktop, the box running the file server and music,
+and the VPS that owns the public ingress. Colours come from one base16 scheme so
+the terminal, the bar and the editor never argue with each other.
+"""
+
+[[project.links]]
+label = "Repo"
+url = "https://github.com/milotek/nixeljam"
+
+
+[[project]]
+slug = "legacy-console-shaders"
+title = "Legacy Console Shaders"
+kind = "Shaders"
+years = "2025"
+status = "Released"
+stack = ["GLSL"]
+featured = true
+summary = "Makes Minecraft Java look like the Xbox 360 edition you played when you were nine."
+body = """
+The Legacy Console lighting had a particular soft, slightly wrong look, and
+nothing on the modern shader scene reproduces it because everyone is chasing
+path tracing instead.
+
+Written against 1.6.4 with ShadersModCore, which is the version I actually play.
+Works fine on OptiFine and Iris too.
+"""
+
+[[project.links]]
+label = "Repo"
+url = "https://github.com/milotek/minecraft-legacy-console-shaders"
+
+[[project.links]]
+label = "Video"
+url = "https://youtu.be/EzzUaDSsb3Q"
+
+[[project.images]]
+src = "img/projects/shaders_cave.webp"
+alt = "A Minecraft cave lit by the Legacy Console shaders, warm torchlight on stone."
+caption = "Cave lighting"
+shape = "wide"
+
+[[project.images]]
+src = "img/projects/shaders_village.webp"
+alt = "A Minecraft village at dusk with soft shadows."
+caption = "Village at dusk"
+shape = "wide"
+
+[[project.images]]
+src = "img/projects/shaders_plains.webp"
+alt = "Minecraft plains biome with distant fog and clouds."
+caption = "Plains and fog"
+shape = "wide"
+
+[[project.images]]
+src = "img/projects/shaders_castle.webp"
+alt = "A large Minecraft build seen across a field in hazy daylight."
+caption = "Draw distance"
+shape = "wide"
+
+
+[[project]]
+slug = "tittyos"
+title = "tittyos"
+kind = "Library"
+years = "2025 -"
+status = "In progress"
+stack = ["C++"]
+featured = true
+summary = "A deep learning library in C++. Tensors, shapes, dtypes and a working backward pass."
+body = """
+I wanted to know what autograd actually does rather than what the PyTorch docs
+say it does, so I wrote one. Tensors carry a shape and a dtype, ops build a
+graph, `backward()` walks it.
+
+Still a long way off finished. The name is a joke I'm now stuck with.
+"""
+
+[[project.links]]
+label = "Repo"
+url = "https://github.com/milotek/tittyos"
+
+[[project.images]]
+src = "img/projects/tittyos_logo.webp"
+alt = "The tittyos logo: a gold engraved illustration of a winged creature."
+caption = "Logo"
+shape = "square"
+
+
+[[project]]
+slug = "airaccel"
+title = "AIRACCEL"
+kind = "Game"
+years = "2025 -"
+status = "In progress"
+org = "Pixeljam Studios"
+stack = ["WebGL", "TypeScript"]
+summary = "Bunnyhop and surf, in a browser tab, with no server list to fight through."
+body = """
+Surf and bhop have survived for twenty years on community goodwill and are still
+almost impossible to find if you don't already know where to look. You have to
+own a Source game, find a server, and then get through the part where the
+movement makes no sense for the first hour.
+
+AIRACCEL removes the first two problems and is trying to do something about the
+third. It runs in the browser. Graybox, the level editor, is open source.
+"""
+
+[[project.links]]
+label = "Repo"
+url = "https://github.com/Pixeljam-Studios/airaccel"
+
+[[project.images]]
+src = "img/projects/airaccel_banner.webp"
+alt = "AIRACCEL logo over a greybox surf map rendered in a browser."
+caption = "Greybox test map"
+shape = "wide"
+
+
+[[project]]
+slug = "roxor"
+title = "Roxor Engine"
+kind = "Game engine"
+years = "2025 -"
+status = "In progress"
+org = "Pixeljam Studios"
+stack = ["Luau", "Roblox"]
+summary = "A shared base for our Roblox games: character controller, weapons, gore, and a downed/revive system."
+body = """
+Every Roblox project we started was rebuilding the same character controller
+badly, so we stopped and built one properly.
+
+Melee and guns, stamina, flinch reactions, ragdolls, downed and revive. The
+target is Source-engine feel in an engine that really doesn't want to give it to
+you.
+"""
+
+[[project.links]]
+label = "Repo"
+url = "https://github.com/Pixeljam-Studios/ROXOR"
+
+[[project.images]]
+src = "img/projects/roxor_logo.webp"
+alt = "The Roxor engine logo, a white pixel X on red."
+caption = "Roxor"
+shape = "square"
+
+
+[[project]]
+slug = "makersbnb"
+title = "MakersBnB"
+kind = "Web app"
+years = "2025"
+status = "Complete"
+stack = ["Flask", "Python", "Playwright", "Postgres"]
+summary = "An Airbnb clone built by six of us in a week, test first, with the tests actually driving it."
+body = """
+List a space, request a booking, approve or decline it, and don't double book.
+Flask on the back, Basecoat UI on the front, Playwright driving a real browser
+for the feature tests.
+
+Six people on one codebase for a week is the actual lesson here. The code is
+fine; the interesting part was keeping six branches from turning into a merge
+nightmare.
+"""
+
+[[project.links]]
+label = "Repo"
+url = "https://github.com/milotek/makersbnb"
+
+[[project.images]]
+src = "img/projects/makersbnb_listings.webp"
+alt = "The MakersBnB listings page showing three property cards with prices."
+caption = "Listings"
+shape = "wide"
+
+
+[[project]]
+slug = "simfiles"
+title = "notITG simfiles"
+kind = "Charts"
+years = "2025"
+status = "Ongoing"
+stack = ["Lua", "GLSL"]
+summary = "Stepmania modcharts. An excuse to write Lua and shaders that happens to be a rhythm game."
+body = """
+Three charts so far, all mine. Modcharting is the one place where the visual
+effects and the gameplay are the same code, which is why it's fun.
+
+I don't own a dance pad. Make of that what you will.
+"""
+
+[[project.links]]
+label = "Repo"
+url = "https://github.com/milotek/simfiles"
+
+[[project.links]]
+label = "Video"
+url = "https://www.youtube.com/watch?v=GO9Xfo2zVvQ"
+
+
+[[project]]
+slug = "habits"
+title = "habits"
+kind = "Tool"
+years = "2026"
+status = "In progress"
+stack = ["Kotlin"]
+summary = "A habit tracker that draws itself as a GitHub contribution grid, for a tablet stuck to my wall."
+body = """
+The only habit tracker I've ever kept using is the green squares on a GitHub
+profile, so I built that and pointed it at the rest of my life instead.
+
+Runs as a kiosk on a wall-mounted tablet. Tap a square, it fills in.
+"""
+
+[[project.links]]
+label = "Repo"
+url = "https://github.com/milotek/habits"
+
+
+[[project]]
+slug = "epq-game"
+title = "EPQ platformer"
+kind = "Game"
+years = "2023 - 2024"
+status = "Complete"
+stack = ["Godot 3.5", "GDScript"]
+summary = "An accessibility-focused platformer, built over six months of weekends for my Extended Project Qualification."
+body = """
+The brief I set myself was a platformer that stays playable if you can't hear
+it, can't see colour differences, or can't hit a two-frame input window. That
+constraint shaped the level design far more than I expected it to.
+
+The protagonist doesn't speak, which is deliberate. Valve do the same thing and it works for the same reason: nothing the character says can
+contradict what you'd have said.
+"""
+
+[[project.links]]
+label = "Repo"
+url = "https://github.com/milotek/GodotGame"
+note = "old fork, may not open in current Godot"
+
+[[project.images]]
+src = "img/art/epq_protagonist.webp"
+alt = "Concept art of the EPQ protagonist: a round white head in a top hat and tie."
+caption = "Protagonist"
+shape = "square"

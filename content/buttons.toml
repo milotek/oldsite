@@ -1,0 +1,28 @@
+# 88x31 buttons. Drop a PNG or GIF in static/buttons/ and add an entry here.
+# vacant = number of empty slots drawn after the list.
+
+mine_note = "Take one. Hotlinking is fine, I'd rather you copied it."
+vacant = 3
+
+[[mine]]
+src = "buttons/milotek.png"
+alt = "milo tek - milotek.dev"
+url = "https://milotek.dev"
+title = "milo tek"
+
+[[mine]]
+src = "buttons/pixeljam.png"
+alt = "Pixeljam Studios"
+url = "https://github.com/Pixeljam-Studios"
+title = "Pixeljam Studios"
+
+[[mine]]
+src = "buttons/trashdump.png"
+alt = "trashdump - files.tek.rip"
+url = "https://files.tek.rip"
+title = "the file server"
+
+[[mine]]
+src = "buttons/anybrowser.png"
+alt = "Viewable anywhere"
+title = "no really, it is"

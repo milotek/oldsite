@@ -1,0 +1,79 @@
+name = "Milo Tekchandani"
+handle = "milo tek"
+title = "milo tek"
+role = "Software Engineer (Apprentice)"
+employer = "Google"
+team = "Google Search, mobile"
+location = "London, UK"
+email = "milo@milotek.dev"
+url = "https://furfag.lol/wst16/"
+description = "Milo Tekchandani. Software engineer at Google in London, working on the Google Search app. Projects, artwork and notes."
+revision = "C"
+avatar = "img/avatar.webp"
+cv = "https://github.com/milotek/milotek/raw/main/CV.pdf"
+
+# The sheet index. Order here is the order in the nav and the sheet numbers.
+[[sheets]]
+code = "00"
+label = "Index"
+path = ""
+
+[[sheets]]
+code = "01"
+label = "Projects"
+path = "projects/"
+
+[[sheets]]
+code = "02"
+label = "Art"
+path = "art/"
+
+[[sheets]]
+code = "03"
+label = "Notes"
+path = "blog/"
+
+[[sheets]]
+code = "04"
+label = "Now"
+path = "now/"
+
+[[sheets]]
+code = "05"
+label = "Uses"
+path = "uses/"
+
+[[sheets]]
+code = "06"
+label = "Colophon"
+path = "colophon/"
+
+[[links]]
+label = "GitHub"
+url = "https://github.com/milotek"
+note = "milotek"
+
+[[links]]
+label = "LinkedIn"
+url = "https://www.linkedin.com/in/fired/"
+note = "in/fired"
+
+[[links]]
+label = "Email"
+url = "mailto:milo@milotek.dev"
+note = "milo@milotek.dev"
+
+[[links]]
+label = "Instagram"
+url = "https://www.instagram.com/milo.tek/"
+note = "milo.tek"
+
+[[links]]
+label = "Pixeljam Studios"
+url = "https://github.com/Pixeljam-Studios"
+note = "games org"
+
+[[links]]
+label = "CV"
+url = "https://github.com/milotek/milotek/raw/main/CV.pdf"
+note = "pdf"

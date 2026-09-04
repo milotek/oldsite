@@ -1,0 +1,126 @@
+# The gallery. Order here is the order on the page.
+# Thumbnails are generated alongside the full image at img/art/thumb/<same name>.
+
+intro = """
+Mostly Procreate on an iPad Pro with an Apple Pencil. Some of it is concept work
+for things elsewhere on this site, some of it is revision I got bored of.
+"""
+
+[[piece]]
+src = "img/art/wolf_head.webp"
+title = "Character head"
+year = "2025"
+alt = "A snarling purple and pink canine character head with a spiked collar."
+caption = "Digital painting, Procreate."
+
+[[piece]]
+src = "img/art/de_dust2.webp"
+title = "de_dust2 in mat_fullbright"
+year = "2024"
+alt = "A painting of the Counter-Strike map de_dust2 rendered in flat fullbright lighting."
+caption = "Every Counter-Strike player knows exactly what this looks like."
+
+[[piece]]
+src = "img/art/de_lake.webp"
+title = "de_lake"
+year = "2024"
+alt = "A line sketch of a lakeside with houses and a wooden jetty."
+caption = "My favourite map."
+
+[[piece]]
+src = "img/art/laser_antlers.webp"
+title = "Laser Antlers"
+year = "2025"
+alt = "A cartoon moose character with orange antlers and a red jumper."
+caption = "Character design for a friend, drawn from his description."
+
+[[piece]]
+src = "img/art/epq_protagonist.webp"
+title = "EPQ protagonist"
+year = "2023"
+alt = "Concept sheet for a round white-headed character in a top hat and tie."
+caption = "Concept character art of the protagonist for my EPQ."
+
+[[piece]]
+src = "img/art/hardware_vs_software.webp"
+title = "Hardware vs Software"
+year = "2022"
+alt = "A hand-lettered poster comparing hardware and software, with a drawn laptop."
+caption = "Poster made for a Computer Science competition in first term."
+
+[[piece]]
+src = "img/art/me_and_friends.webp"
+title = "Me and my friends"
+year = "2023"
+alt = "A grid of eighteen named cartoon portraits of friends."
+caption = "Drawn for someone's birthday."
+
+[[piece]]
+src = "img/art/geometry_dash_anniversary.webp"
+title = "Geometry Dash, 10 years"
+year = "2023"
+alt = "Abstract geometric artwork in pink, purple and green on a gradient background."
+caption = "I don't know what this is supposed to represent either."
+
+[[piece]]
+src = "img/art/quick_sketch.webp"
+title = "Quick sketch"
+year = "2023"
+alt = "An animated sketch of a scribbled face, drawn in under a minute."
+caption = "Under a minute, for a friend."
+
+[[piece]]
+src = "img/art/steam_profile_commission.webp"
+title = "Steam profile picture"
+year = "2023"
+alt = "A cartoon portrait of a person with dark hair, smoking a cigarette."
+caption = "A friend's Steam profile picture, drawn by request."
+
+[[piece]]
+src = "img/art/old_profile_picture.webp"
+title = "Old profile picture"
+year = "2022"
+alt = "A white line-drawn figure on a bright pink background."
+caption = "My profile picture on most sites for a while."
+
+[[piece]]
+src = "img/art/giraffe.webp"
+title = "Giraffe"
+year = "2023"
+alt = "A small cartoon giraffe."
+caption = "Made in Pixelmator Pro to demo the app."
+
+[[piece]]
+src = "img/art/pygame_title.webp"
+title = "Title screen"
+year = "2022"
+alt = "A pixel-art night scene: a full moon over purple mountains and a pine treeline."
+caption = "Title screen background for a pygame project."
+
+[[piece]]
+src = "img/art/pygame_sunset.webp"
+title = "Sunset stage"
+year = "2022"
+alt = "A pixel-art sunset over the sea in orange and deep blue."
+caption = "Stage background for a pygame project."
+
+[[piece]]
+src = "img/art/pygame_space.webp"
+title = "Space stage"
+year = "2022"
+alt = "A pixel-art space scene: the Earth, a comet, a moon and stars."
+caption = "Stage background for a pygame project."
+
+[[piece]]
+src = "img/art/pygame_underground.webp"
+title = "Underground stage"
+year = "2022"
+alt = "A pixel-art underground cavern in grey and brown, with a skull in the rock."
+caption = "Stage background for a pygame project."
+
+[[piece]]
+src = "img/art/pygame_world.webp"
+title = "World stage"
+year = "2022"
+alt = "A pixel-art overworld background: blue sky, white clouds and a grass hill."
+caption = "Stage background for a pygame project."

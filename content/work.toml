@@ -1,0 +1,17 @@
+# Current role. Anything older lives on the CV rather than here.
+
+[[role]]
+title = "Software Engineer (Apprentice)"
+org = "Google"
+location = "London"
+years = "Current"
+team = "Google Search, mobile"
+summary = """
+Backend and infrastructure work on the Google Search app. So, google.com. On a
+phone.
+"""
+highlights = [
+  "Developer tooling for the engineers building AI Mode",
+  "Page transitions between the tabs on the search results page",
+  "Infrastructure work across the app's backend",
+]

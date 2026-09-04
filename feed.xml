@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>milo tek</title>
+<link>https://furfag.lol/wst16/</link>
+<atom:link href="https://furfag.lol/wst16/feed.xml" rel="self" type="application/rss+xml"/>
+<description>Milo Tekchandani. Software engineer at Google in London, working on the Google Search app. Projects, artwork and notes.</description>
+<language>en-GB</language>
+<lastBuildDate>Fri, 04 Sep 2026 22:47:36 +0000</lastBuildDate>
+<item><title>The old site was a Carrd export</title><link>https://furfag.lol/wst16/blog/building-this-site/</link><guid isPermaLink="true">https://furfag.lol/wst16/blog/building-this-site/</guid><pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate><description>Why this one exists, what it&#x27;s made of, and the one decision that did all the work.</description></item>
+</channel>
+</rss>
