@@ -1,0 +1,4 @@
+# Originals for the vendored images. Large, and re-fetchable via
+# assets_src/fetch.sh, so only the processed copies in static/img are committed.
+assets_src/raw/
+__pycache__/

@@ -1,0 +1,98 @@
+# The drawings roll. Order here is order on the sheet.
+intro = "Mostly Procreate on an iPad Pro with an Apple Pencil, over about five years. Some of it was for coursework, some of it was for friends, one of it is a giraffe."
+
+[[frame]]
+img = "art_sketch"
+caption = "Under construction"
+note = "Drawn in under a minute for a friend."
+year = "2024"
+
+[[frame]]
+img = "art_delake"
+caption = "de_lake"
+note = "My favourite Counter-Strike map."
+year = "2023"
+
+[[frame]]
+img = "art_dust2"
+caption = "de_dust2 in mat_fullbright"
+note = "Fullbright is a look."
+year = "2023"
+
+[[frame]]
+img = "art_epq_protagonist"
+caption = "Protagonist"
+note = "Character concept for my EPQ game."
+year = "2024"
+
+[[frame]]
+img = "art_epq_antagonist"
+caption = "Antagonist"
+note = "The other half of the same pair."
+year = "2024"
+
+[[frame]]
+img = "art_friends"
+caption = "Me and my friends"
+note = "Drawn for someone's birthday."
+year = "2023"
+
+[[frame]]
+img = "art_poster"
+caption = "Hardware versus software"
+note = "Poster for a computer science competition, first term of sixth form."
+year = "2023"
+
+[[frame]]
+img = "art_gd"
+caption = "Geometry Dash, ten years"
+note = "Anniversary fan art. I could not tell you what is happening in it."
+year = "2023"
+
+[[frame]]
+img = "art_pygame_title"
+caption = "Title screen"
+note = "Background for a pygame project."
+year = "2022"
+
+[[frame]]
+img = "art_pygame_sunset"
+caption = "Sunset stage"
+note = "Background for a pygame project."
+year = "2022"
+
+[[frame]]
+img = "art_pygame_space"
+caption = "Space stage"
+note = "Background for a pygame project."
+year = "2022"
+
+[[frame]]
+img = "art_pygame_underground"
+caption = "Underground stage"
+note = "Background for a pygame project."
+year = "2022"
+
+[[frame]]
+img = "art_pygame_world"
+caption = "World map"
+note = "Background for a pygame project."
+year = "2022"
+
+[[frame]]
+img = "art_giraffe"
+caption = "Giraffe"
+note = "Made in Pixelmator Pro to demo the app."
+year = "2022"
+
+[[frame]]
+img = "art_oldpfp"
+caption = "Old profile picture"
+note = "Mine, for years, everywhere."
+year = "2022"
+
+[[frame]]
+img = "art_steampfp"
+caption = "Steam avatar"
+note = "Drawn by request for a friend."
+year = "2022"

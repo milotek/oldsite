@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colophon // milo tek</title>
+<meta name="description" content="How this thing is put together">
+<meta name="author" content="Milo Tekchandani">
+<meta property="og:title" content="Colophon // milo tek">
+<meta property="og:description" content="How this thing is put together">
+<meta property="og:type" content="website">
+<link rel="icon" href="../static/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="milo tek notes" href="../feed.xml">
+<link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<svg class="defs" aria-hidden="true" focusable="false"><defs><filter id="wobble0"><feTurbulence type="fractalNoise" baseFrequency="0.021" numOctaves="3" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="wobble1"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="41" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="wobble2"><feTurbulence type="fractalNoise" baseFrequency="0.016" numOctaves="3" seed="19" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="8" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../"><svg class="paw" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><ellipse cx="5.4" cy="9.6" rx="2.4" ry="3.2"/><ellipse cx="10.8" cy="6.2" rx="2.5" ry="3.5"/><ellipse cx="16.6" cy="7.4" rx="2.4" ry="3.3"/><ellipse cx="20.8" cy="12.4" rx="2.1" ry="2.7"/><path d="M11.6 12.2c3.5 0 6.4 2.9 6.4 5.6 0 2.1-1.8 3.3-3.9 3.3-1.3 0-1.9-.5-3.2-.5s-1.9.5-3.2.5c-2.1 0-3.9-1.2-3.9-3.3 0-2.7 2.9-5.6 6.4-5.6z"/></svg> milo tek</a>
+  <nav class="nav"><a class="nav-link" href="../">sheet</a><a class="nav-link" href="../projects/">projects</a><a class="nav-link" href="../drawings/">drawings</a><a class="nav-link" href="../notes/">notes</a><a class="nav-link" href="../about/">about</a></nav>
+</header>
+<main id="main">
+
+<article class="prose page">
+  <header class="page-head">
+    <p class="kicker mono">How this thing is put together</p>
+    <h1>Colophon</h1>
+  </header>
+  <h2 id="build">Build</h2>
+<p>One Python script, 660 lines, no dependencies outside the standard library. It reads TOML and Markdown out of <code>content/</code>, writes plain HTML into the repo root, and GitHub Pages serves the files. No framework, no bundler, no lockfile to rot.</p>
+<p>Adding a project means dropping a <code>.md</code> file into <code>content/projects/</code> with a TOML header. Adding a note is the same in <code>content/posts/</code>. Adding an 88x31 is a file in <code>static/buttons/</code> and three lines of TOML. I never have to open the generator to add anything to the site, which was the point.</p>
+<p>Markdown gets rendered by 75 lines of hand-written parser. It covers what I write and nothing else.</p>
+<h2 id="type-and-colour">Type and colour</h2>
+<p>Inter for prose, JetBrains Mono for everything structural, both self-hosted as variable woff2 subsets. Two files, 80 KB together, no font CDN.</p>
+<p>Catppuccin Mocha, with <code>#ffbdbd</code> as the only accent. It's the same palette my desktop runs, via Stylix and a base16 scheme.</p>
+<h2 id="behaviour">Behaviour</h2>
+<p>No JavaScript, no analytics, no cookies, no fonts or scripts fetched from anyone else's server. Every page is one HTML file and one stylesheet.</p>
+<p>The grease pencil rings are SVG with an <code>feTurbulence</code> displacement filter, so the wobble is generated rather than drawn.</p>
+<h2 id="credit">Credit</h2>
+<p>Screenshots and drawings are mine. The C# game shots, the app screenshots and the drawings were rescued off my old Carrd site.</p>
+<p>Made with a lot of help from Claude, which I mention because pretending otherwise would be daft. The <a href="../notes/how-this-site-is-built/">note about that</a> has the details.</p>
+  
+</article>
+
+</main>
+<footer class="foot">
+  <div class="foot-row">
+    <span class="mono dim">Milo Tekchandani</span>
+    <span class="mono dim">sheet updated 2026-09-05</span>
+    <span class="mono dim"><a href="../feed.xml">rss</a> &middot; <a href="../colophon/">colophon</a> &middot; <a href="https://github.com/milotek/wst17">source</a></span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,117 @@
+title = "milo tek"
+tagline = "Software engineer. London."
+description = "Milo Tekchandani. Software engineer at Google, on the Search app. Projects, drawings and notes."
+base_url = "https://furfag.lol/wst17/"
+author = "Milo Tekchandani"
+email = "milo@milotek.dev"
+# Bumped by hand when something substantive lands. A build timestamp would just
+# record when the generator last ran, which tells a reader nothing.
+updated = "2026-09-05"
+
+[[nav]]
+label = "sheet"
+href = ""
+
+[[nav]]
+label = "projects"
+href = "projects/"
+
+[[nav]]
+label = "drawings"
+href = "drawings/"
+
+[[nav]]
+label = "notes"
+href = "notes/"
+
+[[nav]]
+label = "about"
+href = "about/"
+
+[[links]]
+label = "github"
+href = "https://github.com/milotek"
+handle = "milotek"
+
+[[links]]
+label = "linkedin"
+href = "https://www.linkedin.com/in/fired/"
+handle = "in/fired"
+
+[[links]]
+label = "email"
+href = "mailto:milo@milotek.dev"
+handle = "milo@milotek.dev"
+
+[[links]]
+label = "instagram"
+href = "https://www.instagram.com/milo.tek/"
+handle = "milo.tek"
+
+[[links]]
+label = "studio"
+href = "https://github.com/Pixeljam-Studios"
+handle = "Pixeljam-Studios"
+
+[[links]]
+label = "cv"
+href = "static/cv.pdf"
+handle = "CV.pdf"
+local = true
+
+# Rolls are the groupings on the contact sheet. Order here is order on the page.
+[[rolls]]
+id = "work"
+label = "work and systems"
+edge = "MILOTEK 400 // ROLL 01 // WORK + SYSTEMS"
+
+[[rolls]]
+id = "apps"
+label = "apps and hardware"
+edge = "MILOTEK 400 // ROLL 02 // APPS + HARDWARE"
+
+[[rolls]]
+id = "games"
+label = "games and engines"
+edge = "MILOTEK 400 // ROLL 03 // GAMES + ENGINES"
+
+[[rolls]]
+id = "toys"
+label = "toys and small things"
+edge = "MILOTEK 400 // ROLL 04 // TOYS + SMALL THINGS"
+
+# 88x31s. Mine live in static/buttons; drop a file in and add a row here.
+[[buttons]]
+img = "milotek.png"
+alt = "milo tek"
+href = "https://furfag.lol/"
+title = "this site"
+
+[[buttons]]
+img = "nixos.png"
+alt = "powered by NixOS"
+href = "https://nixos.org"
+
+[[buttons]]
+img = "godot.png"
+alt = "made with Godot"
+href = "https://godotengine.org"
+
+[[buttons]]
+img = "handmade.png"
+alt = "hand written HTML"
+href = "https://github.com/milotek/wst17"
+
+[[buttons]]
+img = "source.png"
+alt = "Source engine enjoyer"
+href = "https://developer.valvesoftware.com/wiki/Source"
+
+[[buttons]]
+img = "nojs.png"
+alt = "no JavaScript required"
+
+[[buttons]]
+img = "pixeljam.png"
+alt = "Pixeljam Studios"
+href = "https://github.com/Pixeljam-Studios"

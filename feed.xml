@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+  <title>milo tek // notes</title>
+  <link>https://furfag.lol/wst17/</link>
+  <atom:link href="https://furfag.lol/wst17/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Milo Tekchandani. Software engineer at Google, on the Search app. Projects, drawings and notes.</description>
+  <language>en-GB</language>
+  <lastBuildDate>Sat, 05 Sep 2026 00:00:00 +0000</lastBuildDate>
+  <item>
+    <title>How this site is built</title>
+    <link>https://furfag.lol/wst17/notes/how-this-site-is-built/</link>
+    <guid isPermaLink="true">https://furfag.lol/wst17/notes/how-this-site-is-built/</guid>
+    <pubDate>Sat, 05 Sep 2026 00:00:00 +0000</pubDate>
+    <description>A contact sheet, a Python script, and no JavaScript.</description>
+    <content:encoded><![CDATA[<p>My old site was a Carrd export from 2024 with a phone number on the front page and links to a GitHub username I don't use any more. It had to go.</p>
+<p>This one is laid out as a contact sheet, the thing photographers print when they want to see a whole roll at once and mark the good ones. It suits a portfolio, honestly. You get everything on one sheet, at one size, and the pink grease pencil says which ones I'd actually print. Nothing hides behind a hero section.</p>
+<p>Underneath it's a Python script of about 660 lines with no dependencies. Content lives in <code>content/</code> as TOML and Markdown, output is plain HTML in the repo root, GitHub Pages serves the files. I wanted adding a project to mean writing one file, and now it does. My notes are already Markdown in an Obsidian vault, so this is the same shape as everything else I write.</p>
+<p>No JavaScript on any page. No fonts or analytics fetched from someone else's server. Two self-hosted font files, one stylesheet, and images I've actually looked at.</p>
+<p>Claude did most of the typing. I read every diff, which is the deal I've made with myself about agents: code nobody has read isn't finished work, however well it runs. It went through my GitHub and my file server, pulled out screenshots I'd forgotten existed, and got the palette from my NixOS theme rather than guessing. I moved things around after.</p>
+<p>The <a href="https://furfag.lol/wst17/colophon/">colophon</a> has the boring specifics.</p>]]></content:encoded>
+  </item>
+</channel>
+</rss>
