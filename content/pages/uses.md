@@ -1,5 +1,6 @@
 +++
 title = "uses"
+heading = "What I use"
 slug  = "uses"
 lead  = "The setup. Most of it is declared in one flake."
 +++

@@ -1,5 +1,6 @@
 +++
 title = "colophon"
+heading = "How this is built"
 slug  = "colophon"
 lead  = "How this site is put together."
 +++

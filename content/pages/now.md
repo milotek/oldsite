@@ -1,5 +1,6 @@
 +++
 title   = "now"
+heading = "Right now"
 slug    = "now"
 lead    = "What I'm actually doing at the moment."
 updated = "2026-09-05"
