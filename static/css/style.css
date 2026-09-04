@@ -214,7 +214,7 @@ blockquote { margin: 1.2em 0; padding-left: 14px; border-left: 2px solid var(--a
 .entry { padding-bottom: 10px; }
 .entry .row__blurb { margin-top: 6px; }
 
-.strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; }
 .strip__cell img { aspect-ratio: 1; object-fit: cover; border-radius: 8px; border: 1px solid var(--surface0); transition: border-color 0.14s; }
 .strip__cell:hover img { border-color: var(--accent); }
 

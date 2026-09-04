@@ -5,7 +5,7 @@ intro = "Nothing here is a recommendation. It is just what is on the machine."
 [[group]]
 name = "desktop"
 rows = [
-  ["os", "NixOS. If it cannot be rebuilt from the flake it does not get installed."],
+  ["os", "NixOS. Nothing gets installed unless the flake can rebuild it."],
   ["wm", "Hyprland, 20px rounding, 8px gaps, 2px borders."],
   ["theme", "Stylix with a base16 scheme I keep in themes/pixeljam.nix. Catppuccin Mocha, accent swapped to #ffbdbd."],
   ["font", "MesloLGS Nerd Font everywhere. Source Sans 3 and Montserrat for anything that is not a terminal."],
@@ -17,10 +17,10 @@ rows = [
 [[group]]
 name = "servers"
 rows = [
-  ["proxy", "Caddy. Three lines beats nginx's forty until the day it doesn't."],
-  ["database", "Postgres by default. SQLite only where the app already shipped it."],
+  ["proxy", "Caddy. Three lines of config against nginx's forty."],
+  ["database", "Postgres, unless the app already shipped with SQLite."],
   ["admin", "Tailscale, always. No host has a public SSH port."],
-  ["secrets", "sops for anything that grants access. Hostnames and ports stay in plaintext."],
+  ["secrets", "sops for keys and tokens. Hostnames and ports stay readable."],
   ["files", "copyparty, at files.tek.rip. Help yourself."],
 ]
 

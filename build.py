@@ -397,10 +397,10 @@ def build_home() -> str:
         "~/art",
         f'<div class="strip">{thumbs}</div>'
         f'<p class="more"><a class="lnk" href="{rel}art/">the rest</a></p>',
-        span="twothirds",
+        span="wide",
     ))
 
-    wins.append(window("~/buttons", buttons_body(rel), span="third"))
+    wins.append(window("~/buttons", buttons_body(rel), span="wide"))
     return "\n".join(wins)
 
 
@@ -614,7 +614,10 @@ def build_feed() -> str:
             f"<content:encoded><![CDATA[{body}]]></content:encoded>"
             "</item>"
         )
-    now = format_datetime(datetime.now(timezone.utc))
+    # Derived from the newest post rather than the clock, so rebuilding without
+    # writing anything does not produce a diff.
+    newest = max((p["date"] for p in POSTS), default=BUILD_DATE)
+    now = format_datetime(datetime.strptime(newest, "%Y-%m-%d").replace(tzinfo=timezone.utc))
     return (
         '<?xml version="1.0" encoding="utf-8"?>\n'
         '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" '

@@ -76,6 +76,7 @@ year     = "2024"
 tags     = ["raspberry pi", "javascript", "cad"]
 featured = true
 blurb    = "An automatic pet feeder, designed and built to a client's spec. The client was my neighbours."
+card     = "img/projects/autopet-card.webp"
 images = [
   { src = "img/projects/autopet-build.webp", alt = "Three photographs of the finished pet feeder: white 3D printed body with an oak lid." },
   { src = "img/projects/autopet-proto.webp", alt = "Design document page showing cardboard prototype iterations and client feedback." },
