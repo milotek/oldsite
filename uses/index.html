@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>uses &amp;middot; milo tek</title>
+<meta name="description" content="The setup. Short version, because nobody needs the long one.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#1e1e2e">
+<meta property="og:title" content="uses &amp;middot; milo tek">
+<meta property="og:description" content="The setup. Short version, because nobody needs the long one.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../assets/img/favicon.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="alternate" type="application/rss+xml" title="milo tek &middot; blog" href="../feed.xml">
+</head>
+<body>
+<a class="skip" href="#main">skip to content</a>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span>milo tek</a>
+    <nav class="nav"><a href="../projects/">projects</a><a href="../blog/">blog</a><a href="../art/">art</a><a href="../now/">now</a><a href="../cv/">cv</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<header class="pagehead"><h1>uses</h1><p>The setup. Short version, because nobody needs the long one.</p></header><div class="prose"><h2 id="desktop">desktop</h2>
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>os</td><td>NixOS, unstable channel</td></tr><tr><td>wm</td><td>Hyprland</td></tr><tr><td>terminal</td><td>Ghostty, with Zellij on top</td></tr><tr><td>shell</td><td>zsh</td></tr><tr><td>theme</td><td>catppuccin mocha, accent <code>#ffbdbd</code></td></tr><tr><td>config</td><td>all of it lives in <a href="https://github.com/milotek/nixeljam" target="_blank" rel="noopener">nixeljam</a></td></tr></tbody></table>
+<p>New and niche is fine by me. A single maintainer with no bus factor is the thing that actually strands a config, rather than a project being young.</p>
+<h2 id="code">code</h2>
+<p>Python first for anything that runs as a service, with uv resolving packages inside a Nix devshell. Flask over the alternatives, because it does what it&#x27;s told and leaves the shape of the app to the app. Postgres unless the thing already shipped with SQLite.</p>
+<p>Bash is for work that&#x27;s mine and finite. The moment something is recurring or handed off, it&#x27;s outgrown a shell script.</p>
+<h2 id="boxes">boxes</h2>
+<p>Public ingress lives on a VPS with a real IP, behind Caddy. Admin interfaces are tailnet only, and no host has a public SSH port. Anything granting access goes through sops. Hostnames and ports stay in plain text, because encrypting those buys nothing and makes the config unreadable.</p>
+<p>I self-host by default and pay only where the constraint is physical. There&#x27;s a <a href="https://files.tek.rip" target="_blank" rel="noopener">file server</a> if you want to poke around.</p>
+<h2 id="drawing">drawing</h2>
+<p>Procreate on an iPad Pro with an Apple Pencil. That&#x27;s the whole pipeline.</p></div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="buttons"><a href="https://furfag.lol/wst21/" target="_blank" rel="noopener" title="milo tek"><img src="../assets/img/buttons/milotek.png" width="88" height="31" alt="milo tek"></a><a href="https://github.com/Pixeljam-Studios" target="_blank" rel="noopener" title="Pixeljam Studios"><img src="../assets/img/buttons/pixeljam.png" width="88" height="31" alt="Pixeljam Studios"></a><a href="colophon/" title="Zero kilobytes of JavaScript"><img src="../assets/img/buttons/nojs.png" width="88" height="31" alt="Zero kilobytes of JavaScript"></a><a href="colophon/" title="Built with python3 and nothing else"><img src="../assets/img/buttons/python3.png" width="88" height="31" alt="Built with python3 and nothing else"></a><a href="http://www.anybrowser.org/campaign/" target="_blank" rel="noopener" title="Best viewed with any browser"><img src="../assets/img/buttons/anybrowser.gif" width="88" height="31" alt="Best viewed with any browser"></a><a href="colophon/" title="Made with cascading style sheets"><img src="../assets/img/buttons/css.gif" width="88" height="31" alt="Made with cascading style sheets"></a><a href="mailto:milo@milotek.dev" title="Room for a friend&#x27;s button"><img src="../assets/img/buttons/yours.png" width="88" height="31" alt="Room for a friend&#x27;s button"></a></div>
+    <div class="footcols">
+      <div><span class="lbl">elsewhere</span><div class="footlinks"><a href="https://github.com/milotek" target="_blank" rel="noopener">github</a><a href="https://www.linkedin.com/in/fired/" target="_blank" rel="noopener">linkedin</a><a href="https://www.instagram.com/milo.tek/" target="_blank" rel="noopener">instagram</a><a href="https://github.com/Pixeljam-Studios" target="_blank" rel="noopener">pixeljam studios</a><a href="mailto:milo@milotek.dev" target="_blank" rel="noopener">email</a></div></div>
+      <div><span class="lbl">this site</span><div class="footlinks"><a href="../uses/">uses</a><a href="../colophon/">colophon</a><a href="../feed.xml">rss</a><a href="https://github.com/milotek/wst21" target="_blank" rel="noopener">source</a></div></div>
+    </div>
+    <p class="fineprint">&copy; 2026 Milo Tekchandani. Built by hand in London.</p>
+  </div>
+</footer>
+</body>
+</html>

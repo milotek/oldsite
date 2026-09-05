@@ -1,0 +1,119 @@
+# Everything the site says about Milo lives in content/. Nothing in build.py
+# needs editing to add a project, a post or a drawing.
+
+name = "milo tek"
+tagline = "software engineer"
+city = "London"
+email = "milo@milotek.dev"
+url = "https://furfag.lol/wst21/"
+repo = "https://github.com/milotek/wst21"
+description = "Milo Tekchandani. Software engineer at Google, working on Search. Projects, writing and drawings."
+
+kicker = "milo tekchandani, 19, uk"
+headline = "Software engineer. I work on Google Search."
+intro = """
+I'm an apprentice engineer on the Google Search App, in London. Backend and infrastructure, mostly. So, google.com, lol.
+
+Everything else on here is mine: games with [Pixeljam Studios](https://github.com/Pixeljam-Studios), a couple of apps, a deep learning library I probably shouldn't have named that, and drawings from when I had more free time.
+"""
+
+projects_blurb = "Some shipped, some still cooking, some parked. Roughly best first."
+blog_blurb = "Not often. I'd rather build the thing than write about building the thing."
+art_blurb = "Mostly Procreate on an iPad Pro with an Apple Pencil, drawn over about five years. Not a professional artist, just enjoy it."
+
+[[hero_links]]
+label = "email"
+href = "mailto:milo@milotek.dev"
+[[hero_links]]
+label = "github"
+href = "https://github.com/milotek"
+[[hero_links]]
+label = "linkedin"
+href = "https://www.linkedin.com/in/fired/"
+[[hero_links]]
+label = "cv"
+href = "cv/"
+
+[work]
+title = "Software Engineer (Apprentice), Google"
+period = "London, current"
+body = """
+I work on the Google Search App, on the backend and infrastructure side of it. The mobile one, in your pocket.
+
+Bits I've worked on: developer tooling for the people building AI Mode, and page transitions between the tabs on the results page. The rest is the sort of plumbing nobody notices until it breaks.
+"""
+[[work.links]]
+label = "linkedin"
+href = "https://www.linkedin.com/in/fired/"
+
+[[socials]]
+name = "github"
+href = "https://github.com/milotek"
+[[socials]]
+name = "linkedin"
+href = "https://www.linkedin.com/in/fired/"
+[[socials]]
+name = "instagram"
+href = "https://www.instagram.com/milo.tek/"
+[[socials]]
+name = "pixeljam studios"
+href = "https://github.com/Pixeljam-Studios"
+[[socials]]
+name = "email"
+href = "mailto:milo@milotek.dev"
+
+# 88x31s. Drop a file in static/img/buttons/ and add a block here.
+[[buttons]]
+file = "milotek.png"
+title = "milo tek"
+href = "https://furfag.lol/wst21/"
+[[buttons]]
+file = "pixeljam.png"
+title = "Pixeljam Studios"
+href = "https://github.com/Pixeljam-Studios"
+[[buttons]]
+file = "nojs.png"
+title = "Zero kilobytes of JavaScript"
+href = "colophon/"
+[[buttons]]
+file = "python3.png"
+title = "Built with python3 and nothing else"
+href = "colophon/"
+[[buttons]]
+file = "anybrowser.gif"
+title = "Best viewed with any browser"
+href = "http://www.anybrowser.org/campaign/"
+[[buttons]]
+file = "css.gif"
+title = "Made with cascading style sheets"
+href = "colophon/"
+[[buttons]]
+file = "yours.png"
+title = "Room for a friend's button"
+href = "mailto:milo@milotek.dev"
+
+# Small things that are real but do not need a card of their own.
+[[scraps]]
+name = "punchdrunk"
+href = "https://github.com/milotek/punchdrunk"
+note = "Flask site for my Minecraft server. Mostly gifs."
+[[scraps]]
+name = "userscripts"
+href = "https://github.com/milotek/userscripts"
+note = "Little fixes for websites that annoy me."
+[[scraps]]
+name = "configs"
+href = "https://github.com/milotek/configs"
+note = "Source engine autoexecs and binds, for L4D2 and friends."
+[[scraps]]
+name = "xeetcode-submissions"
+href = "https://github.com/milotek/xeetcode-submissions"
+note = "Leetcode and Neetcode, kept honest."
+[[scraps]]
+name = "CollisionSounds"
+href = "https://github.com/milotek/CollisionSounds"
+note = "Roblox module for material-specific impact sounds."
+[[scraps]]
+name = "StandLua-CarSwap"
+href = "https://github.com/milotek/StandLua-CarSwap"
+note = "Lua for the Stand menu, so DLC cars behave like normal ones."

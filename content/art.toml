@@ -1,0 +1,62 @@
+# Drawings, newest interest first. Full image in static/img/art/,
+# thumbnail of the same name in static/img/art/thumbs/.
+
+[[piece]]
+file = "de_lake.jpg"
+caption = "de_lake. My favourite map, and I will not be taking questions."
+
+[[piece]]
+file = "de_dust2_fullbright.jpg"
+caption = "de_dust2 in mat_fullbright."
+
+[[piece]]
+file = "epq_protagonist.jpg"
+caption = "Protagonist concept for my EPQ game."
+
+[[piece]]
+file = "epq_antagonist.jpg"
+caption = "Antagonist concept for the same game."
+
+[[piece]]
+file = "me_and_my_friends.jpg"
+caption = "Me and my friends. Drawn for someone's birthday."
+
+[[piece]]
+file = "old_profile_picture.jpg"
+caption = "My profile picture for years."
+
+[[piece]]
+file = "steam_pfp_commission.jpg"
+caption = "A friend's Steam avatar, drawn by request."
+
+[[piece]]
+file = "one_minute_sketch.gif"
+caption = "A sketch for a friend, done in under a minute."
+
+[[piece]]
+file = "giraffe.jpg"
+caption = "A giraffe, made to demo Pixelmator Pro."
+
+[[piece]]
+file = "hardware_vs_software_poster.jpg"
+caption = "Poster for a Computer Science competition, on hardware versus software."
+
+[[piece]]
+file = "pygame_title.jpg"
+caption = "Title screen background for a pygame project."
+
+[[piece]]
+file = "pygame_sunset.jpg"
+caption = "Sunset stage, same project."
+
+[[piece]]
+file = "pygame_space.jpg"
+caption = "Space stage."
+
+[[piece]]
+file = "pygame_underground.jpg"
+caption = "Underground stage."
+
+[[piece]]
+file = "pygame_world.jpg"
+caption = "World stage."
