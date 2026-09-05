@@ -91,9 +91,23 @@ def page(path, title, body, depth, description=None, active=None, wide=False):
         '<a href="%s%s"%s>%s</a>' % (base, href, ' class="on"' if active == label else "", label)
         for label, href in NAV
     )
+    def button_href(href):
+        # Buttons render on every page, so an in-site target has to be walked
+        # back to the root the same way the nav is.
+        if "://" in href or href.startswith("mailto:"):
+            return href
+        return base + href
+
     buttons = "".join(
-        '<a href="%s"%s title="%s"><img src="%simg/buttons/%s" width="88" height="31" alt="%s"></a>'
-        % (e(b["href"]), ' target="_blank" rel="noopener"' if "://" in b["href"] else "", e(b["title"]), base + "assets/", e(b["file"]), e(b["title"]))
+        '<a href="%s"%s title="%s"><img src="%sassets/img/buttons/%s" width="88" height="31" alt="%s"></a>'
+        % (
+            e(button_href(b["href"])),
+            ' target="_blank" rel="noopener"' if "://" in b["href"] else "",
+            e(b["title"]),
+            base,
+            e(b["file"]),
+            e(b["title"]),
+        )
         for b in site["buttons"]
     )
     social = "".join(
