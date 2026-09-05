@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>milo tek</title>
+  <link>https://furfag.lol/wst19/</link>
+  <atom:link href="https://furfag.lol/wst19/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Milo Tekchandani, software engineer at Google in London. Search, games, systems and a bit of drawing.</description>
+  <language>en-gb</language>
+  <lastBuildDate>Sat, 05 Sep 2026 00:29:25 +0000</lastBuildDate>
+  <item>
+    <title>the new site</title>
+    <link>https://furfag.lol/wst19/blog/the-new-site.html</link>
+    <guid isPermaLink="true">https://furfag.lol/wst19/blog/the-new-site.html</guid>
+    <pubDate>Sat, 05 Sep 2026 00:00:00 +0000</pubDate>
+    <description>Why the old one had to go, and what this one is made of.</description>
+  </item>
+</channel>
+</rss>

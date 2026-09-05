@@ -1,0 +1,388 @@
+# One [[project]] block per thing. `line` puts it in a section:
+#   work | projects | games | small
+# `small` entries render as a one-line list at the bottom.
+
+# ------------------------------------------------------------------ work
+
+[[project]]
+id = "google"
+title = "Google, Search"
+line = "work"
+period = "2026 - now"
+status = "current"
+summary = """
+Software Engineer (Apprentice) on the Google Search app for mobile, backend and infrastructure side.
+"""
+details = [
+  "Developer tooling for the people building AI Mode.",
+  "Page transitions between the tabs on the search results page.",
+]
+tech = ["backend", "infrastructure", "mobile"]
+
+# -------------------------------------------------------------- projects
+
+[[project]]
+id = "nixeljam"
+title = "nixeljam"
+line = "projects"
+period = "2026 - now"
+status = "active"
+summary = """
+My whole computing setup as one flake. A desktop, a mini PC doing the serving and an aarch64 VPS
+holding the public ingress, all declared in one repo and rebuildable from nothing.
+"""
+details = [
+  "Built on top of anotherhadi's nixy, then pulled apart into per-host modules.",
+  "Runs copyparty, Navidrome, Home Assistant, AdGuard Home, Gitea and Caddy.",
+  "Secrets through sops-nix, admin access through Tailscale only, no public SSH port.",
+  "Theming through Stylix, which is where the pink on this site comes from.",
+]
+tech = ["Nix", "NixOS", "home-manager", "sops"]
+
+[[project.link]]
+label = "repo"
+href = "https://github.com/milotek/nixeljam"
+primary = true
+
+[[project.shot]]
+src = "assets/img/projects/nixeljam_1.webp"
+caption = "desktop"
+
+[[project.shot]]
+src = "assets/img/projects/nixeljam_2.webp"
+caption = "editor and shell"
+
+[[project.shot]]
+src = "assets/img/projects/nixeljam_3.webp"
+caption = "the rest of it"
+
+[[project.shot]]
+src = "assets/img/projects/nixeljam_dash.webp"
+caption = "server dashboard"
+
+[[project]]
+id = "habits"
+title = "habits"
+line = "projects"
+period = "2026"
+status = "live"
+summary = """
+A habit tracker that draws itself as a GitHub-style activity grid, made for a tablet stuck on my wall.
+Kotlin, ships as a Nix module, so deploying it is one line in the flake.
+"""
+tech = ["Kotlin", "Nix", "kiosk"]
+
+[[project.link]]
+label = "repo"
+href = "https://github.com/milotek/habits"
+primary = true
+
+[[project.link]]
+label = "live"
+href = "https://habits.tek.rip"
+
+[[project.shot]]
+src = "assets/img/projects/habits.webp"
+caption = "habits.tek.rip, a fresh grid"
+tall = true
+
+[[project]]
+id = "lockyn"
+title = "Lockyn"
+line = "projects"
+period = "2024 - now"
+status = "unreleased"
+summary = """
+A commercial study app for GCSE and sixth form students. I did the app: React Native and TypeScript on
+the front, Firebase behind it, iOS and Android with web and desktop coming along for the ride.
+"""
+details = [
+  "Started as my Computer Science NEA, then kept going once it stopped being coursework.",
+  "Source is private and stays that way until it ships.",
+]
+tech = ["React Native", "TypeScript", "Firebase"]
+private = true
+
+[[project.shot]]
+src = "assets/img/projects/lockyn_landing.webp"
+caption = "landing"
+tall = true
+
+[[project.shot]]
+src = "assets/img/projects/lockyn_onboarding.webp"
+caption = "onboarding"
+tall = true
+
+[[project.shot]]
+src = "assets/img/projects/lockyn_home.webp"
+caption = "home"
+tall = true
+
+[[project.shot]]
+src = "assets/img/projects/lockyn_summary.webp"
+caption = "summary"
+tall = true
+
+[[project]]
+id = "petfeeder"
+title = "AutoPet Feeder"
+line = "projects"
+period = "2024"
+status = "delivered"
+summary = """
+An automated pet feeder I designed, built and handed to a client. The client was my neighbours.
+"""
+details = [
+  "Raspberry Pi, a servo, a touchscreen and USB-C power, running JavaScript.",
+  "3D printed ABS shell with an oak finish, because it had to live in someone's kitchen.",
+  "Came with a full design document: client spec, prototypes, evaluation, the lot.",
+]
+tech = ["Raspberry Pi", "JavaScript", "CAD", "3D printing"]
+
+[[project.link]]
+label = "repo"
+href = "https://github.com/milotek/petfeeder"
+primary = true
+
+[[project.link]]
+label = "design document (pdf)"
+href = "https://github.com/milotek/petfeeder/blob/master/Product%20Design%20NEA%20Edited.pdf"
+
+[[project]]
+id = "makersbnb"
+title = "MakersBnB"
+line = "projects"
+period = "2025"
+summary = """
+An Airbnb clone six of us built in a week at Makers. Flask, Postgres and Basecoat UI, driven off tests
+rather than vibes. List a space, request a booking, manage the reservations.
+"""
+tech = ["Python", "Flask", "Postgres", "TDD"]
+
+[[project.link]]
+label = "repo"
+href = "https://github.com/milotek/makersbnb"
+primary = true
+
+[[project.shot]]
+src = "assets/img/projects/makersbnb.webp"
+caption = "listings"
+
+[[project]]
+id = "acebook"
+title = "Acebook"
+line = "projects"
+period = "2025"
+summary = """
+A Facebook clone in Java and Spring Boot, also built as a team. Thymeleaf templates, Flyway migrations,
+Auth0 and Spring Security for logins, Selenium driving the feature tests.
+"""
+tech = ["Java", "Spring Boot", "Postgres", "Selenium"]
+
+[[project.link]]
+label = "repo"
+href = "https://github.com/milotek/acebook"
+primary = true
+
+[[project]]
+id = "ezcals"
+title = "EZcals"
+line = "projects"
+period = "2024 - 2025"
+summary = """
+A calorie tracker for people trying to lose or gain weight. Built so that logging a meal takes seconds,
+because every other app makes you fill in a form. Swift and SwiftUI first, rewritten in React Native in
+2025 to get Android.
+"""
+tech = ["Swift", "SwiftUI", "React Native"]
+
+# ----------------------------------------------------------------- games
+
+[[project]]
+id = "pixeljam"
+title = "Pixeljam Studios"
+line = "games"
+period = "2025 - now"
+status = "active"
+summary = """
+A small studio I run with mates. Two things live in it right now, both closed source, so this is the
+honest version of what I did rather than a repo link.
+"""
+details = [
+  "**ROXOR**: a Roblox base project for games grounded in realism, so everything we ship shares one set of systems and one look. I set up the monorepo and wrote the headless dev-session launcher.",
+  "**Neosource**: a Source-flavoured Unity project. I added bullet penetration, the character system, view models with per-weapon animator controllers and sounds, and CS:GO style recoil, viewpunch and spread. Also fixed the build on Unity 2022 under Linux.",
+]
+tech = ["Luau", "Roblox", "C#", "Unity"]
+private = true
+
+[[project.link]]
+label = "the org"
+href = "https://github.com/Pixeljam-Studios"
+
+[[project]]
+id = "shaders"
+title = "legacy console shaders"
+line = "games"
+period = "2026"
+summary = """
+Shaders that make modern Minecraft look like the Legacy Console Edition you played on a 360. Written
+against the ancient 1.6.4 ShadersMod, works fine on Iris and OptiFine too.
+"""
+tech = ["GLSL", "Minecraft"]
+
+[[project.link]]
+label = "repo"
+href = "https://github.com/milotek/minecraft-legacy-console-shaders"
+primary = true
+
+[[project.link]]
+label = "video"
+href = "https://youtu.be/EzzUaDSsb3Q"
+
+[[project.shot]]
+src = "assets/img/projects/shaders_1.webp"
+caption = "cave"
+
+[[project.shot]]
+src = "assets/img/projects/shaders_2.webp"
+caption = "morning"
+
+[[project.shot]]
+src = "assets/img/projects/shaders_3.webp"
+caption = "spawn"
+
+[[project.shot]]
+src = "assets/img/projects/shaders_4.webp"
+caption = "village"
+
+[[project]]
+id = "epq"
+title = "EPQ platformer"
+line = "games"
+period = "2024"
+summary = """
+An accessibility-focused platforming and exploration game, made in Godot over six months of weekends
+during the first year of my A levels. It was my Extended Project Qualification, and it is where the
+character art further down came from.
+"""
+tech = ["Godot", "GDScript"]
+
+[[project]]
+id = "simfiles"
+title = "notITG pack"
+line = "games"
+period = "2025"
+summary = """
+A pack of StepMania modcharts for notITG, all charted by me. I picked it up to get better at Lua and to
+work out what GLSL actually does. I don't own a dance pad, which tells you how these were tested.
+"""
+tech = ["Lua", "GLSL", "notITG"]
+
+[[project.link]]
+label = "repo"
+href = "https://github.com/milotek/simfiles"
+primary = true
+
+[[project.link]]
+label = "video"
+href = "https://youtu.be/GO9Xfo2zVvQ"
+
+[[project.shot]]
+src = "assets/img/projects/simfiles.webp"
+caption = "charting in SMEditor"
+
+[[project]]
+id = "left-in-vr"
+title = "Left 4 Dead 2 in VR"
+line = "games"
+period = "2025"
+summary = """
+A dead L4D2 VR fork I picked up for a hardware project, pulled the open patches into, then fixed
+properly: MSAA, analogue movement, and the distorted rendering on PSVR2.
+"""
+tech = ["C++", "Source", "VR"]
+
+[[project.link]]
+label = "fork"
+href = "https://github.com/milotek/left-in-vr"
+primary = true
+
+[[project]]
+id = "configs"
+title = "game configs"
+line = "games"
+period = "2025 - 2026"
+summary = """
+Autoexecs and configs for Valve games. Sensible binds, a few things that are only in there because they
+made me laugh, and a video showing the L4D2 one off.
+"""
+tech = ["cfg", "Source"]
+
+[[project.link]]
+label = "repo"
+href = "https://github.com/milotek/configs"
+primary = true
+
+[[project.link]]
+label = "video"
+href = "https://youtu.be/O6OQ100bRKM"
+
+[[project.shot]]
+src = "assets/img/projects/configs.webp"
+caption = "the banner says it"
+
+# ----------------------------------------------------------- smaller things
+
+[[project]]
+id = "collisionsounds"
+title = "CollisionSounds"
+line = "small"
+summary = "Roblox module that gives every object material-correct impact sounds, scaled by how hard it hit."
+[[project.link]]
+label = "repo"
+href = "https://github.com/milotek/CollisionSounds"
+
+[[project]]
+id = "firestarter"
+title = "Firestarter"
+line = "small"
+summary = "My React Native and Expo starter, so a new app is an afternoon instead of a weekend."
+[[project.link]]
+label = "repo"
+href = "https://github.com/milotek/react-native-firestarter"
+
+[[project]]
+id = "tittyos"
+title = "tittyos"
+line = "small"
+summary = "A tensor and autograd library for C++. Early, badly named, still teaches me more than a tutorial would."
+[[project.link]]
+label = "repo"
+href = "https://github.com/milotek/tittyos"
+
+[[project]]
+id = "punchdrunk"
+title = "punchdrunk"
+line = "small"
+summary = "A small Flask site for the Minecraft server I run with friends."
+[[project.link]]
+label = "repo"
+href = "https://github.com/milotek/punchdrunk"
+
+[[project]]
+id = "userscripts"
+title = "userscripts"
+line = "small"
+summary = "Bits of JavaScript that fix websites I have to use."
+[[project.link]]
+label = "repo"
+href = "https://github.com/milotek/userscripts"
+
+[[project]]
+id = "milotekold"
+title = "the old site"
+line = "small"
+summary = "The Carrd export this replaced, archived rather than deleted."
+[[project.link]]
+label = "repo"
+href = "https://github.com/milotek/milotekold"

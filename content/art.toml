@@ -1,0 +1,57 @@
+# Drop a file in assets/img/art/ and add a block. Order here is the order shown.
+
+[[piece]]
+src = "assets/img/art/pygame_title.webp"
+caption = "Title screen background for a pygame project."
+
+[[piece]]
+src = "assets/img/art/pygame_sunset.webp"
+caption = "\"Sunset\" stage background, same project."
+
+[[piece]]
+src = "assets/img/art/dust2_fullbright.webp"
+caption = "de_dust2 in mat_fullbright."
+
+[[piece]]
+src = "assets/img/art/pygame_space.webp"
+caption = "\"Space\" stage background."
+
+[[piece]]
+src = "assets/img/art/epq_antagonist.webp"
+caption = "Antagonist concept sheet for my EPQ game."
+
+[[piece]]
+src = "assets/img/art/epq_protagonist.webp"
+caption = "Protagonist concept art for the same game."
+
+[[piece]]
+src = "assets/img/art/de_lake.webp"
+caption = "de_lake. My favourite map, drawn badly on purpose."
+
+[[piece]]
+src = "assets/img/art/pygame_underground.webp"
+caption = "\"Underground\" stage background."
+
+[[piece]]
+src = "assets/img/art/pygame_world.webp"
+caption = "\"World\" stage background."
+
+[[piece]]
+src = "assets/img/art/steam_pfp.webp"
+caption = "A friend's Steam profile picture, drawn by request."
+
+[[piece]]
+src = "assets/img/art/me_and_friends.webp"
+caption = "Me and my friends, drawn for someone's birthday."
+
+[[piece]]
+src = "assets/img/art/giraffe.webp"
+caption = "A giraffe, made in Pixelmator Pro to show the app off."
+
+[[piece]]
+src = "assets/img/art/old_avatar.webp"
+caption = "My old profile picture. Still fond of it."
+
+[[piece]]
+src = "assets/img/art/quick_sketch.gif"
+caption = "Under a minute, for a friend, no notes."

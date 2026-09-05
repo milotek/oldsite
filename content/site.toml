@@ -1,0 +1,170 @@
+# Everything on the front page that isn't a project, a drawing or a post.
+# Edit this file, run `python3 build.py`, commit. No HTML required.
+
+[profile]
+name = "Milo Tekchandani"
+handle = "milo tek"
+tagline = "software engineer"
+role = "Software Engineer (Apprentice) @ Google"
+location = "London, UK"
+base_url = "https://furfag.lol/wst19/"
+description = "Milo Tekchandani, software engineer at Google in London. Search, games, systems and a bit of drawing."
+avatar = "assets/img/art/old_avatar.webp"
+avatar_alt = "A line drawing of a small creature on a pink background, drawn by Milo"
+intro = """
+I'm a software engineer at Google in London, on the Search app for mobile. Backend and infrastructure,
+mostly. So, google.com.
+
+Away from that I build games with a couple of mates, run three machines off one Nix flake, and draw
+things when I can be bothered. Everything below is stuff I actually built.
+"""
+
+[copy]
+work_note = "The day job."
+projects_note = "Things I built and finished, or am still finishing."
+games_note = "Games, engines and the bits that go inside them."
+art_note = "Drawn mostly in Procreate on an iPad Pro with an Apple Pencil. Click one for the full size."
+writing_note = "Rare. Only when there's something worth writing down."
+buttons_note = "88x31, the way God intended. Nick mine if you link me."
+
+# ------------------------------------------------------------------ links
+# hero = shown big under the intro. quick = shown in the top bar.
+
+[[link]]
+label = "email"
+href = "mailto:milo@milotek.dev"
+note = "milo@milotek.dev"
+hero = true
+quick = true
+
+[[link]]
+label = "github"
+href = "https://github.com/milotek"
+note = "@milotek"
+hero = true
+quick = true
+
+[[link]]
+label = "cv"
+href = "https://github.com/milotek/milotek/raw/main/CV.pdf"
+note = "pdf"
+hero = true
+quick = true
+
+[[link]]
+label = "linkedin"
+href = "https://www.linkedin.com/in/fired/"
+note = "in/fired"
+hero = true
+
+[[link]]
+label = "instagram"
+href = "https://www.instagram.com/milo.tek/"
+
+[[link]]
+label = "pixeljam"
+href = "https://github.com/Pixeljam-Studios"
+
+[[link]]
+label = "files"
+href = "https://files.tek.rip"
+
+# ------------------------------------------------------------------- now
+
+[now]
+updated = "5 September 2026"
+items = [
+  "Google Search on mobile. Developer tooling and page transitions, currently.",
+  "Moving my NixOS config onto nixy v6 across a desktop, a home server and a VPS.",
+  "ROXOR with Pixeljam Studios, on and off.",
+  "Charting notITG badly, still without a dance pad.",
+]
+
+# ------------------------------------------------------------------ uses
+
+[[uses]]
+group = "desk"
+items = [
+  "NixOS, Hyprland, everything declared in one flake",
+  "Ghostty and Zellij, Neovim through nvf, Yazi for files",
+  "Catppuccin Mocha via Stylix, accent `#ffbdbd`",
+  "MesloLGS Nerd Font and Source Sans 3",
+]
+
+[[uses]]
+group = "boxes"
+items = [
+  "A desktop, a mini PC that does the serving, an aarch64 VPS that owns the public ingress",
+  "Tailscale for anything administrative, no public SSH",
+  "Caddy in front, sops-nix for the secrets",
+]
+
+[[uses]]
+group = "running"
+items = [
+  "copyparty at [files.tek.rip](https://files.tek.rip)",
+  "Navidrome, Home Assistant, AdGuard Home, Gitea",
+  "[habits.tek.rip](https://habits.tek.rip) on a wall-mounted tablet",
+]
+
+# -------------------------------------------------------------- colophon
+
+[colophon]
+body = """
+Static HTML from one Python script with no dependencies. Content is two TOML files and a folder of
+Markdown, so adding a project never means touching markup.
+
+Source Sans 3 and MesloLGS Nerd Font, subset down to about 100 KB. Catppuccin Mocha, accent `#ffbdbd`.
+No JavaScript, no analytics, no cookies. GitHub Pages.
+
+There's a [post about it](blog/the-new-site.html) if you care, and the
+[source](https://github.com/milotek/wst19) if you really care.
+"""
+
+# --------------------------------------------------------------- buttons
+# Drop an 88x31 in assets/buttons/ and add a block here. Mine are first.
+
+[[button]]
+src = "assets/buttons/milotek.png"
+alt = "milo tek"
+title = "milo tek - link me"
+href = "https://furfag.lol/wst19/"
+
+[[button]]
+src = "assets/buttons/milotek_alt.png"
+alt = "milo tek (alt)"
+title = "milo tek, the pink one"
+href = "https://furfag.lol/wst19/"
+
+[[button]]
+src = "assets/buttons/pixeljam.png"
+alt = "Pixeljam Studios"
+title = "Pixeljam Studios"
+href = "https://github.com/Pixeljam-Studios"
+
+[[button]]
+src = "assets/buttons/tekrip.png"
+alt = "files.tek.rip"
+title = "the file server"
+href = "https://files.tek.rip"
+
+[[button]]
+src = "assets/buttons/nixos.png"
+alt = "runs NixOS"
+title = "runs NixOS"
+
+[[button]]
+src = "assets/buttons/nojs.png"
+alt = "no javascript"
+title = "no JavaScript on this page"
+
+[[button]]
+src = "assets/buttons/notitg.png"
+alt = "notITG"
+title = "notITG"
+href = "https://www.noti.tg/"
+
+[[button]]
+src = "assets/buttons/slot.png"
+alt = "your button here"
+title = "your button here"

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>milo tek - software engineer</title>
+<meta name="description" content="Milo Tekchandani, software engineer at Google in London. Search, games, systems and a bit of drawing.">
+<meta name="theme-color" content="#1e1e2e">
+<meta property="og:title" content="milo tek - software engineer">
+<meta property="og:description" content="Milo Tekchandani, software engineer at Google in London. Search, games, systems and a bit of drawing.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="milo tek" href="feed.xml">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="">
+<a class="skip" href="#main">skip to content</a>
+<header class="bar">
+  <a class="mark" href="index.html">
+    <svg class="roundel" width="30" height="30" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="42" fill="none" stroke="currentColor" stroke-width="17"/><rect x="2" y="50" width="116" height="20" fill="currentColor"/></svg>
+    <span class="mark-name">milo tek</span>
+  </a>
+  <nav class="bar-links" aria-label="quick links"><a href="mailto:milo@milotek.dev">email</a><a href="https://github.com/milotek">github</a><a href="https://github.com/milotek/milotek/raw/main/CV.pdf">cv</a></nav>
+</header>
+<main id="main">
+<section class="hero">
+  <div class="hero-text">
+    <p class="kicker">Software Engineer (Apprentice) @ Google &middot; London, UK</p>
+    <h1>Milo Tekchandani</h1>
+    <p>I'm a software engineer at Google in London, on the Search app for mobile. Backend and infrastructure, mostly. So, google.com.</p>
+<p>Away from that I build games with a couple of mates, run three machines off one Nix flake, and draw things when I can be bothered. Everything below is stuff I actually built.</p>
+    <div class="big-links"><a class="big-link" href="mailto:milo@milotek.dev" rel="noopener">email<span>milo@milotek.dev</span></a><a class="big-link" href="https://github.com/milotek" rel="noopener">github<span>@milotek</span></a><a class="big-link" href="https://github.com/milotek/milotek/raw/main/CV.pdf" rel="noopener">cv<span>pdf</span></a><a class="big-link" href="https://www.linkedin.com/in/fired/" rel="noopener">linkedin<span>in/fired</span></a></div>
+  </div>
+  <img class="avatar" src="assets/img/art/old_avatar.webp" alt="A line drawing of a small creature on a pink background, drawn by Milo" width="120" height="120">
+</section>
+
+<nav class="diagram" aria-label="sections of this page">
+  <ol><li class="stop stop--end"><a href="#work"><span class="dot"></span><span class="label">work</span></a></li><li class="stop"><a href="#projects"><span class="dot"></span><span class="label">projects</span></a></li><li class="stop"><a href="#games"><span class="dot"></span><span class="label">games</span></a></li><li class="stop"><a href="#art"><span class="dot"></span><span class="label">art</span></a></li><li class="stop"><a href="#writing"><span class="dot"></span><span class="label">writing</span></a></li><li class="stop"><a href="#now"><span class="dot"></span><span class="label">now</span></a></li><li class="stop stop--end"><a href="#uses"><span class="dot"></span><span class="label">uses</span></a></li></ol>
+</nav>
+
+<section class="sect" id="work">
+  <header class="sect-head">
+    
+    <h2><span class="bullet"></span>work</h2>
+    <p class="note">The day job.</p>
+  </header>
+  <ol class="stops">
+  <li class="entry" id="google">
+    <h3>Google, Search</h3>
+    <p class="meta"><span class="when">2026 - now</span><span class="status">current</span></p>
+    <p class="summary">Software Engineer (Apprentice) on the Google Search app for mobile, backend and infrastructure side.
+</p>
+    <ul class="details"><li>Developer tooling for the people building AI Mode.</li><li>Page transitions between the tabs on the search results page.</li></ul>
+    <p class="tech"><span class="chip">backend</span><span class="chip">infrastructure</span><span class="chip">mobile</span></p>
+    
+    
+  </li>
+</ol>
+
+</section>
+
+<section class="sect" id="projects">
+  <header class="sect-head">
+    
+    <h2><span class="bullet"></span>projects</h2>
+    <p class="note">Things I built and finished, or am still finishing.</p>
+  </header>
+  <ol class="stops">
+  <li class="entry" id="nixeljam">
+    <h3><a href="https://github.com/milotek/nixeljam" rel="noopener">nixeljam</a></h3>
+    <p class="meta"><span class="when">2026 - now</span><span class="status">active</span></p>
+    <p class="summary">My whole computing setup as one flake. A desktop, a mini PC doing the serving and an aarch64 VPS
+holding the public ingress, all declared in one repo and rebuildable from nothing.
+</p>
+    <ul class="details"><li>Built on top of anotherhadi's nixy, then pulled apart into per-host modules.</li><li>Runs copyparty, Navidrome, Home Assistant, AdGuard Home, Gitea and Caddy.</li><li>Secrets through sops-nix, admin access through Tailscale only, no public SSH port.</li><li>Theming through Stylix, which is where the pink on this site comes from.</li></ul>
+    <p class="tech"><span class="chip">Nix</span><span class="chip">NixOS</span><span class="chip">home-manager</span><span class="chip">sops</span></p>
+    <div class="strip"><a class="shot" href="assets/img/projects/nixeljam_1.webp" title="desktop"><img src="assets/img/projects/nixeljam_1.webp" alt="desktop" loading="lazy" decoding="async"><span>desktop</span></a><a class="shot" href="assets/img/projects/nixeljam_2.webp" title="editor and shell"><img src="assets/img/projects/nixeljam_2.webp" alt="editor and shell" loading="lazy" decoding="async"><span>editor and shell</span></a><a class="shot" href="assets/img/projects/nixeljam_3.webp" title="the rest of it"><img src="assets/img/projects/nixeljam_3.webp" alt="the rest of it" loading="lazy" decoding="async"><span>the rest of it</span></a><a class="shot" href="assets/img/projects/nixeljam_dash.webp" title="server dashboard"><img src="assets/img/projects/nixeljam_dash.webp" alt="server dashboard" loading="lazy" decoding="async"><span>server dashboard</span></a></div>
+    <p class="entry-links"><a class="go" href="https://github.com/milotek/nixeljam" rel="noopener">repo</a></p>
+  </li>
+  <li class="entry" id="habits">
+    <h3><a href="https://github.com/milotek/habits" rel="noopener">habits</a></h3>
+    <p class="meta"><span class="when">2026</span><span class="status">live</span></p>
+    <p class="summary">A habit tracker that draws itself as a GitHub-style activity grid, made for a tablet stuck on my wall.
+Kotlin, ships as a Nix module, so deploying it is one line in the flake.
+</p>
+    
+    <p class="tech"><span class="chip">Kotlin</span><span class="chip">Nix</span><span class="chip">kiosk</span></p>
+    <div class="strip"><a class="shot tall" href="assets/img/projects/habits.webp" title="habits.tek.rip, a fresh grid"><img src="assets/img/projects/habits.webp" alt="habits.tek.rip, a fresh grid" loading="lazy" decoding="async"><span>habits.tek.rip, a fresh grid</span></a></div>
+    <p class="entry-links"><a class="go" href="https://github.com/milotek/habits" rel="noopener">repo</a><a class="go" href="https://habits.tek.rip" rel="noopener">live</a></p>
+  </li>
+  <li class="entry" id="lockyn">
+    <h3>Lockyn</h3>
+    <p class="meta"><span class="when">2024 - now</span><span class="status">unreleased</span><span class="status status--shut">private repo</span></p>
+    <p class="summary">A commercial study app for GCSE and sixth form students. I did the app: React Native and TypeScript on
+the front, Firebase behind it, iOS and Android with web and desktop coming along for the ride.
+</p>
+    <ul class="details"><li>Started as my Computer Science NEA, then kept going once it stopped being coursework.</li><li>Source is private and stays that way until it ships.</li></ul>
+    <p class="tech"><span class="chip">React Native</span><span class="chip">TypeScript</span><span class="chip">Firebase</span></p>
+    <div class="strip"><a class="shot tall" href="assets/img/projects/lockyn_landing.webp" title="landing"><img src="assets/img/projects/lockyn_landing.webp" alt="landing" loading="lazy" decoding="async"><span>landing</span></a><a class="shot tall" href="assets/img/projects/lockyn_onboarding.webp" title="onboarding"><img src="assets/img/projects/lockyn_onboarding.webp" alt="onboarding" loading="lazy" decoding="async"><span>onboarding</span></a><a class="shot tall" href="assets/img/projects/lockyn_home.webp" title="home"><img src="assets/img/projects/lockyn_home.webp" alt="home" loading="lazy" decoding="async"><span>home</span></a><a class="shot tall" href="assets/img/projects/lockyn_summary.webp" title="summary"><img src="assets/img/projects/lockyn_summary.webp" alt="summary" loading="lazy" decoding="async"><span>summary</span></a></div>
+    
+  </li>
+  <li class="entry" id="petfeeder">
+    <h3><a href="https://github.com/milotek/petfeeder" rel="noopener">AutoPet Feeder</a></h3>
+    <p class="meta"><span class="when">2024</span><span class="status">delivered</span></p>
+    <p class="summary">An automated pet feeder I designed, built and handed to a client. The client was my neighbours.
+</p>
+    <ul class="details"><li>Raspberry Pi, a servo, a touchscreen and USB-C power, running JavaScript.</li><li>3D printed ABS shell with an oak finish, because it had to live in someone's kitchen.</li><li>Came with a full design document: client spec, prototypes, evaluation, the lot.</li></ul>
+    <p class="tech"><span class="chip">Raspberry Pi</span><span class="chip">JavaScript</span><span class="chip">CAD</span><span class="chip">3D printing</span></p>
+    
+    <p class="entry-links"><a class="go" href="https://github.com/milotek/petfeeder" rel="noopener">repo</a><a class="go" href="https://github.com/milotek/petfeeder/blob/master/Product%20Design%20NEA%20Edited.pdf" rel="noopener">design document (pdf)</a></p>
+  </li>
+  <li class="entry" id="makersbnb">
+    <h3><a href="https://github.com/milotek/makersbnb" rel="noopener">MakersBnB</a></h3>
+    <p class="meta"><span class="when">2025</span></p>
+    <p class="summary">An Airbnb clone six of us built in a week at Makers. Flask, Postgres and Basecoat UI, driven off tests
+rather than vibes. List a space, request a booking, manage the reservations.
+</p>
+    
+    <p class="tech"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">Postgres</span><span class="chip">TDD</span></p>
+    <div class="strip"><a class="shot" href="assets/img/projects/makersbnb.webp" title="listings"><img src="assets/img/projects/makersbnb.webp" alt="listings" loading="lazy" decoding="async"><span>listings</span></a></div>
+    <p class="entry-links"><a class="go" href="https://github.com/milotek/makersbnb" rel="noopener">repo</a></p>
+  </li>
+  <li class="entry" id="acebook">
+    <h3><a href="https://github.com/milotek/acebook" rel="noopener">Acebook</a></h3>
+    <p class="meta"><span class="when">2025</span></p>
+    <p class="summary">A Facebook clone in Java and Spring Boot, also built as a team. Thymeleaf templates, Flyway migrations,
+Auth0 and Spring Security for logins, Selenium driving the feature tests.
+</p>
+    
+    <p class="tech"><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Postgres</span><span class="chip">Selenium</span></p>
+    
+    <p class="entry-links"><a class="go" href="https://github.com/milotek/acebook" rel="noopener">repo</a></p>
+  </li>
+  <li class="entry" id="ezcals">
+    <h3>EZcals</h3>
+    <p class="meta"><span class="when">2024 - 2025</span></p>
+    <p class="summary">A calorie tracker for people trying to lose or gain weight. Built so that logging a meal takes seconds,
+because every other app makes you fill in a form. Swift and SwiftUI first, rewritten in React Native in
+2025 to get Android.
+</p>
+    
+    <p class="tech"><span class="chip">Swift</span><span class="chip">SwiftUI</span><span class="chip">React Native</span></p>
+    
+    
+  </li>
+</ol>
+
+</section>
+
+<section class="sect" id="games">
+  <header class="sect-head">
+    
+    <h2><span class="bullet"></span>games</h2>
+    <p class="note">Games, engines and the bits that go inside them.</p>
+  </header>
+  <ol class="stops">
+  <li class="entry" id="pixeljam">
+    <h3>Pixeljam Studios</h3>
+    <p class="meta"><span class="when">2025 - now</span><span class="status">active</span><span class="status status--shut">private repo</span></p>
+    <p class="summary">A small studio I run with mates. Two things live in it right now, both closed source, so this is the
+honest version of what I did rather than a repo link.
+</p>
+    <ul class="details"><li><strong>ROXOR</strong>: a Roblox base project for games grounded in realism, so everything we ship shares one set of systems and one look. I set up the monorepo and wrote the headless dev-session launcher.</li><li><strong>Neosource</strong>: a Source-flavoured Unity project. I added bullet penetration, the character system, view models with per-weapon animator controllers and sounds, and CS:GO style recoil, viewpunch and spread. Also fixed the build on Unity 2022 under Linux.</li></ul>
+    <p class="tech"><span class="chip">Luau</span><span class="chip">Roblox</span><span class="chip">C#</span><span class="chip">Unity</span></p>
+    
+    <p class="entry-links"><a class="go" href="https://github.com/Pixeljam-Studios" rel="noopener">the org</a></p>
+  </li>
+  <li class="entry" id="shaders">
+    <h3><a href="https://github.com/milotek/minecraft-legacy-console-shaders" rel="noopener">legacy console shaders</a></h3>
+    <p class="meta"><span class="when">2026</span></p>
+    <p class="summary">Shaders that make modern Minecraft look like the Legacy Console Edition you played on a 360. Written
+against the ancient 1.6.4 ShadersMod, works fine on Iris and OptiFine too.
+</p>
+    
+    <p class="tech"><span class="chip">GLSL</span><span class="chip">Minecraft</span></p>
+    <div class="strip"><a class="shot" href="assets/img/projects/shaders_1.webp" title="cave"><img src="assets/img/projects/shaders_1.webp" alt="cave" loading="lazy" decoding="async"><span>cave</span></a><a class="shot" href="assets/img/projects/shaders_2.webp" title="morning"><img src="assets/img/projects/shaders_2.webp" alt="morning" loading="lazy" decoding="async"><span>morning</span></a><a class="shot" href="assets/img/projects/shaders_3.webp" title="spawn"><img src="assets/img/projects/shaders_3.webp" alt="spawn" loading="lazy" decoding="async"><span>spawn</span></a><a class="shot" href="assets/img/projects/shaders_4.webp" title="village"><img src="assets/img/projects/shaders_4.webp" alt="village" loading="lazy" decoding="async"><span>village</span></a></div>
+    <p class="entry-links"><a class="go" href="https://github.com/milotek/minecraft-legacy-console-shaders" rel="noopener">repo</a><a class="go" href="https://youtu.be/EzzUaDSsb3Q" rel="noopener">video</a></p>
+  </li>
+  <li class="entry" id="epq">
+    <h3>EPQ platformer</h3>
+    <p class="meta"><span class="when">2024</span></p>
+    <p class="summary">An accessibility-focused platforming and exploration game, made in Godot over six months of weekends
+during the first year of my A levels. It was my Extended Project Qualification, and it is where the
+character art further down came from.
+</p>
+    
+    <p class="tech"><span class="chip">Godot</span><span class="chip">GDScript</span></p>
+    
+    
+  </li>
+  <li class="entry" id="simfiles">
+    <h3><a href="https://github.com/milotek/simfiles" rel="noopener">notITG pack</a></h3>
+    <p class="meta"><span class="when">2025</span></p>
+    <p class="summary">A pack of StepMania modcharts for notITG, all charted by me. I picked it up to get better at Lua and to
+work out what GLSL actually does. I don't own a dance pad, which tells you how these were tested.
+</p>
+    
+    <p class="tech"><span class="chip">Lua</span><span class="chip">GLSL</span><span class="chip">notITG</span></p>
+    <div class="strip"><a class="shot" href="assets/img/projects/simfiles.webp" title="charting in SMEditor"><img src="assets/img/projects/simfiles.webp" alt="charting in SMEditor" loading="lazy" decoding="async"><span>charting in SMEditor</span></a></div>
+    <p class="entry-links"><a class="go" href="https://github.com/milotek/simfiles" rel="noopener">repo</a><a class="go" href="https://youtu.be/GO9Xfo2zVvQ" rel="noopener">video</a></p>
+  </li>
+  <li class="entry" id="left-in-vr">
+    <h3><a href="https://github.com/milotek/left-in-vr" rel="noopener">Left 4 Dead 2 in VR</a></h3>
+    <p class="meta"><span class="when">2025</span></p>
+    <p class="summary">A dead L4D2 VR fork I picked up for a hardware project, pulled the open patches into, then fixed
+properly: MSAA, analogue movement, and the distorted rendering on PSVR2.
+</p>
+    
+    <p class="tech"><span class="chip">C++</span><span class="chip">Source</span><span class="chip">VR</span></p>
+    
+    <p class="entry-links"><a class="go" href="https://github.com/milotek/left-in-vr" rel="noopener">fork</a></p>
+  </li>
+  <li class="entry" id="configs">
+    <h3><a href="https://github.com/milotek/configs" rel="noopener">game configs</a></h3>
+    <p class="meta"><span class="when">2025 - 2026</span></p>
+    <p class="summary">Autoexecs and configs for Valve games. Sensible binds, a few things that are only in there because they
+made me laugh, and a video showing the L4D2 one off.
+</p>
+    
+    <p class="tech"><span class="chip">cfg</span><span class="chip">Source</span></p>
+    <div class="strip"><a class="shot" href="assets/img/projects/configs.webp" title="the banner says it"><img src="assets/img/projects/configs.webp" alt="the banner says it" loading="lazy" decoding="async"><span>the banner says it</span></a></div>
+    <p class="entry-links"><a class="go" href="https://github.com/milotek/configs" rel="noopener">repo</a><a class="go" href="https://youtu.be/O6OQ100bRKM" rel="noopener">video</a></p>
+  </li>
+</ol>
+
+</section>
+
+<section class="sect sect--tight" id="smaller">
+  <header class="sect-head"><h2><span class="bullet bullet--small"></span>smaller things</h2></header>
+  <ul class="minor"><li><a href="https://github.com/milotek/CollisionSounds" rel="noopener">CollisionSounds</a><span>Roblox module that gives every object material-correct impact sounds, scaled by how hard it hit.</span></li><li><a href="https://github.com/milotek/react-native-firestarter" rel="noopener">Firestarter</a><span>My React Native and Expo starter, so a new app is an afternoon instead of a weekend.</span></li><li><a href="https://github.com/milotek/tittyos" rel="noopener">tittyos</a><span>A tensor and autograd library for C++. Early, badly named, still teaches me more than a tutorial would.</span></li><li><a href="https://github.com/milotek/punchdrunk" rel="noopener">punchdrunk</a><span>A small Flask site for the Minecraft server I run with friends.</span></li><li><a href="https://github.com/milotek/userscripts" rel="noopener">userscripts</a><span>Bits of JavaScript that fix websites I have to use.</span></li><li><a href="https://github.com/milotek/milotekold" rel="noopener">the old site</a><span>The Carrd export this replaced, archived rather than deleted.</span></li></ul>
+</section>
+
+<section class="sect" id="art">
+  <header class="sect-head">
+    
+    <h2><span class="bullet"></span>art</h2>
+    <p class="note">Drawn mostly in Procreate on an iPad Pro with an Apple Pencil. Click one for the full size.</p>
+  </header>
+  <div class="gallery"><figure class="plate"><a href="assets/img/art/pygame_title.webp"><img src="assets/img/art/pygame_title.webp" alt="Title screen background for a pygame project." loading="lazy" decoding="async"></a><figcaption>Title screen background for a pygame project.</figcaption></figure><figure class="plate"><a href="assets/img/art/pygame_sunset.webp"><img src="assets/img/art/pygame_sunset.webp" alt="&quot;Sunset&quot; stage background, same project." loading="lazy" decoding="async"></a><figcaption>"Sunset" stage background, same project.</figcaption></figure><figure class="plate"><a href="assets/img/art/dust2_fullbright.webp"><img src="assets/img/art/dust2_fullbright.webp" alt="de_dust2 in mat_fullbright." loading="lazy" decoding="async"></a><figcaption>de_dust2 in mat_fullbright.</figcaption></figure><figure class="plate"><a href="assets/img/art/pygame_space.webp"><img src="assets/img/art/pygame_space.webp" alt="&quot;Space&quot; stage background." loading="lazy" decoding="async"></a><figcaption>"Space" stage background.</figcaption></figure><figure class="plate"><a href="assets/img/art/epq_antagonist.webp"><img src="assets/img/art/epq_antagonist.webp" alt="Antagonist concept sheet for my EPQ game." loading="lazy" decoding="async"></a><figcaption>Antagonist concept sheet for my EPQ game.</figcaption></figure><figure class="plate"><a href="assets/img/art/epq_protagonist.webp"><img src="assets/img/art/epq_protagonist.webp" alt="Protagonist concept art for the same game." loading="lazy" decoding="async"></a><figcaption>Protagonist concept art for the same game.</figcaption></figure><figure class="plate"><a href="assets/img/art/de_lake.webp"><img src="assets/img/art/de_lake.webp" alt="de_lake. My favourite map, drawn badly on purpose." loading="lazy" decoding="async"></a><figcaption>de_lake. My favourite map, drawn badly on purpose.</figcaption></figure><figure class="plate"><a href="assets/img/art/pygame_underground.webp"><img src="assets/img/art/pygame_underground.webp" alt="&quot;Underground&quot; stage background." loading="lazy" decoding="async"></a><figcaption>"Underground" stage background.</figcaption></figure><figure class="plate"><a href="assets/img/art/pygame_world.webp"><img src="assets/img/art/pygame_world.webp" alt="&quot;World&quot; stage background." loading="lazy" decoding="async"></a><figcaption>"World" stage background.</figcaption></figure><figure class="plate"><a href="assets/img/art/steam_pfp.webp"><img src="assets/img/art/steam_pfp.webp" alt="A friend&#x27;s Steam profile picture, drawn by request." loading="lazy" decoding="async"></a><figcaption>A friend's Steam profile picture, drawn by request.</figcaption></figure><figure class="plate"><a href="assets/img/art/me_and_friends.webp"><img src="assets/img/art/me_and_friends.webp" alt="Me and my friends, drawn for someone&#x27;s birthday." loading="lazy" decoding="async"></a><figcaption>Me and my friends, drawn for someone's birthday.</figcaption></figure><figure class="plate"><a href="assets/img/art/giraffe.webp"><img src="assets/img/art/giraffe.webp" alt="A giraffe, made in Pixelmator Pro to show the app off." loading="lazy" decoding="async"></a><figcaption>A giraffe, made in Pixelmator Pro to show the app off.</figcaption></figure><figure class="plate"><a href="assets/img/art/old_avatar.webp"><img src="assets/img/art/old_avatar.webp" alt="My old profile picture. Still fond of it." loading="lazy" decoding="async"></a><figcaption>My old profile picture. Still fond of it.</figcaption></figure><figure class="plate"><a href="assets/img/art/quick_sketch.gif"><img src="assets/img/art/quick_sketch.gif" alt="Under a minute, for a friend, no notes." loading="lazy" decoding="async"></a><figcaption>Under a minute, for a friend, no notes.</figcaption></figure></div>
+</section>
+
+<section class="sect" id="writing">
+  <header class="sect-head">
+    
+    <h2><span class="bullet"></span>writing</h2>
+    <p class="note">Rare. Only when there's something worth writing down.</p>
+  </header>
+  <ol class="stops"><li class="entry entry--post"><h3><a href="blog/the-new-site.html">the new site</a></h3><p class="meta"><span class="when">2026-09-05</span></p><p class="summary">Why the old one had to go, and what this one is made of.</p></li></ol><p class="entry-links entry-links--loose"><a class="go" href="blog/index.html">all posts</a><a class="go" href="feed.xml">rss</a></p>
+</section>
+
+<section class="sect" id="now">
+  <header class="sect-head">
+    <p class="kicker">what I&#x27;m on with</p>
+    <h2><span class="bullet"></span>now</h2>
+    
+  </header>
+  <div class="panel"><ul class="ticks"><li>Google Search on mobile. Developer tooling and page transitions, currently.</li><li>Moving my NixOS config onto nixy v6 across a desktop, a home server and a VPS.</li><li>ROXOR with Pixeljam Studios, on and off.</li><li>Charting notITG badly, still without a dance pad.</li></ul><p class="stamp">updated 5 September 2026</p></div>
+</section>
+
+<section class="sect" id="uses">
+  <header class="sect-head">
+    
+    <h2><span class="bullet"></span>uses</h2>
+    
+  </header>
+  <div class="uses"><div class="uses-group"><h3>desk</h3><ul><li>NixOS, Hyprland, everything declared in one flake</li><li>Ghostty and Zellij, Neovim through nvf, Yazi for files</li><li>Catppuccin Mocha via Stylix, accent <code>#ffbdbd</code></li><li>MesloLGS Nerd Font and Source Sans 3</li></ul></div><div class="uses-group"><h3>boxes</h3><ul><li>A desktop, a mini PC that does the serving, an aarch64 VPS that owns the public ingress</li><li>Tailscale for anything administrative, no public SSH</li><li>Caddy in front, sops-nix for the secrets</li></ul></div><div class="uses-group"><h3>running</h3><ul><li>copyparty at <a href="https://files.tek.rip">files.tek.rip</a></li><li>Navidrome, Home Assistant, AdGuard Home, Gitea</li><li><a href="https://habits.tek.rip">habits.tek.rip</a> on a wall-mounted tablet</li></ul></div></div>
+</section>
+
+<section class="sect sect--tight" id="buttons">
+  <header class="sect-head"><h2><span class="bullet bullet--small"></span>buttons</h2>
+  <p class="note">88x31, the way God intended. Nick mine if you link me.</p></header>
+  <div class="buttons"><a href="https://furfag.lol/wst19/" rel="noopener"><img src="assets/buttons/milotek.png" alt="milo tek" width="88" height="31" title="milo tek - link me"></a><a href="https://furfag.lol/wst19/" rel="noopener"><img src="assets/buttons/milotek_alt.png" alt="milo tek (alt)" width="88" height="31" title="milo tek, the pink one"></a><a href="https://github.com/Pixeljam-Studios" rel="noopener"><img src="assets/buttons/pixeljam.png" alt="Pixeljam Studios" width="88" height="31" title="Pixeljam Studios"></a><a href="https://files.tek.rip" rel="noopener"><img src="assets/buttons/tekrip.png" alt="files.tek.rip" width="88" height="31" title="the file server"></a><span><img src="assets/buttons/nixos.png" alt="runs NixOS" width="88" height="31" title="runs NixOS"></span><span><img src="assets/buttons/nojs.png" alt="no javascript" width="88" height="31" title="no JavaScript on this page"></span><a href="https://www.noti.tg/" rel="noopener"><img src="assets/buttons/notitg.png" alt="notITG" width="88" height="31" title="notITG"></a><span><img src="assets/buttons/slot.png" alt="your button here" width="88" height="31" title="your button here"></span></div>
+</section>
+
+<section class="sect sect--tight" id="colophon">
+  <header class="sect-head"><h2><span class="bullet bullet--small"></span>colophon</h2></header>
+  <div class="prose prose--small"><p>Static HTML from one Python script with no dependencies. Content is two TOML files and a folder of Markdown, so adding a project never means touching markup.</p>
+<p>Source Sans 3 and MesloLGS Nerd Font, subset down to about 100 KB. Catppuccin Mocha, accent <code>#ffbdbd</code>. No JavaScript, no analytics, no cookies. GitHub Pages.</p>
+<p>There's a <a href="blog/the-new-site.html">post about it</a> if you care, and the <a href="https://github.com/milotek/wst19">source</a> if you really care.</p></div>
+  <p class="terminus"><svg viewBox="0 0 64 64" width="26" height="26" aria-hidden="true">
+    <ellipse cx="32" cy="42" rx="15" ry="12"/><ellipse cx="14" cy="24" rx="7" ry="9"/>
+    <ellipse cx="27" cy="16" rx="7" ry="10"/><ellipse cx="42" cy="17" rx="7" ry="10"/>
+    <ellipse cx="54" cy="27" rx="7" ry="9"/></svg><span>end of the line</span></p>
+</section>
+</main>
+<footer class="foot">
+  <div class="foot-links"><a href="mailto:milo@milotek.dev">email</a> <a href="https://github.com/milotek">github</a> <a href="https://github.com/milotek/milotek/raw/main/CV.pdf">cv</a> <a href="https://www.linkedin.com/in/fired/">linkedin</a> <a href="https://www.instagram.com/milo.tek/">instagram</a> <a href="https://github.com/Pixeljam-Studios">pixeljam</a> <a href="https://files.tek.rip">files</a></div>
+  <p class="foot-note">milo tek, 2026. <a href="index.html#colophon">colophon</a> &middot; <a href="feed.xml">rss</a></p>
+</footer>
+</body>
+</html>
