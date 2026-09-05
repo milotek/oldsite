@@ -1,0 +1,101 @@
+title: milo tek
+name: Milo Tekchandani
+url: https://furfag.lol/wst20/
+repo: https://github.com/milotek/wst20
+email: milo@milotek.dev
+description: Milo Tekchandani. Software engineer at Google in London, working on the Google Search App. Projects, games, drawings and the occasional post.
+
+nav:
+  - label: work
+    path: work/
+  - label: blog
+    path: blog/
+  - label: art
+    path: art/
+  - label: now
+    path: now/
+  - label: uses
+    path: uses/
+  - label: cv
+    path: cv/
+
+footer_nav:
+  - label: Work
+    path: work/
+  - label: Blog
+    path: blog/
+  - label: Art
+    path: art/
+  - label: Now
+    path: now/
+  - label: Uses
+    path: uses/
+  - label: CV
+    path: cv/
+  - label: Colophon
+    path: colophon/
+
+links:
+  - label: GitHub
+    url: https://github.com/milotek
+    handle: milotek
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/fired/
+    handle: in/fired
+  - label: Email
+    url: mailto:milo@milotek.dev
+    handle: milo@milotek.dev
+  - label: Instagram
+    url: https://www.instagram.com/milo.tek/
+    handle: milo.tek
+  - label: Pixeljam Studios
+    url: https://github.com/Pixeljam-Studios
+    handle: game studio
+  - label: File server
+    url: https://files.tek.rip
+    handle: files.tek.rip
+
+buttons:
+  - img: milo-tek.png
+    alt: milo tek 88x31 button
+    url: https://furfag.lol/
+    title: This site. Nick it if you link me.
+  - img: milo-tek-moose.png
+    alt: milo tek 88x31 button with a moose on it
+    url: https://furfag.lol/
+    title: Same button, with the moose.
+  - img: pixeljam.png
+    alt: Pixeljam Studios 88x31 button
+    url: https://github.com/Pixeljam-Studios
+    title: Pixeljam Studios
+  - img: trashdump.png
+    alt: trashdump 88x31 button
+    url: https://files.tek.rip
+    title: My file server
+  - img: yours-here.png
+    alt: Empty 88x31 button slot
+    title: Drop a PNG in assets/buttons and add it to content/site.yaml
+
+home:
+  eyebrow: Software engineer, London
+  status: At Google, on the Search app for mobile.
+  lede: I do backend and infrastructure work on the Google Search App. Outside of that I build games with [Pixeljam Studios](https://github.com/Pixeljam-Studios), keep a stupid number of side projects alive, and draw.
+  facts:
+    Role: Software Engineer (Apprentice)
+    Team: Google Search App, mobile
+    Based: London, UK
+
+work:
+  title: Everything worth showing
+  lede: Work, side projects and a few things that were only ever meant to be funny. Newest first-ish.
+  description: Projects by Milo Tekchandani. Google Search App, game engines, a NixOS config, mobile apps and hardware.
+
+blog:
+  title: Posts
+  lede: Rarely, and only when I actually have something to say.
+  description: Writing by Milo Tekchandani.
+
+art:
+  title: Drawings
+  lede: Mostly Procreate on an iPad Pro with an Apple Pencil, going back a few years. Click one to see it properly.
+  description: Drawings and concept art by Milo Tekchandani.
