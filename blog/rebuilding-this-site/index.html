@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I rebuilt this site · milo tek</title>
+<meta name="description" content="The old one was a Carrd export from sixth form. This one is markdown files and a Python script.">
+<meta name="author" content="Milo Tekchandani">
+<meta name="theme-color" content="#1e1e2e">
+<link rel="canonical" href="https://furfag.lol/wst20/blog/rebuilding-this-site/">
+<link rel="icon" href="../../assets/img/site/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/img/site/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="milo tek" href="../../feed.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="milo tek">
+<meta property="og:title" content="I rebuilt this site · milo tek">
+<meta property="og:description" content="The old one was a Carrd export from sixth form. This one is markdown files and a Python script.">
+<meta property="og:url" content="https://furfag.lol/wst20/blog/rebuilding-this-site/">
+<meta property="og:image" content="https://furfag.lol/wst20/assets/img/site/icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="preload" as="font" type="font/woff2" href="../../assets/fonts/sourcesans3-400-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="../../assets/fonts/jetbrainsmono-400-latin.woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="../../">
+      <img src="../../assets/img/site/avatar.webp" alt="" width="30" height="30">
+      <span>milo tek</span>
+    </a>
+    <nav class="nav" aria-label="Primary"><a href="../../work/">work</a><a href="../../blog/" aria-current="page">blog</a><a href="../../art/">art</a><a href="../../now/">now</a><a href="../../uses/">uses</a><a href="../../cv/">cv</a></nav>
+  </div>
+</header>
+<main id="main">
+
+<article class="page-head detail">
+  <div class="wrap narrow">
+    <p class="crumb"><a href="../../blog/">&larr; Blog</a></p>
+    <p class="eyebrow"><time datetime="2026-09-05">2026-09-05</time></p>
+    <h1>I rebuilt this site</h1>
+  </div>
+</article>
+<div class="wrap narrow"><div class="prose"><p>My old site was a Carrd export. It did the job for about two years, in the sense that it was a URL I could put on a CV, but it was written before I had a job and it showed. Four screenshots of an app I couldn't release, some drawings, and a phone number.</p>
+<p>So this is the replacement.</p>
+<p>The whole thing is markdown files in <code>content/</code>. One file per project, one per post, one per drawing, each with a bit of YAML at the top for the title, the stack, the screenshots. A Python script reads them and writes plain HTML. No framework, no node_modules, nothing to migrate when whatever I picked goes out of fashion in eighteen months.</p>
+<p>That constraint is the point, honestly. If adding a project means opening a template file, I won't do it. If it means dropping a <code>.md</code> next to fifteen others, I might. I keep my notes in Obsidian as markdown already, so the format is one I'm going to keep writing in whether or not this site exists.</p>
+<p>The script has no dependencies. It parses enough YAML for front matter and enough markdown for the prose I actually write, and it emits every URL relative, so the site works under any path you drop it at. About 900 lines. You can read all of it if you're bored.</p>
+<p>Colours are Catppuccin Mocha with <code>#ffbdbd</code> doing the accent work, which is the same palette I've had on my desktop for a while. Fonts are Source Sans 3 and JetBrains Mono, both self-hosted, so nothing phones home to Google when you load a page.</p>
+<p>The buttons at the bottom are real 88x31s. Take one if you link me.</p></div></div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <h2 class="eyebrow">Elsewhere</h2>
+        <ul class="foot-links"><li><a href="https://github.com/milotek" target="_blank" rel="noopener">GitHub<span>milotek</span></a></li><li><a href="https://www.linkedin.com/in/fired/" target="_blank" rel="noopener">LinkedIn<span>in/fired</span></a></li><li><a href="mailto:milo@milotek.dev">Email<span>milo@milotek.dev</span></a></li><li><a href="https://www.instagram.com/milo.tek/" target="_blank" rel="noopener">Instagram<span>milo.tek</span></a></li><li><a href="https://github.com/Pixeljam-Studios" target="_blank" rel="noopener">Pixeljam Studios<span>game studio</span></a></li><li><a href="https://files.tek.rip" target="_blank" rel="noopener">File server<span>files.tek.rip</span></a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h2 class="eyebrow">Pages</h2>
+        <ul class="foot-links plain"><li><a href="../../work/">Work</a></li><li><a href="../../blog/">Blog</a></li><li><a href="../../art/">Art</a></li><li><a href="../../now/">Now</a></li><li><a href="../../uses/">Uses</a></li><li><a href="../../cv/">CV</a></li><li><a href="../../colophon/">Colophon</a></li></ul>
+      </div>
+      <div class="foot-col foot-buttons">
+        <h2 class="eyebrow">Buttons</h2>
+        <div class="buttons"><a class="btn88" href="https://furfag.lol/" target="_blank" rel="noopener" title="This site. Nick it if you link me."><img src="../../assets/buttons/milo-tek.png" alt="milo tek 88x31 button" width="88" height="31"></a><a class="btn88" href="https://furfag.lol/" target="_blank" rel="noopener" title="Same button, with the moose."><img src="../../assets/buttons/milo-tek-moose.png" alt="milo tek 88x31 button with a moose on it" width="88" height="31"></a><a class="btn88" href="https://github.com/Pixeljam-Studios" target="_blank" rel="noopener" title="Pixeljam Studios"><img src="../../assets/buttons/pixeljam.png" alt="Pixeljam Studios 88x31 button" width="88" height="31"></a><a class="btn88" href="https://files.tek.rip" target="_blank" rel="noopener" title="My file server"><img src="../../assets/buttons/trashdump.png" alt="trashdump 88x31 button" width="88" height="31"></a><span class="btn88 btn88-empty" title="Drop a PNG in assets/buttons and add it to content/site.yaml"><img src="../../assets/buttons/yours-here.png" alt="Empty 88x31 button slot" width="88" height="31"></span></div>
+        <p class="foot-note">Take the top one if you link me. <a href="../../assets/buttons/milo-tek.png">88&times;31 PNG</a>.</p>
+      </div>
+    </div>
+    <p class="foot-base">
+      <span>&copy; 2026 Milo Tekchandani</span>
+      <span><a href="../../colophon/">Colophon</a> &middot; <a href="../../feed.xml">RSS</a> &middot; <a href="https://github.com/milotek/wst20" target="_blank" rel="noopener">Source</a></span>
+    </p>
+  </div>
+</footer>
+<script src="../../assets/js/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+  <title>milo tek</title>
+  <link>https://furfag.lol/wst20/</link>
+  <atom:link href="https://furfag.lol/wst20/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Milo Tekchandani. Software engineer at Google in London, working on the Google Search App. Projects, games, drawings and the occasional post.</description>
+  <language>en-GB</language>
+  <lastBuildDate>Sat, 05 Sep 2026 13:17:45 +0000</lastBuildDate>
+  <item>
+    <title>I rebuilt this site</title>
+    <link>https://furfag.lol/wst20/blog/rebuilding-this-site/</link>
+    <guid isPermaLink="true">https://furfag.lol/wst20/blog/rebuilding-this-site/</guid>
+    <pubDate>Sat, 05 Sep 2026 00:00:00 +0000</pubDate>
+    <description>The old one was a Carrd export from sixth form. This one is markdown files and a Python script.</description>
+    <content:encoded><![CDATA[<p>My old site was a Carrd export. It did the job for about two years, in the sense that it was a URL I could put on a CV, but it was written before I had a job and it showed. Four screenshots of an app I couldn't release, some drawings, and a phone number.</p>
+<p>So this is the replacement.</p>
+<p>The whole thing is markdown files in <code>content/</code>. One file per project, one per post, one per drawing, each with a bit of YAML at the top for the title, the stack, the screenshots. A Python script reads them and writes plain HTML. No framework, no node_modules, nothing to migrate when whatever I picked goes out of fashion in eighteen months.</p>
+<p>That constraint is the point, honestly. If adding a project means opening a template file, I won't do it. If it means dropping a <code>.md</code> next to fifteen others, I might. I keep my notes in Obsidian as markdown already, so the format is one I'm going to keep writing in whether or not this site exists.</p>
+<p>The script has no dependencies. It parses enough YAML for front matter and enough markdown for the prose I actually write, and it emits every URL relative, so the site works under any path you drop it at. About 900 lines. You can read all of it if you're bored.</p>
+<p>Colours are Catppuccin Mocha with <code>#ffbdbd</code> doing the accent work, which is the same palette I've had on my desktop for a while. Fonts are Source Sans 3 and JetBrains Mono, both self-hosted, so nothing phones home to Google when you load a page.</p>
+<p>The buttons at the bottom are real 88x31s. Take one if you link me.</p>]]></content:encoded>
+  </item>
+</channel>
+</rss>

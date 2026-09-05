@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://furfag.lol/wst20/sitemap.xml
