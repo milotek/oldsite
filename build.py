@@ -452,7 +452,10 @@ def build_blog(site, posts):
 
 def build_feed(site, posts):
     base = site["profile"]["base_url"].rstrip("/") + "/"
-    now = format_datetime(datetime.now(timezone.utc))
+    # Stamped from the newest post rather than the clock, so rebuilding without
+    # writing anything produces no diff.
+    latest = datetime.strptime(posts[0]["date"], "%Y-%m-%d").replace(tzinfo=timezone.utc)
+    now = format_datetime(latest)
     items = []
     for po in posts:
         url = base + f"blog/{po['slug']}.html"
