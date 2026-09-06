@@ -1,0 +1,57 @@
+# Everything the templates need that isn't a page. Change `base` and `url`
+# together if the site moves; every link on the site is built from them.
+
+base = "/wst22/"
+url = "https://furfag.lol/wst22/"
+
+title = "milo tek"
+author = "Milo Tekchandani"
+author_short = "milo tek"
+place = "London"
+role = "Software Engineer (Apprentice) at Google, on Search for mobile."
+description = "Milo Tekchandani (milo tek). Software engineer at Google in London. Projects, drawings, and the occasional post."
+repo = "https://github.com/milotek/wst22"
+
+projects_lede = "Shipped, half-shipped and abandoned. Source is up for most of it."
+art_lede = "Mostly Procreate on an iPad, over about six years. Click any of them for the full size."
+blog_lede = "Rarely. Only when there's something worth writing down."
+
+[[nav]]
+label = "projects"
+href = "/projects/"
+
+[[nav]]
+label = "art"
+href = "/art/"
+
+[[nav]]
+label = "blog"
+href = "/blog/"
+
+[[nav]]
+label = "now"
+href = "/now/"
+
+[[nav]]
+label = "uses"
+href = "/uses/"
+
+[[nav]]
+label = "cv"
+href = "/cv/"
+
+[[links]]
+label = "GitHub"
+href = "https://github.com/milotek"
+
+[[links]]
+label = "LinkedIn"
+href = "https://www.linkedin.com/in/fired/"
+
+[[links]]
+label = "Instagram"
+href = "https://www.instagram.com/milo.tek/"
+
+[[links]]
+label = "Email"
+href = "mailto:milo@milotek.dev"

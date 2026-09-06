@@ -1,0 +1,43 @@
+# 88x31 buttons. `mine = true` is the one people take; everything else is a
+# link out. Drop a gif in static/img/buttons/ and add a block here.
+
+[[button]]
+mine = true
+src = "/assets/img/buttons/milotek.gif"
+alt = "milo tek - milotek.dev"
+href = "https://milotek.dev"
+
+[[button]]
+src = "/assets/img/buttons/gnu-linux.gif"
+alt = "Made on GNU/Linux"
+href = "https://www.gnu.org/"
+
+[[button]]
+src = "/assets/img/buttons/neovim.gif"
+alt = "Made with Neovim"
+href = "https://neovim.io/"
+
+[[button]]
+src = "/assets/img/buttons/firefox.gif"
+alt = "Get Firefox"
+href = "https://www.mozilla.org/firefox/"
+
+[[button]]
+src = "/assets/img/buttons/anybrowser.gif"
+alt = "Best viewed with any browser"
+href = "https://anybrowser.org/campaign/"
+
+[[button]]
+src = "/assets/img/buttons/powered-cpp.gif"
+alt = "Powered by C++"
+href = "https://isocpp.org/"
+
+[[button]]
+src = "/assets/img/buttons/notepad.gif"
+alt = "Created with Microsoft Notepad"
+href = "https://cyber.dabamos.de/88x31/"
+
+[[button]]
+src = "/assets/img/buttons/madewithlove.gif"
+alt = "Made with love"
+href = "https://cyber.dabamos.de/88x31/"

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>milo tek</title>
+    <link>https://furfag.lol/wst22/</link>
+    <atom:link href="https://furfag.lol/wst22/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Milo Tekchandani (milo tek). Software engineer at Google in London. Projects, drawings, and the occasional post.</description>
+    <language>en-gb</language>
+    <lastBuildDate>Sat, 05 Sep 2026 14:07:34 +0000</lastBuildDate>
+    <item>
+      <title>A new site</title>
+      <link>https://furfag.lol/wst22/blog/a-new-site/</link>
+      <guid isPermaLink="true">https://furfag.lol/wst22/blog/a-new-site/</guid>
+      <pubDate>Sat, 05 Sep 2026 00:00:00 +0000</pubDate>
+      <description>The old one was a Carrd export I&#x27;d stopped touching. This one is a folder of Markdown and a Python script.</description>
+    </item>
+  </channel>
+</rss>

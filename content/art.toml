@@ -1,0 +1,66 @@
+# Gallery entries, newest-feeling first. `src` points at the full size; the
+# build looks for a `-thumb` next to it, so both need to exist.
+
+[[art]]
+src = "/assets/img/art/laser-antlers.jpg"
+caption = "Laser Antlers, the final design"
+
+[[art]]
+src = "/assets/img/art/character-portrait.jpg"
+caption = "Character portrait"
+
+[[art]]
+src = "/assets/img/art/de-dust2.jpg"
+caption = "de_dust2 in mat_fullbright"
+
+[[art]]
+src = "/assets/img/art/de-lake.jpg"
+caption = "de_lake, my favourite map"
+
+[[art]]
+src = "/assets/img/art/laser-antlers-sheet.jpg"
+caption = "Character sheet for the antagonist of my EPQ game"
+
+[[art]]
+src = "/assets/img/art/epq-protagonist.jpg"
+caption = "Concept art for the protagonist of the same"
+
+[[art]]
+src = "/assets/img/art/friends.jpg"
+caption = "Me and my friends, drawn for a birthday"
+
+[[art]]
+src = "/assets/img/art/steam-pfp.jpg"
+caption = "A friend's Steam profile picture, drawn by request"
+
+[[art]]
+src = "/assets/img/art/hardware-vs-software.jpg"
+caption = "Poster for a Computer Science competition, first term"
+
+[[art]]
+src = "/assets/img/art/geometry-dash.jpg"
+caption = "Geometry Dash 10 year anniversary fan art"
+
+[[art]]
+src = "/assets/img/art/giraffe.jpg"
+caption = "A giraffe, made to show off Pixelmator Pro"
+
+[[art]]
+src = "/assets/img/art/pygame-title.jpg"
+caption = "Title screen background for a pygame project"
+
+[[art]]
+src = "/assets/img/art/pygame-sunset.jpg"
+caption = "Sunset stage, same project"
+
+[[art]]
+src = "/assets/img/art/pygame-world.jpg"
+caption = "Overworld stage"
+
+[[art]]
+src = "/assets/img/art/pygame-underground.jpg"
+caption = "Underground stage"
+
+[[art]]
+src = "/assets/img/art/pygame-space.jpg"
+caption = "Space stage"
