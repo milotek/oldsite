@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block main_class %}narrow{% endblock %}
+{% block main %}
+<article>
+  <h1>{{ page.title }}</h1>
+  {% if page.updated %}<p class="byline">Updated <time datetime="{{ page.updated.isoformat() }}">{{ page.updated | date }}</time></p>{% endif %}
+  <div class="prose">{{ body }}</div>
+</article>
+{% endblock %}

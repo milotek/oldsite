@@ -1,0 +1,29 @@
+# One entry per 88x31 button, in the order they appear in the footer.
+# Drop the gif in static/buttons/ and add a line here. href is optional and
+# may be a site-relative path like feed.xml.
+- image: milotek.gif
+  alt: milo tek
+  href: /
+- image: paws.gif
+  alt: Made with my own two paws
+- image: gnu-linux.gif
+  alt: Made on GNU/Linux
+- image: neovim.gif
+  alt: Made with Neovim
+  href: https://neovim.io
+- image: github.gif
+  alt: GitHub
+  href: https://github.com/milotek
+- image: dark-mode.gif
+  alt: Made for dark mode
+- image: any_browser_now.gif
+  alt: Any browser now
+- image: javascript-zero.gif
+  alt: Proudly zero JavaScript
+- image: css3.gif
+  alt: Made with cascading style sheets
+- image: rss-button.gif
+  alt: RSS feed
+  href: feed.xml
+- image: counter-strike.gif
+  alt: Counter-Strike

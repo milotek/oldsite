@@ -1,0 +1,43 @@
+# Each piece needs a full-size image in static/img/art/<file>.webp and a
+# thumbnail in static/img/art/thumbs/<file>.webp.
+intro: Mostly Procreate on an iPad Pro with an Apple Pencil. Click through for full size.
+pieces:
+  - file: de-lake
+    alt: Line drawing of the Counter-Strike map de_lake, a house on a lakeside with a dock
+    caption: de_lake, my favourite Counter-Strike map. Bring it back.
+  - file: dust2-fullbright
+    alt: Sketch of de_dust2 with flat lighting
+    caption: de_dust2 in mat_fullbright.
+  - file: laser-antlers
+    alt: Concept sheet for a deer character in a suit, with notes and a polaroid-style portrait
+    caption: Laser Antlers, the antagonist of my EPQ game.
+  - file: protagonist
+    alt: Concept art of a top-hatted figure with a blank white face, surrounded by sticky notes
+    caption: The protagonist of my EPQ game.
+  - file: mountains
+    alt: Pixel art of purple mountains under a full moon
+    caption: Title screen background for a pygame project.
+  - file: stage-world
+    alt: Pixel art of a grassy field under a blue sky with clouds
+    caption: World stage, same pygame project.
+  - file: stage-space
+    alt: Pixel art of Earth from orbit with a comet and a planet
+    caption: Space stage.
+  - file: stage-sunset
+    alt: Pixel art of a sunset over water in orange and blue
+    caption: Sunset stage.
+  - file: stage-underground
+    alt: Pixel art of a dark cave with a skull and a glowing crystal
+    caption: Underground stage.
+  - file: gd-anniversary
+    alt: Geometry Dash ship and cube icons over a pink and purple gradient
+    caption: Geometry Dash 10th anniversary fan art.
+  - file: giraffe
+    alt: A cartoon giraffe on grass under a cloudy sky
+    caption: A giraffe, made in Pixelmator Pro to show the app off.
+  - file: old-avatar
+    alt: Loose white line drawing of a smiling figure on pink
+    caption: An old profile picture.
+  - file: friends
+    alt: A grid of quick cartoon portraits with names written above each one
+    caption: Me and my friends, drawn for someone's birthday.

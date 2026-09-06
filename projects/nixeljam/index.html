@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nixeljam · milo tek</title>
+<meta name="description" content="One Nix flake for my desktop, a self-hosting mini PC, a VPS and a work Mac. Hyprland, base16 theming and a stack of server modules.">
+<meta name="theme-color" content="#1e1e2e">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://furfag.lol/MLGSwag/projects/nixeljam/">
+<meta property="og:title" content="nixeljam · milo tek">
+<meta property="og:description" content="One Nix flake for my desktop, a self-hosting mini PC, a VPS and a work Mac. Hyprland, base16 theming and a stack of server modules.">
+<meta property="og:url" content="https://furfag.lol/MLGSwag/projects/nixeljam/">
+<meta property="og:image" content="https://furfag.lol/MLGSwag/static/img/avatar.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="../../static/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="milo tek" href="../../feed.xml">
+<link rel="preload" href="../../static/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../"><img src="../../static/img/avatar.webp" alt="" width="28" height="28">milo tek</a>
+  <nav aria-label="Site">
+    <a href="../../projects/" aria-current="page">projects</a>
+    <a href="../../blog/">blog</a>
+    <a href="../../art/">art</a>
+    <a href="../../now/">now</a>
+    <a href="../../uses/">uses</a>
+  </nav>
+</header>
+<main id="main" class="narrow">
+<article>
+  <p class="crumb"><a href="../../projects/">Projects</a></p>
+  <h1>nixeljam</h1>
+  <p class="lede">One Nix flake for my desktop, a self-hosting mini PC, a VPS and a work Mac. Hyprland, base16 theming and a stack of server modules.</p>
+  <ul class="meta">
+<li>2026</li><li>Nix</li><li>NixOS</li><li>Hyprland</li>  </ul>
+  <img class="lead-image" src="../../static/img/projects/nixeljam.webp" alt="Hyprland desktop with two terminals and a clock over a mountain wallpaper">
+  <div class="prose"><p>My NixOS configuration, built on top of <a href="https://github.com/anotherhadi/nixy">anotherhadi's Nixy</a>. One repo declares every machine I own: <code>pc</code>, <code>minipc</code>, <code>vps</code>, <code>work-mac</code> and a WSL host, each with its own flake and sops-encrypted secrets.</p>
+<p>The desktop side is Hyprland with waybar, tofi, hyprlock and swaync, all themed from one base16 scheme through Stylix. Neovim is configured through nvf, the terminal is Ghostty, and zellij, starship and zsh do the rest.</p>
+<p>The mini PC runs the self-hosted stuff as NixOS modules: Caddy in front, copyparty for the <a href="https://files.tek.rip">file server</a>, Gitea, AdGuard Home, Glance, fail2ban, the *arr stack, a game relay and the habits board below. Tailscale handles admin access.</p></div>
+  <div class="gallery">
+    <figure>
+      <img src="../../static/img/projects/nixeljam-2.webp" alt="File manager and terminal windows on the same desktop" loading="lazy">
+<figcaption>Thunar, a terminal and cbonsai.</figcaption>    </figure>
+    <figure>
+      <img src="../../static/img/projects/nixeljam-3.webp" alt="Neovim and a Spotify TUI side by side" loading="lazy">
+<figcaption>Neovim and spotatui.</figcaption>    </figure>
+  </div>
+  <ul class="inline-links">
+<li><a href="https://github.com/milotek/nixeljam">Source</a></li>  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  <ul class="buttons" aria-label="88x31 buttons">
+    <li><a href="../../"><img src="../../static/buttons/milotek.gif" alt="milo tek" width="88" height="31" loading="lazy"></a></li>
+    <li><img src="../../static/buttons/paws.gif" alt="Made with my own two paws" width="88" height="31" loading="lazy"></li>
+    <li><img src="../../static/buttons/gnu-linux.gif" alt="Made on GNU/Linux" width="88" height="31" loading="lazy"></li>
+    <li><a href="https://neovim.io"><img src="../../static/buttons/neovim.gif" alt="Made with Neovim" width="88" height="31" loading="lazy"></a></li>
+    <li><a href="https://github.com/milotek"><img src="../../static/buttons/github.gif" alt="GitHub" width="88" height="31" loading="lazy"></a></li>
+    <li><img src="../../static/buttons/dark-mode.gif" alt="Made for dark mode" width="88" height="31" loading="lazy"></li>
+    <li><img src="../../static/buttons/any_browser_now.gif" alt="Any browser now" width="88" height="31" loading="lazy"></li>
+    <li><img src="../../static/buttons/javascript-zero.gif" alt="Proudly zero JavaScript" width="88" height="31" loading="lazy"></li>
+    <li><img src="../../static/buttons/css3.gif" alt="Made with cascading style sheets" width="88" height="31" loading="lazy"></li>
+    <li><a href="../../feed.xml"><img src="../../static/buttons/rss-button.gif" alt="RSS feed" width="88" height="31" loading="lazy"></a></li>
+    <li><img src="../../static/buttons/counter-strike.gif" alt="Counter-Strike" width="88" height="31" loading="lazy"></li>
+  </ul>
+  <ul class="footer-links">
+    <li><a href="https://github.com/milotek">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/fired/">LinkedIn</a></li>
+    <li><a href="https://www.instagram.com/milo.tek/">Instagram</a></li>
+    <li><a href="https://github.com/Pixeljam-Studios">Pixeljam Studios</a></li>
+    <li><a href="mailto:milo@milotek.dev">Email</a></li>
+    <li><a href="https://github.com/milotek/milotek/raw/main/CV.pdf">CV</a></li>
+    <li><a href="../../feed.xml">RSS</a></li>
+    <li><a href="../../colophon/">Colophon</a></li>
+  </ul>
+  <p class="footer-note">© 2026 Milo Tekchandani</p>
+</footer>
+</body>
+</html>

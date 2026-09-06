@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block main %}
+<h1>Art</h1>
+<p class="lede">{{ art.intro }}</p>
+<div class="art-grid">
+  {% for piece in art.pieces %}
+  <figure>
+    <a href="{{ rel }}static/img/art/{{ piece.file }}.webp"><img src="{{ rel }}static/img/art/thumbs/{{ piece.file }}.webp" alt="{{ piece.alt }}" loading="lazy"></a>
+    <figcaption>{{ piece.caption }}</figcaption>
+  </figure>
+  {% endfor %}
+</div>
+{% endblock %}

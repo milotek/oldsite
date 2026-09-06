@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block main_class %}narrow{% endblock %}
+{% block main %}
+<article>
+  <p class="crumb"><a href="{{ rel }}projects/">Projects</a></p>
+  <h1>{{ project.title }}</h1>
+  <p class="lede">{{ project.summary }}</p>
+  <ul class="meta">
+    {% if project.year %}<li>{{ project.year }}</li>{% endif %}
+    {% for t in project.tags %}<li>{{ t }}</li>{% endfor %}
+  </ul>
+  {% if project.image %}
+  <img class="lead-image" src="{{ rel }}{{ project.image }}" alt="{{ project.image_alt or '' }}">
+  {% endif %}
+  <div class="prose">{{ body }}</div>
+  {% if project.images %}
+  <div class="gallery">
+    {% for im in project.images %}
+    <figure>
+      <img src="{{ rel }}{{ im.src }}" alt="{{ im.alt or '' }}" loading="lazy">
+      {% if im.caption %}<figcaption>{{ im.caption }}</figcaption>{% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% if project.repo or project.links %}
+  <ul class="inline-links">
+    {% if project.repo %}<li><a href="{{ project.repo }}">Source</a></li>{% endif %}
+    {% for l in project.links %}<li><a href="{{ link(l.url) }}">{{ l.label }}</a></li>{% endfor %}
+  </ul>
+  {% endif %}
+</article>
+{% endblock %}

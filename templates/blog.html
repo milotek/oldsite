@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block main_class %}narrow{% endblock %}
+{% block main %}
+<h1>Blog</h1>
+<p class="lede">Occasional. There's an <a href="{{ rel }}feed.xml">Atom feed</a>.</p>
+<ul class="post-list">
+  {% for post in posts %}
+  <li>
+    <time datetime="{{ post.date.isoformat() }}">{{ post.date | date }}</time>
+    <div><a href="{{ link(post.url) }}">{{ post.title }}</a>{% if post.summary %}<p>{{ post.summary }}</p>{% endif %}</div>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

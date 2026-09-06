@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block main %}
+<h1>Projects</h1>
+<p class="lede">Everything worth showing, newest first-ish. Source for most of it is on <a href="https://github.com/milotek">GitHub</a>.</p>
+<div class="cards">
+  {% for p in projects %}
+  <a class="card" href="{{ link(p.url) }}">
+    {% if p.image %}<img src="{{ rel }}{{ p.image }}" alt="" loading="lazy">{% else %}<div class="card-blank"></div>{% endif %}
+    <div class="card-body">
+      <h3>{{ p.title }}{% if p.year %} <span class="year">{{ p.year }}</span>{% endif %}</h3>
+      <p>{{ p.summary }}</p>
+      <ul class="tags">{% for t in p.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}

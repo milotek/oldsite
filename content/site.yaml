@@ -1,0 +1,29 @@
+title: milo tek
+name: Milo Tekchandani
+tagline: Software engineer in London. Apprentice at Google, on the Search app.
+description: Milo Tekchandani, software engineer in London. Projects, writing and drawings.
+url: https://furfag.lol/MLGSwag/
+email: milo@milotek.dev
+cv: https://github.com/milotek/milotek/raw/main/CV.pdf
+nav:
+  - label: projects
+    url: projects/
+  - label: blog
+    url: blog/
+  - label: art
+    url: art/
+  - label: now
+    url: now/
+  - label: uses
+    url: uses/
+socials:
+  - label: GitHub
+    url: https://github.com/milotek
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/fired/
+  - label: Instagram
+    url: https://www.instagram.com/milo.tek/
+  - label: Pixeljam Studios
+    url: https://github.com/Pixeljam-Studios
+  - label: Email
+    url: mailto:milo@milotek.dev

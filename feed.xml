@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>milo tek</title>
+  <subtitle>Milo Tekchandani, software engineer in London. Projects, writing and drawings.</subtitle>
+  <link href="https://furfag.lol/MLGSwag/"/>
+  <link rel="self" href="https://furfag.lol/MLGSwag/feed.xml"/>
+  <id>https://furfag.lol/MLGSwag/</id>
+  <updated>2026-09-06T00:00:00Z</updated>
+  <author><name>Milo Tekchandani</name><email>milo@milotek.dev</email></author>
+  <entry>
+    <title>Rebuilding this site</title>
+    <link href="https://furfag.lol/MLGSwag/blog/rebuilding-this-site/"/>
+    <id>https://furfag.lol/MLGSwag/blog/rebuilding-this-site/</id>
+    <published>2026-09-06T00:00:00Z</published>
+    <updated>2026-09-06T00:00:00Z</updated>
+<summary>The old site was a carrd export. This one is Markdown, YAML and one Python script.</summary>    <content type="html">&lt;p&gt;The old site was a carrd export, still linking to a GitHub username I&#39;d stopped using. It had the Lockyn screenshots, a pile of drawings and a CV, and that was about it. This is the replacement.&lt;/p&gt;
+&lt;p&gt;Everything is content in a folder. Projects are Markdown files with a bit of YAML front matter for the tags, links and images. Posts are the same, straight out of my Obsidian vault. One Python script (Jinja2 for the templates, python-markdown for the bodies, and that&#39;s the whole dependency list) renders it to plain HTML and an Atom feed.&lt;/p&gt;
+&lt;p&gt;No JavaScript anywhere. Every link is relative, so the same output works on GitHub Pages under a subpath and straight off a local folder. Colours are Catppuccin Mocha with #ffbdbd as the one accent, which is what my desktop runs too.&lt;/p&gt;
+&lt;p&gt;Honest bit: the first version was generated with Claude Code from a brief I wrote, in one unattended run. The &lt;a href=&#34;https://furfag.lol/MLGSwag/colophon/&#34;&gt;colophon&lt;/a&gt; has the details. If something reads wrong, tell me.&lt;/p&gt;</content>
+  </entry>
+</feed>

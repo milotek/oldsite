@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block main_class %}narrow{% endblock %}
+{% block main %}
+<article>
+  <p class="crumb"><a href="{{ rel }}blog/">Blog</a></p>
+  <h1>{{ post.title }}</h1>
+  <p class="byline"><time datetime="{{ post.date.isoformat() }}">{{ post.date | date }}</time></p>
+  <div class="prose">{{ body }}</div>
+</article>
+{% endblock %}

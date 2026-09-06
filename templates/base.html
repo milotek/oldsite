@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ title }} · {{ site.title }}{% endblock %}</title>
+<meta name="description" content="{{ description or site.description }}">
+<meta name="theme-color" content="#1e1e2e">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="{{ site.url }}{{ path }}">
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:description" content="{{ description or site.description }}">
+<meta property="og:url" content="{{ site.url }}{{ path }}">
+<meta property="og:image" content="{{ site.url }}static/img/avatar.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="{{ rel }}static/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="{{ rel }}static/img/apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ rel }}feed.xml">
+<link rel="preload" href="{{ rel }}static/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ rel }}static/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="{{ rel or './' }}"><img src="{{ rel }}static/img/avatar.webp" alt="" width="28" height="28">{{ site.title }}</a>
+  <nav aria-label="Site">
+    {% for item in site.nav %}
+    <a href="{{ link(item.url) }}"{% if item.url.rstrip('/') == section %} aria-current="page"{% endif %}>{{ item.label }}</a>
+    {% endfor %}
+  </nav>
+</header>
+<main id="main" class="{% block main_class %}{% endblock %}">
+{% block main %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <ul class="buttons" aria-label="88x31 buttons">
+    {% for b in buttons %}
+    <li>{% if b.href %}<a href="{{ link(b.href) }}">{% endif %}<img src="{{ rel }}static/buttons/{{ b.image }}" alt="{{ b.alt }}" width="88" height="31" loading="lazy">{% if b.href %}</a>{% endif %}</li>
+    {% endfor %}
+  </ul>
+  <ul class="footer-links">
+    {% for s in site.socials %}
+    <li><a href="{{ s.url }}">{{ s.label }}</a></li>
+    {% endfor %}
+    <li><a href="{{ site.cv }}">CV</a></li>
+    <li><a href="{{ rel }}feed.xml">RSS</a></li>
+    <li><a href="{{ rel }}colophon/">Colophon</a></li>
+  </ul>
+  <p class="footer-note">© {{ year }} {{ site.name }}</p>
+</footer>
+</body>
+</html>
