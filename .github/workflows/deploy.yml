@@ -17,17 +17,12 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      # A step-level `if` cannot see the secrets context, so whether the token
-      # exists has to reach the condition through env.
-      VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 
-      # The blog lives in a private repo, so the build needs a token that can read it.
+      # The vault is public, so the blog source needs no credentials.
       - name: Clone vault
-        if: env.VAULT_TOKEN != ''
-        run: git clone --depth 1 "https://x-access-token:${VAULT_TOKEN}@github.com/milotek/ObsidianVault.git" vault
+        run: git clone --depth 1 https://github.com/milotek/ObsidianVault.git vault
 
       - uses: actions/setup-node@v4
         with:
