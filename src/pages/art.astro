@@ -1,0 +1,80 @@
+---
+import { Image, getImage } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Win from '../components/Win.astro';
+import Lightbox from '../components/Lightbox.astro';
+import { artworks } from '../data/art';
+
+const items = await Promise.all(
+  artworks.map(async (a) => ({ ...a, full: (await getImage({ src: a.src, width: 1800 })).src })),
+);
+---
+
+<Base title="art" description="Drawings and pixel art by Milo Tekchandani, mostly made in Procreate.">
+  <Win title="~/art" meta={`${items.length} pieces`} focus>
+    <p class="lead">
+      Procreate on an iPad, mostly. Concept sheets for a game, backgrounds for another, and maps I like drawn from
+      memory.
+    </p>
+    <div class="masonry">
+      {
+        items.map((a) => (
+          <figure>
+            <a href={a.full} data-lightbox={a.caption}>
+              <Image src={a.src} alt={a.alt} width={560} densities={[1, 2]} loading="lazy" />
+            </a>
+            <figcaption>{a.caption}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </Win>
+  <Lightbox />
+</Base>
+
+<style>
+  .lead {
+    color: var(--subtext1);
+    margin: 0 0 1.5rem;
+    max-width: 38rem;
+  }
+  /* Three columns here rather than two: the window is wider than the old
+     centred measure, so two would stretch each piece past its own resolution. */
+  .masonry {
+    columns: 3;
+    column-gap: var(--gap);
+  }
+  figure {
+    margin: 0 0 var(--gap);
+    break-inside: avoid;
+    background: var(--mantle);
+    border: 1px solid var(--surface0);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+  figure a {
+    display: block;
+  }
+  figure img {
+    width: 100%;
+    transition: transform var(--fast) var(--ease);
+  }
+  figure:hover img {
+    transform: scale(1.01);
+  }
+  figcaption {
+    padding: 0.55rem 0.8rem 0.65rem;
+    font-size: 0.9rem;
+    color: var(--subtext1);
+  }
+  @media (max-width: 60rem) {
+    .masonry {
+      columns: 2;
+    }
+  }
+  @media (max-width: 34rem) {
+    .masonry {
+      columns: 1;
+    }
+  }
+</style>

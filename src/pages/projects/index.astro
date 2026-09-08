@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Win from '../../components/Win.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+
+const all = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const main = all.filter((p) => !p.data.hobby);
+const hobby = all.filter((p) => p.data.hobby);
+---
+
+<Base title="projects" description="Things Milo Tekchandani has built: backend and infrastructure, hardware, apps, games.">
+  <Win title="~/projects" meta={`${all.length} total`} focus>
+    <p class="lead">
+      The day job is the Google Search app for Android: backend, infrastructure, developer tooling, and lately page
+      transitions. None of that is on GitHub. This is the rest.
+    </p>
+    <div class="grid">
+      {main.map((p) => <ProjectCard project={p} />)}
+    </div>
+  </Win>
+
+  <Win title="~/projects --hobby" meta="smaller and sillier">
+    <div class="grid">
+      {hobby.map((p) => <ProjectCard project={p} />)}
+    </div>
+  </Win>
+</Base>
+
+<style>
+  .lead {
+    color: var(--subtext1);
+    margin: 0 0 1.5rem;
+    max-width: 38rem;
+  }
+</style>

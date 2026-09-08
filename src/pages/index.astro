@@ -1,0 +1,167 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { getPosts } from '../lib/posts';
+import Base from '../layouts/Base.astro';
+import Win from '../components/Win.astro';
+import Splash from '../components/Splash.astro';
+import LiveCards from '../components/LiveCards.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Buttons from '../components/Buttons.astro';
+import { site, socials } from '../config';
+import { url } from '../lib/url';
+import { isoDate } from '../lib/time';
+import photo from '../assets/me/photo.jpg';
+
+const featured = (await getCollection('projects', (p) => p.data.featured))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 4);
+
+const posts = (await getPosts()).slice(0, 3);
+---
+
+<Base>
+  <Win title="~/whoami" span="twothirds" focus>
+    <div class="hero">
+      <Image
+        class="photo"
+        src={photo}
+        alt="Milo, at a garden gate, being climbed by a border collie"
+        width={176}
+        densities={[1, 2]}
+        loading="eager"
+      />
+      <div>
+        <h1>{site.name}</h1>
+        <p class="role">{site.role}</p>
+        <Splash />
+      </div>
+    </div>
+    <div class="prose intro">
+      <p>
+        I work on the backend and infrastructure of the Google Search app for Android. Right now that means bringing page
+        transitions to the app. Before that it was internal developer tools and shaving latency off WebView and search.
+      </p>
+      <p>
+        Outside work I run a small pile of NixOS machines, write Kotlin when nobody is making me, draw a bit, and hold
+        strong opinions about Counter-Strike maps. I am 19 and from the UK.
+      </p>
+    </div>
+  </Win>
+
+  <Win title="~/now" span="third">
+    <LiveCards />
+  </Win>
+
+  <Win title="~/projects --featured" meta="all of them">
+    <div class="grid">
+      {featured.map((p) => <ProjectCard project={p} />)}
+    </div>
+    <p class="more"><a href={url('projects/')}>every project</a></p>
+  </Win>
+
+  <Win title="~/writing" span="half">
+    {
+      posts.length ? (
+        <ul class="posts">
+          {posts.map((p) => (
+            <li>
+              <time class="mono muted" datetime={isoDate(p.data.published)}>
+                {isoDate(p.data.published)}
+              </time>
+              <a href={url(`blog/${p.id}/`)}>{p.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="muted">Nothing published yet. There is a drafts folder with a lot of opinions in it.</p>
+      )
+    }
+    <p class="more"><a href={url('blog/')}>the blog</a></p>
+  </Win>
+
+  <Win title="~/contact" span="half" id="contact">
+    <p>Email is best. The CV is a PDF because recruiters like PDFs.</p>
+    <ul class="contact">
+      {
+        socials.map((s) => (
+          <li>
+            <span class="label mono muted">{s.label.toLowerCase()}</span>
+            <a href={s.href}>{s.handle}</a>
+          </li>
+        ))
+      }
+      <li>
+        <span class="label mono muted">phone</span>
+        <a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a>
+      </li>
+      <li>
+        <span class="label mono muted">cv</span>
+        <a href={site.cv}>CV.pdf</a>
+      </li>
+    </ul>
+  </Win>
+
+  <Win title="~/buttons">
+    <Buttons />
+  </Win>
+</Base>
+
+<style>
+  .hero {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .photo {
+    flex: none;
+    width: 6.5rem;
+    height: 6.5rem;
+    object-fit: cover;
+    object-position: 60% 20%;
+    border-radius: 999px;
+    border: 2px solid var(--surface0);
+    transform: rotate(-2deg);
+    transition: transform var(--fast) var(--ease);
+  }
+  .photo:hover {
+    transform: rotate(2deg) scale(1.03);
+  }
+  .role {
+    color: var(--subtext1);
+    margin: 0.25rem 0 0.4rem;
+  }
+  .intro {
+    margin-top: 1.25rem;
+  }
+  .posts,
+  .contact {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .posts li,
+  .contact li {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+  }
+  .label {
+    width: 5.5rem;
+    flex: none;
+  }
+  .more {
+    margin-top: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+  }
+  @media (max-width: 30rem) {
+    .hero {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+</style>

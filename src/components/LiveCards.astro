@@ -1,0 +1,244 @@
+---
+import { site } from '../config';
+
+const lastfmReady = Boolean(site.lastfm.user && site.lastfm.apiKey);
+---
+
+<div class="live">
+  <section class="card listening" aria-labelledby="listening-h" data-user={site.lastfm.user} data-key={site.lastfm.apiKey}>
+    <h3 id="listening-h" class="mono muted">listening</h3>
+    <div class="row">
+      <div class="art" aria-hidden="true" hidden={!lastfmReady}></div>
+      <div class="meta">
+        <p class="track">
+          {lastfmReady ? 'checking…' : <a href={site.spotify}>Spotify profile</a>}
+        </p>
+        <p class="sub muted">{lastfmReady ? ' ' : 'Last.fm is not wired up yet.'}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card github" aria-labelledby="github-h" data-user={site.github}>
+    <h3 id="github-h" class="mono muted">github</h3>
+    <ul class="events">
+      <li class="muted">
+        loading… (or <a href={`https://github.com/${site.github}`}>go there</a>)
+      </li>
+    </ul>
+  </section>
+</div>
+
+<script>
+  function ago(iso: string): string {
+    const s = Math.max(1, Math.round((Date.now() - new Date(iso).getTime()) / 1000));
+    const units: [number, string][] = [
+      [60, 's'],
+      [60, 'm'],
+      [24, 'h'],
+      [7, 'd'],
+      [4.35, 'w'],
+      [12, 'mo'],
+    ];
+    let n = s;
+    let label = 's';
+    for (const [div, next] of units) {
+      if (n < div) break;
+      n = n / div;
+      label = next;
+    }
+    return `${Math.round(n)}${label} ago`;
+  }
+
+  async function lastfm() {
+    const card = document.querySelector<HTMLElement>('.listening');
+    if (!card?.dataset.user || !card.dataset.key) return;
+    const track = card.querySelector<HTMLElement>('.track')!;
+    const sub = card.querySelector<HTMLElement>('.sub')!;
+    const art = card.querySelector<HTMLElement>('.art')!;
+    try {
+      const params = new URLSearchParams({
+        method: 'user.getrecenttracks',
+        user: card.dataset.user,
+        api_key: card.dataset.key,
+        format: 'json',
+        limit: '1',
+      });
+      const res = await fetch(`https://ws.audioscrobbler.com/2.0/?${params}`);
+      if (!res.ok) throw new Error(String(res.status));
+      const data = await res.json();
+      const t = data?.recenttracks?.track?.[0];
+      if (!t) throw new Error('empty');
+      const live = t['@attr']?.nowplaying === 'true';
+      track.innerHTML = '';
+      const link = document.createElement('a');
+      link.href = t.url;
+      link.textContent = t.name;
+      track.append(link);
+      sub.textContent = `${t.artist['#text']} · ${live ? 'now playing' : ago(new Date(Number(t.date.uts) * 1000).toISOString())}`;
+      const img = t.image?.find((i: { size: string }) => i.size === 'large')?.['#text'];
+      if (img) {
+        art.style.backgroundImage = `url("${img}")`;
+        art.classList.add('has-art');
+      }
+      if (live) card.classList.add('live-now');
+    } catch {
+      track.textContent = 'quiet for now';
+      sub.textContent = 'Last.fm did not answer.';
+    }
+  }
+
+  interface GhEvent {
+    type: string;
+    created_at: string;
+    repo: { name: string };
+    payload: {
+      action?: string;
+      ref_type?: string;
+      ref?: string;
+      pull_request?: { number: number; title: string; html_url: string };
+      issue?: { number: number; html_url: string };
+      release?: { tag_name: string; html_url: string };
+    };
+  }
+
+  function describe(e: GhEvent): { text: string; href: string } | undefined {
+    const repo = `https://github.com/${e.repo.name}`;
+    switch (e.type) {
+      case 'PushEvent': {
+        // The public events API no longer includes the commit count.
+        const branch = e.payload.ref?.replace('refs/heads/', '');
+        return { text: `pushed to ${e.repo.name}${branch && branch !== 'main' ? ` (${branch})` : ''}`, href: repo };
+      }
+      case 'PullRequestEvent': {
+        const pr = e.payload.pull_request!;
+        return { text: `${e.payload.action} PR #${pr.number} in ${e.repo.name}`, href: pr.html_url };
+      }
+      case 'IssuesEvent':
+        return { text: `${e.payload.action} an issue in ${e.repo.name}`, href: e.payload.issue!.html_url };
+      case 'CreateEvent':
+        return e.payload.ref_type === 'repository'
+          ? { text: `created ${e.repo.name}`, href: repo }
+          : { text: `created ${e.payload.ref_type} ${e.payload.ref} in ${e.repo.name}`, href: repo };
+      case 'ReleaseEvent':
+        return { text: `released ${e.payload.release!.tag_name} of ${e.repo.name}`, href: e.payload.release!.html_url };
+      case 'WatchEvent':
+        return { text: `starred ${e.repo.name}`, href: repo };
+      case 'ForkEvent':
+        return { text: `forked ${e.repo.name}`, href: repo };
+      default:
+        return undefined;
+    }
+  }
+
+  async function github() {
+    const card = document.querySelector<HTMLElement>('.github');
+    if (!card?.dataset.user) return;
+    const list = card.querySelector<HTMLElement>('.events')!;
+    try {
+      const res = await fetch(`https://api.github.com/users/${card.dataset.user}/events/public?per_page=30`);
+      if (!res.ok) throw new Error(String(res.status));
+      const events = (await res.json()) as GhEvent[];
+      const items = events.map((e) => ({ when: e.created_at, ...describe(e) })).filter((i) => i.text).slice(0, 4);
+      if (!items.length) throw new Error('empty');
+      list.innerHTML = '';
+      for (const item of items) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = item.href!;
+        a.textContent = item.text!;
+        const when = document.createElement('span');
+        when.className = 'when';
+        when.textContent = ago(item.when);
+        li.append(a, when);
+        list.append(li);
+      }
+    } catch {
+      list.innerHTML = '';
+      const li = document.createElement('li');
+      li.className = 'muted';
+      li.innerHTML = `GitHub is rate limiting. <a href="https://github.com/${card.dataset.user}">Go there instead.</a>`;
+      list.append(li);
+    }
+  }
+
+  lastfm();
+  github();
+</script>
+
+<style>
+  .live {
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+  h3 {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.8rem;
+    margin-bottom: 0.7rem;
+  }
+  h3::before {
+    content: '● ';
+    color: var(--surface2);
+  }
+  .live-now h3::before {
+    color: var(--green);
+  }
+  .row {
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+  }
+  .art[hidden] {
+    display: none;
+  }
+  .art {
+    flex: none;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: var(--radius-sm);
+    background: var(--surface0) center / cover no-repeat;
+    border: 1px solid var(--surface1);
+  }
+  .meta {
+    min-width: 0;
+  }
+  .track {
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .sub {
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .events {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.95rem;
+  }
+  .events > :global(li) {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    align-items: baseline;
+  }
+  .events :global(a) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .events :global(.when) {
+    flex: none;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--overlay1);
+  }
+</style>

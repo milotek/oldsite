@@ -1,0 +1,123 @@
+---
+import { friends, friendsWithoutButtons, site } from '../config';
+import { url } from '../lib/url';
+
+const own = new URL(url('88x31.png'), Astro.site).href;
+const snippet = `<a href="${new URL(url(''), Astro.site).href}"><img src="${own}" alt="${site.handle}" width="88" height="31"></a>`;
+---
+
+<section class="wall" aria-labelledby="buttons-h">
+  <div class="head">
+    <h2 id="buttons-h">friends</h2>
+    <p class="muted">88 by 31 pixels each. Hotlinking is fine, that is the point of them.</p>
+  </div>
+  <ul class="buttons">
+    {
+      friends.map((f) => (
+        <li>
+          <a href={f.href} title={f.name}>
+            <img src={f.button} alt={f.name} width="88" height="31" loading="lazy" decoding="async" />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  {
+    friendsWithoutButtons.length > 0 && (
+      <p class="also muted">
+        Also: {friendsWithoutButtons.map((f, i) => (
+          <>
+            <a href={f.href}>{f.name}</a>
+            {i < friendsWithoutButtons.length - 1 ? ', ' : ''}
+          </>
+        ))}
+      </p>
+    )
+  }
+  <div class="mine">
+    <img src={url('88x31.png')} alt={`${site.handle} button`} width="88" height="31" />
+    <div>
+      <p>Mine, if you want it.</p>
+      <button type="button" data-snippet={snippet}>copy the html</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('.mine button');
+  btn?.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(btn.dataset.snippet ?? '');
+      btn.textContent = 'copied';
+    } catch {
+      btn.textContent = 'clipboard said no';
+    }
+    setTimeout(() => (btn.textContent = 'copy the html'), 1500);
+  });
+</script>
+
+<style>
+  .wall {
+    margin: 0;
+  }
+  .head {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .head p {
+    font-size: 0.9rem;
+  }
+  .buttons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .buttons img {
+    image-rendering: pixelated;
+    transition: transform var(--fast) var(--ease);
+  }
+  .buttons a:hover img {
+    transform: scale(1.5);
+  }
+  .buttons a {
+    display: block;
+    outline-offset: 2px;
+  }
+  .also {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+  }
+  .mine {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--surface0);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+  .mine img {
+    image-rendering: pixelated;
+  }
+  button {
+    font: inherit;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--accent);
+    background: var(--base);
+    border: 1px solid var(--surface1);
+    border-radius: 999px;
+    padding: 0.15rem 0.7rem;
+    cursor: pointer;
+    margin-top: 0.2rem;
+  }
+  button:hover {
+    border-color: var(--accent);
+  }
+</style>

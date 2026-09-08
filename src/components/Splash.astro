@@ -1,0 +1,27 @@
+---
+import { splashes } from '../config';
+---
+
+<p class="splash" data-splashes={JSON.stringify(splashes)}>{splashes[0]}</p>
+
+<script>
+  // Pick a line per page load; the server-rendered first line is the no-JS fallback.
+  const el = document.querySelector<HTMLElement>('.splash');
+  if (el) {
+    const lines = JSON.parse(el.dataset.splashes ?? '[]') as string[];
+    const pick = lines[Math.floor(Math.random() * lines.length)];
+    if (pick) el.textContent = pick;
+  }
+</script>
+
+<style>
+  .splash {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--subtext0);
+  }
+  .splash::before {
+    content: '// ';
+    color: var(--overlay1);
+  }
+</style>

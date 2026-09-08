@@ -1,0 +1,112 @@
+---
+import { Image, getImage } from 'astro:assets';
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Win from '../../components/Win.astro';
+import Lightbox from '../../components/Lightbox.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({ params: { slug: project.id }, props: { project } }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const { title, blurb, status, year, tech, links, images } = project.data;
+
+const gallery = await Promise.all(
+  images.map(async (img) => ({ ...img, full: (await getImage({ src: img.src, width: 1600 })).src })),
+);
+---
+
+<Base title={title} description={blurb} type="article">
+  <Win title={`~/projects/${project.id}`} span="twothirds" meta={year} read focus>
+    <article class="prose">
+      <h1>{title}</h1>
+      <p class="blurb">{blurb}</p>
+      <Content />
+    </article>
+
+    {
+      gallery.length > 0 && (
+        <section class="gallery" aria-label="Screenshots">
+          {gallery.map((img) => (
+            <a href={img.full} data-lightbox={img.alt}>
+              <Image src={img.src} alt={img.alt} width={720} densities={[1, 2]} loading="lazy" />
+            </a>
+          ))}
+        </section>
+      )
+    }
+  </Win>
+
+  <Win title="~/meta" span="third" side>
+    <div class="meta">
+      <span class="pill" data-status={status}>{status}</span>
+      <span class="chip">{year}</span>
+      {tech.map((t) => <span class="chip">{t}</span>)}
+    </div>
+    {
+      links.length > 0 && (
+        <ul class="links">
+          {links.map((l) => (
+            <li>
+              <a href={l.href}>{l.label}</a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </Win>
+
+  <Lightbox />
+</Base>
+
+<style>
+  .blurb {
+    color: var(--subtext1);
+    font-size: 1.15rem;
+    margin-top: 0.5rem;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    align-items: center;
+  }
+  .links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
+  .links a::before {
+    content: '↗ ';
+    color: var(--overlay1);
+  }
+  .gallery {
+    margin-top: 2rem;
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  }
+  .gallery a {
+    display: block;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--surface0);
+    background: var(--crust);
+  }
+  .gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    transition: transform var(--fast) var(--ease);
+  }
+  .gallery a:hover img {
+    transform: scale(1.02);
+  }
+</style>

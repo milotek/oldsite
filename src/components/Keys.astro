@@ -1,0 +1,71 @@
+---
+import { workspaces } from '../config';
+---
+
+<div class="keys" id="keys" hidden>
+  <div class="keys__inner">
+    <p class="keys__head">keybinds</p>
+    <div class="keys__grid">
+      {
+        workspaces.map((ws) => (
+          <div>
+            <kbd>{ws.key}</kbd>
+            <span>{ws.name}</span>
+          </div>
+        ))
+      }
+      <div><kbd>?</kbd><span>this</span></div>
+      <div><kbd>Esc</kbd><span>close</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const pills = Array.from(document.querySelectorAll<HTMLAnchorElement>('.ws'));
+  const keys = document.getElementById('keys');
+  const toggle = document.getElementById('keys-toggle');
+  const clock = document.getElementById('clock');
+
+  function showKeys(on: boolean) {
+    if (!keys || !toggle) return;
+    keys.hidden = !on;
+    toggle.setAttribute('aria-expanded', String(on));
+  }
+
+  toggle?.addEventListener('click', () => showKeys(Boolean(keys?.hidden)));
+  keys?.addEventListener('click', () => showKeys(false));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const el = e.target as HTMLElement | null;
+    if (el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+
+    if (e.key === 'Escape') return showKeys(false);
+    if (e.key === '?') {
+      e.preventDefault();
+      return showKeys(Boolean(keys?.hidden));
+    }
+
+    const hit = pills.find((p) => p.dataset.key === e.key);
+    if (hit && hit.getAttribute('aria-current') !== 'page') {
+      e.preventDefault();
+      window.location.href = hit.href;
+    }
+  });
+
+  // London time, because that is where I am and it is the only honest thing a
+  // status bar can tell you about someone else's machine.
+  if (clock) {
+    const fmt = new Intl.DateTimeFormat('en-GB', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+      timeZone: 'Europe/London',
+    });
+    const tick = () => {
+      clock.textContent = fmt.format(new Date());
+    };
+    tick();
+    setInterval(tick, 15000);
+  }
+</script>

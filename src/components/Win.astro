@@ -1,0 +1,40 @@
+---
+interface Props {
+  title: string;
+  span?: 'wide' | 'half' | 'third' | 'twothirds';
+  meta?: string;
+  focus?: boolean;
+  side?: boolean;
+  read?: boolean;
+  id?: string;
+  level?: 2 | 3;
+}
+
+const {
+  title,
+  span = 'wide',
+  meta,
+  focus = false,
+  side = false,
+  read = false,
+  id,
+  level = 2,
+} = Astro.props;
+
+const Heading = `h${level}` as 'h2' | 'h3';
+
+const classes = ['win', `win--${span}`, focus && 'win--focus', side && 'win--side', read && 'win--read']
+  .filter(Boolean)
+  .join(' ');
+---
+
+<section class={classes} id={id}>
+  <div class="win__bar">
+    <span class="win__dot" aria-hidden="true"></span>
+    <Heading class="win__title">{title}</Heading>
+    {meta && <span class="win__meta">{meta}</span>}
+  </div>
+  <div class="win__body">
+    <slot />
+  </div>
+</section>

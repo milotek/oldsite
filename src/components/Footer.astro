@@ -1,0 +1,18 @@
+---
+import { site } from '../config';
+import { url } from '../lib/url';
+
+const built = new Date().toISOString().slice(0, 10);
+---
+
+<footer class="foot">
+  <span>{site.name}</span>
+  <span class="foot__sep">/</span>
+  <a href={url('rss.xml')}>rss</a>
+  <span class="foot__sep">/</span>
+  <a href="https://astro.build">astro</a>
+  <span class="foot__sep">/</span>
+  <a href="https://catppuccin.com">catppuccin mocha</a>
+  <span class="foot__sep">/</span>
+  <span>built {built}</span>
+</footer>

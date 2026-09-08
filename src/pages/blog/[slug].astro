@@ -1,0 +1,38 @@
+---
+import { render } from 'astro:content';
+import { getPosts } from '../../lib/posts';
+import Base from '../../layouts/Base.astro';
+import Win from '../../components/Win.astro';
+import { isoDate, longDate } from '../../lib/time';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Base title={post.data.title} description={post.data.summary ?? post.data.title} type="article">
+  <Win title={`~/blog/${post.id}`} meta={longDate(post.data.published)} read focus>
+    <article class="prose">
+      <h1>{post.data.title}</h1>
+      <p class="date mono muted">
+        <time datetime={isoDate(post.data.published)}>{longDate(post.data.published)}</time>
+        {post.data.draft && <span class="pill" data-status="in-progress">draft</span>}
+      </p>
+      <Content />
+    </article>
+  </Win>
+</Base>
+
+<style>
+  .date {
+    margin-top: 0.6rem;
+    margin-bottom: 1.75rem;
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+  }
+</style>

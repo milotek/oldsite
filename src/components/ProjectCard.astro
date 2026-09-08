@@ -1,0 +1,78 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { url } from '../lib/url';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { title, blurb, status, year, tech, cover } = project.data;
+---
+
+<a class="card project" href={url(`projects/${project.id}/`)}>
+  {
+    cover ? (
+      <Image class="cover" src={cover} alt="" width={640} densities={[1, 2]} />
+    ) : (
+      <span class="cover cover--none" aria-hidden="true" />
+    )
+  }
+  <div class="body">
+    <div class="title-row">
+      <h3>{title}</h3>
+      <span class="pill" data-status={status}>{status}</span>
+    </div>
+    <p class="blurb">{blurb}</p>
+    <ul class="chips" aria-label="Technologies">
+      <li class="chip year">{year}</li>
+      {tech.slice(0, 4).map((t) => <li class="chip">{t}</li>)}
+    </ul>
+  </div>
+</a>
+
+<style>
+  .project {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .cover {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-bottom: 1px solid var(--surface0);
+    background: var(--crust);
+  }
+  .cover--none {
+    background: repeating-linear-gradient(
+      135deg,
+      var(--crust),
+      var(--crust) 7px,
+      var(--base) 7px,
+      var(--base) 14px
+    );
+  }
+  .body {
+    padding: 1rem 1.2rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+  .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .blurb {
+    color: var(--subtext1);
+  }
+  .year {
+    color: var(--accent);
+  }
+</style>

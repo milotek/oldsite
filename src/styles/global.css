@@ -1,0 +1,758 @@
+@import '@fontsource-variable/source-sans-3';
+@import '@fontsource-variable/montserrat';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+:root {
+  color-scheme: dark;
+
+  --crust: #11111b;
+  --mantle: #181825;
+  --base: #1e1e2e;
+  --surface0: #313244;
+  --surface1: #45475a;
+  --surface2: #585b70;
+  --overlay0: #6c7086;
+  --overlay1: #7f849c;
+  --overlay2: #9399b2;
+  --subtext0: #a6adc8;
+  --subtext1: #bac2de;
+  --text: #cdd6f4;
+
+  --accent: #ffbdbd;
+  --flamingo: #f2cdcd;
+  --pink: #f5c2e7;
+  --mauve: #cba6f7;
+  --red: #f38ba8;
+  --peach: #fab387;
+  --yellow: #f9e2af;
+  --green: #a6e3a1;
+  --teal: #94e2d5;
+  --blue: #89b4fa;
+  --lavender: #b4befe;
+
+  --radius: 18px;
+  --radius-sm: 10px;
+  --radius-xs: 6px;
+  --measure: 44rem;
+  --gap: 16px;
+  --border: 2px;
+  --bar-h: 44px;
+
+  --accent-soft: rgba(255, 189, 189, 0.12);
+  --accent-line: rgba(255, 189, 189, 0.35);
+
+  --font-sans: 'Source Sans 3 Variable', 'Source Sans 3', system-ui, sans-serif;
+  --font-display: 'Montserrat Variable', Montserrat, var(--font-sans);
+  --font-mono: 'JetBrains Mono', 'MesloLGS Nerd Font Mono', ui-monospace, monospace;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --fast: 150ms;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--crust);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--bar-h) + var(--gap) * 2);
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--crust);
+  background-image:
+    radial-gradient(70rem 40rem at 12% -12%, rgba(255, 189, 189, 0.07), transparent 60%),
+    radial-gradient(55rem 32rem at 95% 0%, rgba(203, 166, 247, 0.05), transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Six columns so a window can claim a half, a third or two thirds of a row,
+   the way a tiling layout splits one. */
+.workspace {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--gap);
+  width: 100%;
+  max-width: 1180px;
+  margin: var(--gap) auto;
+  padding: 0 var(--gap);
+  flex: 1;
+  align-content: start;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 1.35rem;
+  color: var(--accent);
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+p,
+ul,
+ol {
+  margin: 0;
+}
+
+p + p,
+.prose > * + * {
+  margin-top: 0.9em;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color var(--fast) var(--ease);
+}
+
+a:hover {
+  text-decoration-color: var(--accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+code,
+kbd,
+pre {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+}
+
+code {
+  background: var(--mantle);
+  border: 1px solid var(--surface0);
+  border-radius: var(--radius-xs);
+  padding: 0.05em 0.35em;
+}
+
+pre {
+  background: var(--mantle);
+  border: 1px solid var(--surface0);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--surface0);
+  margin: 2rem 0;
+}
+
+.muted {
+  color: var(--subtext0);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.section {
+  margin-top: 3rem;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--gap);
+  margin-bottom: 1rem;
+}
+
+.section-head a {
+  font-size: 0.95rem;
+}
+
+.card {
+  background: var(--mantle);
+  border: 1px solid var(--surface0);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  transition:
+    border-color var(--fast) var(--ease),
+    transform var(--fast) var(--ease);
+}
+
+a.card {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+a.card:hover {
+  border-color: var(--surface2);
+  transform: translateY(-1px);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--subtext1);
+  background: var(--base);
+  border: 1px solid var(--surface0);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+  white-space: nowrap;
+}
+
+.pill {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+
+.pill[data-status='live'] {
+  color: var(--green);
+}
+.pill[data-status='in-progress'] {
+  color: var(--peach);
+}
+.pill[data-status='shipped'] {
+  color: var(--blue);
+}
+.pill[data-status='shelved'],
+.pill[data-status='archived'] {
+  color: var(--overlay2);
+}
+
+/* Long-form markdown: blog posts and project write-ups. */
+.prose {
+  font-size: 1.05rem;
+}
+
+.prose h2 {
+  margin-top: 2.2rem;
+  font-size: 1.4rem;
+}
+
+.prose h3 {
+  margin-top: 1.6rem;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.4rem;
+}
+
+.prose li + li {
+  margin-top: 0.25em;
+}
+
+.prose li > ul,
+.prose li > ol {
+  margin-top: 0.25em;
+}
+
+.prose img {
+  border-radius: var(--radius-sm);
+  margin-inline: auto;
+}
+
+.prose blockquote {
+  margin: 1rem 0;
+  padding: 0.25rem 1rem;
+  border-left: 3px solid var(--accent);
+  color: var(--subtext1);
+}
+
+.prose table {
+  border-collapse: collapse;
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  font-size: 0.95rem;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid var(--surface0);
+  padding: 0.5rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  background: var(--mantle);
+  font-weight: 600;
+}
+
+.prose td img {
+  margin: 0;
+}
+
+.callout {
+  margin: 1.2rem 0;
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius-sm);
+  background: var(--mantle);
+  border: 1px solid var(--surface0);
+  border-left: 3px solid var(--blue);
+}
+
+.callout[data-callout='warning'],
+.callout[data-callout='caution'] {
+  border-left-color: var(--peach);
+}
+.callout[data-callout='danger'],
+.callout[data-callout='bug'] {
+  border-left-color: var(--red);
+}
+.callout[data-callout='tip'],
+.callout[data-callout='success'] {
+  border-left-color: var(--green);
+}
+.callout[data-callout='quote'] {
+  border-left-color: var(--overlay1);
+}
+
+.callout-title,
+.callout > summary {
+  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  margin: 0 0 0.5rem;
+}
+
+.callout > summary {
+  cursor: pointer;
+  margin: 0;
+}
+
+.callout > summary + * {
+  margin-top: 0.6rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---------- window manager chrome ---------- */
+
+.bar {
+  position: sticky;
+  top: var(--gap);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  max-width: 1180px;
+  height: var(--bar-h);
+  margin: var(--gap) auto 0;
+  padding: 0 10px 0 6px;
+  background: rgba(24, 24, 37, 0.86);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--border) solid var(--surface0);
+  border-radius: var(--radius);
+}
+
+.bar__ws {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.bar__ws::-webkit-scrollbar {
+  display: none;
+}
+
+.ws {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1;
+  color: var(--subtext0);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background var(--fast) var(--ease),
+    color var(--fast) var(--ease);
+}
+.ws__key {
+  color: var(--surface2);
+  font-size: 0.72rem;
+}
+.ws:hover {
+  background: var(--surface0);
+  color: var(--text);
+}
+.ws:hover .ws__key {
+  color: var(--subtext0);
+}
+.ws[aria-current='page'] {
+  background: var(--accent);
+  color: var(--crust);
+  font-weight: 600;
+}
+.ws[aria-current='page'] .ws__key {
+  color: rgba(17, 17, 27, 0.55);
+}
+
+.bar__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+}
+.mod {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--subtext0);
+  white-space: nowrap;
+}
+.mod--host {
+  color: var(--overlay0);
+}
+.mod--clock {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.mod--keys {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--surface1);
+  border-radius: 6px;
+  color: var(--subtext0);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.mod--keys:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---------- windows ---------- */
+
+.win {
+  grid-column: span 6;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--base);
+  border: var(--border) solid var(--surface0);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition:
+    border-color var(--fast) var(--ease),
+    box-shadow var(--fast) var(--ease);
+}
+.win--half {
+  grid-column: span 3;
+}
+.win--third {
+  grid-column: span 2;
+}
+.win--twothirds {
+  grid-column: span 4;
+}
+
+.win:hover,
+.win:focus-within,
+.win--focus {
+  border-color: var(--accent-line);
+  box-shadow:
+    0 0 0 1px rgba(255, 189, 189, 0.06),
+    0 10px 34px -22px rgba(0, 0, 0, 0.9);
+}
+/* Only one window is focused at a time, same as the real thing. */
+.workspace:has(.win:hover) .win--focus:not(:hover) {
+  border-color: var(--surface0);
+  box-shadow: none;
+}
+
+/* A short sidebar beside a long article would otherwise be a tall empty
+   column, so it rides along instead. */
+.win--side {
+  align-self: start;
+  position: sticky;
+  top: calc(var(--bar-h) + var(--gap) * 2);
+}
+
+.win__bar {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 14px;
+  background: var(--mantle);
+  border-bottom: 1px solid var(--surface0);
+}
+.win__dot {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--surface2);
+  transition: background var(--fast) var(--ease);
+}
+.win:hover .win__dot,
+.win:focus-within .win__dot,
+.win--focus .win__dot {
+  background: var(--accent);
+}
+.workspace:has(.win:hover) .win--focus:not(:hover) .win__dot {
+  background: var(--surface2);
+}
+.win__title {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--subtext0);
+  letter-spacing: 0.01em;
+}
+.win__meta {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--overlay0);
+}
+.win__body {
+  padding: 20px;
+  flex: 1;
+}
+.win__body > :first-child {
+  margin-top: 0;
+}
+.win--read .win__body {
+  padding: 24px 26px 26px;
+}
+
+/* ---------- footer ---------- */
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 8px var(--gap) 40px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--overlay0);
+}
+.foot a {
+  color: var(--subtext0);
+  text-decoration: none;
+}
+.foot a:hover {
+  color: var(--accent);
+}
+.foot__sep {
+  color: var(--surface1);
+}
+
+/* ---------- keybind overlay ---------- */
+
+.keys {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  background: rgba(17, 17, 27, 0.72);
+  backdrop-filter: blur(3px);
+}
+.keys[hidden] {
+  display: none;
+}
+.keys__inner {
+  min-width: 260px;
+  padding: 20px 24px;
+  background: var(--base);
+  border: var(--border) solid var(--accent-line);
+  border-radius: var(--radius);
+}
+.keys__head {
+  margin: 0 0 14px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--subtext0);
+}
+.keys__grid {
+  display: grid;
+  gap: 8px;
+}
+.keys__grid > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.keys kbd {
+  min-width: 26px;
+  padding: 4px 6px;
+  background: var(--surface0);
+  border: 1px solid var(--surface1);
+  border-radius: 5px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-align: center;
+}
+.keys span {
+  font-size: 0.88rem;
+  color: var(--subtext0);
+}
+
+/* ---------- narrow ---------- */
+
+@media (max-width: 900px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+  .win,
+  .win--half,
+  .win--third,
+  .win--twothirds {
+    grid-column: span 1;
+  }
+  .win--side {
+    position: static;
+  }
+}
+
+@media (max-width: 620px) {
+  :root {
+    --gap: 12px;
+  }
+  .bar {
+    padding-left: 4px;
+  }
+  .mod--host,
+  .mod--keys {
+    display: none;
+  }
+  /* On a phone the names are the only usable label, so the numbers go instead
+     and the strip scrolls. The fade is the only affordance there is room for. */
+  .ws__key {
+    display: none;
+  }
+  .ws {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+  .bar__ws {
+    -webkit-mask-image: linear-gradient(to right, #000 90%, transparent);
+    mask-image: linear-gradient(to right, #000 90%, transparent);
+  }
+  .win__body {
+    padding: 16px;
+  }
+  .win--read .win__body {
+    padding: 18px;
+  }
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--crust);
+}
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-track {
+  background: var(--crust);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface0);
+  border-radius: 999px;
+  border: 3px solid var(--crust);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--surface1);
+}

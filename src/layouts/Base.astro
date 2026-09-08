@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+import { site } from '../config';
+import { url } from '../lib/url';
+import Bar from '../components/Bar.astro';
+import Keys from '../components/Keys.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  type?: 'website' | 'article';
+}
+
+const { title, description = site.description, type = 'website' } = Astro.props;
+const fullTitle = title ? `${title} · ${site.handle}` : `${site.name} · ${site.handle}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={site.name} />
+    <meta name="theme-color" content="#11111b" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={url('favicon.svg')} type="image/svg+xml" />
+    <link rel="icon" href={url('favicon.ico')} sizes="48x48" />
+    <link rel="alternate" type="application/rss+xml" title={`${site.handle} blog`} href={url('rss.xml')} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={site.handle} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <Bar />
+    <main class="workspace" id="main">
+      <slot />
+    </main>
+    <Footer />
+    <Keys />
+  </body>
+</html>
+
+<style>
+  .skip {
+    position: absolute;
+    left: 1rem;
+    top: -3rem;
+    background: var(--accent);
+    color: var(--crust);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    z-index: 10;
+  }
+  .skip:focus {
+    top: 1rem;
+  }
+</style>

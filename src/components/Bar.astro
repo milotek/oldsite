@@ -1,0 +1,29 @@
+---
+import { workspaces } from '../config';
+import { url } from '../lib/url';
+
+const path = Astro.url.pathname;
+// Home would match every path under it, so it has to be an exact hit.
+const isActive = (href: string) => (href === url('') ? path === href : path.startsWith(href));
+---
+
+<header class="bar">
+  <nav class="bar__ws" aria-label="Sections">
+    {
+      workspaces.map((ws) => {
+        const href = url(ws.path);
+        return (
+          <a class="ws" href={href} data-key={ws.key} aria-current={isActive(href) ? 'page' : undefined}>
+            <span class="ws__key">{ws.key}</span>
+            <span class="ws__name">{ws.name}</span>
+          </a>
+        );
+      })
+    }
+  </nav>
+  <div class="bar__status">
+    <span class="mod mod--host">milo@london</span>
+    <button class="mod mod--keys" type="button" id="keys-toggle" aria-expanded="false" aria-controls="keys">?</button>
+    <span class="mod mod--clock" id="clock" aria-hidden="true">--:--</span>
+  </div>
+</header>
