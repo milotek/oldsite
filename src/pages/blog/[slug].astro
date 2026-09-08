@@ -12,15 +12,15 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+const meta = post.data.draft ? 'draft' : undefined;
 ---
 
 <Base title={post.data.title} description={post.data.summary ?? post.data.title} type="article">
-  <Win title={`~/blog/${post.id}`} meta={longDate(post.data.published)} read focus>
+  <Win title={`~/blog/${post.id}`} meta={meta} read focus>
     <article class="prose">
       <h1>{post.data.title}</h1>
       <p class="date mono muted">
         <time datetime={isoDate(post.data.published)}>{longDate(post.data.published)}</time>
-        {post.data.draft && <span class="pill" data-status="in-progress">draft</span>}
       </p>
       <Content />
     </article>
