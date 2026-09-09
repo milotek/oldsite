@@ -3,7 +3,6 @@ title: "wtf is wrong with modifier keys"
 published: 2026-08-30
 draft: false
 ---
-
 ## Preamble
 1. I have 3 keyboards.
 2. I travel between my home and the office
