@@ -44,7 +44,7 @@
 
   --font-sans: 'Source Sans 3 Variable', 'Source Sans 3', system-ui, sans-serif;
   --font-display: 'Montserrat Variable', Montserrat, var(--font-sans);
-  --font-mono: 'JetBrains Mono', 'MesloLGS Nerd Font Mono', ui-monospace, monospace;
+  --font-mono: 'MesloLGS Nerd Font Mono', ui-monospace, monospace;
 
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   --fast: 150ms;

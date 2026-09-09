@@ -1,9 +1,9 @@
 export const site = {
   name: 'Milo Tekchandani',
   handle: 'milotek',
-  role: 'Software Engineer Apprentice at Google, London',
+  role: 'Software Engineering @ Google, London',
   description:
-    'Milo Tekchandani. Software engineer apprentice at Google, working on the Google Search app for Android. Projects, writing and art.',
+    'Software Engineer @ Google, working on the Google Search app for Android and iOS.',
   email: 'milo@milotek.dev',
   phone: '+44 7745 011538',
   cv: 'https://github.com/milotek/milotek/raw/main/CV.pdf',
@@ -46,14 +46,13 @@ export const socials: Social[] = [
 
 // One shows under the name on each page load. Keep them true.
 export const splashes = [
-  'backend and infrastructure on the Google Search app',
+  'moron',
   'currently: page transitions for Android Search',
-  'three keyboards, no consistent modifier keys',
   'no lake, no play',
-  'runs NixOS on purpose',
-  '1-indexed arrays are a crime',
+  'nixos user',
+  'lua enjoyer',
   'draws sometimes',
-  'de_lake enjoyer',
+  'de_lake player',
 ];
 
 export interface Friend {
@@ -63,19 +62,5 @@ export interface Friend {
 }
 
 export const friends: Friend[] = [
-  { name: 'bomberfish', href: 'https://bomberfish.ca', button: 'https://bomberfish.ca/button.gif' },
-  { name: 'qwq', href: 'https://qwq.sh/', button: 'https://qwq.sh/88x31/hazelcaffe.png' },
-  { name: 'dispherical', href: 'https://dispherical.com/', button: 'https://cdn.dispherical.com/88x31.png' },
-  { name: 'zenfyr', href: 'https://zenfyr.dev/', button: 'https://zenfyr.dev/88_31/88_31.webp' },
-  // notfire serves HTML to anything that does not look like a browser; the image is fine in one.
-  { name: 'notfire', href: 'https://notfire.cc/home.html', button: 'https://notfire.cc/design/images/buttons/notfire-cc-88x31-af-darkv.gif' },
-  { name: 'sneexy', href: 'https://sneexy.synth.download/', button: 'https://synth.download/assets/buttons/sneexy.svg' },
-  { name: 'beeps', href: 'https://beeps.website/', button: 'https://beeps.website/assets/images/buttons/88x31.gif' },
-  { name: 'hiijax', href: 'https://hiijax.net/', button: 'https://hiijax.net/buttons/hiijax_v1.gif' },
-  { name: 'guigui', href: 'https://guigui.aerocity.site/', button: 'https://guigui.aerocity.site/88x31/guigui.png' },
-];
-
-// No button found on the site; listed as a text link until there is one.
-export const friendsWithoutButtons: Omit<Friend, 'button'>[] = [
-  { name: 'swifty', href: 'https://swiftyshq.neocities.org/main/' },
+  { name: 'test', href: 'https://bomberfish.ca', button: 'https://bomberfish.ca/button.gif' },
 ];

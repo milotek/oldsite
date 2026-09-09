@@ -8,8 +8,7 @@ export async function GET(context: APIContext) {
   const posts = await getPosts();
   return rss({
     title: `${site.handle} blog`,
-    description: 'Writing by Milo Tekchandani.',
-    // Astro.site is the bare origin; the feed has to point at the subpath.
+    description: 'Terrible writing from milo@milotek.dev.',
     site: new URL(url(''), context.site),
     trailingSlash: true,
     items: posts.map((p) => ({

@@ -21,17 +21,17 @@ export const artworks: Artwork[] = [
   {
     src: title,
     alt: 'Dithered pixel art of purple mountains under a full moon at dusk',
-    caption: 'Title screen for a pygame project.',
+    caption: 'Title screen for a pygame project',
   },
   {
     src: lake,
     alt: 'Black ink line sketch of the Counter-Strike map de_lake, with a #BringBackLake caption',
-    caption: 'de_lake. Best map in the game, still not in the game.',
+    caption: 'de_lake sketch',
   },
   {
     src: antagonist,
-    alt: 'Character concept sheet for Laser Antlers, a moose in a red shirt, with handwritten notes',
-    caption: 'Laser Antlers, the antagonist of my EPQ platformer.',
+    alt: 'Character concept sheet for my EPQ',
+    caption: 'EPQ game project concept art',
   },
   {
     src: sunset,
@@ -45,8 +45,8 @@ export const artworks: Artwork[] = [
   },
   {
     src: protagonist,
-    alt: 'Character concept sheet for a round-headed protagonist in a top hat and suit, with sticky notes',
-    caption: 'The protagonist. Autistic, non-verbal, well dressed.',
+    alt: 'Character concept sheet for my EPQ',
+    caption: 'More EPQ game project concept art',
   },
   {
     src: space,

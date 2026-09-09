@@ -1,5 +1,5 @@
 ---
-import { friends, friendsWithoutButtons, site } from '../config';
+import { friends, site } from '../config';
 import { url } from '../lib/url';
 
 const own = new URL(url('88x31.png'), Astro.site).href;
@@ -22,18 +22,6 @@ const snippet = `<a href="${new URL(url(''), Astro.site).href}"><img src="${own}
       ))
     }
   </ul>
-  {
-    friendsWithoutButtons.length > 0 && (
-      <p class="also muted">
-        Also: {friendsWithoutButtons.map((f, i) => (
-          <>
-            <a href={f.href}>{f.name}</a>
-            {i < friendsWithoutButtons.length - 1 ? ', ' : ''}
-          </>
-        ))}
-      </p>
-    )
-  }
   <div class="mine">
     <img src={url('88x31.png')} alt={`${site.handle} button`} width="88" height="31" />
     <div>
@@ -88,10 +76,6 @@ const snippet = `<a href="${new URL(url(''), Astro.site).href}"><img src="${own}
   .buttons a {
     display: block;
     outline-offset: 2px;
-  }
-  .also {
-    margin-top: 0.75rem;
-    font-size: 0.9rem;
   }
   .mine {
     margin-top: 1.25rem;
