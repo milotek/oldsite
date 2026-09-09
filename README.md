@@ -1,7 +1,20 @@
-# milotek.dev
+---
 
-Personal site.
-Astro, static output, Catppuccin Mocha, no client JavaScript except the live cards and the image viewer.
+<p align="center">
+    <img width="1080" height="720" src="/src/assets/art/thumbnail.jpg">
+</p>
+
+<h1 align="center">
+    <a href="https://milotek.dev">milotek.dev</a>
+</h1>
+
+<p align="center">
+    godawful """professional""" website
+</p>
+
+---
+
+
 
 ## Running it
 
