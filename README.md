@@ -21,9 +21,9 @@
 ```bash
 npm install
 cp .env.example .env    # fill in Last.fm if you want the listening card
-npm run dev             # http://localhost:4321
-npm run build           # -> dist/
-npm run check           # types and templates
+npm run dev
+npm run build
+npm run check
 ```
 
 `npm run dev` and `npm run build` both run `scripts/sync-vault.ts` first.
