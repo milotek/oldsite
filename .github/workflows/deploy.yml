@@ -20,10 +20,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # The vault is public, so the blog source needs no credentials.
-      - name: Clone vault
-        run: git clone --depth 1 https://github.com/milotek/ObsidianVault.git vault
-
       - uses: actions/setup-node@v4
         with:
           node-version: 24

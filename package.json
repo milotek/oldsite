@@ -10,9 +10,6 @@
     "build": "astro build --force",
     "preview": "astro preview",
     "astro": "astro",
-    "sync": "node scripts/sync-vault.ts",
-    "predev": "npm run sync",
-    "prebuild": "npm run sync",
     "check": "astro check"
   },
   "dependencies": {
@@ -29,7 +26,6 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@types/node": "^26.4.1",
-    "typescript": "^6.0.3",
-    "yaml": "^2.9.0"
+    "typescript": "^6.0.3"
   }
 }
