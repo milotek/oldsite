@@ -3,7 +3,6 @@ title: "Seperating the art from the artist"
 published: 2026-08-25
 draft: false
 ---
-
 I'm going to subvert your expectation for this piece by not leading with Kanye West.
 
 ## """FURRY MUSICIANS"""

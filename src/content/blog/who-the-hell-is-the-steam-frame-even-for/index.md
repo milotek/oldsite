@@ -3,7 +3,6 @@ title: "Who the hell is the Steam Frame even for"
 published: 2026-08-25
 draft: false
 ---
-
 When it was released all the way back in 2019 (wow, time flies, huh), the Valve Index was **the** greatest virtual reality headset money could buy you - and it was a **damn good deal too!**
 For "just" £950:
 - The highest refresh rate on a HMD ever
@@ -67,9 +66,3 @@ So I knew what I was talking about. This was based off leaks and also common sen
 When the Steam Frame was announced with specs and all, I couldn't help but feel a little miffed however. In spite of their marketing, this did not *feel* like a device designed for streaming first.
 
 I'm going to write my argument by juxtaposing the Frame against its primary competitor, the Quest 3 - released in 2023.
-
-
-
-
-
-
