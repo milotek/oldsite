@@ -3,6 +3,10 @@ title: "Google Does Not Use Lua"
 published: 2026-08-25
 draft: false
 ---
+# Google Does Not Use Lua
+It's very very rarely, if ever, used, sadly.
+
+## Introduction
 I started scripting in Lua when I was 11.
 
 If you're not familiar with Lua, it is a neat and weird scripting language. It has:
@@ -35,7 +39,9 @@ So, it would appear it's just a subset of NeoVim powerusers, and Roblox develope
 
 Ah, Roblox, a platform that was once filled with young pioneers, future engineers, and men destined to go on to do great things. It is currently, slowing, molting into a vibe-coding haven for techbros and pharmers to to create slop for prepubescent iPad kids. **Thank you, private equity, for kicking off the beginning of the end of something beautiful.**
 
-Irregardless, Roblox has made a dedicated commitment to stick with Lua, or rather, their fork of the language - Luau. See: https://luau.org/why
+Irregardless, Roblox has made a dedicated commitment to stick with Lua, or rather, their fork of the language - Luau. 
+
+See: https://luau.org/why
 
 > [!QUOTE] "Why Luau?"
 > Around 2006, [Roblox](https://www.roblox.com/) started using Lua 5.1 as a scripting language for games. Over the years the runtime had to be tweaked to provide a safe, secure sandboxed environment; we gradually started accumulating small library changes and tweaks.
@@ -44,6 +50,6 @@ Irregardless, Roblox has made a dedicated commitment to stick with Lua, or rathe
 > 
 > Unlike mainline Lua, we also could not afford to do major breaking changes to the language (hence the 5.1 language baseline that remained unchanged for more than a decade). While faster implementations of Lua 5.1 like LuaJIT were available, they didn’t meet our needs in terms of portability, ease of change and they didn’t address the problem of developing robust code at scale.
 > 
-> All of these motivated us to start reshaping Lua 5.1 that we started from into a new, derivative language that we call Luau. Our focus is on making the language more performant and feature-rich, and make it easier to write robust code through a combination of linting and type checking using a gradual type system.
+> All of these motivated us to start reshaping Lua 5.1 that we started from into a new, derivative language that we call Luau.
 
-Luau is a modern edition of the language designed to make
+Luau is a modern edition of the language focused on making the language more performant and feature-rich. Luau makes it easier to write robust code through a combination of linting and type checking using a gradual type system.

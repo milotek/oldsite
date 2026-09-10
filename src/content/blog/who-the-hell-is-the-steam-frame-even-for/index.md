@@ -45,7 +45,7 @@ Note the date on this:
 ![Pasted image 20260724133124.png](./Pasted image 20260724133124.png)
 (At the time, "Fremont" was Valve's internal / leaked codename for the Steam Machine)
 
-So immediately, I was wrong (*COUGH COUGH PRICE*), but also I wasn't.
+So immediately, I was wrong, but also I wasn't.
 - It was **announced** at the same time as the Steam Machine
 	- It would have **released** at the same time too if it weren't for the great RAM crisis of 2026.
 - You can buy with the Fremont... technically.
