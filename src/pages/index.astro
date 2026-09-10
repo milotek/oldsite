@@ -26,7 +26,7 @@ const posts = (await getPosts()).slice(0, 3);
       <Image
         class="photo"
         src={photo}
-        alt="Milo, at a garden gate, being climbed by a border collie"
+        alt="A picture of Milo Tekchandani."
         width={176}
         densities={[1, 2]}
         loading="eager"
@@ -39,12 +39,16 @@ const posts = (await getPosts()).slice(0, 3);
     </div>
     <div class="prose intro">
       <p>
-        I work on the backend and infrastructure of the Google Search app for Android. Right now that means bringing page
-        transitions to the app. Before that it was internal developer tools and shaving latency off WebView and search.
+        Hello! My name is Milo, a 19 year old from the United Kingdom.
       </p>
       <p>
-        Outside work I run a small pile of NixOS machines, write Kotlin when nobody is making me, draw a bit, and hold
-        strong opinions about Counter-Strike maps. I am 19 and from the UK.
+        Currently, I work on the backend and infrastructure of the Google Search App, primarily for Android (+ iOS a little). Some of my work includes making internal developer tools for people working on <a href="https://google.com">google.com</a>, and micro-optimising search latency and WebView. Right now I am working on bringing transitions between search results tabs to the app.
+      </p>
+      <p>
+        Outside work I run a small pile of NixOS machines, write Kotlin when nobody is making me, draw a bit, and hold strong opinions about Counter-Strike maps.
+      </p>
+      <p>
+        I take great interest in homelabbing, Valve's Source Engine, Roblox development (pre-slop days I promise), iOS jailbreaking + sideloading.
       </p>
     </div>
   </Win>
@@ -74,14 +78,14 @@ const posts = (await getPosts()).slice(0, 3);
           ))}
         </ul>
       ) : (
-        <p class="muted">Nothing published yet. There is a drafts folder with a lot of opinions in it.</p>
+        <p class="muted">There isn't anything published yet :(</p>
       )
     }
     <p class="more"><a href={url('blog/')}>the blog</a></p>
   </Win>
 
   <Win title="~/contact" span="half" id="contact">
-    <p>Email is best. The CV is a PDF because recruiters like PDFs.</p>
+    <p>Say hi, for whatever it may be!</p>
     <ul class="contact">
       {
         socials.map((s) => (
