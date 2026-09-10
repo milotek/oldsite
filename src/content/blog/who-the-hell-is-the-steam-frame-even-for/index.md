@@ -6,6 +6,7 @@ draft: false
 # Who the hell is the Steam Frame even for?
 Do valve even know? 🤔
 ## Valve's history of headsets
+Valve have a long and extensive history in VR. They practically pioneered the first "big boom" of consumer virtual reality by makiin
 
 ### Valve Index
 When it was released all the way back in 2019 (wow, time flies, huh), the Valve Index was **the** greatest virtual reality headset money could buy you - and it was a **damn good deal too!**
